@@ -19,34 +19,76 @@ const Practice = ({ onFilterChange }) => {
     const [okcategory, setcategory] = useState([]);
     const [ProductData, setProductData] = useState([]);
 
+    // Additional states 
+    const [smallCategory, setsmallCategory] = useState([])
+    const [productColor, setproductColor] = useState([])
+    const [productStyle, setproductStyle] = useState([])
+    const [collection, setcollection] = useState([]);
+    const [material, setmaterial] = useState([]);
+    const [size, setsize] = useState([]);
+    const [price, setprice] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             const res = await axios.get("/api/v1/product");
             setProductData(res.data.data);
+            // console.log(res.data.data.find(item => item.category.includes(category)));
+            const find = res.data.data.filter(item => item.category.includes(category))
+
+            // Extract unique Categories items
+            const uniqueSubCategories = [
+                ...new Set(find.map(item => item.subCategory))
+            ];
+            const uniquesmallCategories = [
+                ...new Set(find.map(item => item.smallCategory))
+            ];
+            const uniqueColors = [
+                ...new Set(find.map(item => item.color))
+            ];
+            const uniqueStyles = [
+                ...new Set(find.map(item => item.style))
+            ];
+            const uniqueCollections = [
+                ...new Set(find.map(item => item.collection))
+            ];
+            const uniqueMaterials = [
+                ...new Set(find.map(item => item.material))
+            ];
+            const uniqueSizes = [
+                ...new Set(find.map(item => item.details.sizeIN))
+            ];
+            const uniquePrices = [
+                ...new Set(find.map(item => item.price))
+            ];
+
+            setsubCategory(uniqueSubCategories)
+            setsmallCategory(uniquesmallCategories);
+            setproductColor(uniqueColors)
+            setproductStyle(uniqueStyles)
+            setcollection(uniqueCollections);
+            setmaterial(uniqueMaterials)
+            setsize(uniqueSizes)
+            setprice(uniquePrices)
         };
         fetchData();
-    }, []);
+    }, [category]);
 
-    const data = collectionsData;
+    // const data = collectionsData;
 
-    const st = ProductData.filter((item) => item.category.includes(category));
+    // const st = ProductData.filter((item) => item.category.includes(category));
 
     const myitems = {
-        CATEGORY: data[category][0].category.map(item => item),
-        PRODUCT: data[category][1].products.map(item => item.collection),
-        COLOR: [data[category][2].color.map(item => item)],
-        STYLE: st.map(item => item.style),
-        COLLECTION: st.map(item => item.collection),
-        MATERIAL: st.map(item => item.material),
-        SIZE: st.map(item => item.size),
-        PRICE: st.map(item => item.price)
+        CATEGORY: subCategory,
+        PRODUCT: smallCategory,
+        COLOR: productColor,
+        STYLE: productStyle,
+        COLLECTION: collection,
+        MATERIAL: material,
+        SIZE: size,
+        PRICE: price
     };
 
-    useEffect(() => {
-        const mycategories = data[category][0].category;
-        setsubCategory(mycategories.map((item) => item));
-    }, []);
-
+    // console.log(myitems.CATEGORY)
     const toggleCategory = (e) => {
         if (okcategory.includes(e.target.value)) {
             setcategory(prev => prev.filter(item => item !== e.target.value));
@@ -75,7 +117,7 @@ const Practice = ({ onFilterChange }) => {
                     </div>
                 </div>
             </div>
-            <div className="w-[220px] border-t border-r h-full overflow-y-scroll custom-scroll">
+            <div className="w-[220px] border-t border-r h-[80vh] overflow-y-scroll custom-scroll">
 
                 <div className="border-t-2 border-[#e8e8e1] py-[18px]">
                     <button
@@ -95,7 +137,7 @@ const Practice = ({ onFilterChange }) => {
                                 className="mx-2 h-4 w-4"
                                 value={item}
                                 onClick={toggleCategory}
-                            /> {item}
+                            /> {item?.charAt(0)?.toUpperCase() + item?.slice(1)}
                         </div>
                     ))
                 }
@@ -129,7 +171,7 @@ const Practice = ({ onFilterChange }) => {
                 </div>
 
                 {isColorOpen &&
-                    myitems.COLOR[0].map((item, index) => (
+                    myitems.COLOR.map((item, index) => (
                         <div key={index} className="pt-2 bg-white flex items-center">
                             <input type="checkbox" className="mx-2 h-4 w-4" value={item} onClick={toggleCategory} /> {item}
                         </div>
