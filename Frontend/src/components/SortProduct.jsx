@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "motion/react";
 import ProductCard from "./ProductCard";
@@ -7,16 +7,18 @@ import { useQuery } from "@tanstack/react-query";
 
 const SortProduct = ({ ProductSubcategory }) => {
   const { category } = useParams();
-
+  const hasRun = useRef(false);
 
   useEffect(() => {
+
     const userActivity = async (req, res) => {
       try {
-
+        if (hasRun.current) return;
+        hasRun.current = true;
         const token = localStorage.getItem("refreshToken");
         const res = await axios.post("/api/v1/track", {
           action: "category_visit",
-          category : category
+          category: category
         },
           {
             headers: {

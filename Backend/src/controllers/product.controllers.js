@@ -6,23 +6,11 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 const productData = asyncHandler(async (req, res) => {
 
     try {
-        let { _limit = 10, _page = 1 } = req.query;
+        const products =await Product.find();
 
-        _limit = Number(_limit);
-        _page = Number(_page);
-
-        const products = await Product.find()
-            .limit(_limit)
-            .skip((_page - 1) * _limit);
-
-        const total = await Product.countDocuments();
-
-        res.json({
-            total,
-            page: _page,
-            limit: _limit,
-            data: products
-        });
+        res.status(200).json(
+            new ApiResponse(200, products, "Products fetched successfully")
+        )
         
     } catch (error) {
         throw new ApiError(500, "Failed to update cart");

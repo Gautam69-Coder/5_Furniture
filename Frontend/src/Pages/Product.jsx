@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import facebookLogo from "../assets/logos/facebook.svg"
 import { useQuickView } from '../context/PopupContext';
 
@@ -29,7 +28,7 @@ const ProductPage = () => {
 
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
-                console.log(productk)
+                // console.log(productk)
             } catch (error) {
                 console.error("Error fetching product:", error);
             }
@@ -39,13 +38,17 @@ const ProductPage = () => {
     }, [id]);
 
 
+    const hasRun = useRef(false);
+
     useEffect(() => {
+        if (hasRun.current) return;
+        hasRun.current = true;
         const userActivity = async () => {
             try {
 
                 const res2 = await axios.get("/api/v1/product/");
                 const products = res2.data.data;
-                console.log(product)
+                // console.log(product)
 
                 const productt = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 // console.log(productt)
@@ -53,7 +56,7 @@ const ProductPage = () => {
                 const res = await axios.post("/api/v1/track", {
                     action: "view",
                     productId: productt?._id,
-                    category : productt?.category
+                    category: productt?.category
                 },
                     {
                         headers: {
@@ -67,7 +70,6 @@ const ProductPage = () => {
                 console.log(error);
             }
         }
-
         userActivity();
     }, [id])
 
@@ -380,7 +382,7 @@ const ProductPage = () => {
 
             </div>
             <div>
-                
+
             </div>
 
         </motion.div>

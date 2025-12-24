@@ -8,6 +8,11 @@ const UserActivity = asyncHandler(async (req, res) => {
     try {
         const { productId, action, searchKeyword, category } = req.body
 
+        const obj = {
+            productId, action, searchKeyword, category
+        }
+
+        console.log(obj)
 
         await Activity.create({
             userId: req.user?._id || null,
@@ -73,28 +78,28 @@ const RecentlyViewed = asyncHandler(async (req, res) => {
 });
 
 const Recommended = asyncHandler(async (req, res) => {
-    try {   
-            const topCategory = await Activity.aggregate([
-                { $match: { userId: req.user._id, action: "view" } },
-                { $group: { _id: "$category", count: { $sum: 1 } } },
-                { $sort: { count: -1 } },
-                { $limit: 1 }
-            ]);
+    try {
+        const topCategory = await Activity.aggregate([
+            { $match: { userId: req.user._id, action: "view" } },
+            { $group: { _id: "$category", count: { $sum: 1 } } },
+            { $sort: { count: -1 } },
+            { $limit: 1 }
+        ]);
 
 
-            const products = await Product.find({
-                category: topCategory[0]._id
-            }).limit(6);
+        const products = await Product.find({
+            category: topCategory[0]._id
+        }).limit(6);
 
 
-            res.status(200).json(
-                new ApiResponse(200,products,"All done")
-            )
+        res.status(200).json(
+            new ApiResponse(200, products, "All done")
+        )
 
     } catch (error) {
-        throw new ApiError(500,error)
+        throw new ApiError(500, error)
     }
 })
 
 
-export { UserActivity, RecentlyViewed ,Recommended};
+export { UserActivity, RecentlyViewed, Recommended };
