@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Make scrollbar thick and black */
+.custom-scroll::-webkit-scrollbar {
+  width: 2px;          /* thickness */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #000;     /* black color */
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #e5e5e5;  /* light track */
+}
