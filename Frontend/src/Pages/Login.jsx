@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { TailChase } from 'ldrs/react'
 import 'ldrs/react/TailChase.css'
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
 
 
 const Login = () => {
@@ -43,6 +45,36 @@ const Login = () => {
   // Loaders
   const [loaders, setloaders] = useState(false)
   const [success, setsuccess] = useState(false)
+
+
+  const provider = new GoogleAuthProvider();
+
+  provider.setCustomParameters({
+    prompt: "select_account",
+  });
+
+
+  const login = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const firebaseToken = await result.user.getIdToken();
+
+      const res = await axios.post("/api/v1/google", { token: firebaseToken }, { withCredentials: true });
+
+      localStorage.setItem("refreshToken", res.data.data)
+      await messageApi.open({
+        type: 'success',
+        content: 'Signup successFully',
+      });
+      closeLogin();
+
+      console.log("Login success, JWT cookie set by backend");
+    } catch (error) {
+      if (error.response) console.error("Backend error:", error.response.data);
+      else console.error("Popup closed or blocked:", error);
+    }
+  };
+
 
   // OTP timer
   useEffect(() => {
@@ -117,7 +149,7 @@ const Login = () => {
     }
   }
 
-  
+
 
 
   //Register user 
@@ -265,7 +297,7 @@ const Login = () => {
                   <img
                     src="../src/assets/Icons/freedomtree.avif"
                     alt="Freedom Tree Logo"
-                    
+
                     className='pt-4 sm:mb-[30px] mb-5 w-[150px]'
                   />
                 </div>
@@ -468,11 +500,24 @@ const Login = () => {
                           <span className='w-[60px] border h-0.5 border-[#C7C7C7]'></span>
                         </p>
 
-                        <div className='border rounded-[5px] py-[7px] px-5 flex justify-center items-center gap-2'>
-                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0859 2.90629C15.2061 1.03307 12.7059 0.000950389 10.042 0C4.55283 0 0.08547 4.44545 0.08356 9.90971C0.082605 11.6565 0.54147 13.3615 1.41288 14.8641L0 20L5.27909 18.6219C6.7335 19.4117 8.37128 19.8275 10.0377 19.828H10.042C15.5302 19.828 19.9981 15.382 20 9.91779C20.0009 7.26956 18.9662 4.77999 17.0859 2.90677V2.90629ZM10.042 18.1543H10.0387C8.55367 18.1539 7.09689 17.7566 5.82583 17.0063L5.52357 16.8276L2.39078 17.6454L3.22686 14.6056L3.03013 14.2938C2.20169 12.9823 1.76383 11.4664 1.76479 9.91021C1.7667 5.36875 5.47963 1.67364 10.0454 1.67364C12.2561 1.67459 14.3342 2.53232 15.8969 4.08953C17.4598 5.64627 18.3197 7.71624 18.3188 9.91685C18.3168 14.4588 14.6039 18.1539 10.042 18.1539V18.1543ZM14.5819 11.9854C14.3332 11.8614 13.1099 11.2626 12.8816 11.1799C12.6534 11.0972 12.4877 11.0559 12.322 11.3039C12.1563 11.552 11.6793 12.1099 11.5342 12.2748C11.389 12.4401 11.2438 12.4606 10.9951 12.3365C10.7463 12.2125 9.94461 11.9511 8.99395 11.1077C8.25433 10.4509 7.75483 9.64029 7.60972 9.39221C7.46456 9.14418 7.59444 9.01016 7.71856 8.88709C7.83028 8.7759 7.96733 8.59771 8.09194 8.45324C8.21661 8.30877 8.25767 8.20521 8.34072 8.04028C8.42383 7.87492 8.38228 7.7305 8.32022 7.60643C8.25811 7.48242 7.76061 6.26352 7.55289 5.76791C7.35089 5.28512 7.14561 5.3507 6.99328 5.34262C6.84811 5.33549 6.68244 5.33407 6.51628 5.33407C6.35011 5.33407 6.08078 5.39584 5.85256 5.6439C5.62433 5.89192 4.98162 6.49114 4.98162 7.70954C4.98162 8.92795 5.87311 10.106 5.99772 10.2714C6.12233 10.4367 7.75244 12.9377 10.2483 14.0107C10.8418 14.2658 11.3054 14.4184 11.6669 14.5324C12.2628 14.7211 12.8052 14.6945 13.234 14.6308C13.712 14.5595 14.7061 14.0316 14.9133 13.4532C15.1206 12.8749 15.1206 12.3788 15.0585 12.2757C14.9964 12.1726 14.8303 12.1103 14.5815 11.9863L14.5819 11.9854Z" fill="#111B21"></path>
-                          </svg>
-                          <p className='text-[14px] font-semibold leading-[26px] text-[#111b21]'>WhatsApp</p>
+                        <div className='flex gap-6 justify-center'>
+
+
+                          <button className='shadow-md  rounded-[5px] py-[7px] px-5 flex justify-center items-center gap-2'
+                            onClick={() => {
+                              login();
+                            }}
+                          >
+                            <svg width="20px" height="20px" viewBox="0 0 256 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                              <g>
+                                <path d="M255.878,133.451 C255.878,122.717 255.007,114.884 253.122,106.761 L130.55,106.761 L130.55,155.209 L202.497,155.209 C201.047,167.249 193.214,185.381 175.807,197.565 L175.563,199.187 L214.318,229.21 L217.003,229.478 C241.662,206.704 255.878,173.196 255.878,133.451" fill="#4285F4"></path>
+                                <path d="M130.55,261.1 C165.798,261.1 195.389,249.495 217.003,229.478 L175.807,197.565 C164.783,205.253 149.987,210.62 130.55,210.62 C96.027,210.62 66.726,187.847 56.281,156.37 L54.75,156.5 L14.452,187.687 L13.925,189.152 C35.393,231.798 79.49,261.1 130.55,261.1" fill="#34A853"></path>
+                                <path d="M56.281,156.37 C53.525,148.247 51.93,139.543 51.93,130.55 C51.93,121.556 53.525,112.853 56.136,104.73 L56.063,103 L15.26,71.312 L13.925,71.947 C5.077,89.644 0,109.517 0,130.55 C0,151.583 5.077,171.455 13.925,189.152 L56.281,156.37" fill="#FBBC05"></path>
+                                <path d="M130.55,50.479 C155.064,50.479 171.6,61.068 181.029,69.917 L217.873,33.943 C195.245,12.91 165.798,0 130.55,0 C79.49,0 35.393,29.301 13.925,71.947 L56.136,104.73 C66.726,73.253 96.027,50.479 130.55,50.479" fill="#EB4335"></path>
+                              </g>
+                            </svg>
+                            <p className='text-[14px] font-semibold leading-[26px] text-[#111b21]'>Sign in with google</p>
+                          </button>
                         </div>
 
                         <div className='flex justify-center items-center sm:w-[70%] font-normal leading-[21px]'>

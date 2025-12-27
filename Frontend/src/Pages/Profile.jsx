@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import 'ldrs/react/TailChase.css'
 import axios from "axios"
 import { Link } from "react-router-dom";
-import Cart2 from "../assets/Icons/cart2.svg"
 
 const Profile = () => {
   const [user, setUser] = useState(null);

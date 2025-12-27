@@ -13,6 +13,9 @@ const userSchema = new Schema(
             type: String,
             trim: true
         },
+        avatar: {
+            type: String
+        },
         email: {
             type: String,
             required: true,
@@ -22,12 +25,12 @@ const userSchema = new Schema(
         },
         phoneNumber: {
             type: Number,
-            required:true,
-            unique:true,
+            // required: true,
+            unique: true,
         },
         refreshToken: {
             type: String
-        }
+        },
     },
     {
         timestamps: true
@@ -36,7 +39,7 @@ const userSchema = new Schema(
 
 
 //user Accesstoken generate
-userSchema.methods.generateAccessToken =  function () {
+userSchema.methods.generateAccessToken = function () {
     return jwt.sign({
         _id: this._id,
         email: this.email,
@@ -48,13 +51,13 @@ userSchema.methods.generateAccessToken =  function () {
 }
 
 
-userSchema.methods.generateRefreshToken =  function () {
+userSchema.methods.generateRefreshToken = function () {
     return jwt.sign(
         {
-            _id:this._id
-        },process.env.REFRESH_TOKEN_SECRET,{
-            expiresIn:process.env.REFRESH_TOKEN_EXPIRY
-        }
+            _id: this._id
+        }, process.env.REFRESH_TOKEN_SECRET, {
+        expiresIn: process.env.REFRESH_TOKEN_EXPIRY
+    }
     )
 }
 
