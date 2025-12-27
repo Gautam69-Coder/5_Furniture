@@ -19,7 +19,7 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
                     </div>
                 ) : (
                     <>
-                        <div className='overflow-y-scroll h-[54vh]'>
+                        <div className='overflow-y-scroll hide-scrollbar h-[54vh]'>
                             {cart.map((item, index) => (
 
                                 <div>
@@ -35,7 +35,8 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
                                                         <img src={Trash} alt="" />
                                                     </div>
                                                 </div>
-                                                <div className='text-[10px] text-[#8f8e8e]'>{item.details?.sizeIN}</div>
+                                                <div className='text-[10px] text-[#8f8e8e]'>{item.size}</div>
+                                                <div className='text-[10px] text-[#8f8e8e]'>{item.materail}</div>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <div className=' flex w-fit text-[12px] justify-center items-center '>
@@ -71,7 +72,7 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
                                     <p className='font-normal text-[18px] text-black '>Rs .{subTotal}</p>
                                 </div>
 
-                                <div className='my-2 w-full px-2' onClick={() => { navigate(`/checkout`); closeCart() }}>
+                                <div className='my-2 w-full px-2' onClick={() => { navigate(`/checkout`); closeCart(); }}>
                                     <button className='bg-[#09AE62] flex items-center justify-center gap-2 py-1.5  text-[18px] text-white w-full font-medium text-center uppercase'>
                                         Checkbox
                                         <img src="../src/assets/Icons/upi_options.svg" alt="" />

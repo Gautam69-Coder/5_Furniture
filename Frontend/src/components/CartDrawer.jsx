@@ -69,8 +69,6 @@ const CartDrawer = ({ Close }) => {
       }
     };
 
-
-
     if (isOpenCart) fetchCart();
   }, [isOpenCart, deleteProduct]);
 

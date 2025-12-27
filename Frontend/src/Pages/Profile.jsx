@@ -48,9 +48,8 @@ const Profile = () => {
           }
         });
 
-        setcart(res.data.data
-          .map(item => item)
-        )
+        console.log(res.data.data)
+        setcart(res.data.data)
 
       } catch (error) {
         console.log(error)
@@ -72,114 +71,120 @@ const Profile = () => {
   if (error) return <p className="flex justify-center items-center w-full h-[70vh]" style={{ color: "red" }}>{error}</p>;
 
   return (
-  <div className="min-h-screen bg-[#fafafa] py-10">
-    <div className="max-w-6xl mx-auto px-6">
+    <div className="min-h-screen bg-[#fafafa] py-10">
+      <div className="max-w-6xl mx-auto px-6">
 
-      <div className="mb-10">
-        <p className="text-sm text-gray-500">My Account</p>
-        <h1 className="text-2xl font-light tracking-wide text-gray-900">
-          Profile & Orders
-        </h1>
-      </div>
+        <div className="mb-10">
+          <p className="text-sm text-gray-500">My Account</p>
+          <h1 className="text-2xl font-light tracking-wide text-gray-900">
+            Profile & Orders
+          </h1>
+        </div>
 
-      <div className="grid grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-2 gap-8 mb-12">
+
+          <div className="bg-white border border-gray-200 p-6">
+            <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
+              Profile Details
+            </h2>
+
+            <p className="text-sm text-gray-800 mb-2">
+              <span className="text-gray-500">Name:</span>{" "}
+              {user?.firstName} {user?.lastName}
+            </p>
+
+            <p className="text-sm text-gray-800 mb-2">
+              <span className="text-gray-500">Email:</span>{" "}
+              {user?.email}
+            </p>
+
+            <p className="text-sm text-gray-800">
+              <span className="text-gray-500">Member Since:</span>{" "}
+              {new Date(user?.createdAt).toLocaleDateString()}
+            </p>
+
+            <button
+              onClick={() => {
+                localStorage.removeItem("refreshToken");
+                navigate("/");
+              }}
+              className="mt-6 text-sm underline text-gray-700 hover:text-black"
+            >
+              Logout
+            </button>
+          </div>
+
+          <div className="bg-[#f4f1ec] flex items-center justify-center text-sm text-gray-600">
+            Freedom Tree • Crafted Living
+          </div>
+
+        </div>
 
         <div className="bg-white border border-gray-200 p-6">
-          <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
-            Profile Details
+          <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-6">
+            My Orders
           </h2>
 
-          <p className="text-sm text-gray-800 mb-2">
-            <span className="text-gray-500">Name:</span>{" "}
-            {user?.firstName} {user?.lastName}
-          </p>
-
-          <p className="text-sm text-gray-800 mb-2">
-            <span className="text-gray-500">Email:</span>{" "}
-            {user?.email}
-          </p>
-
-          <p className="text-sm text-gray-800">
-            <span className="text-gray-500">Member Since:</span>{" "}
-            {new Date(user?.createdAt).toLocaleDateString()}
-          </p>
-
-          <button
-            onClick={() => {
-              localStorage.removeItem("refreshToken");
-              navigate("/");
-            }}
-            className="mt-6 text-sm underline text-gray-700 hover:text-black"
-          >
-            Logout
-          </button>
-        </div>
-
-        <div className="bg-[#f4f1ec] flex items-center justify-center text-sm text-gray-600">
-          Freedom Tree • Crafted Living
-        </div>
-
-      </div>
-
-      <div className="bg-white border border-gray-200 p-6">
-        <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-6">
-          My Orders
-        </h2>
-
-        <div className="space-y-6">
           {cart.map((item, index) => (
             <div
               key={index}
               className="border-b pb-6 last:border-none"
             >
-              <div className="flex gap-6">
+              <div className="space-y-6">
+                {item.order_details.map((prod, idx) => (
+                  <>
+                    <div className="flex gap-6">
+                      <img
+                        src={prod.items[0].item_image_url}
+                        alt={prod.items[0].item_name}
+                        className="w-28 h-28 object-cover"
+                      />
+                      <div className="flex-1">
+                        <h3 className="text-md font-light text-gray-900">
+                          {prod.items[0].item_name}
+                        </h3>
 
-                <img
-                  src={item.items[0].item_image_url}
-                  alt={item.items[0].item_name}
-                  className="w-28 h-28 object-cover"
-                />
+                        <p className="text-sm text-gray-500 mt-1">
+                          Size: {prod.items[0].item_size || "N/A"}
+                        </p>
 
-                <div className="flex-1">
-                  <h3 className="text-md font-light text-gray-900">
-                    {item.items[0].item_name}
-                  </h3>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Quantity: {prod.items[0].item_quantity}
+                        </p>
 
-                  <p className="text-sm text-gray-500 mt-1">
-                    Size: {item.items[0].item_size|| "N/A"}
-                  </p>
+                        <p className="text-sm font-medium text-gray-900 mt-3">
+                        ₹ {prod.status[0].totalAmount}
+                      </p>
 
-                  <p className="text-sm text-gray-500 mt-1">
-                    Quantity: {item.items[0].item_quantity}
-                  </p>
+                        <Link
+                          to={`/order/${prod._id}`}
+                          className="inline-block mt-4 text-sm underline text-gray-700 hover:text-black"
+                        >
+                          View Order Details
+                        </Link>
+                      </div >
 
-                  <p className="text-sm font-medium text-gray-900 mt-3">
-                    ₹ {item.totalAmount}
-                  </p>
+                    </div>
+                    {prod.items.length > 1 && (
+                      <p className="text-sm text-gray-500 mt-4">
+                        + {prod.items.length - 1} more item(s)
 
-                  <Link
-                    to={`/order/${item._id}`}
-                    className="inline-block mt-4 text-sm underline text-gray-700 hover:text-black"
-                  >
-                    View Order Details
-                  </Link>
-                </div>
+                      </p>
+                    )}
+                    <hr />
+                  </>
+
+                ))}
+
 
               </div>
-
-              {item.items.length > 1 && (
-                <p className="text-sm text-gray-500 mt-4">
-                  + {item.items.length - 1} more item(s)
-                </p>
-              )}
             </div>
           ))}
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-);
+  );
 
 };
 

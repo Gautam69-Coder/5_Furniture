@@ -11,7 +11,9 @@ const PaymentStatus = () => {
     useEffect(() => {
         const fetchStatus = async () => {
             try {
+                // console.log("hello")
                 const orderId = localStorage.getItem("currentOrderId");
+                console.log(orderId)
                 if (!orderId) {
                     setError("No order found");
                     setLoading(false);
@@ -33,12 +35,35 @@ const PaymentStatus = () => {
         fetchStatus();
     }, []);
 
+
+    useEffect(() => {
+        const deleteItem = async (productId) => {
+            try {
+
+                const token = localStorage.getItem("refreshToken")
+                const res = await axios.post("/api/v1/deleteItem",
+                    { productId },
+                    {
+                        headers: {
+                            "Authorization": `Bearer ${token}`
+                        }
+                    }
+                )
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        deleteItem();
+    }, [])
+
+
     if (loading) return <p>Loading payment status...</p>;
     if (error) return <p className="text-red-500">{error}</p>;
 
     return (
         <div className="p-8">
-            
+
         </div>
     );
 };

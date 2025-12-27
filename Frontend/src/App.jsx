@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import { useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollTop.jsx";
+import { useState } from "react";
 
 import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -17,6 +18,14 @@ import Checkout from "./Pages/Checkout";
 import PaymentStatus from "./Pages/PaymentStatus";
 import OrderDetails from "./Pages/Order";
 
+// Admin Imports
+import DashboardLayout from "./Admin/layouts/DashboardLayout.jsx";
+import Dashboard from "./Admin/Pages/Dashboard";
+import Products from "./Admin/Pages/Products";
+import Orders from "./Admin/Pages/Orders";
+import Customers from "./Admin/Pages/Customers";
+import Settings from "./Admin/Pages/Settings";
+
 // TopMenu Pages
 
 // Contact Us Page
@@ -29,11 +38,9 @@ import Professional from './Pages/TopMenu/Professional.jsx';
 const App = () => {
 
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
 
-  const hideNavbar = location.pathname === "/checkout"
-
-
-
+  const hideNavbar = location.pathname === "/checkout" || location.pathname === "/payment-status" || location.pathname.startsWith("/admin");
 
   return (
     <>
@@ -42,7 +49,7 @@ const App = () => {
 
       <main>
         <AnimatePresence mode="wait" >
-            <ScrollToTop/>
+          <ScrollToTop />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
@@ -67,7 +74,19 @@ const App = () => {
             <Route path="/payment-status" element={<PaymentStatus />} />
 
             {/* Order */}
-            <Route path="/order/:orderId" element={<OrderDetails  />} />
+            <Route path="/order/:orderId" element={<OrderDetails />} />
+
+
+            {/* Admin Routes */}
+            <Route path="/admin" element={<DashboardLayout />}>
+              <Route path="/admin/" element={<Dashboard />} />
+              <Route path="/admin/products" element={<Products />} />
+              <Route path="/admin/orders" element={<Orders />} />
+              <Route path="/admin/customers" element={<Customers />} />
+              <Route path="/admin/settings" element={<Settings />} />
+            </Route>
+
+            
           </Routes>
         </AnimatePresence>
 

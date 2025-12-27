@@ -6,7 +6,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 const CartData = asyncHandler(async (req, res) => {
 
     try {
-        const { productId, name, image, price, quantity,size,materail,description } = req.body;
+        const { productId, name, image, price, quantity, size, materail, description } = req.body;
         const userId = req.user._id
         if (!productId || !quantity || !name || !price || !image) {
             throw new ApiError(400, "Product fileds are required");
@@ -98,26 +98,31 @@ const DeleteItem = asyncHandler(async (req, res) => {
         const { productId } = req.body;
 
         if (!productId) {
-            throw new ApiError(400, "ProductId is required");
+            //delete all cart paroducts
+            const orderDelete = await Cart.deleteMany();
+            console.log(orderDelete)
+            res.status(200).json(
+                new ApiResponse(200, "All cart item delete successFully")
+            )
+        } else {
+            const cart = await Cart.findOneAndUpdate(
+                { user: userId },
+                {
+                    $pull: {
+                        product: { productId: productId }
+                    }
+                },
+                { new: true }
+            );
+
+            if (!cart) {
+                throw new ApiError(404, "Cart not found");
+            }
+
+            return res.status(200).json(
+                new ApiResponse(200, cart, "Item deleted from cart")
+            );
         }
-
-        const cart = await Cart.findOneAndUpdate(
-            { user: userId },
-            {
-                $pull: {
-                    product: { productId: productId }
-                }
-            },
-            { new: true }
-        );
-
-        if (!cart) {
-            throw new ApiError(404, "Cart not found");
-        }
-
-        return res.status(200).json(
-            new ApiResponse(200, cart, "Item deleted from cart")
-        );
 
     } catch (error) {
         throw new ApiError(500, error.message);

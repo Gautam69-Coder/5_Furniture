@@ -5,7 +5,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import twilio from 'twilio'
 import jwt from 'jsonwebtoken'
 
-
+// Generate and Refresh Token
 const generateAccessAndRefreshToken = async (userId) => {
     try {
         const user = await User.findById(userId);
@@ -26,6 +26,7 @@ const generateAccessAndRefreshToken = async (userId) => {
     }
 }
 
+// Register User
 const registerUser = asyncHandler(async (req, res) => {
     // Steps to Register user
     // get user deatils from frontend
@@ -47,19 +48,19 @@ const registerUser = asyncHandler(async (req, res) => {
     })
 
     if (user) {
-        const {refreshToken } = await generateAccessAndRefreshToken(user._id)
+        const { refreshToken } = await generateAccessAndRefreshToken(user._id)
 
-        const my=await User.findOneAndUpdate(
+        const my = await User.findOneAndUpdate(
             { email: user.email },
             {
                 $set: {
-                    firstName:firstName,
-                    lastName:lastName,
-                    phoneNumber:phoneNumber
+                    firstName: firstName,
+                    lastName: lastName,
+                    phoneNumber: phoneNumber
                 }
             },
             {
-                new:true
+                new: true
             }
         )
 
@@ -107,7 +108,7 @@ const registerUser = asyncHandler(async (req, res) => {
         phoneNumber
     })
 
-    const {refreshToken } = await generateAccessAndRefreshToken(user._id)
+    const { refreshToken } = await generateAccessAndRefreshToken(user._id)
 
     const userCreated = await User.findById(user._id).select(
         "-refreshToken"
@@ -135,12 +136,7 @@ const registerUser = asyncHandler(async (req, res) => {
         )
 })
 
-
-
-// Twilo for use mobile otp
-
-
-
+// Twilio for mobile OTP
 const OTPValidate = asyncHandler(async (req, res) => {
 
     const { phoneNumber } = req.body;
@@ -233,4 +229,20 @@ const refreshAccesToken = asyncHandler(async (req, res) => {
     }
 })
 
-export { registerUser, OTPValidate, logoutUser, refreshAccesToken }
+
+//Get All Users - For Admin
+const getAllUsers = asyncHandler(async (req, res) => {
+    try {
+        const users = await User.find().select("-refreshToken");
+
+        return res
+            .status(200)
+            .json(
+                new ApiResponse(200, users, "All Users Fetched Successfully")
+            )
+    } catch (error) {
+        throw new ApiError(500, "Something went wrong while fetching users")
+    }
+})
+
+export { registerUser, OTPValidate, logoutUser, refreshAccesToken, getAllUsers }

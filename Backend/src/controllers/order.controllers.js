@@ -23,4 +23,23 @@ const MyOrder= asyncHandler(async (req, res) => {
     }
 });
 
-export { MyOrder };
+//Get all orders for admin
+const getAllOrders = asyncHandler(async (req, res) => {
+    try {
+        const orders = await Order.find().sort({ createdAt: -1 });
+
+        if (!orders) {
+            throw new ApiError(404, "No orders found");
+        }
+
+        return res.status(200).json(
+            new ApiResponse(200, orders, "Orders fetched successfully")
+        );
+    } catch (error) {
+        throw new ApiError(500, error.message);
+    }
+});
+
+
+
+export { MyOrder, getAllOrders };

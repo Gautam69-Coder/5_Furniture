@@ -4,15 +4,12 @@ import { collectionsData } from '../Collections/data'
 
 const Footter = () => {
 
-    const [email, setemail] = useState("")
+    const [email, setemail] = useState()
 
     const data = collectionsData;
     const furniture = data.furniture.map((item)=>(item.category));
     const furnishing = data.furnishing.map((item)=>(item.category));
     
-    useEffect(() => {
-        setemail(localStorage.getItem("email"))
-    }, [email])
     const usefulLinks = {
         data: [
             "Our Story",
@@ -71,6 +68,7 @@ const Footter = () => {
                 <div className='md:m-0 mb-6 flex '>
                     <input type="email"
                         value={email}
+                        defaultValue={localStorage.getItem("email")}
                         placeholder='Enter your email address'
                         className='focus:outline-none border-b w-60'
                         onChange={(e)=>{

@@ -60,6 +60,7 @@ const ProductCard = ({  link, item }) => {
                         <div className="px-3 py-2 text-white bg-black"
                             onClick={() => {
                                 cartData();
+                                openCart();
                             }}
                         >Add to Cart</div>
                     </div>

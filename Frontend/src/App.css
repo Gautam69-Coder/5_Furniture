@@ -6,14 +6,53 @@ body {
 
 /* Make scrollbar thick and black */
 .custom-scroll::-webkit-scrollbar {
-  width: 2px;          /* thickness */
+  width: 2px;
+  /* thickness */
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: #000;     /* black color */
+  background: #000;
+  /* black color */
   border-radius: 10px;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-  background: #e5e5e5;  /* light track */
+  background: #e5e5e5;
+  /* light track */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0f766e;
+  /* Teal 700 - approx Green Haze */
+  --color-brand-secondary: #be123c;
+  /* Rose 700 - approx Cardinal Red */
+  --color-brand-accent: #f59e0b;
+  /* Amber 500 */
+  --color-brand-dark: #111827;
+  --color-brand-light: #f9fafb;
+  --color-brand-surface: #ffffff;
+
+  --font-family-sans: "Inter", sans-serif;
+  --font-family-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-brand-light);
+    color: var(--color-brand-dark);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-display);
+  }
 }

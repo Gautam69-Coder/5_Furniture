@@ -21,6 +21,7 @@ if(connectCloudinary()){
 import UserRoutes from './routes/user.routes.js'
 app.use("/api/v1/user",UserRoutes)
 app.use("/api/v1/userotp",UserRoutes)
+app.use("/api/v1/",UserRoutes)
 
 import ProductData from "./routes/product.routers.js"
 app.use("/api/v1/",ProductData)

@@ -12,7 +12,7 @@ const Collection = () => {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className='sm:mx-[60px] mx-5 sm:mt-5 sm:flex'
         >
 

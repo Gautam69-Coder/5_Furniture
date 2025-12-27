@@ -31,7 +31,7 @@ const Checkout = () => {
                     }
                 });
                 setcart(res.data.data[0].product);
-                console.log(res.data.data[0].product);
+                console.log(res.data.data);
                 const s = res.data.data[0].product.reduce((total, item) => {
                     return total + item.price * item.quantity
                 }, 0)
@@ -68,6 +68,7 @@ const Checkout = () => {
 
         fetchUserDetails();
     }, []);
+
 
     //Payment Handler 
 
@@ -378,7 +379,7 @@ const Checkout = () => {
                         </div>
 
                         {/* Pay Now Button */}
-                        <button onClick={() => { handleSubmit(); }} className="w-full mt-6 bg-black text-white py-4 rounded-lg font-semibold hover:opacity-90 transition">
+                        <button onClick={() => { handleSubmit()}} className="w-full mt-6 bg-black text-white py-4 rounded-lg font-semibold hover:opacity-90 transition">
                             Pay now
                         </button>
                     </form>

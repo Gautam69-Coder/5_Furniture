@@ -25,10 +25,9 @@ const ProductPage = () => {
                 const res = await axios.get("/api/v1/product/");
                 const products = res.data.data;
                 console.log(products)
-
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
-                // console.log(productk)
+                console.log(productk)
             } catch (error) {
                 console.error("Error fetching product:", error);
             }

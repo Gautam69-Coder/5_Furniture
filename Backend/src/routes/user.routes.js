@@ -1,5 +1,5 @@
 import { Router } from "express"
-import {logoutUser, OTPValidate, refreshAccesToken, registerUser} from '../controllers/user.controllers.js'
+import {logoutUser, OTPValidate, refreshAccesToken, registerUser,getAllUsers} from '../controllers/user.controllers.js'
 import { verifyJWT } from "../middlewares/auth.middlewares.js"
 
 const router = Router()
@@ -13,4 +13,6 @@ router.route("/profile").get(verifyJWT,(req, res) => {
 router.route("/logout").post(verifyJWT,logoutUser)
 
 router.route("/refresh-token").post(refreshAccesToken)
+
+router.route("/users").get(getAllUsers)
 export default router
