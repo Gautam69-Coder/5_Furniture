@@ -9,7 +9,7 @@ import { useQuickView } from '../context/PopupContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { openCart, openLogin, closeLogin } = useQuickView();
+  const { openCart, openLogin, closeLogin, setisSearch ,isSearch } = useQuickView();
 
   const [Islogin, setIslogin] = useState(false);
   const [cartDrawer, setcartDrawer] = useState(false);
@@ -70,13 +70,22 @@ const Navbar = () => {
 
             <div className='hidden md:flex border h-[30px] cursor-pointer'>
               <input type="text" placeholder='Search our Store '
+                onChange={(e) => console.log("User typed:", e.target.value)}
+                onClick={()=>{
+                  console.log("hello");
+                  setisSearch(true);
+                  console.log(isSearch)
+                }}
                 className='focus:outline-none px-3 py-2 text-[17px] w-full' />
               <img src="../src/assets/Icons/search.svg" alt="" width={25} className='mx-3' />
             </div>
 
             <div className='md:ml-20 cursor-pointer'>
               <img src="../src/assets/Icons/freedomtree.avif" alt="" className='w-[150px] md:w-[220px]'
-                onClick={() => { navigate('/') }}
+                onClick={() => {
+                  console.log("hello")
+                  navigate('/');
+                }}
               />
             </div>
 

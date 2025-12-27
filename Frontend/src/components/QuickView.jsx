@@ -236,7 +236,6 @@ const QuickView = () => {
                     </div>
                 </div>
 
-
             </motion.div>
         </div>
     )

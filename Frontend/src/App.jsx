@@ -1,12 +1,10 @@
-import { Routes, Route } from "react-router-dom";
-import { AnimatePresence } from "motion/react";
-import { useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import ScrollToTop from "./components/ScrollTop.jsx";
-import { useState } from "react";
 
 import Home from './Pages/Home';
 import Login from './Pages/Login';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
 import Practice from './Pages/Practice';
 import Profile from './Pages/Profile';
 import Footter from './components/Footter';
@@ -27,55 +25,44 @@ import Customers from "./Admin/Pages/Customers";
 import Settings from "./Admin/Pages/Settings";
 
 // TopMenu Pages
-
-// Contact Us Page
 import Contact from './Pages/TopMenu/ContactUs.jsx';
-
-//Professional Page
 import Professional from './Pages/TopMenu/Professional.jsx';
-
+import Search from "./components/Search.jsx";
 
 const App = () => {
-
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
-
   const hideNavbar = location.pathname === "/checkout" || location.pathname === "/payment-status" || location.pathname.startsWith("/admin");
 
   return (
     <>
-      {/* Global Navbar or hide a navabar in checkout page */}
       {!hideNavbar && <Navbar />}
 
       <main>
-        <AnimatePresence mode="wait" >
+
+        <AnimatePresence >
           <ScrollToTop />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/practice' element={<Practice />} />
-            <Route path='/p' element={<CartDrawer />} />
+          <Routes location={location} key={location.pathname}>
+            {/* Public Routes */}
+            <Route path='/' element={<PageWrapper><Home /></PageWrapper>} />
+            <Route path='/login' element={<PageWrapper><Login /></PageWrapper>} />
+            <Route path='/profile' element={<PageWrapper><Profile /></PageWrapper>} />
+            <Route path='/practice' element={<PageWrapper><Practice /></PageWrapper>} />
+            <Route path='/p' element={<PageWrapper><CartDrawer /></PageWrapper>} />
 
-            {/* Top Menu Pages*/}
-            <Route path='/pages/contact-us' element={<Contact />} />
-            <Route path='/pages/professionals' element={<Professional />} />
+            {/* Top Menu Pages */}
+            <Route path='/pages/contact-us' element={<PageWrapper><Contact /></PageWrapper>} />
+            <Route path='/pages/professionals' element={<PageWrapper><Professional /></PageWrapper>} />
 
-            {/*Colllection Routes*/}
-            <Route path='/collections/:category' element={<Furniture />} />
+            {/* Collection & Product */}
+            <Route path='/collections/:category' element={<PageWrapper><Furniture /></PageWrapper>} />
+            <Route path="/collections/:category/products/:id/" element={<PageWrapper><ProductPage /></PageWrapper>} />
 
-            {/* Product Page */}
-            <Route path="/collections/:category/products/:id/" element={<ProductPage />} />
-
-            {/* Checkout */}
-            <Route path="/checkout" element={<Checkout />} />
-
-            {/* Payment */}
-            <Route path="/payment-status" element={<PaymentStatus />} />
+            {/* Checkout & Payment */}
+            <Route path="/checkout" element={<PageWrapper><Checkout /></PageWrapper>} />
+            <Route path="/payment-status" element={<PageWrapper><PaymentStatus /></PageWrapper>} />
 
             {/* Order */}
-            <Route path="/order/:orderId" element={<OrderDetails />} />
-
+            <Route path="/order/:orderId" element={<PageWrapper><OrderDetails /></PageWrapper>} />
 
             {/* Admin Routes */}
             <Route path="/admin" element={<DashboardLayout />}>
@@ -85,22 +72,31 @@ const App = () => {
               <Route path="/admin/customers" element={<Customers />} />
               <Route path="/admin/settings" element={<Settings />} />
             </Route>
-
-            
           </Routes>
         </AnimatePresence>
 
-        {/* //Popup and Drawer */}
+        {/* Popups and Drawers */}
         <QuickView />
         <CartDrawer />
         <Login />
+        <Search/>
       </main>
 
-      {/* Global Footer or hide a navabar in checkout page */}
       {!hideNavbar && <Footter />}
-
     </>
-  )
-}
+  );
+};
 
-export default App
+// Wrapper to animate page transitions
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, x: 0 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, x: -20 }}
+    transition={{ duration: 0.3 }}
+  >
+    {children}
+  </motion.div>
+);
+
+export default App;

@@ -24,10 +24,9 @@ const ProductPage = () => {
             try {
                 const res = await axios.get("/api/v1/product/");
                 const products = res.data.data;
-                console.log(products)
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
-                console.log(productk)
+                // console.log(productk)
             } catch (error) {
                 console.error("Error fetching product:", error);
             }
@@ -47,10 +46,8 @@ const ProductPage = () => {
 
                 const res2 = await axios.get("/api/v1/product/");
                 const products = res2.data.data;
-                // console.log(product)
 
                 const productt = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
-                // console.log(productt)
                 const token = localStorage.getItem("refreshToken");
                 const res = await axios.post("/api/v1/track", {
                     action: "view",
@@ -64,7 +61,6 @@ const ProductPage = () => {
                     }
 
                 );
-                console.log(res)
             } catch (error) {
                 console.log(error);
             }

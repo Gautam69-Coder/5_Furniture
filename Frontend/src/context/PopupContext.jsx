@@ -20,6 +20,9 @@ export const PopupProvider = ({ children }) => {
   const [quantity, setquantity] = useState(1);
   const [quantityProductId, setquantityProductId] = useState("");
 
+  //Search
+  const [isSearch, setisSearch] = useState(false);
+
   const openQuickView = (productData) => {
     setProduct(productData);
     setIsOpen(true);
@@ -75,7 +78,9 @@ export const PopupProvider = ({ children }) => {
       openLogin, closeLogin,
       isLoginOpen, loginData,
 
-      increaseQty, decreaseQty, quantity
+      increaseQty, decreaseQty, quantity,
+
+      isSearch,setisSearch
     }}>
       {children}
     </PopupContext.Provider>

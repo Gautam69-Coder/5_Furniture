@@ -3,12 +3,12 @@ import ItemCarousel from '../components/ItemCarsoul'
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import ProductCard from '../components/ProductCard'
 import Activity from '../components/Activity'
 const Home = () => {
 
   const [item, setitem] = useState([])
   const [recommended, setrecommended] = useState([])
+
 
 
   useEffect(() => {
@@ -38,10 +38,8 @@ const Home = () => {
             "Authorization": `Bearer ${token}`
           }
         })
-        console.log(res)
         setrecommended(res.data.data.map(item => item))
-        // console.log(res.data.data.map(item => item))
-
+        
       } catch (error) {
         console.log(error)
       }

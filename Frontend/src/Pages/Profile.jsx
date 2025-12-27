@@ -132,8 +132,8 @@ const Profile = () => {
             >
               <div className="space-y-6">
                 {item.order_details.map((prod, idx) => (
-                  <>
-                    <div className="flex gap-6">
+                  <div key={idx}>
+                    <div className="flex gap-6" >
                       <img
                         src={prod.items[0].item_image_url}
                         alt={prod.items[0].item_name}
@@ -153,12 +153,12 @@ const Profile = () => {
                         </p>
 
                         <p className="text-sm font-medium text-gray-900 mt-3">
-                        ₹ {prod.status[0].totalAmount}
-                      </p>
+                          ₹ {prod.status[0].totalAmount}
+                        </p>
 
                         <Link
                           to={`/order/${prod._id}`}
-                          className="inline-block mt-4 text-sm underline text-gray-700 hover:text-black"
+                          className="inline-block mb-6 text-sm underline text-gray-700 hover:text-black"
                         >
                           View Order Details
                         </Link>
@@ -172,7 +172,7 @@ const Profile = () => {
                       </p>
                     )}
                     <hr />
-                  </>
+                  </div>
 
                 ))}
 
