@@ -8,6 +8,7 @@ app.use(cors({
     origin: [
         "http://localhost:5173",
         "https://five-furniture.onrender.com",
+        "https://furniture.gautamdoliya69.workers.dev"
     ],
 }))
 app.use(cookieParser())
