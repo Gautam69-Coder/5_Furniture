@@ -77,7 +77,8 @@ const Navbar = () => {
                   console.log(isSearch)
                 }}
                 className='focus:outline-none px-3 py-2 text-[17px] w-full' />
-              <img src="../src/assets/Icons/search.svg" alt="" width={25} className='mx-3' />
+              <svg width="30" height="30" className='mx-3' xmlns="http://www.w3.org/2000/svg"><path d="M19.427 20.427a8.5 8.5 0 111.083-.917l5.998 5.998a.699.699 0 01-.008.992.7.7 0 01-.992.008l-6.08-6.08zM14.5 21a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" fill="#000" fill-rule="evenodd"/></svg>
+
             </div>
 
             <div className='md:ml-20 cursor-pointer'>
