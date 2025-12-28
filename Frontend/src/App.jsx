@@ -13,7 +13,7 @@ import ProductPage from "./Pages/Product";
 import QuickView from "./components/QuickView";
 import CartDrawer from "./components/CartDrawer";
 import Checkout from "./Pages/Checkout";
-import PaymentStatus from "./Pages/PaymentStatus";
+import PaymentStatus from "./Pages/PaymentStatus"
 import OrderDetails from "./Pages/Order";
 
 // Admin Imports
