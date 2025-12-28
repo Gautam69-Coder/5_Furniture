@@ -10,6 +10,7 @@ app.use(cors({
         "https://five-furniture.onrender.com",
         "https://furniture.gautamdoliya69.workers.dev"
     ],
+    credentials: true,  
 }))
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
