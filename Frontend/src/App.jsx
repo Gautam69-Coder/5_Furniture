@@ -22,7 +22,7 @@ import Dashboard from "./Admin/AdminPages/ADashboard.jsx";
 import Products from "./Admin/AdminPages/AProducts.jsx";
 import Orders from "./Admin/AdminPages/AOrders.jsx";
 import Customers from "./Admin/AdminPages/ACustomers.jsx";
-import Settings from "./Admin/AdminPages/ASettings.jsx";
+import Settings from "./Admin/AdminPages/ASettings.jsx"
 
 // TopMenu Pages
 import Contact from './Pages/TopMenu/ContactUs.jsx';
