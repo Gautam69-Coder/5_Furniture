@@ -9,7 +9,7 @@ app.use(cors({
         "http://localhost:5173",
         "https://five-furniture.onrender.com",
         "https://furniture.gautamdoliya69.workers.dev",
-        "https://5-furniture.pages.dev/"
+        "https://5-furniture.pages.dev"
     ],
     credentials: true,  
 }))
