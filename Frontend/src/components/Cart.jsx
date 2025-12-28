@@ -1,7 +1,7 @@
-import Cart2 from "../assets/Icons/cart2.svg"
 import Trash from "../assets/Icons/trash.svg"
 import Whatsapp from "../assets/Icons/whatsapp.png"
 import CheckoutBanner from "../assets/Icons/checkoutBanner.png"
+import Cart2 from "../assets/Icons/cart2.svg"
 
 const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, closeCart, navigate }) => {
     return (

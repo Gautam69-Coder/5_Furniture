@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import 'ldrs/react/TailChase.css'
 import axios from "axios"
 import { Link } from "react-router-dom";
+import Cart2 from "../assets/Icons/cart2.svg"
+
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -124,61 +126,80 @@ const Profile = () => {
             My Orders
           </h2>
 
-          {cart.map((item, index) => (
-            <div
-              key={index}
-              className="border-b pb-6 last:border-none"
-            >
-              <div className="space-y-6">
-                {item.order_details.map((prod, idx) => (
-                  <div key={idx}>
-                    <div className="flex gap-6" >
-                      <img
-                        src={prod.items[0].item_image_url}
-                        alt={prod.items[0].item_name}
-                        className="w-28 h-28 object-cover"
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-md font-light text-gray-900">
-                          {prod.items[0].item_name}
-                        </h3>
-
-                        <p className="text-sm text-gray-500 mt-1">
-                          Size: {prod.items[0].item_size || "N/A"}
-                        </p>
-
-                        <p className="text-sm text-gray-500 mt-1">
-                          Quantity: {prod.items[0].item_quantity}
-                        </p>
-
-                        <p className="text-sm font-medium text-gray-900 mt-3">
-                          ₹ {prod.status[0].totalAmount}
-                        </p>
-
-                        <Link
-                          to={`/order/${prod._id}`}
-                          className="inline-block mb-6 text-sm underline text-gray-700 hover:text-black"
-                        >
-                          View Order Details
-                        </Link>
-                      </div >
-
-                    </div>
-                    {prod.items.length > 1 && (
-                      <p className="text-sm text-gray-500 mt-4">
-                        + {prod.items.length - 1} more item(s)
-
-                      </p>
-                    )}
-                    <hr />
-                  </div>
-
-                ))}
-
-
+          {(cart.length === 0) ? (
+            <div className='flex flex-col mt-20 justify-center items-center'>
+              <div className='my-2'>
+                <img src={Cart2} alt="" className='w-[82px] h-[70px]' />
               </div>
+
+              <p className='font-medium text-[18px] text-center my-2'>Your cart looks deserted currently. Start shopping our originally designed and handmade products.</p>
+
+              <Link to={"/"}>
+                <button className='px-6 py-3 font-bold text-[15px] leading-3 uppercase bg-[#333333] text-white'>Start Shopping</button>
+              </Link>
             </div>
-          ))}
+          ) : (
+            (
+              cart.map((item, index) => (
+                <div
+                  key={index}
+                  className="border-b pb-6 last:border-none"
+                >
+                  <div className="space-y-6">
+                    {item.order_details.map((prod, idx) => (
+                      <div key={idx}>
+                        <div className="flex gap-6" >
+                          <img
+                            src={prod.items[0].item_image_url}
+                            alt={prod.items[0].item_name}
+                            className="w-28 h-28 object-cover"
+                          />
+                          <div className="flex-1">
+                            <div className="flex justify-between">
+                              <h3 className="text-md font-light text-gray-900">
+                                {prod.items[0].item_name}
+                              </h3>
+
+                              {prod.items.length > 1 && (
+                                <p className="text-sm text-gray-500 underline">
+                                  + {prod.items.length - 1} more item(s)
+
+                                </p>
+                              )}
+
+                            </div>
+                            <p className="text-sm text-gray-500 mt-1">
+                              Size: {prod.items[0].item_size || "N/A"}
+                            </p>
+
+                            <p className="text-sm text-gray-500 mt-1">
+                              Quantity: {prod.items[0].item_quantity}
+                            </p>
+
+                            <p className="text-sm font-medium text-gray-900 mt-3">
+                              ₹ {prod.status[0].totalAmount}
+                            </p>
+
+                            <Link
+                              to={`/order/${prod._id}`}
+                              className="inline-block mb-6 text-sm underline text-gray-700 hover:text-black"
+                            >
+                              View Order Details
+                            </Link>
+                          </div >
+
+                        </div>
+                        <hr />
+                      </div>
+
+                    ))}
+
+
+                  </div>
+                </div>
+              ))
+            )
+          )}
         </div>
 
       </div>
