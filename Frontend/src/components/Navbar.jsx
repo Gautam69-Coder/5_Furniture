@@ -113,7 +113,7 @@ const Navbar = () => {
               </div>
 
               <div className='cursor-pointer'>
-                <img src="../src/assets/Icons/profile.svg" alt="profile" width={28} onClick={() => {
+                <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924413/profile_rwlyrw.svg" alt="profile" width={28} onClick={() => {
                   if (!localStorage.getItem("refreshToken")) {
                     openLogin(null)
                   } else {
@@ -125,11 +125,11 @@ const Navbar = () => {
               <div className='cursor-pointer' onClick={() => {
                 openCart(null)
               }}>
-                <img src="../src/assets/Icons/cart.svg" alt="cart" width={28} />
+                <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/cart_qn88fx.svg" alt="cart" width={28} />
               </div>
 
               <div className='hidden md:block cursor-pointer'>
-                <img src="../src/assets/Icons/lion.png" alt="lion" width={59}
+                <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/lion_mlsdvm.png" alt="lion" width={59}
                   onClick={() => {
                     navigate('/practice');
                   }}
