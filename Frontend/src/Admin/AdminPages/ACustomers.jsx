@@ -18,7 +18,7 @@ const Customers = () => {
                 setOrders(ordersRes.data.data);
 
                 // Fetch users
-                const usersRes = await axios.get('/api/v1/users');
+                const usersRes = await axios.get(`${API_BASE_URL}/api/v1/users`);
                 setUsers(usersRes.data.data);
 
                 // Filter only users who have orders
