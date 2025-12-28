@@ -1,7 +1,8 @@
 {
-  "name": "frontend-app",
+  "name": "furniture",
   "compatibility_date": "2025-12-28",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "fallback": "index.html"
   }
 }
