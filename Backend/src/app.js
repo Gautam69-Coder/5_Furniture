@@ -4,7 +4,10 @@ import cookieParser from "cookie-parser"
 import connectCloudinary from "./config/cloudinary.js"
 const app = express();
 
-app.use(cors())
+app.use(cors({
+    origin: "https://furniture.gautamdoliya69.workers.dev/", 
+    credentials: true,
+}))
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.json({ limit: "16kb" }))
