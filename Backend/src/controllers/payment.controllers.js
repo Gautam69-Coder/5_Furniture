@@ -12,8 +12,12 @@ const CheckOut = asyncHandler(async (req, res) => {
 
     try {
         const cashfree = new Cashfree(CFEnvironment.SANDBOX, process.env.CASHFREE_ID, process.env.CASHFREE_SECRET);
-        const userId = req.user._id;
         const { amount, customer_phone, customer_name, customer_email, cart, address } = req.body;
+        const userId = req.user._id;
+
+        if(!userId){
+            throw new ApiError(401,"Aunothorized")
+        }
 
         // console.log(amount, customer_phone, customer_name, customer_email, cart, address)
 
@@ -23,6 +27,11 @@ const CheckOut = asyncHandler(async (req, res) => {
 
 
         const orderId = `ORDER_${Date.now()}`;
+
+        if(!orderId){
+            console.log("Not found ordered id")
+        }
+
 
 
         const cartItems = cart.map((item) => ({

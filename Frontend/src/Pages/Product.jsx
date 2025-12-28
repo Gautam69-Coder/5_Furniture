@@ -49,7 +49,7 @@ const ProductPage = () => {
 
                 const productt = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 const token = localStorage.getItem("refreshToken");
-                const res = await axios.post("/api/v1/track", {
+                const res = await axios.post(`${API_BASE_URL}/api/v1/track`, {
                     action: "view",
                     productId: productt?._id,
                     category: productt?.category

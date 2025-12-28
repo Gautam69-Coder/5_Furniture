@@ -38,7 +38,8 @@ const Home = () => {
         const res = await axios.get(`${API_BASE_URL}/api/v1/recommended`, {
           headers: {
             "Authorization": `Bearer ${token}`
-          }
+          },
+          withCredentials : true
         })
         setrecommended(res.data.data.map(item => item))
 
