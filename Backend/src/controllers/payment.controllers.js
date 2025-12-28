@@ -50,7 +50,7 @@ const CheckOut = asyncHandler(async (req, res) => {
                 "customer_name": customer_name.toString()
             },
             "order_meta": {
-                "return_url": "http://localhost:5173/payment-status"
+                "return_url": "https://5-furniture.pages.dev/payment-status"
             },
             "cart_details": {
                 "cart_items": cartItems
