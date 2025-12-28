@@ -1,6 +1,5 @@
 import { motion, easeInOut } from 'motion/react'
 import { useState } from 'react';
-import facebookLogo from "../assets/logos/facebook.svg"
 import { useQuickView } from "../context/PopupContext";
 import axios from 'axios';
 const QuickView = () => {
@@ -220,15 +219,15 @@ const QuickView = () => {
 
                             <div className='flex gap-2'>
                                 <div className='mt-10 flex gap-2 items-center'>
-                                    <p>Share on : </p> <img src={facebookLogo} alt="" className='invert w-4 h-4' /> <p>share</p>
+                                    <p>Share on : </p> <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" alt="" className='invert w-4 h-4' /> <p>share</p>
                                 </div>
 
                                 <div className='mt-10 flex gap-2 items-center'>
-                                    <img src={facebookLogo} alt="" className='invert w-4 h-4' /> <p>tweet</p>
+                                    <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" alt="" className='invert w-4 h-4' /> <p>tweet</p>
                                 </div>
 
                                 <div className='mt-10 flex gap-2 items-center'>
-                                    <img src={facebookLogo} alt="" className='invert w-4 h-4' /> <p>Pin it</p>
+                                    <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" alt="" className='invert w-4 h-4' /> <p>Pin it</p>
                                 </div>
                             </div>
 

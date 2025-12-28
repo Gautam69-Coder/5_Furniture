@@ -1,7 +1,6 @@
 import { collectionsData } from '../Collections/data';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import downArrow from "../assets/basicIcons/downarrow.svg";
 import '../App.css';
 import axios from 'axios';
 
@@ -125,7 +124,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Category</span>
-                        <span>{isCategoryOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isCategoryOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 
@@ -148,7 +147,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Product</span>
-                        <span>{isProductOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isProductOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 
@@ -166,7 +165,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Color</span>
-                        <span>{isColorOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isColorOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 
@@ -184,7 +183,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Style</span>
-                        <span>{isStyleOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isStyleOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 
@@ -202,7 +201,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Collection</span>
-                        <span>{isCollectionOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isCollectionOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 
@@ -220,7 +219,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Material</span>
-                        <span>{isMaterialOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isMaterialOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 
@@ -238,7 +237,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Size</span>
-                        <span>{isSizeOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isSizeOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 
@@ -256,7 +255,7 @@ const Practice = ({ onFilterChange }) => {
                         className="w-full px-2 flex justify-between items-center"
                     >
                         <span>Price</span>
-                        <span>{isPriceOpen ? <img src={downArrow} className="h-2 w-2" /> : ">"}</span>
+                        <span>{isPriceOpen ? <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928095/downarrow_crnjk8.svg" className="h-2 w-2" /> : ">"}</span>
                     </button>
                 </div>
 

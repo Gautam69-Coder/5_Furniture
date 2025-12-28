@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import logos from "../assets/logos/facebook.svg"
 import { collectionsData } from '../Collections/data'
 
 const Footter = () => {
@@ -83,19 +82,19 @@ const Footter = () => {
                 <div className='flex '>
                     {/* FaceBook */}
                     <div className='cursor-pointer w-full m-[7.5px]'>
-                        <img src={logos} height={12} width={22} alt="" />
+                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" height={12} width={22} alt="" />
                     </div>
                     <div className='cursor-pointer w-full m-[7.5px]'>
-                        <img src={logos} height={12} width={22} alt="" />
+                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" height={12} width={22} alt="" />
                     </div>
                     <div className='cursor-pointer w-full m-[7.5px]'>
-                        <img src={logos} height={12} width={22} alt="" />
+                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" height={12} width={22} alt="" />
                     </div>
                     <div className='cursor-pointer w-full m-[7.5px]'>
-                        <img src={logos} height={12} width={22} alt="" />
+                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" height={12} width={22} alt="" />
                     </div>
                     <div className='cursor-pointer w-full m-[7.5px]'>
-                        <img src={logos} height={12} width={22} alt="" />
+                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" height={12} width={22} alt="" />
                     </div>
                 </div>
             </div>

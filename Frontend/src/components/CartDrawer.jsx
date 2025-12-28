@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Drawer } from 'antd';
-import Cart2 from "../assets/Icons/cart2.svg"
-import Trash from "../assets/Icons/trash.svg"
-import Whatsapp from "../assets/Icons/whatsapp.png"
-import CheckoutBanner from "../assets/Icons/checkoutBanner.png"
+
 import { useQuickView } from '../context/PopupContext';
 import axios from "axios"
 import {useNavigate} from  "react-router-dom"

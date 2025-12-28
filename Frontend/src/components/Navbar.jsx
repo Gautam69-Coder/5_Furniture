@@ -40,19 +40,19 @@ const Navbar = () => {
 
   return (
     <div className='overflow-x-hidden'>
-      <div className='py-[7px] sm:block hidden flex justify-center items-center bg-black'>
-        <motion.span className='absolute flex justify-center items-center'
-          initial={{ x: 0, opacity: 1 }}
+      <div className='py-[7px] sm:block hidden justify-center items-center bg-black'>
+        <motion.span className='absolute flex justify-center items-center text-center'
+          initial={{ x: 600, opacity: 1 }}
           animate={{ x: -500, opacity: 0 }}
           transition={{ duration: 2, delay: 1, ease: "easeInOut" }}
         >
-          <span className='text-white text-center text-[13px] leading-[23px] font-bold'>Soft, Serene, Sensory - </span>
-          <span className='text-white text-center text-[13px] leading-[23px] font-normal underline'>Discover Freedom tree - Nest</span>
+          <span className='text-white  text-[13px] leading-[23px] font-bold'>Soft, Serene, Sensory - </span>
+          <span className='text-white  text-[13px] leading-[23px] font-normal underline'>Discover Freedom tree - Nest</span>
         </motion.span>
-        <motion.span className='text-center relative'
+        <motion.span className='text-center flex justify-center relative'
           initial={{ x: 500, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 3, ease: "easeInOut" }}
+          animate={{ x: 0, opacity: 1  }}
+          transition={{ duration: 2, delay: 3, ease: "easeInOut" }} 
         >
           <span className='text-white text-[13px] leading-[23px] font-bold'>Thoughtful designs and joyful finds for every occasion - </span>
           <span className='text-white text-[13px] leading-[23px] font-normal underline'>Discovery freedom tree-Nest</span>
@@ -168,7 +168,7 @@ const Navbar = () => {
             <div className='flex border h-20 cursor-pointer mb-4'>
               <input type="text" placeholder='Search our Store '
                 className='focus:outline-none px-3 py-2 text-[17px] w-full' />
-              <img src="../src/assets/Icons/search.svg" alt="" width={25} className='mx-3' />
+              <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928748/search_kiulai.svg" alt="" width={25} className='mx-3' />
             </div>
 
             <ul className="flex flex-col gap-2 text-[16px] font-medium text-black border-b pb-4 mb-4">

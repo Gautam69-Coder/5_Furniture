@@ -129,7 +129,7 @@ const Profile = () => {
           {(cart.length === 0) ? (
             <div className='flex flex-col mt-20 justify-center items-center'>
               <div className='my-2'>
-                <img src={Cart2} alt="" className='w-[82px] h-[70px]' />
+                <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/cart2_cjjh48.svg" alt="" className='w-[82px] h-[70px]' />
               </div>
 
               <p className='font-medium text-[18px] text-center my-2'>Your cart looks deserted currently. Start shopping our originally designed and handmade products.</p>

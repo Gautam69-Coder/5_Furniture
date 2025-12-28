@@ -276,7 +276,7 @@ const Login = () => {
               className='absolute -top-6 sm:-right-5 right-2 text-2xl p-2 w-10 h-10
           flex justify-center items-center bg-transparent rounded-md hover:bg-black transition-all ease-in-out'
             >
-              <img src="../src/assets/Icons/close.svg" alt="close svg" />
+              <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/close_vb6fdm.svg" alt="close svg" />
             </button>
 
             <div className='sm:flex sm:h-[536px]  w-full'>
@@ -295,7 +295,7 @@ const Login = () => {
 
                 <div>
                   <img
-                    src="../src/assets/Icons/freedomtree.avif"
+                    src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924191/freedomtree_phpfqw.avif"
                     alt="Freedom Tree Logo"
 
                     className='pt-4 sm:mb-[30px] mb-5 w-[150px]'

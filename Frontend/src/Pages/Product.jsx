@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom'
 import { motion } from 'motion/react';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import facebookLogo from "../assets/logos/facebook.svg"
 import { useQuickView } from '../context/PopupContext';
 
 const ProductPage = () => {
@@ -360,15 +359,15 @@ const ProductPage = () => {
 
                     <div className='flex gap-2'>
                         <div className='mt-10 flex gap-2 items-center'>
-                            <p>Share on : </p> <img src={facebookLogo} alt="" className='invert w-4 h-4' /> <p>share</p>
+                            <p>Share on : </p> <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" alt="" className='invert w-4 h-4' /> <p>share</p>
                         </div>
 
                         <div className='mt-10 flex gap-2 items-center'>
-                            <img src={facebookLogo} alt="" className='invert w-4 h-4' /> <p>tweet</p>
+                            <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" alt="" className='invert w-4 h-4' /> <p>tweet</p>
                         </div>
 
                         <div className='mt-10 flex gap-2 items-center'>
-                            <img src={facebookLogo} alt="" className='invert w-4 h-4' /> <p>Pin it</p>
+                            <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928080/facebook_iqacum.svg" alt="" className='invert w-4 h-4' /> <p>Pin it</p>
                         </div>
                     </div>
                 </div>

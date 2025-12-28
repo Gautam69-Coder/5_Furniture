@@ -1,7 +1,4 @@
-import Trash from "../assets/Icons/trash.svg"
-import Whatsapp from "../assets/Icons/whatsapp.png"
-import CheckoutBanner from "../assets/Icons/checkoutBanner.png"
-import Cart2 from "../assets/Icons/cart2.svg"
+
 
 const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, closeCart, navigate }) => {
     return (
@@ -10,7 +7,7 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
                 {(cart.length === 0 || !localStorage.getItem("refreshToken")) ? (
                     <div className='flex flex-col mt-40 justify-center items-center'>
                         <div className='my-2'>
-                            <img src={Cart2} alt="" className='w-[82px] h-[70px]' />
+                            <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/cart2_cjjh48.svg" alt="" className='w-[82px] h-[70px]' />
                         </div>
 
                         <p className='font-medium text-[18px] text-center my-2'>Your cart looks deserted currently. Start shopping our originally designed and handmade products.</p>
@@ -32,7 +29,7 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
                                                 <div className='flex justify-between items-center'>
                                                     <div className='mb-2 text-[12px] '>{item.name}</div>
                                                     <div className='cursor-pointer' onClick={() => { deleteItem(item.productId); setdeleteProduct(!deleteProduct) }}>
-                                                        <img src={Trash} alt="" />
+                                                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/trash_pm7xzj.svg" alt="" />
                                                     </div>
                                                 </div>
                                                 <div className='text-[10px] text-[#8f8e8e]'>{item.size}</div>
@@ -58,11 +55,11 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
                         <div className='flex justify-center'>
                             <div className='fixed bg-white bottom-0 '>
                                 <div className='mb-2'>
-                                    <img src={CheckoutBanner} alt="" />
+                                    <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/checkoutBanner_plg5vu.png" alt="" />
                                 </div>
                                 <div className='border-t border-b p-2 text-center my-2  border-[#9c9c9c]'>
                                     <div className='flex justify-center items-center gap-1'>
-                                        <img src={Whatsapp} alt="" width={18} />
+                                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924531/whatsapp_riaswe.png" alt="" width={18} />
                                         <p className='text-[12px]'>Need help ? </p>
                                     </div>
                                 </div>
@@ -75,7 +72,7 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
                                 <div className='my-2 w-full px-2' onClick={() => { navigate(`/checkout`); closeCart(); }}>
                                     <button className='bg-[#09AE62] flex items-center justify-center gap-2 py-1.5  text-[18px] text-white w-full font-medium text-center uppercase'>
                                         Checkbox
-                                        <img src="../src/assets/Icons/upi_options.svg" alt="" />
+                                        <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924531/upi_options_s6p5sd.svg" alt="" />
                                     </button>
                                 </div>
 
