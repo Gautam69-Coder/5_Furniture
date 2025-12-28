@@ -17,12 +17,12 @@ import PaymentStatus from "./Pages/PaymentStatus";
 import OrderDetails from "./Pages/Order";
 
 // Admin Imports
-import DashboardLayout from "./Admin/layouts/DashboardLayout.jsx";
-import Dashboard from "./Admin/Pages/Dashboard";
-import Products from "./Admin/Pages/Products";
-import Orders from "./Admin/Pages/Orders";
-import Customers from "./Admin/Pages/Customers";
-import Settings from "./Admin/Pages/Settings";
+import DashboardLayout from "./Admin/AdminLayouts/DashboardLayout.jsx";
+import Dashboard from "./Admin/AdminPages/ADashboard.jsx";
+import Products from "./Admin/AdminPages/AProducts.jsx";
+import Orders from "./Admin/AdminPages/AOrders.jsx";
+import Customers from "./Admin/AdminPages/ACustomers.jsx";
+import Settings from "./Admin/AdminPages/ASettings.jsx";
 
 // TopMenu Pages
 import Contact from './Pages/TopMenu/ContactUs.jsx';
