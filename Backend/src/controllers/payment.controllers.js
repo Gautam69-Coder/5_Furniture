@@ -5,6 +5,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { Cashfree, CFEnvironment } from "cashfree-pg";
 import Order from '../models/order.models.js';
 import { OrderSummary } from '../models/orderSummary.models.js';
+import { User } from '../models/user.model.js'
 
 
 const CheckOut = asyncHandler(async (req, res) => {
@@ -45,7 +46,7 @@ const CheckOut = asyncHandler(async (req, res) => {
             "order_id": orderId,
             "customer_details": {
                 "customer_id": userId.toString(),
-                "customer_phone": customer_phone.toString(),
+                "customer_phone": address.phone.toString(),
                 "customer_email": customer_email.toString(),
                 "customer_name": customer_name.toString()
             },
@@ -98,6 +99,15 @@ const CheckOut = asyncHandler(async (req, res) => {
             });
             await order.save();
         }
+
+
+        console.log(address.phone)
+
+        await User.findByIdAndUpdate(
+            userId,
+            { phoneNumber: address.phone },
+            { new: true }
+        );
 
         // const orderUserID = await OrderSummary.findOne({ userId: userId }); 
 
