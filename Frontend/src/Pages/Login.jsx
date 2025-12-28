@@ -11,6 +11,7 @@ import { TailChase } from 'ldrs/react'
 import 'ldrs/react/TailChase.css'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase";
+import { API_BASE_URL } from '../api';
 
 
 const Login = () => {
@@ -59,7 +60,7 @@ const Login = () => {
       const result = await signInWithPopup(auth, provider);
       const firebaseToken = await result.user.getIdToken();
 
-      const res = await axios.post("/api/v1/google", { token: firebaseToken }, { withCredentials: true });
+      const res = await axios.post(`${API_BASE_URL}/api/v1/google`, { token: firebaseToken }, { withCredentials: true });
 
       localStorage.setItem("refreshToken", res.data.data)
       await messageApi.open({
@@ -160,7 +161,7 @@ const Login = () => {
       setisRegister(false)
 
       const response = await axios.post(
-        "/api/v1/user/register",
+        `${API_BASE_URL}/api/v1/user/register`,
         {
           firstName,
           lastName,

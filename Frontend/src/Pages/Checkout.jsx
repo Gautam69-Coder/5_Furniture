@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form"
 import axios from "axios"
 import { load } from '@cashfreepayments/cashfree-js';
+import { API_BASE_URL } from '../api';
 
 const Checkout = () => {
 
@@ -25,7 +26,7 @@ const Checkout = () => {
         const fetchCart = async () => {
             try {
                 const token = localStorage.getItem("refreshToken")
-                const res = await axios.get("/api/v1/cart", {
+                const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
@@ -48,7 +49,7 @@ const Checkout = () => {
             try {
 
                 const token = localStorage.getItem("refreshToken")
-                const res = await axios.get("/api/v1/user/profile", {
+                const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
@@ -82,7 +83,7 @@ const Checkout = () => {
 
             const token = localStorage.getItem("refreshToken")
 
-            const response = await axios.post('/api/v1/create-order', {
+            const response = await axios.post(`${API_BASE_URL}/api/v1/create-order`, {
                 amount: subTotal,
                 customer_name: user?.firstName || "John Doe",
                 customer_email: user?.email || "john@example.com",

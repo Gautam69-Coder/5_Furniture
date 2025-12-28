@@ -2,6 +2,8 @@ import { motion, easeInOut } from 'motion/react'
 import { useState } from 'react';
 import { useQuickView } from "../context/PopupContext";
 import axios from 'axios';
+import { API_BASE_URL } from '../api';
+
 const QuickView = () => {
 
     const { isOpen, product, closeQuickView, openCart } = useQuickView();
@@ -29,7 +31,7 @@ const QuickView = () => {
             const token = localStorage.getItem("refreshToken");
 
             const res = await axios.post(
-                "/api/v1/cart",
+                `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: product._id,
                     name: product.name,

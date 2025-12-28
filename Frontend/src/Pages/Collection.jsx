@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { collectionsData } from '../Collections/data'
 import Filter from '../components/Filter';
 import { motion } from 'motion/react';
 import SortProduct from '../components/SortProduct';

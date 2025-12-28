@@ -4,6 +4,8 @@ import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Activity from '../components/Activity'
+import { API_BASE_URL } from '../api'
+
 const Home = () => {
 
   const [item, setitem] = useState([])
@@ -15,7 +17,7 @@ const Home = () => {
     const recently_viewed = async () => {
       try {
         const token = localStorage.getItem("refreshToken");
-        const res = await axios.get("/api/v1/recently-view", {
+        const res = await axios.get(`${API_BASE_URL}/api/v1/recently-view`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -33,7 +35,7 @@ const Home = () => {
     const recommended = async () => {
       try {
         const token = localStorage.getItem("refreshToken");
-        const res = await axios.get("/api/v1/recommended", {
+        const res = await axios.get(`${API_BASE_URL}/api/v1/recommended`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }

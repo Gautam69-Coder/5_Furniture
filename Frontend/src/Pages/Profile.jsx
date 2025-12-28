@@ -5,6 +5,7 @@ import 'ldrs/react/TailChase.css'
 import axios from "axios"
 import { Link } from "react-router-dom";
 import Cart2 from "../assets/Icons/cart2.svg"
+import { API_BASE_URL } from "../api";
 
 
 const Profile = () => {
@@ -21,7 +22,7 @@ const Profile = () => {
       try {
 
         const token = localStorage.getItem("refreshToken")
-        const res = await axios.get("/api/v1/user/profile", {
+        const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -32,6 +33,7 @@ const Profile = () => {
       } catch (err) {
         setError("Failed to load user details");
         setLoading(false);
+        console.log(err)
       }
     };
 
@@ -43,7 +45,7 @@ const Profile = () => {
     const myorders = async () => {
       try {
         const token = localStorage.getItem("refreshToken")
-        const res = await axios.get("/api/v1/myorders", {
+        const res = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -181,12 +183,12 @@ const Profile = () => {
 
                         </div>
                         {prod.items.length > 1 && (
-                          <p className="text-sm text-gray-500 mt-2 mb-5">
+                          <p className="text-sm text-gray-500 mt-2 ">
                             + {prod.items.length - 1} more item(s)
 
                           </p>
                         )}
-                        <hr />
+                        <hr className="mt-6 text-neutral-400"/>
                       </div>
 
                     ))}

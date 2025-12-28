@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { TrendingUp, Users, ShoppingBag, DollarSign, ArrowUpRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../../api';
+
 
 const StatCard = ({ title, value, change, icon: Icon, color }) => (
     <motion.div
@@ -41,7 +43,7 @@ const Dashboard = () => {
         // Fetch orders from the backend API
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('/api/v1/admin/orders');
+                const response = await axios.get(`${API_BASE_URL}/api/v1/admin/orders`);
                 setOrders(response.data.data.map((item => item.order_details.slice(0, 5))));
                 let total = response.data.data.map((item=>item.order_details.map(item=>item.status[0].totalAmount)))
                 setTotalAmount(total.map(item=>item.reduce((acc, amount) => acc + amount, 0)).reduce((acc, amount) => acc + amount, 0))

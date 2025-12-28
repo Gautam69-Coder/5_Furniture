@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Search, Mail, Phone, MapPin, MoreHorizontal } from 'lucide-react';
 import axios from 'axios';
+import { API_BASE_URL } from '../../api';
+
 
 const Customers = () => {
     const [users, setUsers] = useState([]);
@@ -12,7 +14,7 @@ const Customers = () => {
         const fetchData = async () => {
             try {
                 // Fetch orders first
-                const ordersRes = await axios.get('/api/v1/admin/orders');
+                const ordersRes = await axios.get(`${API_BASE_URL}/api/v1/admin/orders`);
                 setOrders(ordersRes.data.data);
 
                 // Fetch users

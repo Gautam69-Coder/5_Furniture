@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useQuickView } from "../context/PopupContext";
-import { useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../api';
+
 const ProductCard = ({  link, item }) => {
     const { openQuickView, openCart } = useQuickView();
 
@@ -12,7 +13,7 @@ const ProductCard = ({  link, item }) => {
             const token = localStorage.getItem("refreshToken");
 
             const res = await axios.post(
-                "/api/v1/cart",
+                `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: item._id,
                     name: item.name,

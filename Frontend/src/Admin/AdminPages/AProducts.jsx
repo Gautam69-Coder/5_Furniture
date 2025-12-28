@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Plus, Search, Filter, MoreHorizontal, Edit, Trash2 } from 'lucide-react';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { API_BASE_URL } from '../../api';
 
 const Products = () => {
     const [view, setView] = useState('list');
@@ -15,7 +16,7 @@ const Products = () => {
         const fetchProducts = async () => {
             try {
                 console.log("hello")
-                const res = await axios.get('/api/v1/product');
+                const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
                 console.log(res.data.data);
                 setProductsData(res.data.data);
             } catch (error) {

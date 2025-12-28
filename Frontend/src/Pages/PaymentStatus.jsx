@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 const PaymentStatus = () => {
     const [status, setStatus] = useState(null);
@@ -20,7 +21,7 @@ const PaymentStatus = () => {
                     return;
                 }
 
-                const res = await axios.get(`/api/v1/status/${orderId}`);
+                const res = await axios.get(`${API_BASE_URL}/api/v1/status/${orderId}`);
                 setStatus(res.data.data);
                 console.log(res.data.data);
                 navigate("/")
@@ -41,7 +42,7 @@ const PaymentStatus = () => {
             try {
 
                 const token = localStorage.getItem("refreshToken")
-                const res = await axios.post("/api/v1/deleteItem",
+                const res = await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
                     { productId },
                     {
                         headers: {

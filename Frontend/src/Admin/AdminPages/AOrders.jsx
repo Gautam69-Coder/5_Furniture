@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Search, Filter, Eye, Download, CheckCircle, Clock, XCircle, Truck } from 'lucide-react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../../api';
+
 
 const Orders = () => {
     const [activeTab, setActiveTab] = useState('all');
@@ -13,7 +15,7 @@ const Orders = () => {
         // Fetch orders from the backend API
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('/api/v1/admin/orders');
+                const response = await axios.get(`${API_BASE_URL}/api/v1/admin/orders`);
                 setOrders(response.data.data.map(order => order.order_details.map(item => item)));
                 // console.log(response.data.data.map(order => order.order_details.map(item => item)));
                 // console.log(response.data.data[0].order_details);

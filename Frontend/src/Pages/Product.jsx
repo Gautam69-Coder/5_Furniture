@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useQuickView } from '../context/PopupContext';
+import { API_BASE_URL } from '../api';
 
 const ProductPage = () => {
     const { openCart } = useQuickView();
@@ -21,7 +22,7 @@ const ProductPage = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const res = await axios.get("/api/v1/product/");
+                const res = await axios.get(`${API_BASE_URL}/api/v1/product/`);
                 const products = res.data.data;
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
@@ -43,7 +44,7 @@ const ProductPage = () => {
         const userActivity = async () => {
             try {
 
-                const res2 = await axios.get("/api/v1/product/");
+                const res2 = await axios.get(`${API_BASE_URL}/api/v1/product/`);
                 const products = res2.data.data;
 
                 const productt = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
@@ -84,7 +85,7 @@ const ProductPage = () => {
             const token = localStorage.getItem("refreshToken");
 
             const res = await axios.post(
-                "/api/v1/cart",
+                `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: product._id,
                     name: product.name,
@@ -109,7 +110,7 @@ const ProductPage = () => {
         try {
 
             const token = localStorage.getItem("refreshToken");
-            const res = await axios.post("/api/v1/track", {
+            const res = await axios.post(`${API_BASE_URL}/api/v1/track`, {
                 action: "add_to_cart",
                 productId: product._id
             },

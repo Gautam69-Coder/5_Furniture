@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../api";
 
 
 const OrderDetails = () => {
@@ -17,7 +18,7 @@ const OrderDetails = () => {
         const myorders = async () => {
             try {
                 const token = localStorage.getItem("refreshToken")
-                const res = await axios.get("/api/v1/myorders", {
+                const res = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }

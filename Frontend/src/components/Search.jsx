@@ -4,6 +4,8 @@ import { useQuickView } from "../context/PopupContext";
 import { X } from "lucide-react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
+
 
 const Search = () => {
     const { isSearch, setisSearch } = useQuickView();
@@ -16,7 +18,7 @@ const Search = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get("/api/v1/product");
+                const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
                 setProducts(res.data?.data || []);
                 setFiltered(res.data?.data || []);
             } catch (error) {
@@ -115,7 +117,7 @@ const Search = () => {
 
                             <div className="flex flex-col justify-between flex-1">
                                 <div>
-                                    <div className="flex justify-between">
+                                    <div className="fle`${API_BASE_URL} justify-betwee`">
                                         <h3 className="text-[16px] font-semibold text-gray-800 line-clamp-1">
                                             {product.name}
                                         </h3>

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
+import { API_BASE_URL } from '../api';
+
 
 const Practice = ({ onFilterChange }) => {
     const { category } = useParams();
@@ -29,7 +31,7 @@ const Practice = ({ onFilterChange }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get("/api/v1/product");
+            const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
             setProductData(res.data.data);
             // console.log(res.data.data.find(item => item.category.includes(category)));
             const find = res.data.data.filter(item => item.category.includes(category))

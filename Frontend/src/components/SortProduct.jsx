@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import ProductCard from "./ProductCard";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { API_BASE_URL } from "../api";
+
 
 const SortProduct = ({ ProductSubcategory }) => {
   const { category } = useParams();
@@ -16,7 +18,7 @@ const SortProduct = ({ ProductSubcategory }) => {
         if (hasRun.current) return;
         hasRun.current = true;
         const token = localStorage.getItem("refreshToken");
-        const res = await axios.post("/api/v1/track", {
+        const res = await axios.post(`${API_BASE_URL}/api/v1/track`, {
           action: "category_visit",
           category: category
         },
@@ -38,7 +40,7 @@ const SortProduct = ({ ProductSubcategory }) => {
   const [myProduct, setMyProduct] = useState([]);
 
   const fetchProducts = async () => {
-    const res = await axios.get("/api/v1/product");
+    const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
     return res.data.data;
   };
 

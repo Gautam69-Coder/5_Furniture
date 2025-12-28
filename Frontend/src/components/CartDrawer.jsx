@@ -5,6 +5,8 @@ import { useQuickView } from '../context/PopupContext';
 import axios from "axios"
 import {useNavigate} from  "react-router-dom"
 import Cart from './Cart';
+import { API_BASE_URL } from '../api';
+
 
 const CartDrawer = ({ Close }) => {
   const { closeCart, isOpenCart } = useQuickView();
@@ -32,7 +34,7 @@ const CartDrawer = ({ Close }) => {
     try {
 
       const token = localStorage.getItem("refreshToken")
-      const res = await axios.post("/api/v1/deleteItem",
+      const res = await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
         { productId },
         {
           headers: {
@@ -50,7 +52,7 @@ const CartDrawer = ({ Close }) => {
     const fetchCart = async () => {
       try {
         const token = localStorage.getItem("refreshToken")
-        const res = await axios.get("/api/v1/cart", {
+        const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }

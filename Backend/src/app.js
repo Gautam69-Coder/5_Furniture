@@ -5,7 +5,7 @@ import connectCloudinary from "./config/cloudinary.js"
 const app = express();
 
 app.use(cors({
-    origin: "https://furniture.gautamdoliya69.workers.dev/", 
+    origin: "http://localhost:5173", 
     credentials: true,
 }))
 app.use(cookieParser())
