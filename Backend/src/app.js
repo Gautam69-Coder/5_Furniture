@@ -5,8 +5,10 @@ import connectCloudinary from "./config/cloudinary.js"
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173", 
-    credentials: true,
+    origin: [
+        "http://localhost:5173",
+        "https://five-furniture.onrender.com",
+    ],
 }))
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
