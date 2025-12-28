@@ -94,11 +94,11 @@ const Customers = () => {
                             <div className="flex items-start justify-between mb-4">
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary font-bold text-lg">
-                                        {customer.firstName.charAt(0)?.toUpperCase()} {customer.lastName.charAt(0)?.toUpperCase()}
+                                        {customer.firstName.charAt(0)?.toUpperCase()} {customer.lastName?.charAt(0)?.toUpperCase()}
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-gray-900 group-hover:text-brand-primary transition-colors">
-                                            {customer.firstName.charAt(0)?.toUpperCase() + customer.firstName.slice(1)?.toLowerCase()} {customer.lastName.charAt(0)?.toUpperCase() + customer.lastName.slice(1)?.toLowerCase()}
+                                            {customer.firstName.charAt(0)?.toUpperCase() + customer.firstName?.slice(1)?.toLowerCase()} {customer.lastName?.charAt(0)?.toUpperCase() + customer.lastName?.slice(1)?.toLowerCase()}
                                         </h3>
                                         <p className="text-xs text-gray-500 ">CID # {customer._id}</p>
                                     </div>
