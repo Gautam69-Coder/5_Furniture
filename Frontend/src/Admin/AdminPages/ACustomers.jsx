@@ -53,7 +53,8 @@ const Customers = () => {
     // Compute totals for each user
     const getUserTotals = (userId) => {
         const userOrders = orders.filter(order => order.userId.toString() === userId.toString());
-        const totalOrders = userOrders.length;
+        const totalOrders = userOrders[0]?.order_details.length || 0;
+        console.log(userOrders[0]?.order_details.length)
         const totalSpent = userOrders.reduce((sum, order) => {
             const orderTotal = order.order_details.reduce((odSum, od) => {
                 return odSum + od.status.reduce((statusSum, s) => statusSum + s.totalAmount, 0);

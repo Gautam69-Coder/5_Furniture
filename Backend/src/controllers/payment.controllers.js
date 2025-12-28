@@ -46,7 +46,7 @@ const CheckOut = asyncHandler(async (req, res) => {
             "order_id": orderId,
             "customer_details": {
                 "customer_id": userId.toString(),
-                "customer_phone": address.phone.toString(),
+                "customer_phone": customer_phone.toString(),
                 "customer_email": customer_email.toString(),
                 "customer_name": customer_name.toString()
             },

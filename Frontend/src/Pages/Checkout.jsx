@@ -87,7 +87,7 @@ const Checkout = () => {
                 amount: subTotal,
                 customer_name: user?.firstName || "John Doe",
                 customer_email: user?.email || "john@example.com",
-                customer_phone: user?.phoneNumber || "9999999999",
+                customer_phone: user?.phoneNumber || "9082386079",
                 cart,
                 address: addressData
             },
