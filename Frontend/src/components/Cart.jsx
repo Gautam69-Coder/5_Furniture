@@ -15,15 +15,15 @@ const Cart = ({ cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, clo
 
                         <p className='font-medium text-[18px] text-center my-2'>Your cart looks deserted currently. Start shopping our originally designed and handmade products.</p>
 
-                        <button className='px-6 py-3 font-bold text-[15px] leading-3 uppercase bg-[#333333] text-white'>Start Shopping</button>
+                        <button className='px-6 py-3 font-bold text-[15px] leading-3 uppercase bg-[#333333] text-white' onClick={()=>{closeCart()}}>Start Shopping</button>
                     </div>
                 ) : (
                     <>
                         <div className='overflow-y-scroll hide-scrollbar h-[54vh]'>
                             {cart.map((item, index) => (
 
-                                <div>
-                                    <div className='flex mb-2 ' key={index}>
+                                <div key={index}>
+                                    <div className='flex mb-2 ' >
                                         <div className='w-[25%] mr-2'>
                                             <img src={item.image} alt="" className=' rounded w-full' />
                                         </div>

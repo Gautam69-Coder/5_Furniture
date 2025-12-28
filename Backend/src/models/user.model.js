@@ -24,9 +24,10 @@ const userSchema = new Schema(
             lowercase: true,
         },
         phoneNumber: {
-            type: Number,
-            // required: true,
+            type: String,
             unique: true,
+            sparse: true,
+            default: undefined
         },
         refreshToken: {
             type: String

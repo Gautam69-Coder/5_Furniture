@@ -45,21 +45,21 @@ const OrderDetails = () => {
 
     return (
         <div>
-            <div className="min-h-screen bg-[#fafafa] py-10">
-                <div className="max-w-6xl mx-auto px-6">
+            <div className="min-h-screen bg-[#fafafa] sm:py-10">
+                <div className="sm:max-w-6xl sm:mx-auto sm:px-6 mx-4">
 
                     {/* Page Header */}
-                    <div className="mb-8">
+                    <div className="sm:mb-8 mb-4">
                         <p className="text-sm text-gray-500">My Account / Orders</p>
                         <h1 className="text-2xl font-light tracking-wide text-gray-900 mt-1">
                             Order Details
                         </h1>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8">
+                    <div className="grid sm:grid-cols-3 grid-cols-1 gap-8">
 
                         {/* LEFT CONTENT */}
-                        <div className="col-span-2 bg-white border border-gray-200 p-6">
+                        <div className="col-span-2 bg-white border border-gray-200 sm:p-6 p-2">
 
                             {/* Order Meta */}
                             {order?.status?.map((item, index) => (

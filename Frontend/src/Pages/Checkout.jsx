@@ -31,12 +31,10 @@ const Checkout = () => {
                     }
                 });
                 setcart(res.data.data[0].product);
-                console.log(res.data.data);
                 const s = res.data.data[0].product.reduce((total, item) => {
                     return total + item.price * item.quantity
                 }, 0)
                 setsubTotal(s)
-                console.log(s)
             } catch (error) {
                 console.error(error);
             }
@@ -164,7 +162,7 @@ const Checkout = () => {
 
     return (
         <div >
-            <nav className='py-5 px-[38px] flex justify-around items-center bg-center bg-cover bg-[url("https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cool_collection_51196dc4-7baf-4be6-8af5-142209398314_2000x.jpg?v=1742366830")]'>
+            <nav className='py-5 sm:px-[38px] flex justify-around items-center bg-center bg-cover bg-[url("https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cool_collection_51196dc4-7baf-4be6-8af5-142209398314_2000x.jpg?v=1742366830")]'>
 
                 <div className='w-6 h-6'>
                     <svg className='' viewBox="0 0 64 64" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -173,12 +171,12 @@ const Checkout = () => {
                 </div>
 
                 <div>
-                    <h1 className='font-medium text-[20px] text-white'>Freedom Tree</h1>
+                    <h1 className='sm:font-medium font-bold text-[20px] text-white'>Freedom Tree</h1>
                 </div>
             </nav>
 
-            <div className='p-[38px] grid grid-cols-6 grid-rows-5   '>
-                <div className='col-span-2 row-span-5 col-start-2 pr-6 border-r border-[#DFDFDF]'>
+            <div className='sm:p-[38px] mb-10  sm:flex sm:mx-[100px] mx-5 justify-center '>
+                <div className=' sm:pr-6 border-r sm:w-[50%] mb-8 border-[#DFDFDF]'>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='py-[9px] '>
 
@@ -391,9 +389,9 @@ const Checkout = () => {
                         <a href="#">Terms of service</a>
                     </div>
                 </div>
-                <div className='col-span-2 row-span-5 col-start-4 pl-6'>
+                <div className=' sm:pl-6 sm:w-[40%]'>
                     <div className='sticky top-0'>
-                        <div className="w-full max-w-md  bg-white rounded-xl  shadow-sm space-y-6">
+                        <div className=" bg-white rounded-xl  shadow-sm space-y-6">
                             {/* Product 1 */}
                             {cart.map((item, index) => (
                                 <div className="flex gap-4" key={index}>

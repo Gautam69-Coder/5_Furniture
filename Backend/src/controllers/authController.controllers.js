@@ -12,17 +12,18 @@ export const googleAuth = asyncHandler(async (req, res) => {
 
     const decoded = await admin.auth().verifyIdToken(token);
 
-    const { name, email, picture } = decoded;
+    const { name, email, picture ,exp } = decoded;
     const [firstName, lastName] = name.trim().split(/\s+/);
 
     let user = await User.findOne({ email });
+    console.log(user)
     if (!user) {
       user = await User.create({
         firstName,
         lastName,
         email,
         avatar: picture,
-        refreshToken: token
+        phoneNumber : exp, //Not correct phoneNumber dummy
       });
     }
 

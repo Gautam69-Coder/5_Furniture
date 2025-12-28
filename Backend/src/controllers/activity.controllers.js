@@ -12,7 +12,6 @@ const UserActivity = asyncHandler(async (req, res) => {
             productId, action, searchKeyword, category
         }
 
-        console.log(obj)
 
         await Activity.create({
             userId: req.user?._id || null,

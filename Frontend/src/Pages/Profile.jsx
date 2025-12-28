@@ -72,7 +72,7 @@ const Profile = () => {
   if (error) return <p className="flex justify-center items-center w-full h-[70vh]" style={{ color: "red" }}>{error}</p>;
 
   return (
-    <div className="min-h-screen bg-[#fafafa] py-10">
+    <div className="min-h-screen bg-[#fafafa] sm:py-10 ">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="mb-10">
@@ -82,7 +82,7 @@ const Profile = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 mb-12">
 
           <div className="bg-white border border-gray-200 p-6">
             <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
@@ -155,19 +155,10 @@ const Profile = () => {
                             className="w-28 h-28 object-cover"
                           />
                           <div className="flex-1">
-                            <div className="flex justify-between">
-                              <h3 className="text-md font-light text-gray-900">
-                                {prod.items[0].item_name}
-                              </h3>
+                            <h3 className="text-md font-light text-gray-900">
+                              {prod.items[0].item_name}
+                            </h3>
 
-                              {prod.items.length > 1 && (
-                                <p className="text-sm text-gray-500 underline">
-                                  + {prod.items.length - 1} more item(s)
-
-                                </p>
-                              )}
-
-                            </div>
                             <p className="text-sm text-gray-500 mt-1">
                               Size: {prod.items[0].item_size || "N/A"}
                             </p>
@@ -182,13 +173,19 @@ const Profile = () => {
 
                             <Link
                               to={`/order/${prod._id}`}
-                              className="inline-block mb-6 text-sm underline text-gray-700 hover:text-black"
+                              className="inline-block  text-sm underline text-gray-700 hover:text-black"
                             >
                               View Order Details
                             </Link>
                           </div >
 
                         </div>
+                        {prod.items.length > 1 && (
+                          <p className="text-sm text-gray-500 mt-2 mb-5">
+                            + {prod.items.length - 1} more item(s)
+
+                          </p>
+                        )}
                         <hr />
                       </div>
 

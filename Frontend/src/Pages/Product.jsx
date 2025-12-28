@@ -100,7 +100,6 @@ const ProductPage = () => {
                 }
             );
 
-            console.log(res.data);
             openCart();
         } catch (error) {
             console.log("Error in cart", error.response?.data || error.message);
@@ -122,7 +121,6 @@ const ProductPage = () => {
                 }
 
             );
-            console.log(res)
         } catch (error) {
             console.log(error);
         }

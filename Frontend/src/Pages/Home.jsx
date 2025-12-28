@@ -39,7 +39,7 @@ const Home = () => {
           }
         })
         setrecommended(res.data.data.map(item => item))
-        
+
       } catch (error) {
         console.log(error)
       }
@@ -69,19 +69,20 @@ const Home = () => {
           src="https://freedomtree.in/cdn/shop/files/NOV_START_25_c5440a48-26cb-4ec7-8c30-a5beba163d0d_1900x.jpg?v=1762593648" alt="" />
       </div>
 
+      {/* Recently Viewed */}
       {item.length > 0 && (
-        <div className='mx-8 mt-4'>
-          <p className='font-semibold mb-3 text-[20px]'>Recently Viewed</p>
+        <div className='sm:mx-8 mx-2  mt-4'>
+          <p className='font-semibold mb-3 sm:text-[20px] text-[16px]'>Recently Viewed</p>
           <div className=''>
             <Activity item={item} />
           </div>
         </div>
       )}
 
-
+      {/* Recommended */}
       {recommended.length > 0 && (
-        <div className='mx-8 mt-4'>
-          <p className='font-semibold mb-3 text-[20px]'>Recommended</p>
+        <div className='sm:mx-8 mx-2  mt-4'>
+          <p className='font-semibold mb-3 sm:text-[20px] text-[16px]'>Recommended</p>
           <div className=''>
 
             <Activity item={recommended} />

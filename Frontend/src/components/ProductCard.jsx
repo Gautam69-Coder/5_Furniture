@@ -67,7 +67,7 @@ const ProductCard = ({  link, item }) => {
                 </div>
             </div>
 
-            <div className="text-center mt-2 pt-2.5 pb-2">
+            <div className="text-center sm:mt-2 sm:pt-2.5 sm:pb-2">
                 <p>{item.name}</p>
                 <p className="italic text-[13px] pt-1">RS {item.price}</p>
             </div>
