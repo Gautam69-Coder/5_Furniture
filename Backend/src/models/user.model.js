@@ -25,8 +25,7 @@ const userSchema = new Schema(
         },
         phoneNumber: {
             type: String,
-            sparse: true,
-            default: undefined
+            default: "9999999999"
         },
         refreshToken: {
             type: String

@@ -109,9 +109,10 @@ const CheckOut = asyncHandler(async (req, res) => {
     }
 
     if (address?.phone) {
-        await User.findByIdAndUpdate(
-            userId,
-            { phoneNumber: address.phone }
+        await User.findOneAndUpdate(
+            { _id: userId },
+            { phoneNumber: address.phone },
+            { new: true }
         );
     }
 
