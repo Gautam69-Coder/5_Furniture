@@ -24,7 +24,7 @@ const PaymentStatus = () => {
                 const res = await axios.get(`${API_BASE_URL}/api/v1/status/${orderId}`);
                 setStatus(res.data.data);
                 console.log(res.data.data);
-                navigate("/")
+                // navigate("/")
             } catch (err) {
                 console.error(err);
                 setError("Failed to fetch order status");

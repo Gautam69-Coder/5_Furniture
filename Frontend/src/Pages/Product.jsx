@@ -12,7 +12,7 @@ const ProductPage = () => {
     const [product, setproduct] = useState([])
     const [qty, setqty] = useState(1);
     const [zoom, setzoom] = useState(false);
-    const [img, setimg] = useState("https://freedomtree.in/cdn/shop/files/buy-toddy-palm-pure-cotton-moss-grey-printed-upholstery-fabric-online-10000017508-1193955233_360x.jpg");
+    const [img, setimg] = useState("");
     const [isSection, setisSection] = useState({
         details: true,
         instruction: true,
@@ -29,7 +29,8 @@ const ProductPage = () => {
                 const products = res.data.data;
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
-                // console.log(productk)
+                // console.log(productk.images[0])
+                setimg(productk.images[0])
             } catch (error) {
                 console.error("Error fetching product:", error);
             }
@@ -167,7 +168,7 @@ const ProductPage = () => {
                 {/* Image part */}
                 <div className='sm:flex gap-4 my-4 sm:mr-[22px]  col-span-2'>
                     <div className='sm:flex sm:flex-col  gap-[15px] h-[600px] sm:overflow-y-auto hide-scrollbar mb-2  hidden '>
-                        <img src={product?.images || "https://freedomtree.in/cdn/shop/files/buy-toddy-palm-pure-cotton-moss-grey-printed-upholstery-fabric-online-10000017508-1193955233_360x.jpg"}
+                        <img src={product?.images}
                             className='object-center sm:w-22 sm:h-30 h-30 w-20 bg-black hover:border-black hover:border-2  ' alt=""
                             onClick={() => {
                                 setimg(product?.images)
@@ -187,7 +188,7 @@ const ProductPage = () => {
                     </div>
                     <div className="overflow-hidden sm:w-[450px] sm:h-[600px] w-auto h-[400px] ">
                         <img
-                            src={img || "https://freedomtree.in/cdn/shop/files/buy-toddy-palm-pure-cotton-moss-grey-printed-upholstery-fabric-online-10000017508-1193955233_360x.jpg"}
+                            src={img || product?.images}
                             alt=""
                             className={` transition-all cursor-zoom-in duration-300 object-cover w-full h-full ${zoom ? "scale-150 cursor-zoom-out" : "scale-100 cursor-none"}`}
                             onClick={() => setzoom(!zoom)}

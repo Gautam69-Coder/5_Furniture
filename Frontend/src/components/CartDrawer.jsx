@@ -3,7 +3,7 @@ import { Drawer } from 'antd';
 
 import { useQuickView } from '../context/PopupContext';
 import axios from "axios"
-import {useNavigate} from  "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Cart from './Cart';
 import { API_BASE_URL } from '../api';
 
@@ -14,13 +14,14 @@ const CartDrawer = ({ Close }) => {
   const [cart, setcart] = useState([])
   const [deleteProduct, setdeleteProduct] = useState(false)
   const [subTotal, setsubTotal] = useState()
+  const [loading, setloading] = useState(false)
 
   const onClose = () => {
     setOpen(false);
     closeCart()
   };
 
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isOpenCart) {
@@ -32,7 +33,6 @@ const CartDrawer = ({ Close }) => {
 
   const deleteItem = async (productId) => {
     try {
-
       const token = localStorage.getItem("refreshToken")
       const res = await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
         { productId },
@@ -51,6 +51,7 @@ const CartDrawer = ({ Close }) => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
+        setloading(true)
         const token = localStorage.getItem("refreshToken")
         const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
           headers: {
@@ -58,18 +59,18 @@ const CartDrawer = ({ Close }) => {
           }
         });
         setcart(res.data.data[0].product);
-        console.log(cart)
-        const s= res.data.data[0].product.reduce((total, item) => {
+        console.log(res.data.data)
+        const s = res.data.data[0].product.reduce((total, item) => {
           return total + item.price * item.quantity
-        },0)
+        }, 0)
         setsubTotal(s)
+        setloading(false)
       } catch (error) {
         console.error(error);
       }
     };
-
-    if (isOpenCart) fetchCart();
-  }, [isOpenCart, deleteProduct]);
+    if (isOpenCart || deleteProduct) fetchCart();
+  }, [isOpenCart,deleteProduct]);
 
 
   return (
@@ -85,7 +86,7 @@ const CartDrawer = ({ Close }) => {
         open={open}
         className='flex justify-center w-[400px]'
       >
-       <Cart cart={cart} subTotal={subTotal} deleteItem={deleteItem} setdeleteProduct={setdeleteProduct} deleteProduct={deleteProduct} closeCart={closeCart} navigate={navigate}/>
+        <Cart cart={cart} loading={loading} subTotal={subTotal} deleteItem={deleteItem} setdeleteProduct={setdeleteProduct} deleteProduct={deleteProduct} closeCart={closeCart} navigate={navigate} />
       </Drawer>
     </>
   );

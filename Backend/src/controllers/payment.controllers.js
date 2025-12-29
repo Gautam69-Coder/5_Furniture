@@ -26,9 +26,7 @@ const CheckOut = asyncHandler(async (req, res) => {
         throw new ApiError(401, "Unauthorized");
     }
 
-    if (!cart || !cart.length) {
-        throw new ApiError(400, "Cart is empty");
-    }
+
 
     if (!customer_phone || !customer_name || !customer_email) {
         throw new ApiError(400, "Customer details missing");
@@ -66,11 +64,25 @@ const CheckOut = asyncHandler(async (req, res) => {
         },
         order_meta: {
             return_url: "https://5-furniture.pages.dev/payment-status"
+            // return_url: "http://localhost:5173/payment-status"
         },
         cart_details: {
-            cart_items: cartItems
-        }
+            cart_items: cart.map(item => ({
+                item_id: item.productId.toString(),
+                item_name: item.name,
+                item_description: item.description || "Cart product",
+                item_image_url: item.image,
+                item_original_unit_price: item.price,
+                item_discounted_unit_price: item.price,
+                item_quantity: item.quantity,
+                item_currency: "INR",
+                item_size: item.size,
+                item_material: item.material
+            }))
+        },
     };
+
+    console.log(request)
 
     let data;
     try {
@@ -115,6 +127,7 @@ const CheckOut = asyncHandler(async (req, res) => {
             { new: true }
         );
     }
+    
 
     res.status(200).json(
         new ApiResponse(200, data, "Payment session created")
