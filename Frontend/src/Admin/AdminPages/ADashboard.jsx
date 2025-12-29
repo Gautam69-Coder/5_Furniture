@@ -59,7 +59,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get('/api/v1/users');
+                const res = await axios.get(`${API_BASE_URL}/api/v1/users`);
                 settotalUser(res.data.data.length);
             } catch (error) {
                 console.error('Error fetching users:', error);
@@ -128,8 +128,8 @@ const Dashboard = () => {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-50">
-                                {Orders.map((item) => (
-                                    (item.slice(0,4).map((order) => (
+                                {Orders.slice(0,5).map((item) => (
+                                    (item.slice(0,1).map((order) => (
                                         <tr key={order.items.item_id} className="group hover:bg-gray-50/50 transition-colors">
                                             <td className="py-4 text-sm font-medium text-brand-primary">{order.status[0].cashfreeOrderId}</td>
                                             <td className="py-4 text-sm text-gray-800">{order.user_address[0]?.firstName?.charAt(0).toUpperCase() + order.user_address[0].firstName?.slice(1).toLowerCase()} {order.user_address[0].lastName?.charAt(0).toUpperCase() + order.user_address[0].lastName?.slice(1).toLowerCase()}</td>
@@ -153,8 +153,8 @@ const Dashboard = () => {
                     <SectionHeader title="Popular Items" subtitle="Top selling furniture this week" />
 
                     <div className="space-y-6">
-                        {Orders.map((order, index) => (
-                            (order.slice(0,2).map((item) => (
+                        {Orders.slice(0,3).map((order, index) => (
+                            (order.slice(0,1).map((item) => (
                                 <div key={index} className="flex items-center gap-4">
                                     <div className="w-16 h-16 rounded-lg bg-gray-100 shrink-0">
                                         <img src={item.items[0].item_image_url} alt={item.items[0].item_name} className="w-full h-full object-cover" />

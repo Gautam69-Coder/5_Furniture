@@ -1,4 +1,3 @@
-import React from 'react';
 import { User, Lock, Bell, Globe, Shield, CreditCard } from 'lucide-react';
 
 const SettingsSection = ({ title, icon: Icon, children }) => (
