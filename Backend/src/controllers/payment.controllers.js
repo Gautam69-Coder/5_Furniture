@@ -10,143 +10,113 @@ import { User } from '../models/user.model.js'
 
 const CheckOut = asyncHandler(async (req, res) => {
 
+    const cashfree = new Cashfree(
+        CFEnvironment.SANDBOX,
+        process.env.CASHFREE_ID,
+        process.env.CASHFREE_SECRET
+    );
+
+    const { customer_phone, customer_name, customer_email, cart, address } = req.body;
+    const userId = req.user?._id;
+
+    if (!userId) {
+        throw new ApiError(401, "Unauthorized");
+    }
+
+    if (!cart || !cart.length) {
+        throw new ApiError(400, "Cart is empty");
+    }
+
+    if (!customer_phone || !customer_name || !customer_email) {
+        throw new ApiError(400, "Customer details missing");
+    }
+
+    const orderId = `ORDER_${Date.now()}`;
+
+    const cartItems = cart.map(item => ({
+        item_id: item.productId.toString(),
+        item_name: item.name,
+        item_description: item.description || "Cart product",
+        item_image_url: item.image,
+        item_original_unit_price: item.price,
+        item_discounted_unit_price: item.price,
+        item_quantity: item.quantity,
+        item_currency: "INR",
+        item_size: item.size,
+        item_material: item.material
+    }));
+
+    const totalAmount = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+
+    const request = {
+        order_id: orderId,
+        order_amount: totalAmount,
+        order_currency: "INR",
+        customer_details: {
+            customer_id: userId.toString(),
+            customer_phone: customer_phone.toString(),
+            customer_email: customer_email,
+            customer_name: customer_name
+        },
+        order_meta: {
+            return_url: "https://5-furniture.pages.dev/payment-status"
+        },
+        cart_details: {
+            cart_items: cartItems
+        }
+    };
+
+    let data;
     try {
-        const cashfree = new Cashfree(CFEnvironment.SANDBOX, process.env.CASHFREE_ID, process.env.CASHFREE_SECRET);
-        const { amount, customer_phone, customer_name, customer_email, cart, address } = req.body;
-        const userId = req.user._id;
+        const response = await cashfree.PGCreateOrder(request);
+        data = response.data;
+    } catch (err) {
+        console.log(err.response?.data || err.message);
+        throw new ApiError(502, "Cashfree order creation failed");
+    }
 
-        if(!userId){
-            throw new ApiError(401,"Aunothorized")
-        }
+    if (!data?.order_id) {
+        throw new ApiError(500, "Invalid Cashfree response");
+    }
 
-        // console.log(amount, customer_phone, customer_name, customer_email, cart, address)
+    const order = await Order.findOne({ userId });
 
-        if (!amount || !customer_phone || !customer_name || !customer_email) {
-            throw new ApiError(400, "All payment fields are required");
-        }
+    const orderPayload = {
+        items: cartItems,
+        user_address: address,
+        status: [{
+            totalAmount,
+            paymentStatus: "PENDING",
+            orderStatus: "processing",
+            cashfreeOrderId: data.order_id
+        }]
+    };
 
+    if (!order) {
+        await Order.create({
+            userId,
+            order_details: [orderPayload]
+        });
+    } else {
+        order.order_details.push(orderPayload);
+        await order.save();
+    }
 
-        const orderId = `ORDER_${Date.now()}`;
-
-        if(!orderId){
-            console.log("Not found ordered id")
-        }
-
-
-
-        const cartItems = cart.map((item) => ({
-            item_id: item.productId.toString(),
-            item_name: item.name,
-            item_description: item.description || "Cart product",
-            item_image_url: item.image || "https://example.com/image.png",
-            item_original_unit_price: item.price,
-            item_discounted_unit_price: item.price,
-            item_quantity: item.quantity,
-            item_currency: "INR",
-            item_size: item.size,
-            item_material: item.materail,
-        }));
-
-        // console.log(cartItems)
-
-        const request = {
-            "order_amount": amount,
-            "order_currency": "INR",
-            "order_id": orderId,
-            "customer_details": {
-                "customer_id": userId.toString(),
-                "customer_phone": customer_phone.toString(),
-                "customer_email": customer_email.toString(),
-                "customer_name": customer_name.toString()
-            },
-            "order_meta": {
-                "return_url": "https://5-furniture.pages.dev/payment-status"
-            },
-            "cart_details": {
-                "cart_items": cartItems
-            }
-        };
-
-
-
-        let data;
-
-        await
-            cashfree.PGCreateOrder(request).then((response) => {
-                data = response.data;
-            }).catch((error) => {
-                console.error('Error:', error.response.data.message);
-            });
-
-        const order = await Order.findOne({ userId });
-        if (!order) {
-            const newOrder = new Order({
-                userId,
-                order_details: [{
-                    items: cartItems,
-                    user_address: address,
-                    status: [{
-                        totalAmount: amount,
-                        paymentStatus: "PENDING",
-                        orderStatus: "processing",
-                        cashfreeOrderId: data.order_id,
-                    }]
-                }]
-            });
-            await newOrder.save();
-        }
-        else {
-            order.order_details.push({
-                items: cartItems,
-                user_address: address,
-                status: [{
-                    totalAmount: amount,
-                    paymentStatus: "PENDING",
-                    orderStatus: "processing",
-                    cashfreeOrderId: data.order_id,
-                }]
-            });
-            await order.save();
-        }
-
-
-        console.log(address.phone)
-
+    if (address?.phone) {
         await User.findByIdAndUpdate(
             userId,
-            { phoneNumber: address.phone },
-            { new: true }
+            { phoneNumber: address.phone }
         );
-
-        // const orderUserID = await OrderSummary.findOne({ userId: userId }); 
-
-        // console.log(cart.length);
-        // if (orderUserID) {
-        //     orderUserID.order.push({ orderId: order._id });
-        //     orderUserID.totalItems += cart.length;
-        //     orderUserID.totalAmount += amount;
-        //     orderUserID.paymentStatus = "PENDING";
-        //     await orderUserID.save();
-        // } else {
-        //     await OrderSummary.create({
-        //         userId: userId,
-        //         order: { orderId: order._id },
-        //         totalItems: cart.length,
-        //         totalAmount: amount
-        //     });
-        // }
-
-        res.status(200).json(
-            new ApiResponse(
-                200,
-                data,
-                "Payment session created"
-            )
-        );
-    } catch (error) {
-        throw new ApiError(500, error.message);
     }
+
+    res.status(200).json(
+        new ApiResponse(200, data, "Payment session created")
+    );
 });
+
 
 const getPaymentStatus = asyncHandler(async (req, res) => {
     const { orderId } = req.params;

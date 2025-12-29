@@ -49,5 +49,9 @@ app.use("/api/v1/", UserAnalysis)
 import GoogleAuth from "./routes/authRoutes.routers.js"
 app.use("/api/v1/", GoogleAuth)
 
+import WhatsAppMessage from "./routes/whatsapp.routers.js"
+app.use("/api/v1/", WhatsAppMessage)
+
+
 
 export default app;

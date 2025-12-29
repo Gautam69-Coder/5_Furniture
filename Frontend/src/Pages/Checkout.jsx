@@ -79,7 +79,7 @@ const Checkout = () => {
         try {
             console.log(cart)
             let cashfree;
-            console.log(address)
+            console.log(addressData)
             setisloading(true);
             cashfree = await load({
                 mode: "sandbox"
@@ -105,6 +105,9 @@ const Checkout = () => {
             console.log(response)
 
             const sessionId = response.data.data.payment_session_id;
+            if (!sessionId) {
+                console.log("Not Found session id")
+            }
             console.log(sessionId)
 
             const orderId = response.data.data.order_id;
