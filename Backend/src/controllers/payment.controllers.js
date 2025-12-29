@@ -16,6 +16,9 @@ const CheckOut = asyncHandler(async (req, res) => {
         process.env.CASHFREE_SECRET
     );
 
+    console.log("CF ID:", process.env.CASHFREE_ID);
+    console.log("CF SECRET:", process.env.CASHFREE_SECRET);
+
     const { customer_phone, customer_name, customer_email, cart, address } = req.body;
     const userId = req.user?._id;
 
