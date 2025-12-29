@@ -2,16 +2,19 @@ import { Link } from 'react-router-dom';
 import { useQuickView } from "../context/PopupContext";
 import axios from 'axios';
 import { API_BASE_URL } from '../api';
+import { loader } from '../Utils/loarder';
+import { useState } from 'react';
 
-const ProductCard = ({  link, item }) => {
+const ProductCard = ({ link, item }) => {
     const { openQuickView, openCart } = useQuickView();
+    const [loading, setloading] = useState(false)
 
     // console.log(item)
 
     const cartData = async () => {
         try {
             const token = localStorage.getItem("refreshToken");
-
+            setloading(true)
             const res = await axios.post(
                 `${API_BASE_URL}/api/v1/cart`,
                 {
@@ -31,8 +34,11 @@ const ProductCard = ({  link, item }) => {
                 }
             );
 
-            // console.log(res.data);
-            openCart();
+            let user = res.data.data.user
+            if (user) {
+                openCart();
+                setloading(false)
+            }
         } catch (error) {
             console.log("Error in cart", error.response?.data || error.message);
         }
@@ -58,12 +64,14 @@ const ProductCard = ({  link, item }) => {
                             Quick View
                         </div>
 
-                        <div className="px-3 py-2 text-white bg-black"
+                        <button className={`px-3 py-2 text-white bg-black `} 
                             onClick={() => {
                                 cartData();
                                 openCart();
+                                 setloading(!loading);
                             }}
-                        >Add to Cart</div>
+                            disabled={loading}
+                        >{loading ? (loader(14, "white")) : ("Add to Cart")}</button>
                     </div>
                 </div>
             </div>

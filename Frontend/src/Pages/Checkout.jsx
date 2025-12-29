@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import axios from "axios"
 import { load } from '@cashfreepayments/cashfree-js';
 import { API_BASE_URL } from '../api';
+import { loader } from '../Utils/loarder';
 
 const Checkout = () => {
 
@@ -20,6 +21,9 @@ const Checkout = () => {
     const [address, setaddress] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [isloading, setisloading] = useState(false)
+
+
 
     // Fetch Cart Data
     useEffect(() => {
@@ -76,7 +80,7 @@ const Checkout = () => {
             console.log(cart)
             let cashfree;
             console.log(address)
-
+            setisloading(true);
             cashfree = await load({
                 mode: "sandbox"
             });
@@ -95,7 +99,6 @@ const Checkout = () => {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     },
-                    withCredentials : true,
                 }
             );
 
@@ -119,6 +122,7 @@ const Checkout = () => {
             //     redirectTarget: "_self",
             // };
             // cashfree.checkout(checkoutOptions);
+            setisloading(false)
 
         } catch (error) {
             if (error.response) {
@@ -378,8 +382,8 @@ const Checkout = () => {
                         </div>
 
                         {/* Pay Now Button */}
-                        <button onClick={() => { handleSubmit()}} className="w-full mt-6 bg-black text-white py-4 rounded-lg font-semibold hover:opacity-90 transition">
-                            Pay now
+                        <button onClick={() => { handleSubmit() }} disabled={loading} className="w-full mt-6 bg-black text-white py-4 rounded-lg font-semibold hover:opacity-90 transition">
+                            {loading ? (loader(14, "white")) : ("Pay Now")}
                         </button>
                     </form>
 

@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { API_BASE_URL } from "../api";
-
+import { loader } from "../Utils/loarder";
 
 const SortProduct = ({ ProductSubcategory }) => {
   const { category } = useParams();
@@ -110,7 +110,7 @@ const SortProduct = ({ ProductSubcategory }) => {
     "Price, high to low",
   ];
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <div className="h-[30vh] flex justify-center items-center">{loader(60)}</div>;
   if (isError) return <p>Error loading products</p>;
 
   const finalProducts = myProduct.length ? myProduct : categoryProducts;

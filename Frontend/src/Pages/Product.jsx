@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useQuickView } from '../context/PopupContext';
 import { API_BASE_URL } from '../api';
+import { loader } from '../Utils/loarder';
 
 const ProductPage = () => {
     const { openCart } = useQuickView();
@@ -16,6 +17,8 @@ const ProductPage = () => {
         details: true,
         instruction: true,
     })
+
+    const [loading, setloading] = useState(false)
 
     // const [AddToCart, setAddToCart] = useState();
 
@@ -83,7 +86,7 @@ const ProductPage = () => {
     const cartData = async () => {
         try {
             const token = localStorage.getItem("refreshToken");
-
+            setloading(true)
             const res = await axios.post(
                 `${API_BASE_URL}/api/v1/cart`,
                 {
@@ -92,6 +95,9 @@ const ProductPage = () => {
                     image: img,
                     price: product.price,
                     quantity: qty,
+                    size: product.details.sizeIN,
+                    materail: product.details.frameMaterial,
+                    description: product.description
                 },
                 {
                     headers: {
@@ -99,8 +105,12 @@ const ProductPage = () => {
                     },
                 }
             );
-
-            openCart();
+            console.log(res.data.data)
+            let user = res.data.data.user
+            if (user) {
+                openCart();
+                setloading(false)
+            }
         } catch (error) {
             console.log("Error in cart", error.response?.data || error.message);
         }
@@ -250,11 +260,16 @@ const ProductPage = () => {
 
                     <div className='flex justify-between gap-2'>
                         <button className='px-6 text-center bg-black py-3 text-white uppercase font-bold text-[14px] w-full cursor-pointer'
+                            disabled={loading}
                             onClick={() => {
                                 userActivity();
                                 cartData();
-                            }} >Add to Cart</button>
-                        <button className='px-6 text-center hover:bg-black bg-[#0db269] py-3 text-white uppercase font-bold text-[14px] w-full transition-all duration-300 cursor-pointer' >Buy it Now</button>
+                                setloading(!loading);
+                            }} >{loading ? (loader(14, "white")) : ("Add to Cart")}</button>
+                        <button className='px-6 text-center hover:bg-black bg-[#0db269] py-3 text-white uppercase font-bold text-[14px] w-full transition-all duration-300 cursor-pointer'
+                            onClick={() => {
+
+                            }} >Buy it Now</button>
                     </div>
 
                     <div className='text-left my-10 font-medium '>

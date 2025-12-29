@@ -39,7 +39,6 @@ const Home = () => {
           headers: {
             "Authorization": `Bearer ${token}`
           },
-          withCredentials : true
         })
         setrecommended(res.data.data.map(item => item))
 

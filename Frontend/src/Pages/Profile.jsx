@@ -6,6 +6,7 @@ import axios from "axios"
 import { Link } from "react-router-dom";
 import Cart2 from "../assets/Icons/cart2.svg"
 import { API_BASE_URL } from "../api";
+import { loader } from "../Utils/loarder";
 
 
 const Profile = () => {
@@ -63,12 +64,8 @@ const Profile = () => {
 
 
   if (loading) return <div>
-    <div className="flex justify-center items-center">
-      <TailChase
-        size="40"
-        speed="1.75"
-        color="black"
-      />
+    <div className="flex justify-center items-center h-[70vh]">
+      {loader()}
     </div>
   </div>;
   if (error) return <p className="flex justify-center items-center w-full h-[70vh]" style={{ color: "red" }}>{error}</p>;
