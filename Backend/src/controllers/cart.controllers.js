@@ -24,7 +24,7 @@ const CartData = asyncHandler(async (req, res) => {
         }
 
 
-        const cart = await Cart.findOne({ user: userId })
+        let cart = await Cart.findOne({ user: userId })
 
         if (!cart) {
             cart = await Cart.create({

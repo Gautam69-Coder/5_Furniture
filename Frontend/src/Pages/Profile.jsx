@@ -1,10 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { TailChase } from 'ldrs/react'
 import { useState, useEffect } from "react";
 import 'ldrs/react/TailChase.css'
 import axios from "axios"
 import { Link } from "react-router-dom";
-import Cart2 from "../assets/Icons/cart2.svg"
 import { API_BASE_URL } from "../api";
 import { loader } from "../Utils/loarder";
 
