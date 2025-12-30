@@ -3,12 +3,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../api";
 import jsPDF from "jspdf";
+import { Steps } from 'antd';
+
 
 
 const OrderDetails = () => {
     const [order, setOrder] = useState(null);
     const [orderTime, setOrderTime] = useState("");
     const { orderId } = useParams();
+    const [count, setcount] = useState(0);
 
     useEffect(() => {
         const fetchOrders = async () => {
@@ -31,52 +34,175 @@ const OrderDetails = () => {
     }, [orderId]);
 
     const downloadInvoice = () => {
-        const doc = new jsPDF();
-        let y = 20;
+        const doc = new jsPDF("p", "mm", "a4");
+        let y = 15;
 
+        /* ===== BRAND CIRCLE (LOGO PLACEHOLDER) ===== */
+        doc.setFillColor(34, 197, 94); // green
+        doc.circle(20, y, 8, "F");
+        doc.setTextColor(255);
+        doc.setFontSize(14);
+        doc.setFont("helvetica", "bold");
+        doc.text("H", 17, y + 5);
+
+        doc.setTextColor(0);
+
+        /* ===== SELLER INFO ===== */
+        doc.setFontSize(11);
+        doc.setFont("helvetica", "bold");
+        doc.text("FreeDom Tree", 140, y - 4);
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9);
+        doc.text(
+            `GSTIN: 27ABCDE1234F1Z5
+            support@freedomtree.com
+            +91 98765 43210`,
+            140,
+            y + 2
+        );
+
+        /* ===== INVOICE TITLE ===== */
         doc.setFontSize(16);
-        doc.text("INVOICE", 105, y, { align: "center" });
-        y += 10;
+        doc.setFont("helvetica", "bold");
+        doc.text("INVOICE", 105, y + 18, { align: "center" });
+
+        y += 30;
+
+        /* ===== BILL TO / INVOICE META ===== */
+        const addr = order?.user_address[0];
 
         doc.setFontSize(10);
-        doc.text(`Order ID: ${order?.status[0]?.cashfreeOrderId}`, 14, y);
-        y += 6;
-        doc.text(`Order Date: ${orderTime?.slice(0, 10)}`, 14, y);
-        y += 10;
+        doc.setFont("helvetica", "bold");
+        doc.text("Bill To", 14, y);
 
-        doc.text("Billing Address:", 14, y);
-        y += 6;
-
-        const addr = order?.user_address[0];
+        doc.setFont("helvetica", "normal");
         doc.text(
             `${addr.firstName} ${addr.lastName}
 ${addr.address}
 ${addr.city}, ${addr.state} - ${addr.pin}
-Phone: ${addr.phone}`,
+${addr.phone}`,
             14,
-            y
+            y + 6
         );
 
-        y += 25;
-        doc.text("Products:", 14, y);
-        y += 6;
+        doc.setFont("helvetica", "bold");
+        doc.text("Invoice #", 140, y);
+        doc.setFont("helvetica", "normal");
+        doc.text(order?.status[0]?.cashfreeOrderId, 140, y + 6);
 
-        order?.items?.forEach((item, i) => {
-            doc.text(
-                `${i + 1}. ${item.item_name} | Qty: ${item.item_quantity} | ₹${item.item_original_unit_price}`,
-                14,
-                y
-            );
-            y += 6;
-        });
+        y += 30;
+
+        /* ===== GREEN INFO BAR ===== */
+        doc.setFillColor(34, 197, 94);
+        doc.rect(14, y, 182, 8, "F");
+
+        doc.setTextColor(255);
+        doc.setFontSize(9);
+        doc.text("Invoice Date", 18, y + 5);
+        doc.text("Payment Method", 80, y + 5);
+        doc.text("Due Date", 150, y + 5);
+
+        doc.setTextColor(0);
+        y += 12;
+
+        doc.text(orderTime?.slice(0, 10), 18, y);
+        doc.text("Online", 80, y);
+        doc.text(orderTime?.slice(0, 10), 150, y);
 
         y += 10;
-        doc.text(`Total Amount: ₹ ${order?.status[0]?.totalAmount}`, 14, y);
-        y += 6;
-        doc.text(`Payment Status: ${order?.status[0]?.paymentStatus}`, 14, y);
+
+        /* ===== TABLE HEADER ===== */
+        doc.setFillColor(240, 253, 244);
+        doc.rect(14, y, 182, 8, "F");
+
+        doc.setFont("helvetica", "bold");
+        doc.text("#", 16, y + 5);
+        doc.text("Item & Description", 30, y + 5);
+        doc.text("Qty", 120, y + 5);
+        doc.text("Rate", 145, y + 5);
+        doc.text("Amount", 170, y + 5);
+
+        y += 12;
+        doc.setFont("helvetica", "normal");
+
+        let subtotal = 0;
+
+        order?.items?.forEach((item, i) => {
+            const total = item.item_quantity * item.item_original_unit_price;
+            subtotal += total;
+
+            doc.text(String(i + 1), 16, y);
+            doc.text(item.item_name, 30, y, { maxWidth: 80 });
+            doc.text(String(item.item_quantity), 122, y);
+            doc.text(`₹${item.item_original_unit_price}`, 145, y);
+            doc.text(`₹${total}`, 170, y);
+
+            y += 8;
+        });
+
+        /* ===== TOTAL BOX ===== */
+        const gst = subtotal * 0.18;
+        const grandTotal = subtotal + gst;
+
+        y += 8;
+        doc.setFillColor(245, 245, 245);
+        doc.rect(120, y, 76, 30, "F");
+
+        doc.text("Sub Total", 125, y + 7);
+        doc.text(`₹${subtotal.toFixed(2)}`, 190, y + 7, { align: "right" });
+
+        doc.text("Tax (18%)", 125, y + 14);
+        doc.text(`₹${gst.toFixed(2)}`, 190, y + 14, { align: "right" });
+
+        doc.setFont("helvetica", "bold");
+        doc.text("Total", 125, y + 22);
+        doc.text(`₹${grandTotal.toFixed(2)}`, 190, y + 22, { align: "right" });
+
+        /* ===== FOOTER ===== */
+        y += 45;
+        doc.setFontSize(9);
+        doc.setFont("helvetica", "normal");
+        doc.text("Thanks for your business.", 14, y);
+
+        doc.text(
+            "This is a computer-generated invoice and does not require a signature.",
+            105,
+            y + 10,
+            { align: "center" }
+        );
 
         doc.save(`Invoice_${order?.status[0]?.cashfreeOrderId}.pdf`);
     };
+
+
+    const content = 'This is a content';
+    const items = [
+        {
+            title: 'Processing',
+            content,
+        },
+        {
+            title: 'Shipped',
+            content,
+        },
+        {
+            title: 'Delivered',
+            content,
+        },
+    ];
+
+
+    const handleTimeOut = () => {
+        setTimeout(() => {
+            setcount(count + 1);
+        }, 6000);
+    }
+
+    useEffect(() => {
+        handleTimeOut()
+    }, [count])
+
 
 
 
@@ -157,12 +283,17 @@ Phone: ${addr.phone}`,
                         </div>
 
                         <div className="mt-8">
-                            <h2 className="text-sm uppercase text-gray-500 mb-4">
-                                Order Status
-                            </h2>
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-sm uppercase text-gray-500 mb-4">
+                                    Order Status
+                                </h2>
+                                <h2 className="text-sm uppercase text-gray-500 mb-4">
+                                    Payment Status
+                                </h2>
+                            </div>
 
                             {order?.status?.map((step, i) => (
-                                <div key={i} className="flex gap-8 mb-2">
+                                <div key={i} className="flex justify-between gap-8 mb-2">
                                     <div className="flex items-center gap-2">
                                         <div className={`w-3 h-3 rounded-full ${step.orderStatus !== "processing" ? "bg-green-600" : "bg-gray-300"}`} />
                                         <p className="text-sm">
@@ -185,13 +316,10 @@ Phone: ${addr.phone}`,
                                 Delivery Timeline
                             </h2>
 
-                            <div className="space-y-3">
-                                <p className="text-sm">Order Placed – {orderTime?.slice(0, 10)}</p>
-                                <p className="text-sm">Processing</p>
-                                <p className="text-sm text-gray-400">Shipped</p>
-                                <p className="text-sm text-gray-400">Delivered</p>
-                            </div>
+
                         </div>
+
+                        <Steps current={count} status="error" items={items} />
 
                     </div>
 

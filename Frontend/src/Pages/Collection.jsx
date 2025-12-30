@@ -2,10 +2,14 @@ import { useEffect, useState } from 'react';
 import Filter from '../components/Filter';
 import { motion } from 'motion/react';
 import SortProduct from '../components/SortProduct';
-
+import { useQuickView } from '../context/PopupContext';
 const Collection = () => {
 
+
+    const {filter,setfilter}= useQuickView();
+
     const [filterChange, setfilterChange] = useState([])
+
 
     return (
         <motion.div
@@ -85,7 +89,7 @@ const Collection = () => {
                 </div>
 
                 <div>
-                    <SortProduct ProductSubcategory={filterChange} />
+                    <SortProduct ProductSubcategory={filter} />
                 </div>
 
             </div>

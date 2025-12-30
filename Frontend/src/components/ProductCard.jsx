@@ -11,6 +11,7 @@ const ProductCard = ({ link, item }) => {
 
     // console.log(item)
 
+    // Send Add to cart pro to
     const cartData = async () => {
         try {
             const token = localStorage.getItem("refreshToken");
@@ -20,9 +21,9 @@ const ProductCard = ({ link, item }) => {
                 {
                     productId: item._id,
                     name: item.name,
-                    image: item.images[0],
+                    image: img,
                     price: item.price,
-                    quantity: 1,
+                    quantity: qty,
                     size: item.details.sizeIN,
                     materail: item.details.frameMaterial,
                     description: item.description
@@ -33,7 +34,7 @@ const ProductCard = ({ link, item }) => {
                     },
                 }
             );
-
+            console.log(res.data.data)
             let user = res.data.data.user
             if (user) {
                 openCart();
@@ -64,11 +65,11 @@ const ProductCard = ({ link, item }) => {
                             Quick View
                         </div>
 
-                        <button className={`px-3 py-2 text-white bg-black `} 
+                        <button className={`px-3 py-2 text-white bg-black `}
                             onClick={() => {
                                 cartData();
                                 openCart();
-                                 setloading(!loading);
+                                setloading(!loading);
                             }}
                             disabled={loading}
                         >{loading ? (loader(14, "white")) : ("Add to Cart")}</button>

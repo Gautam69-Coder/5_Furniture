@@ -9,7 +9,7 @@ import { useQuickView } from '../context/PopupContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { openCart, openLogin, closeLogin, setisSearch ,isSearch } = useQuickView();
+  const { openCart, openLogin, closeLogin, setisSearch, isSearch } = useQuickView();
 
   const [Islogin, setIslogin] = useState(false);
   const [cartDrawer, setcartDrawer] = useState(false);
@@ -51,8 +51,8 @@ const Navbar = () => {
         </motion.span>
         <motion.span className='text-center flex justify-center relative'
           initial={{ x: 500, opacity: 0 }}
-          animate={{ x: 0, opacity: 1  }}
-          transition={{ duration: 2, delay: 3, ease: "easeInOut" }} 
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 2, delay: 3, ease: "easeInOut" }}
         >
           <span className='text-white text-[13px] leading-[23px] font-bold'>Thoughtful designs and joyful finds for every occasion - </span>
           <span className='text-white text-[13px] leading-[23px] font-normal underline'>Discovery freedom tree-Nest</span>
@@ -62,24 +62,38 @@ const Navbar = () => {
       <div className=''>
         <div className='px-[20px]  md:px-8'>
           <div className='flex justify-between items-center h-[62px] mb-4'>
-            <div className='md:hidden cursor-pointer' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path>
-              </svg>
+            <div className='flex sm:hidden items-center gap-2'>
+              <div className='md:hidden cursor-pointer' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                <div className='flex items-center gap-2'>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path>
+                  </svg>
+                </div>
+              </div>
+              <div className='block sm:hidden '
+                onClick={() => {
+                  console.log("hello");
+                  setisSearch(true);
+                  console.log(isSearch)
+                }}>
+                <svg width="30" height="30" className='' xmlns="http://www.w3.org/2000/svg"><path d="M19.427 20.427a8.5 8.5 0 111.083-.917l5.998 5.998a.699.699 0 01-.008.992.7.7 0 01-.992.008l-6.08-6.08zM14.5 21a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" fill="#000" fill-rule="evenodd" /></svg>
+              </div>
             </div>
+
 
             <div className='hidden md:flex border h-[30px] cursor-pointer'>
               <input type="text" placeholder='Search our Store '
                 onChange={(e) => console.log("User typed:", e.target.value)}
-                onClick={()=>{
+                onClick={() => {
                   console.log("hello");
                   setisSearch(true);
                   console.log(isSearch)
                 }}
                 className='focus:outline-none px-3 py-2 text-[17px] w-full' />
-              <svg width="30" height="30" className='mx-3' xmlns="http://www.w3.org/2000/svg"><path d="M19.427 20.427a8.5 8.5 0 111.083-.917l5.998 5.998a.699.699 0 01-.008.992.7.7 0 01-.992.008l-6.08-6.08zM14.5 21a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" fill="#000" fill-rule="evenodd"/></svg>
+              <svg width="30" height="30" className='mx-3' xmlns="http://www.w3.org/2000/svg"><path d="M19.427 20.427a8.5 8.5 0 111.083-.917l5.998 5.998a.699.699 0 01-.008.992.7.7 0 01-.992.008l-6.08-6.08zM14.5 21a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" fill="#000" fill-rule="evenodd" /></svg>
 
             </div>
+
 
             <div className='md:ml-20 cursor-pointer'>
               <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924191/freedomtree_phpfqw.avif" alt="" className='w-[150px] md:w-[220px]'
@@ -163,12 +177,6 @@ const Navbar = () => {
           >
             <div className='flex justify-end'>
               <button onClick={() => setIsMobileMenuOpen(false)} className='text-2xl'>&times;</button>
-            </div>
-
-            <div className='flex border h-20 cursor-pointer mb-4'>
-              <input type="text" placeholder='Search our Store '
-                className='focus:outline-none px-3 py-2 text-[17px] w-full' />
-              <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766928748/search_kiulai.svg" alt="" width={25} className='mx-3' />
             </div>
 
             <ul className="flex flex-col gap-2 text-[16px] font-medium text-black border-b pb-4 mb-4">

@@ -6,12 +6,16 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { API_BASE_URL } from "../api";
 import { loader } from "../Utils/loarder";
+import { useQuickView } from "../context/PopupContext";
 
 const SortProduct = ({ ProductSubcategory }) => {
   const { category } = useParams();
   const hasRun = useRef(false);
+  const { sort, setsort, filter, setfilter } = useQuickView();
+
 
   useEffect(() => {
+
 
     const userActivity = async (req, res) => {
       try {
@@ -50,8 +54,9 @@ const SortProduct = ({ ProductSubcategory }) => {
   });
 
   const categoryProducts = products.filter((item) =>
-    item.category.includes(category)
+    item.category === category && item.subCategory.includes(filter)
   );
+
 
   useEffect(() => {
     const sub = ProductSubcategory?.map((item) => item.toLowerCase());

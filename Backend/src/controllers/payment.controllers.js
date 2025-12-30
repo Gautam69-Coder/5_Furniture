@@ -63,8 +63,8 @@ const CheckOut = asyncHandler(async (req, res) => {
             customer_name: customer_name
         },
         order_meta: {
-            return_url: "https://5-furniture.pages.dev/payment-status"
-            // return_url: "http://localhost:5173/payment-status"
+            // return_url: "https://5-furniture.pages.dev/payment-status"
+            return_url: "http://localhost:5173/payment-status"
         },
         cart_details: {
             cart_items: cart.map(item => ({
@@ -88,6 +88,37 @@ const CheckOut = asyncHandler(async (req, res) => {
     try {
         const response = await cashfree.PGCreateOrder(request);
         data = response.data;
+        const order = await Order.findOne({ userId });
+
+        const orderPayload = {
+            items: cartItems,
+            user_address: address,
+            status: [{
+                totalAmount,
+                paymentStatus: "PENDING",
+                orderStatus: "processing",
+                cashfreeOrderId: data.order_id
+            }]
+        };
+
+        if (!order) {
+            await Order.create({
+                userId,
+                order_details: [orderPayload]
+            });
+        } else {
+            order.order_details.push(orderPayload);
+            await order.save();
+        }
+
+        if (address?.phone) {
+            await User.findOneAndUpdate(
+                { _id: userId },
+                { phoneNumber: address.phone },
+                { new: true }
+            );
+        }
+
     } catch (err) {
         console.log(err.response?.data || err.message);
         throw new ApiError(502, "Cashfree order creation failed");
@@ -97,37 +128,7 @@ const CheckOut = asyncHandler(async (req, res) => {
         throw new ApiError(500, "Invalid Cashfree response");
     }
 
-    const order = await Order.findOne({ userId });
 
-    const orderPayload = {
-        items: cartItems,
-        user_address: address,
-        status: [{
-            totalAmount,
-            paymentStatus: "PENDING",
-            orderStatus: "processing",
-            cashfreeOrderId: data.order_id
-        }]
-    };
-
-    if (!order) {
-        await Order.create({
-            userId,
-            order_details: [orderPayload]
-        });
-    } else {
-        order.order_details.push(orderPayload);
-        await order.save();
-    }
-
-    if (address?.phone) {
-        await User.findOneAndUpdate(
-            { _id: userId },
-            { phoneNumber: address.phone },
-            { new: true }
-        );
-    }
-    
 
     res.status(200).json(
         new ApiResponse(200, data, "Payment session created")

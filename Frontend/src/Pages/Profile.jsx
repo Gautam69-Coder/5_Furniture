@@ -70,8 +70,16 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa] sm:py-10 ">
+        <div className='flex gap-1 text-[13.45px] text-left mx-10 mb-5'>
+          <Link to={"/"}>
+            <p className='text-[#0db269] '>Home</p>
+          </Link>
+          <Link to={`/profile`} className='flex gap-1'>
+            <p className='text-[#e8e8e1]'>/</p>
+            <p className='text-[#0db269] '> Profile</p>
+          </Link>
+        </div>
       <div className="max-w-6xl mx-auto px-6">
-
         <div className="mb-10">
           <p className="text-sm text-gray-500">My Account</p>
           <h1 className="text-2xl font-light tracking-wide text-gray-900">
@@ -183,7 +191,7 @@ const Profile = () => {
 
                           </p>
                         )}
-                        <hr className="mt-6 text-neutral-400"/>
+                        <hr className="mt-6 text-neutral-400" />
                       </div>
 
                     ))}

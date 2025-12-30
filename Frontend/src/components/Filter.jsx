@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 import { API_BASE_URL } from '../api';
+import { useQuickView } from '../context/PopupContext';
+import { Link } from 'react-router-dom';
 
 
 const Practice = ({ onFilterChange }) => {
@@ -28,6 +30,9 @@ const Practice = ({ onFilterChange }) => {
     const [material, setmaterial] = useState([]);
     const [size, setsize] = useState([]);
     const [price, setprice] = useState([]);
+
+
+    const { setfilter, filter } = useQuickView();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -100,16 +105,23 @@ const Practice = ({ onFilterChange }) => {
 
     useEffect(() => {
         onFilterChange(okcategory);
+        setfilter(okcategory)
     }, [okcategory]);
+
+    console.log(window.location.pathname)
 
     return (
         <div className="sm:sticky top-0  ">
             {/* Filter */}
             <div className='my-2.5'>
                 <div className='flex gap-1 text-[13.45px] text-left'>
-                    <p className='text-[#0db269] '>Home</p>
-                    <p className='text-[#e8e8e1]'>/</p>
-                    <p className='text-[#0db269] '> Furniture</p>
+                    <Link to={"/"}>
+                        <p className='text-[#0db269] '>Home</p>
+                    </Link>
+                    <Link to={`/collections/${category}`} className='flex gap-1'>
+                        <p className='text-[#e8e8e1]'>/</p>
+                        <p className='text-[#0db269] '> {category?.charAt(0).toUpperCase() + category?.slice(1).toLowerCase()}</p>
+                    </Link>
                 </div>
 
                 <div>
@@ -120,7 +132,7 @@ const Practice = ({ onFilterChange }) => {
             </div>
             <div className="w-[220px] border-t border-r h-[80vh] overflow-y-scroll custom-scroll">
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsCategoryOpen(!isCategoryOpen)}
                         className="w-full px-2 flex justify-between items-center"
@@ -143,7 +155,7 @@ const Practice = ({ onFilterChange }) => {
                     ))
                 }
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsProductOpen(!isProductOpen)}
                         className="w-full px-2 flex justify-between items-center"
@@ -161,7 +173,7 @@ const Practice = ({ onFilterChange }) => {
                     ))
                 }
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsColorOpen(!isColorOpen)}
                         className="w-full px-2 flex justify-between items-center"
@@ -179,7 +191,7 @@ const Practice = ({ onFilterChange }) => {
                     ))
                 }
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsStyleOpen(!isStyleOpen)}
                         className="w-full px-2 flex justify-between items-center"
@@ -197,7 +209,7 @@ const Practice = ({ onFilterChange }) => {
                     ))
                 }
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsCollectionOpen(!isCollectionOpen)}
                         className="w-full px-2 flex justify-between items-center"
@@ -215,7 +227,7 @@ const Practice = ({ onFilterChange }) => {
                     ))
                 }
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsMaterialOpen(!isMaterialOpen)}
                         className="w-full px-2 flex justify-between items-center"
@@ -233,7 +245,7 @@ const Practice = ({ onFilterChange }) => {
                     ))
                 }
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsSizeOpen(!isSizeOpen)}
                         className="w-full px-2 flex justify-between items-center"
@@ -251,7 +263,7 @@ const Practice = ({ onFilterChange }) => {
                     ))
                 }
 
-                <div className="border-t-2 border-[#e8e8e1] py-[18px]">
+                <div className="border-t-2 border-[#e8e8e1] py-4.5">
                     <button
                         onClick={() => setIsPriceOpen(!isPriceOpen)}
                         className="w-full px-2 flex justify-between items-center"

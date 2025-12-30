@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useQuickView } from '../context/PopupContext';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
+import { Link } from 'react-router-dom';
 
 const ProductPage = () => {
     const { openCart } = useQuickView();
@@ -155,15 +156,19 @@ const ProductPage = () => {
                 delay: 0.5,
             }} className="p-6 sm:pt-5 pt-2 sm:px-[60px] px-5">
 
-            {/* <div className='flex justify-start'>
-                <p className='text-[11px] leading-[18px]  font-normal flex gap-1 '>
-                    <Link className='text-[#0db269]' to={"/"}>Home</Link>
-                    /
-                    <Link className='text-[#0db269]' to={`/collections/${product.category}`}>{product.category}</Link>
-                    /
-                    <Link>{product.name}</Link>
-                </p>
-            </div> */}
+            <div className='flex gap-1 text-[13.45px] text-left'>
+                <Link to={"/"}>
+                    <p className='text-[#0db269] '>Home</p>
+                </Link>
+                <Link to={`/collections/${product.category}`} className='flex gap-1'>
+                    <p className='text-[#e8e8e1]'>/</p>
+                    <p className='text-[#0db269] '> {product.category?.charAt(0).toUpperCase() + product.category?.slice(1).toLowerCase()}</p>
+                </Link>
+                <Link to={`/collections/${product.category}/products/${id}`} className='flex gap-1'>
+                    <p className='text-[#e8e8e1]'>/</p>
+                    <p className='text-[#0db269] '> {product.name}</p>
+                </Link>
+            </div>
 
             <div className='grid grid-cols-1 sm:grid-cols-5 w-full'>
 

@@ -69,7 +69,7 @@ const Search = () => {
             transition={{ duration: 0.25 }}
 
         >
-            <div className="m-4 h-[70vh] flex flex-col">
+            <div className="m-4 h-[68vh] flex flex-col">
 
                 <div className="flex items-center gap-4 mb-4">
                     <input
@@ -87,7 +87,7 @@ const Search = () => {
                     />
                 </div>
 
-                <div className="flex-1 overflow-y-auto overflow-x-hidden space-y-3 pr-1">
+                <div className="flex-1 overflow-y-auto overflow-x-hidden shadow-md py-4 space-y-3 pr-1">
                     {filtered.length === 0 && (
                         <p className="text-center text-gray-500 mt-10">
                             No products found

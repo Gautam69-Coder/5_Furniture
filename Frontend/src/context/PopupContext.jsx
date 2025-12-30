@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios"
-import { useEffect } from "react";
 export const PopupContext = createContext();
 
 export const PopupProvider = ({ children }) => {
@@ -22,6 +21,10 @@ export const PopupProvider = ({ children }) => {
 
   //Search
   const [isSearch, setisSearch] = useState(false);
+  
+  //Sorting and Filtering Products
+  const [sort, setsort] = useState([])
+  const [filter, setfilter] = useState([])
 
   const openQuickView = (productData) => {
     setProduct(productData);
@@ -80,7 +83,11 @@ export const PopupProvider = ({ children }) => {
 
       increaseQty, decreaseQty, quantity,
 
-      isSearch,setisSearch
+      isSearch,setisSearch,
+
+      setsort , sort,
+
+      filter ,setfilter
     }}>
       {children}
     </PopupContext.Provider>
