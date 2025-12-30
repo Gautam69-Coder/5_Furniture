@@ -22,6 +22,7 @@ const ProductPage = () => {
 
     // const [AddToCart, setAddToCart] = useState();
 
+    //Get Prodata
     useEffect(() => {
         const fetchdata = async () => {
             try {
@@ -30,7 +31,6 @@ const ProductPage = () => {
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
                 // console.log(productk.images[0])
-                setimg(productk.images[0])
             } catch (error) {
                 console.error("Error fetching product:", error);
             }
@@ -42,6 +42,7 @@ const ProductPage = () => {
 
     const hasRun = useRef(false);
 
+    // Track User view pro
     useEffect(() => {
         if (hasRun.current) return;
         hasRun.current = true;
@@ -84,6 +85,7 @@ const ProductPage = () => {
         }
     }
 
+    // Send Add to cart pro to
     const cartData = async () => {
         try {
             const token = localStorage.getItem("refreshToken");
@@ -167,25 +169,39 @@ const ProductPage = () => {
 
                 {/* Image part */}
                 <div className='sm:flex gap-4 my-4 sm:mr-[22px]  col-span-2'>
-                    <div className='sm:flex sm:flex-col  gap-[15px] h-[600px] sm:overflow-y-auto hide-scrollbar mb-2  hidden '>
-                        <img src={product?.images}
-                            className='object-center sm:w-22 sm:h-30 h-30 w-20 bg-black hover:border-black hover:border-2  ' alt=""
-                            onClick={() => {
-                                setimg(product?.images)
-                            }}
+                    <div className="sm:flex sm:flex-col gap-[15px] h-[600px] sm:overflow-y-auto hide-scrollbar mb-2 hidden">
 
-                        />
+                        {/* Main image */}
+                        <label className="cursor-pointer">
+                            <input type="radio" name="productImg" className="peer hidden" />
+
+                            <img
+                                src={product?.images}
+                                className="object-center sm:w-22 sm:h-30 h-30 w-20 border-2 border-transparent peer-checked:border-black"
+                                alt=""
+                                onClick={() => setimg(product?.images)}
+                            />
+                        </label>
+
+                        {/* Gallery images */}
                         {product?.gallery?.map((item, index) => (
-                            <div key={index}>
-                                <img src={item || "Hello"}
-                                    className='object-center sm:w-22 sm:h-30 h-30 w-20  bg-black hover:border-black hover:border-2' alt=""
+                            <label key={index} className="cursor-pointer">
+                                <input type="radio" name="productImg" className="peer hidden" />
+
+                                <img
+                                    src={item}
+                                    className="object-center sm:w-22 sm:h-30 h-30 w-20 border-2 border-transparent peer-checked:border-black"
+                                    alt=""
+
                                     onClick={() => {
                                         setimg(item)
+                                        console.log(img)
                                     }}
                                 />
-                            </div>
+                            </label>
                         ))}
                     </div>
+
                     <div className="overflow-hidden sm:w-[450px] sm:h-[600px] w-auto h-[400px] ">
                         <img
                             src={img || product?.images}
@@ -194,23 +210,45 @@ const ProductPage = () => {
                             onClick={() => setzoom(!zoom)}
                         />
                     </div>
+
+                    {/* Mobile section */}
                     <div className="flex gap-[15px] mt-2 overflow-x-auto whitespace-nowrap w-full sm:hidden hide-scrollbar">
 
-                        <img
-                            src={product?.images}
-                            className="h-30 w-20 shrink-0 object-center bg-black hover:border-black hover:border-2"
-                            onClick={() => setimg(product?.images)}
-                        />
+                        {/* Main image */}
+                        <label className="cursor-pointer shrink-0">
+                            <input type="radio" name="mobileImg" className="peer hidden" />
 
-                        {product?.gallery?.map((item, index) => (
                             <img
-                                key={index}
-                                src={item}
-                                className="h-30 w-20 shrink-0 object-center bg-black hover:border-black hover:border-2"
-                                onClick={() => setimg(item)}
+                                src={product?.images}
+                                className="
+        h-30 w-20 object-center bg-black
+        border-2 border-transparent
+        peer-checked:border-black
+      "
+                                onClick={() => setimg(product?.images)}
+                                alt=""
                             />
+                        </label>
+
+                        {/* Gallery images */}
+                        {product?.gallery?.map((item, index) => (
+                            <label key={index} className="cursor-pointer shrink-0">
+                                <input type="radio" name="mobileImg" className="peer hidden" />
+
+                                <img
+                                    src={item}
+                                    className="
+          h-30 w-20 object-center bg-black
+          border-2 border-transparent
+          peer-checked:border-black
+        "
+                                    onClick={() => setimg(item)}
+                                    alt=""
+                                />
+                            </label>
                         ))}
                     </div>
+
 
                 </div>
 
@@ -238,14 +276,29 @@ const ProductPage = () => {
                         <p className='uppercase mb-2 sm:text-[14px] text-[14px]'>Pick suggest colors - Fabric selected Seprately </p>
                         <div className='flex gap-2'>
                             {product?.gallery?.map((item, index) => (
-                                <div key={index} className='border-gray-300 overflow-hidden focus:border-black border-2   hover:border-black rounded-full w-10 h-10 flex justify-center items-center'>
-                                    <img src={item} alt={item}
-                                        className='w-10 h-10 rounded-full scale-2000 p-2 object-center'
-                                        onClick={() => {
-                                            setimg(item)
-                                        }}
-                                    />
+                                <div key={index}>
+                                    <label className="cursor-pointer">
+                                        <input
+                                            type="radio"
+                                            name="productImg"
+                                            className="peer hidden"
+                                        />
+
+                                        <div
+                                            className="w-10 h-10 rounded-full overflow-hidden flex justify-center items-center border-2 border-transparent peer-checked:border-black "
+                                        >
+                                            <img
+                                                src={item}
+                                                className="w-10 h-10 scale-1000 rounded-full object-cover"
+                                                alt=""
+                                                onClick={() => {
+                                                    setimg(item)
+                                                }}
+                                            />
+                                        </div>
+                                    </label>
                                 </div>
+
                             ))}
                         </div>
                     </div>
