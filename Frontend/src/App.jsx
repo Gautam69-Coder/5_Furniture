@@ -15,6 +15,7 @@ import CartDrawer from "./components/CartDrawer";
 import Checkout from "./Pages/Checkout";
 import PaymentStatus from "./Pages/PaymentStatus"
 import OrderDetails from "./Pages/Order";
+import EditProfile from "./Pages/EditProfile.jsx";
 
 // Admin Imports
 import DashboardLayout from "./Admin/AdminLayouts/DashboardLayout.jsx";
@@ -46,6 +47,7 @@ const App = () => {
             <Route path='/' element={<PageWrapper><Home /></PageWrapper>} />
             <Route path='/login' element={<PageWrapper><Login /></PageWrapper>} />
             <Route path='/profile' element={<PageWrapper><Profile /></PageWrapper>} />
+            <Route path='/profile/edit' element={<PageWrapper><EditProfile /></PageWrapper>} />
             <Route path='/practice' element={<PageWrapper><Practice /></PageWrapper>} />
             <Route path='/p' element={<PageWrapper><CartDrawer /></PageWrapper>} />
 

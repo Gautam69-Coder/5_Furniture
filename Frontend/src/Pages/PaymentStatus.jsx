@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../api";
-
+import { Button, Result } from 'antd';
+import { loader } from "../Utils/loarder";
 const PaymentStatus = () => {
     const [status, setStatus] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ const PaymentStatus = () => {
                 const res = await axios.get(`${API_BASE_URL}/api/v1/status/${orderId}`);
                 setStatus(res.data.data);
                 console.log(res.data.data);
-                // navigate("/")
+                navigate("/")
             } catch (err) {
                 console.error(err);
                 setError("Failed to fetch order status");
@@ -59,12 +60,22 @@ const PaymentStatus = () => {
     }, [])
 
 
-    if (loading) return <p>Loading payment status...</p>;
+    if (loading) return <p className="h-[70vh] flex items-center justify-center">{loader}</p>;
     if (error) return <p className="text-red-500">{error}</p>;
 
     return (
-        <div className="p-8">
-
+        <div className="p-8 flex justify-center items-center h-[80vh]">
+            <Result
+                status="success"
+                title="Successfully Purchased Cloud Server ECS!"
+                subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
+                extra={[
+                    <Button type="primary" key="console" onClick={()=>{navigate("/")}}>
+                        Home
+                    </Button>,
+                    <Button key="buy" onClick={()=>{navigate("/collections/furniture")}} >Buy Again</Button>,
+                ]}
+            />
         </div>
     );
 };

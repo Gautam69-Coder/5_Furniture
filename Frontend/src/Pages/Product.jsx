@@ -31,14 +31,14 @@ const ProductPage = () => {
                 const products = res.data.data;
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
-                // console.log(productk.images[0])
+                setimg(img ||productk.images[0])
             } catch (error) {
                 console.error("Error fetching product:", error);
             }
         };
 
         fetchdata();
-    }, [id]);
+    }, [id,img]);
 
 
     const hasRun = useRef(false);

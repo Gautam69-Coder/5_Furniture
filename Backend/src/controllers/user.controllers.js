@@ -4,6 +4,7 @@ import { User } from '../models/user.model.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import twilio from 'twilio'
 import jwt from 'jsonwebtoken'
+import { Address } from '../models/address.models.js';
 
 // Generate and Refresh Token
 const generateAccessAndRefreshToken = async (userId) => {
@@ -245,4 +246,95 @@ const getAllUsers = asyncHandler(async (req, res) => {
     }
 })
 
-export { registerUser, OTPValidate, logoutUser, refreshAccesToken, getAllUsers }
+
+//Upadate User details
+const updateUserDetails = asyncHandler(async (req, res) => {
+
+    const userId = req.user._id;
+
+    if (!userId) {
+        throw new ApiError(400, "Not found user id")
+    }
+
+    const { form, address } = req.body
+
+    if (!form || !address) {
+        throw new ApiError(400, "form or address are required ")
+    }
+
+    const profile = await User.findOne(userId)
+    console.log(profile)
+
+    const updateProfile = await User.findOneAndUpdate(
+        { _id: userId },
+        {
+            $set: {
+                firstName: form.firstName,
+                lastName: form.lastName,
+                email: form.email,
+                phoneNumber: form.phoneNumber
+            },
+        },
+        { new: true }
+    )
+
+    if (!updateProfile) {
+        throw new ApiError(400, "Profile not Updated")
+    }
+
+    console.log(userId)
+    const userAddressExistes = await Address.findOne({ userId })
+    console.log(userAddressExistes)
+
+    console.log(userAddressExistes)
+    if (!userAddressExistes) {
+        await Address.create(
+            {
+                userId: userId,
+                address: address.address,
+                city: address.city,
+                state: address.state,
+                country: address.country,
+                pincode: address.pincode
+            },
+        )
+    } else {
+        await Address.findOneAndUpdate(
+            {userId : userId},
+            {
+                $set: {
+                    address: address.address,
+                    city: address.city,
+                    state: address.state,
+                    country: address.country,
+                    pincode: address.pincode
+                }
+            },
+            {
+                new : true,
+            }
+        )
+    }
+
+
+    res.status(200).json(
+        new ApiResponse(200, "Profile Upated SuccessFully")
+    )
+})
+
+// Get Address
+const GetAddress = asyncHandler(async (req, res) => {
+    const userId = req.user._id;
+
+    if (!userId) {
+        throw new ApiError(400, "Not found user id")
+    }
+
+    const address = await Address.findOne({ userId })
+
+    res.status(200).json(
+        new ApiResponse(200, address, "Get Address successfully")
+    )
+})
+
+export { registerUser, OTPValidate, logoutUser, refreshAccesToken, getAllUsers, updateUserDetails, GetAddress }

@@ -10,6 +10,7 @@ const Orders = () => {
     const [Orders, setOrders] = useState([]);
     const [search, setsearch] = useState("");
     const [filteredOrders, setFilteredOrders] = useState([]);
+    const [filterOpen, setfilterOpen] = useState(false)
 
     useEffect(() => {
         // Fetch orders from the backend API
@@ -50,7 +51,7 @@ const Orders = () => {
             console.log(orderId)
 
             return (
-                orderId.some(item=>item.includes(searchText)) || customerName.some(item=>item.includes(searchText))
+                orderId.some(item => item.includes(searchText)) || customerName.some(item => item.includes(searchText))
             )
         })
 
@@ -129,10 +130,19 @@ const Orders = () => {
                 </div>
 
                 <div className="flex items-center gap-2 w-full md:w-auto">
-                    <button className="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 text-sm font-medium">
+                    <div>
+                        <button className="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 text-sm font-medium">
                         <Filter size={18} />
-                        <span>Filter Date</span>
+                        <span onClick={() => { setfilterOpen(!filterOpen) }}>Filter Date</span>
                     </button>
+                    {/* {filterOpen && (
+                        <div className='sticky right-15  bg-white p-2'>
+                            <div className='flex gap-2'>
+                                <input type="checkbox" name="" id="" /><p>Lowest</p>
+                            </div>
+                        </div>
+                    )} */}
+                    </div>
                 </div>
             </div>
 

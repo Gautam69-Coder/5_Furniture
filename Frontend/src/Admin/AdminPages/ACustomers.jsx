@@ -8,6 +8,7 @@ const Customers = () => {
   const [orders, setOrders] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredUsers, setFilteredUsers] = useState([]);
+  const [country, setcoutnry] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,9 +16,10 @@ const Customers = () => {
         const ordersRes = await axios.get(`${API_BASE_URL}/api/v1/admin/orders`);
         const usersRes = await axios.get(`${API_BASE_URL}/api/v1/users`);
 
+        const token = localStorage.getItem("refreshToken")
+
         setOrders(ordersRes.data.data);
         setUsers(usersRes.data.data);
-
         const orderUserIds = ordersRes.data.data.map(o => o.userId.toString());
         const filtered = usersRes.data.data.filter(u =>
           orderUserIds.includes(u._id.toString())

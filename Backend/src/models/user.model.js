@@ -25,7 +25,7 @@ const userSchema = new Schema(
         },
         phoneNumber: {
             type: String,
-            default: "9999999999"
+            trim : true,
         },
         refreshToken: {
             type: String

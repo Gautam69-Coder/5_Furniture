@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, easeInOut } from 'motion/react';
 import { slugify } from '../Utils/slugify';
 import Login from '../Pages/Login';
-import CartDrawer from './CartDrawer';
 import NavMenu from './NavMenu';
 import { useQuickView } from '../context/PopupContext';
+import axios from 'axios';
+import { API_BASE_URL } from '../api';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Navbar = () => {
 
   const [Islogin, setIslogin] = useState(false);
   const [cartDrawer, setcartDrawer] = useState(false);
+  const [avatar, setavatar] = useState();
 
   // 1. New state for mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,6 +39,26 @@ const Navbar = () => {
     { index: 8, title: "Sale" }
   ];
 
+  useEffect(() => {
+    const fetchUserDetails = async () => {
+      try {
+
+        const token = localStorage.getItem("refreshToken")
+        const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
+
+        setavatar(res.data.data.avatar);
+      } catch (err) {
+        console.log(err)
+      }
+    };
+
+    fetchUserDetails();
+  }, [avatar]);
+
 
   return (
     <div className='overflow-x-hidden'>
@@ -46,22 +68,22 @@ const Navbar = () => {
           animate={{ x: -500, opacity: 0 }}
           transition={{ duration: 2, delay: 1, ease: "easeInOut" }}
         >
-          <span className='text-white  text-[13px] leading-[23px] font-bold'>Soft, Serene, Sensory - </span>
-          <span className='text-white  text-[13px] leading-[23px] font-normal underline'>Discover Freedom tree - Nest</span>
+          <span className='text-white  text-[13px] leading-8 font-bold'>Soft, Serene, Sensory - </span>
+          <span className='text-white  text-[13px] leading-8 font-normal underline'>Discover Freedom tree - Nest</span>
         </motion.span>
         <motion.span className='text-center flex justify-center relative'
           initial={{ x: 500, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2, delay: 3, ease: "easeInOut" }}
         >
-          <span className='text-white text-[13px] leading-[23px] font-bold'>Thoughtful designs and joyful finds for every occasion - </span>
-          <span className='text-white text-[13px] leading-[23px] font-normal underline'>Discovery freedom tree-Nest</span>
+          <span className='text-white text-[13px] leading-8 font-bold'>Thoughtful designs and joyful finds for every occasion - </span>
+          <span className='text-white text-[13px] leading-8 font-normal underline'>Discovery freedom tree-Nest</span>
         </motion.span>
       </div>
 
       <div className=''>
-        <div className='px-[20px]  md:px-8'>
-          <div className='flex justify-between items-center h-[62px] mb-4'>
+        <div className='px-5  md:px-8'>
+          <div className='flex justify-between items-center h-15.5 mb-4'>
             <div className='flex sm:hidden items-center gap-2'>
               <div className='md:hidden cursor-pointer' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 <div className='flex items-center gap-2'>
@@ -127,7 +149,7 @@ const Navbar = () => {
               </div>
 
               <div className='cursor-pointer'>
-                <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924413/profile_rwlyrw.svg" alt="profile" width={28} onClick={() => {
+                <img src={avatar || "https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924413/profile_rwlyrw.svg"} className='rounded-full ' alt="profile" width={30} onClick={() => {
                   if (!localStorage.getItem("refreshToken")) {
                     openLogin(null)
                   } else {

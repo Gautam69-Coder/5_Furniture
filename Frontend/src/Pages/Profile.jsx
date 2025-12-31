@@ -40,6 +40,9 @@ const Profile = () => {
   }, []);
 
 
+
+
+
   useEffect(() => {
     const myorders = async () => {
       try {
@@ -50,7 +53,6 @@ const Profile = () => {
           }
         });
 
-        console.log(res.data.data)
         setcart(res.data.data)
 
       } catch (error) {
@@ -70,21 +72,32 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa] sm:py-10 ">
-        <div className='flex gap-1 text-[13.45px] text-left mx-10 mb-5'>
-          <Link to={"/"}>
-            <p className='text-[#0db269] '>Home</p>
-          </Link>
-          <Link to={`/profile`} className='flex gap-1'>
-            <p className='text-[#e8e8e1]'>/</p>
-            <p className='text-[#0db269] '> Profile</p>
-          </Link>
-        </div>
+      <div className='flex gap-1 text-[13.45px] text-left mx-10 mb-5'>
+        <Link to={"/"}>
+          <p className='text-[#0db269] '>Home</p>
+        </Link>
+        <Link to={`/profile`} className='flex gap-1'>
+          <p className='text-[#e8e8e1]'>/</p>
+          <p className='text-[#0db269] '> Profile</p>
+        </Link>
+      </div>
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-10">
-          <p className="text-sm text-gray-500">My Account</p>
-          <h1 className="text-2xl font-light tracking-wide text-gray-900">
-            Profile & Orders
-          </h1>
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-sm text-gray-500">My Account</p>
+              <h1 className="text-2xl font-light tracking-wide text-gray-900">
+                Profile & Orders
+              </h1>
+            </div>
+            {user?._id === "695526beffbeff81efbfb399" && (
+              <Link to={"/admin"}>
+                <button className="p-2 border-2">
+                  Admin
+                </button>
+              </Link>
+            )}
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 mb-12">
@@ -109,15 +122,25 @@ const Profile = () => {
               {new Date(user?.createdAt).toLocaleDateString()}
             </p>
 
-            <button
-              onClick={() => {
-                localStorage.removeItem("refreshToken");
-                navigate("/");
-              }}
-              className="mt-6 text-sm underline text-gray-700 hover:text-black"
-            >
-              Logout
-            </button>
+            <div className="flex justify-between items-center">
+              <button
+                onClick={() => {
+                  localStorage.removeItem("refreshToken");
+                  navigate("/");
+                }}
+                className="mt-6 text-sm underline text-gray-700 hover:text-black"
+              >
+                Logout
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/profile/edit");
+                }}
+                className="mt-6 text-sm underline text-gray-700 hover:text-black"
+              >
+                Edit
+              </button>
+            </div>
           </div>
 
           <div className="bg-[#f4f1ec] flex items-center justify-center text-sm text-gray-600">
