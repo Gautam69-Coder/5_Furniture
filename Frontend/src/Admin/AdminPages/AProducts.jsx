@@ -3,13 +3,14 @@ import { Plus, Search, Filter, MoreHorizontal, Edit, Trash2 } from 'lucide-react
 import axios from 'axios';
 import { useEffect } from 'react';
 import { API_BASE_URL } from '../../api';
+import {useQuickView} from  "../../context/PopupContext"
 
 const Products = () => {
     const [view, setView] = useState('list');
     const [productsData, setProductsData] = useState([]);
-    const [addProduct, setaddProduct] = useState(true);
     const [search, setsearch] = useState("")
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const {isOpenEdit,setisOpenEdit} = useQuickView();
 
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const Products = () => {
             try {
                 console.log("hello")
                 const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
-                console.log(res.data.data);
+                // console.log(res.data.data);
                 setProductsData(res.data.data);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -56,7 +57,7 @@ const Products = () => {
 
                 <button className="flex items-center gap-2 px-4 py-2 bg-brand-primary text-white rounded-lg shadow-lg hover:bg-brand-primary/90 transition-all font-medium">
                     <Plus size={20} />
-                    <span onClick={() => { setaddProduct(true) }}>Add Product</span>
+                    <span onClick={() => { setisOpenEdit(true) }}>Add Product</span>
                 </button>
             </div>
 

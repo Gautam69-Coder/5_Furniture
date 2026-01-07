@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import axios from "axios"
 export const PopupContext = createContext();
 
 export const PopupProvider = ({ children }) => {
@@ -25,6 +24,11 @@ export const PopupProvider = ({ children }) => {
   //Sorting and Filtering Products
   const [sort, setsort] = useState([])
   const [filter, setfilter] = useState([])
+
+
+  //Start Admin Popup
+  const [isOpenEdit,setisOpenEdit] = useState(false);
+
 
   const openQuickView = (productData) => {
     setProduct(productData);
@@ -87,7 +91,10 @@ export const PopupProvider = ({ children }) => {
 
       setsort , sort,
 
-      filter ,setfilter
+      filter ,setfilter,
+
+      //Admin Popup
+      setisOpenEdit ,isOpenEdit,
     }}>
       {children}
     </PopupContext.Provider>

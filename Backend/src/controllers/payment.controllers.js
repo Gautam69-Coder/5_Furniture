@@ -61,8 +61,8 @@ const CheckOut = asyncHandler(async (req, res) => {
             customer_name: customer_name
         },
         order_meta: {
-            return_url: "https://5-furniture.pages.dev/payment-status"
-            // return_url: "http://localhost:5173/payment-status"
+            // return_url: "https://5-furniture.pages.dev/payment-status"
+            return_url: "http://localhost:5173/payment-status"
         },
         cart_details: {
             cart_items: cart.map(item => ({
@@ -109,12 +109,26 @@ const CheckOut = asyncHandler(async (req, res) => {
             await order.save();
         }
 
+        console.log(address.phone)
+
         if (address?.phone) {
-            await User.findOneAndUpdate(
-                { _id: userId },
-                { phoneNumber: address.phone },
-                { new: true }
-            );
+            const existingPhoneNumber = await User.findOne({ phoneNumber: address.phone })
+
+            console.log(existingPhoneNumber);
+
+            if (!existingPhoneNumber) {
+                await User.findByIdAndUpdate(
+                    { _id: userId },
+                    {
+                        $set: {
+                            phoneNumber: address.phone
+                        }
+                    },
+                    {
+                        new: true,
+                    }
+                );
+            }
         }
 
     } catch (err) {

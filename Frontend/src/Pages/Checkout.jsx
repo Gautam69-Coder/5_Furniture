@@ -22,53 +22,48 @@ const Checkout = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [isloading, setisloading] = useState(false)
+    const [add, setadd] = useState([])
 
+    const fetchCart = async () => {
+        try {
+            const token = localStorage.getItem("refreshToken")
+            const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+            setcart(res.data.data[0].product);
+            const s = res.data.data[0].product.reduce((total, item) => {
+                return total + item.price * item.quantity
+            }, 0)
+            setsubTotal(s)
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
+    const fetchUserDetails = async () => {
+        try {
+
+            const token = localStorage.getItem("refreshToken")
+            const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            setUser(res.data.data);
+            // console.log(res.data.data)
+            setLoading(false);
+        } catch (err) {
+            setError("Failed to load user details");
+            setLoading(false);
+        }
+    };
 
     // Fetch Cart Data
     useEffect(() => {
-        const fetchCart = async () => {
-            try {
-                const token = localStorage.getItem("refreshToken")
-                const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
-                setcart(res.data.data[0].product);
-                const s = res.data.data[0].product.reduce((total, item) => {
-                    return total + item.price * item.quantity
-                }, 0)
-                setsubTotal(s)
-            } catch (error) {
-                console.error(error);
-            }
-        };
         fetchCart();
-    }, []);
-
-    // Fetch User Data
-    useEffect(() => {
-        const fetchUserDetails = async () => {
-            try {
-
-                const token = localStorage.getItem("refreshToken")
-                const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
-
-                setUser(res.data.data);
-                // console.log(res.data.data)
-                setLoading(false);
-            } catch (err) {
-                setError("Failed to load user details");
-                setLoading(false);
-            }
-        };
-
-
         fetchUserDetails();
     }, []);
 

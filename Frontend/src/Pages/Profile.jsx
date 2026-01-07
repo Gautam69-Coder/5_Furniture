@@ -11,32 +11,52 @@ const Profile = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [cart, setcart] = useState([])
+  const [cart, setcart] = useState([]);
+  const [add, setadd] = useState([])
   // const [totalAmount, settotalAmount] = useState();
 
   const navigate = useNavigate();
 
+  const fetchUserDetails = async () => {
+    try {
+
+      const token = localStorage.getItem("refreshToken")
+      const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+
+      setUser(res.data.data);
+      console.log(res.data.data)
+      setLoading(false);
+    } catch (err) {
+      setError("Failed to load user details");
+      setLoading(false);
+      console.log(err)
+    }
+  };
+
+  const fetchAddressDetails = async () => {
+    try {
+
+      const token = localStorage.getItem("refreshToken")
+      const res = await axios.get(`${API_BASE_URL}/api/v1/address`, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+
+      setadd(res.data.data || []);
+      console.log(res.data.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
-    const fetchUserDetails = async () => {
-      try {
-
-        const token = localStorage.getItem("refreshToken")
-        const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
-          headers: {
-            "Authorization": `Bearer ${token}`
-          }
-        });
-
-        setUser(res.data.data);
-        setLoading(false);
-      } catch (err) {
-        setError("Failed to load user details");
-        setLoading(false);
-        console.log(err)
-      }
-    };
-
     fetchUserDetails();
+    fetchAddressDetails();
   }, []);
 
 
@@ -59,6 +79,7 @@ const Profile = () => {
         console.log(error)
       }
     }
+
     myorders()
   }, []);
 
@@ -102,50 +123,72 @@ const Profile = () => {
 
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 mb-12">
 
-          <div className="bg-white border border-gray-200 p-6">
-            <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
-              Profile Details
-            </h2>
+          <div className="bg-white border border-gray-200 p-6 flex justify-between ">
+            <div>
+              <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
+                Profile Details
+              </h2>
 
-            <p className="text-sm text-gray-800 mb-2">
-              <span className="text-gray-500">Name:</span>{" "}
-              {user?.firstName} {user?.lastName}
-            </p>
+              <p className="text-sm text-gray-800 mb-2">
+                <span className="text-gray-500">Name:</span>{" "}
+                {user?.firstName} {user?.lastName}
+              </p>
 
-            <p className="text-sm text-gray-800 mb-2">
-              <span className="text-gray-500">Email:</span>{" "}
-              {user?.email}
-            </p>
+              <p className="text-sm text-gray-800 mb-2">
+                <span className="text-gray-500">Email:</span>{" "}
+                {user?.email}
+              </p>
 
-            <p className="text-sm text-gray-800">
-              <span className="text-gray-500">Member Since:</span>{" "}
-              {new Date(user?.createdAt).toLocaleDateString()}
-            </p>
+              <p className="text-sm text-gray-800">
+                <span className="text-gray-500">Member Since:</span>{" "}
+                {new Date(user?.createdAt).toLocaleDateString()}
+              </p>
 
-            <div className="flex justify-between items-center">
-              <button
-                onClick={() => {
-                  localStorage.removeItem("refreshToken");
-                  navigate("/");
-                }}
-                className="mt-6 text-sm underline text-gray-700 hover:text-black"
-              >
-                Logout
-              </button>
-              <button
-                onClick={() => {
-                  navigate("/profile/edit");
-                }}
-                className="mt-6 text-sm underline text-gray-700 hover:text-black"
-              >
-                Edit
-              </button>
+              <div className="flex justify-between items-center">
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("refreshToken");
+                    localStorage.removeItem("email");
+                    navigate("/");
+                    window.location.reload();
+                  }}
+                  className="mt-6 text-sm underline text-gray-700 hover:text-black"
+                >
+                  Logout
+                </button>
+                <button
+                  onClick={() => {
+                    navigate("/profile/edit");
+                  }}
+                  className="mt-6 text-sm underline text-gray-700 hover:text-black"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+            <div>
+              <img src={user?.avatar} className="rounded-full w-10" alt="" />
             </div>
           </div>
 
-          <div className="bg-[#f4f1ec] flex items-center justify-center text-sm text-gray-600">
-            Freedom Tree • Crafted Living
-          </div>
+          {add ? (
+            <div className="bg-white border border-gray-200 p-5">
+              <h3 className="text-sm uppercase text-gray-500 mb-3">
+                Delivery Address
+              </h3>
+
+              <p className="text-sm leading-relaxed block">
+                <p>{add?.address}</p>
+                <p> {add?.city}</p>
+                <p>{add?.state}</p>
+                <p>{add?.country}</p>
+              </p>
+            </div>
+          ) : (
+            <div className="bg-[#f4f1ec] flex items-center justify-center text-sm text-gray-600">
+              Freedom Tree • Crafted Living
+            </div>
+          )}
 
         </div>
 
@@ -228,7 +271,7 @@ const Profile = () => {
         </div>
 
       </div>
-    </div>
+    </div >
   );
 
 };

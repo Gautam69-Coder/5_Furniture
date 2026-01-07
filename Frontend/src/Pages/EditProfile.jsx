@@ -19,41 +19,42 @@ export default function EditProfile() {
         country: "India"
     })
 
-    useEffect(() => {
-        const fetchUserDetails = async () => {
-            try {
+    const fetchUserDetails = async () => {
+        try {
 
-                const token = localStorage.getItem("refreshToken")
-                const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
+            const token = localStorage.getItem("refreshToken")
+            const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
 
-                setUser(res.data.data);
-                console.log(res.data.data)
-            } catch (err) {
-                console.log(err)
-            }
-        };
-
-        const fetchAddressDetails = async () => {
-            try {
-
-                const token = localStorage.getItem("refreshToken")
-                const res = await axios.get(`${API_BASE_URL}/api/v1/address`, {
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
-
-                setadd(res.data.data);
-                console.log(res.data.data)
-            } catch (err) {
-                console.log(err)
-            }
+            setUser(res.data.data);
+            console.log(res.data.data)
+        } catch (err) {
+            console.log(err)
         }
+    };
 
+    const fetchAddressDetails = async () => {
+        try {
+
+            const token = localStorage.getItem("refreshToken")
+            const res = await axios.get(`${API_BASE_URL}/api/v1/address`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            setadd(res.data.data || []);
+            // console.log(res.data.data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+
+    useEffect(() => {
         fetchUserDetails();
         fetchAddressDetails();
     }, []);
@@ -68,7 +69,7 @@ export default function EditProfile() {
             })
 
             setaddress({
-                address: add.address || "",
+                address: "" || add.address,
                 city: add.city || "",
                 state: add.state || "",
                 pincode: add.pincode || "",

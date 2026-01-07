@@ -58,19 +58,24 @@ const CartDrawer = ({ Close }) => {
             "Authorization": `Bearer ${token}`
           }
         });
-        setcart(res.data.data[0].product);
-        console.log(res.data.data)
-        const s = res.data.data[0].product.reduce((total, item) => {
-          return total + item.price * item.quantity
-        }, 0)
-        setsubTotal(s)
-        setloading(false)
+        console.log(res.data.data.length)
+        setcart(res.data.data[0]?.product || []);
+        if (res.data.data.length === 0) {
+          setloading(false);
+        }
+        else {
+          setloading(false);
+          const s = res.data.data[0].product.reduce((total, item) => {
+            return total + item.price * item.quantity
+          }, 0)
+          setsubTotal(s)
+        }
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     if (isOpenCart || deleteProduct) fetchCart();
-  }, [isOpenCart,deleteProduct]);
+  }, [isOpenCart, deleteProduct]);
 
 
   return (

@@ -120,7 +120,6 @@ const Navbar = () => {
             <div className='md:ml-20 cursor-pointer'>
               <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924191/freedomtree_phpfqw.avif" alt="" className='w-[150px] md:w-[220px]'
                 onClick={() => {
-                  console.log("hello")
                   navigate('/');
                 }}
               />

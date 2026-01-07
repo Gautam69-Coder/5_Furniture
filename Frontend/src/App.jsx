@@ -17,6 +17,11 @@ import PaymentStatus from "./Pages/PaymentStatus"
 import OrderDetails from "./Pages/Order";
 import EditProfile from "./Pages/EditProfile.jsx";
 
+// TopMenu Pages
+import Contact from './Pages/TopMenu/ContactUs.jsx';
+import Professional from './Pages/TopMenu/Professional.jsx';
+import Search from "./components/Search.jsx";
+
 // Admin Imports
 import DashboardLayout from "./Admin/AdminLayouts/DashboardLayout.jsx";
 import Dashboard from "./Admin/AdminPages/ADashboard.jsx";
@@ -24,11 +29,7 @@ import Products from "./Admin/AdminPages/AProducts.jsx";
 import Orders from "./Admin/AdminPages/AOrders.jsx";
 import Customers from "./Admin/AdminPages/ACustomers.jsx";
 import Settings from "./Admin/AdminPages/ASettings.jsx"
-
-// TopMenu Pages
-import Contact from './Pages/TopMenu/ContactUs.jsx';
-import Professional from './Pages/TopMenu/Professional.jsx';
-import Search from "./components/Search.jsx";
+import AddProduct from  "./Admin/AdminPages/Components/AddProductPopup.jsx"
 
 const App = () => {
   const location = useLocation();
@@ -82,6 +83,9 @@ const App = () => {
         <CartDrawer />
         <Login />
         <Search/>
+
+        {/* Admin Popup */}
+        <AddProduct/>        
       </main>
 
       {!hideNavbar && <Footter />}

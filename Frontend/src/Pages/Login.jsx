@@ -67,7 +67,10 @@ const Login = () => {
         type: 'success',
         content: 'Signup successFully',
       });
+
       closeLogin();
+
+      window.location.reload();
 
       console.log("Login success, JWT cookie set by backend");
     } catch (error) {

@@ -25,7 +25,6 @@ const PaymentStatus = () => {
                 const res = await axios.get(`${API_BASE_URL}/api/v1/status/${orderId}`);
                 setStatus(res.data.data);
                 console.log(res.data.data);
-                navigate("/")
             } catch (err) {
                 console.error(err);
                 setError("Failed to fetch order status");
@@ -70,10 +69,10 @@ const PaymentStatus = () => {
                 title="Successfully Purchased Cloud Server ECS!"
                 subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
                 extra={[
-                    <Button type="primary" key="console" onClick={()=>{navigate("/")}}>
+                    <Button type="primary" key="console" onClick={() => { navigate("/") }}>
                         Home
                     </Button>,
-                    <Button key="buy" onClick={()=>{navigate("/collections/furniture")}} >Buy Again</Button>,
+                    <Button key="buy" onClick={() => { navigate("/collections/furniture") }} >Buy Again</Button>,
                 ]}
             />
         </div>
