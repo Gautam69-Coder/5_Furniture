@@ -22,6 +22,7 @@
     "firebase-admin": "^13.6.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.3",
+    "nodemailer": "^7.0.12",
     "prelude": "^0.8.2",
     "twilio": "^5.10.5"
   }

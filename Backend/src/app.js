@@ -52,6 +52,9 @@ app.use("/api/v1/", GoogleAuth)
 import WhatsAppMessage from "./routes/whatsapp.routers.js"
 app.use("/api/v1/", WhatsAppMessage)
 
+import AddProduct from "./routes/addproduct.routers.js"
+app.use("/api/v1/",AddProduct)
+
 
 
 export default app;

@@ -4,6 +4,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { Cashfree, CFEnvironment } from "cashfree-pg";
 import Order from '../models/order.models.js';
 import { User } from '../models/user.model.js'
+import nodemailer from "nodemailer"
 
 
 const CheckOut = asyncHandler(async (req, res) => {

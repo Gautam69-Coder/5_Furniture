@@ -82,9 +82,6 @@ const Dashboard = () => {
           <h1 className="text-3xl font-bold text-gray-900 mb-1">Welcome Back, Admin</h1>
           <p className="text-gray-500">Here's what's happening with your store today.</p>
         </div>
-        <button className="px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-all font-medium">
-          Download Report
-        </button>
       </div>
 
       {/* Stats Cards */}

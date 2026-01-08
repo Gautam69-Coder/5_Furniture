@@ -16,14 +16,15 @@ const ProductCard = ({ link, item }) => {
         try {
             const token = localStorage.getItem("refreshToken");
             setloading(true)
+            console.log(item)
             const res = await axios.post(
                 `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: item._id,
                     name: item.name,
-                    image: img,
+                    image: item.images[0],
                     price: item.price,
-                    quantity: qty,
+                    quantity:  1,
                     size: item.details.sizeIN,
                     materail: item.details.frameMaterial,
                     description: item.description
@@ -37,7 +38,7 @@ const ProductCard = ({ link, item }) => {
             console.log(res.data.data)
             let user = res.data.data.user
             if (user) {
-                openCart();
+                await openCart();
                 setloading(false)
             }
         } catch (error) {

@@ -23,8 +23,24 @@ const PaymentStatus = () => {
                 }
 
                 const res = await axios.get(`${API_BASE_URL}/api/v1/status/${orderId}`);
+                const token = localStorage.getItem("refreshToken");
+                const res2 = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
                 setStatus(res.data.data);
                 console.log(res.data.data);
+                let my = res2.data.data[0].order_details.map((item => item));
+                let findOrder = my.slice(-1)[0]
+
+                const ordersSend = await axios.post(`${API_BASE_URL}/api/v1/verify_order/`,
+                    { findOrder },
+                    {
+                        headers: { Authorization: `Bearer ${token}` }
+                    }
+                )
+
+                console.log(ordersSend)
+
             } catch (err) {
                 console.error(err);
                 setError("Failed to fetch order status");

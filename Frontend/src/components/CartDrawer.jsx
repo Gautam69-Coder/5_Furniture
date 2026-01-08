@@ -58,7 +58,6 @@ const CartDrawer = ({ Close }) => {
             "Authorization": `Bearer ${token}`
           }
         });
-        console.log(res.data.data.length)
         setcart(res.data.data[0]?.product || []);
         if (res.data.data.length === 0) {
           setloading(false);

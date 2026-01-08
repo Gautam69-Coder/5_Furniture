@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const DimensionSchema = new mongoose.Schema({
-    seatHeight: { type: Number, min: 0, required: true },
-    seatBackHeight: { type: Number, min: 0, required: true },
-    seatDepth: { type: Number, min: 0, required: true },
+    seatHeight: { type: Number, min: 0},
+    seatBackHeight: { type: Number, min: 0},
+    seatDepth: { type: Number, min: 0},
     backRestAngle: { type: Number, min: 0 },
     armWidth: { type: Number, min: 0 },
     armHeightFromSeating: { type: Number, min: 0 },
@@ -13,19 +13,18 @@ const DimensionSchema = new mongoose.Schema({
 const ProductDetailSchema = new mongoose.Schema({
     sizeCM: {
         type: String,
-        required: true,
+
         trim: true
     },
 
     sizeIN: {
         type: String,
-        required: true,
+
         trim: true
     },
 
     additionalSizes: {
         type: DimensionSchema,
-        required: true
     },
 
     frameMaterial: {
@@ -70,83 +69,82 @@ const productSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: true,
+
             index: true,
         },
         category: {
             type: String,
-            required: true,
+
         },
         subcategory: {
             type: String,
-            required: true,
+
         },
         smallCategory: {
             type: String,
-            required: true,
+
         },
         price: {
             type: Number,
-            required: true,
+
         },
         tags: {
             type: Array,
-            required: true,
+
         },
         images: {
             type: Array,
-            required: true,
+
         },
         galleryImages: {
             type: Array,
         },
         description: {
             type: String,
-            required: true,
+
         },
         width: {
             type: String,
-            required: true,
+
         },
         material: {
             type: String,
-            required: true,
+
         },
         style: {
             type: String,
-            required: true,
+
         },
         technique: {
             type: String,
-            required: true,
+
         },
         fabricWeight: {
             type: String,
-            required: true,
+
         },
         collection: {
             type: String,
-            required: true,
+
         },
         careInstructions: {
             type: String,
-            required: true,
+
         },
         returnPolicy: {
             type: String,
-            required: true,
+
         },
         warranty: {
             type: String,
-            required: true,
+
         },
         origin: {
             type: String,
-            required: true,
+
         },
         details: {
             type: ProductDetailSchema,
-            required: true
         }
     },
     {

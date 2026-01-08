@@ -48,7 +48,7 @@ const Profile = () => {
       });
 
       setadd(res.data.data || []);
-      console.log(res.data.data)
+      // console.log(res.data.data)
     } catch (err) {
       console.log(err)
     }
@@ -111,7 +111,7 @@ const Profile = () => {
                 Profile & Orders
               </h1>
             </div>
-            {user?._id === "695526beffbeff81efbfb399" && (
+            {user?.email === "gautamdoliya69@gmail.com" && (
               <Link to={"/admin"}>
                 <button className="p-2 border-2">
                   Admin
@@ -171,7 +171,7 @@ const Profile = () => {
             </div>
           </div>
 
-          {add ? (
+          {add.length !== 0 ? (
             <div className="bg-white border border-gray-200 p-5">
               <h3 className="text-sm uppercase text-gray-500 mb-3">
                 Delivery Address

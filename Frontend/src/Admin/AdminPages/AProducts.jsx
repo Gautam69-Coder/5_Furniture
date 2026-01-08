@@ -112,7 +112,7 @@ const Products = () => {
                                     </div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap">
-                                    <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-md">{product.category.charAt(0).toUpperCase() + product.category.slice(1).toLowerCase()}</span>
+                                    <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-md">{product.category?.charAt(0).toUpperCase() + product.category?.slice(1).toLowerCase()}</span>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap">
                                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${product.status === 'In Stock' ? 'bg-green-50 text-green-700 border-green-200' :

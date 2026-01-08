@@ -12,6 +12,8 @@ const CartData = asyncHandler(async (req, res) => {
             throw new ApiError(400, "Product fileds are required");
         }
 
+        console.log(productId, name, image, price, quantity, size, materail, description)
+
         const item = {
             productId,
             name,
