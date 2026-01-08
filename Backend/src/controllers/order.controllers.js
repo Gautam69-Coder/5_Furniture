@@ -210,7 +210,7 @@ const OrderMessage = asyncHandler(async (req, res) => {
       height: 100px;
       object-fit: cover;
       border-radius: 8px;
-      flex-shrink: 0;
+      margin-right : 15px
     }
     .product-details {
       flex: 1;
