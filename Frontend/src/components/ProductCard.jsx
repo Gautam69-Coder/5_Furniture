@@ -13,38 +13,44 @@ const ProductCard = ({ link, item }) => {
 
     // Send Add to cart pro to
     const cartData = async () => {
+        const token = localStorage.getItem("refreshToken")
+        if (!token) return
+
         try {
-            const token = localStorage.getItem("refreshToken");
             setloading(true)
-            console.log(item)
+
             const res = await axios.post(
                 `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: item._id,
                     name: item.name,
-                    image: item.images[0],
+                    image: item.images?.[0],
                     price: item.price,
-                    quantity:  1,
-                    size: item.details.sizeIN,
-                    materail: item.details.frameMaterial,
+                    quantity: 1,
+                    size: item.details?.sizeIN,
+                    materail: item.details?.frameMaterial,
                     description: item.description
                 },
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
+                        Authorization: `Bearer ${token}`
+                    }
                 }
-            );
-            console.log(res.data.data)
-            let user = res.data.data.user
-            if (user) {
-                await openCart();
-                setloading(false)
+            )
+
+            if (res.data?.data?.user) {
+                openCart()
             }
         } catch (error) {
-            console.log("Error in cart", error.response?.data || error.message);
+            console.log(
+                "Error in cart",
+                error.response?.data || error.message
+            )
+        } finally {
+            setloading(false)
         }
-    };
+    }
+
 
     return (
         <div className="cursor-pointer relative">

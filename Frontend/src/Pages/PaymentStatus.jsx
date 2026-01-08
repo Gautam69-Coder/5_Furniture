@@ -31,15 +31,16 @@ const PaymentStatus = () => {
                 console.log(res.data.data);
                 let my = res2.data.data[0].order_details.map((item => item));
                 let findOrder = my.slice(-1)[0]
-
+                console.log(findOrder)
                 const ordersSend = await axios.post(`${API_BASE_URL}/api/v1/verify_order/`,
                     { findOrder },
                     {
                         headers: { Authorization: `Bearer ${token}` }
                     }
                 )
-
+                
                 console.log(ordersSend)
+                setLoading(false);
 
             } catch (err) {
                 console.error(err);
@@ -75,7 +76,7 @@ const PaymentStatus = () => {
     }, [])
 
 
-    if (loading) return <p className="h-[70vh] flex items-center justify-center">{loader}</p>;
+    if (loading) return <p className="h-[70vh] flex items-center justify-center">{loader()}</p>;
     if (error) return <p className="text-red-500">{error}</p>;
 
     return (
