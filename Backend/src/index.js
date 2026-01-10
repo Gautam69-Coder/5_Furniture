@@ -2,9 +2,7 @@ import connectDB from "./db/db.js";
 import dotenv from "dotenv";
 import app from "./app.js";
 
-dotenv.config({
-    path: "../.env"
-})
+dotenv.config();
 
 connectDB()
   .then(() => {
@@ -14,4 +12,4 @@ connectDB()
     console.error("Database connection failed:", error);
   });
 
-export default app; 
+export default app;   // ✅ VERY IMPORTANT
