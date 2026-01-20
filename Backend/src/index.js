@@ -2,17 +2,17 @@ import connectDB from "./db/db.js";
 import dotenv from "dotenv";
 import app from "./app.js";
 
-dotenv.config()
+dotenv.config();
 
-const port = process.env.PORT || 4000
+// Connect DB once when function is initialized
+connectDB()
+  .then(() => {
+    console.log("Database connected");
+  })
+  .catch((error) => {
+    console.log("Database connection failed:", error);
+  });
 
-connectDB().
-    then(() => {
-        app.listen(port, () => {
-            console.log("Data Base is Connected port is : ", port)
-        })
-    }).catch((error) => {
-        console.log("Database connection Fialed : ", error)
-    })
-
+// ❌ NO app.listen()
+// ✅ JUST export app
 export default app;
