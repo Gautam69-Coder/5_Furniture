@@ -62,8 +62,8 @@ const CheckOut = asyncHandler(async (req, res) => {
             customer_name: customer_name
         },
         order_meta: {
-            return_url: "https://5-furniture.pages.dev/payment-status"
-            // return_url: "http://localhost:5173/payment-status"
+            // return_url: "https://5-furniture.pages.dev/payment-status"
+            return_url: "http://localhost:5173/payment-status"
         },
         cart_details: {
             cart_items: cart.map(item => ({

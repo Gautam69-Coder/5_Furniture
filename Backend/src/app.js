@@ -11,7 +11,7 @@ app.use(cors({
         "https://furniture.gautamdoliya69.workers.dev",
         "https://5-furniture.pages.dev"
     ],
-    credentials: true,  
+    credentials: true,
 }))
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
@@ -23,6 +23,10 @@ if (connectCloudinary()) {
 } else {
     console.log("Not Connected")
 }
+
+app.get("/", (req, res) => {
+    res.send("Hello World!")
+})
 
 
 //import Routes
@@ -53,7 +57,7 @@ import WhatsAppMessage from "./routes/whatsapp.routers.js"
 app.use("/api/v1/", WhatsAppMessage)
 
 import AddProduct from "./routes/addproduct.routers.js"
-app.use("/api/v1/",AddProduct)
+app.use("/api/v1/", AddProduct)
 
 
 
