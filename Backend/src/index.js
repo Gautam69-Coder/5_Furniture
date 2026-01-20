@@ -15,9 +15,11 @@ const port = process.env.PORT || 4000
 
 connectDB().
     then(() => {
-        app.listen(port,()=>{
-            console.log("Data Base is Connected port is : ",port)
+        app.listen(port, () => {
+            console.log("Data Base is Connected port is : ", port)
         })
-    }).catch((error)=>{
-       console.log("Database connection Fialed : ",error) 
+    }).catch((error) => {
+        console.log("Database connection Fialed : ", error)
     })
+
+export default app;
