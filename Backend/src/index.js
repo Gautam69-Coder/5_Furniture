@@ -13,6 +13,8 @@ connectDB()
     console.log("Database connection failed:", error);
   });
 
-// ❌ NO app.listen()
-// ✅ JUST export app
+  app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
+  });
+
 export default app;
