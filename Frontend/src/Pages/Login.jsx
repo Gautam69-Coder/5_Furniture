@@ -286,18 +286,20 @@ const Login = () => {
             <div className='sm:flex sm:h-[536px]  w-full'>
               {/* Left Image Section */}
               {contextHolder}
-              <div className='sm:w-[55%]'>
+              <div className='sm:w-[55%] '>
                 <img
                   src="https://cdn.shopify.com/s/files/1/0258/1394/2371/files/simply-otp-login-modal-mobile.jpg?v=1726567216&t=1726567222693"
                   alt="Banner"
-                  className=' rounded-l-2xl rounded-r-2xl sm:h-full h-[200px] w-full object-cover'
+                  className=' sm:rounded-2xl rounded-t-2xl sm:rounded-r-none sm:h-full h-[200px] w-full object-cover'
                 />
               </div>
 
               {/* Right Login Section */}
-              <div className='p-5 sm:mx-auto flex flex-col items-center sm:w-[45%] sm:rounded-r-2xl rounded-r bg-white rounded-l'>
+              <div 
+                className='p-5 sm:mx-auto flex flex-col items-center sm:w-[45%] sm:rounded-2xl  bg-white rounded-b-2xl sm:rounded-l-none  '
+              >
 
-                <div>
+                <div className='w-full flex justify-center'>
                   <img
                     src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924191/freedomtree_phpfqw.avif"
                     alt="Freedom Tree Logo"

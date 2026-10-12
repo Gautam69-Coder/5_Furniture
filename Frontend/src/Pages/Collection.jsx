@@ -20,7 +20,7 @@ const Collection = () => {
         >
 
             {/* LEFT SIDEBAR */}
-            <div className='pr-5 bg-white sticky top-0 h-fit'>
+            <div className='pr-5  sticky top-0 h-fit'>
 
                
                 <div className='flex sm:block hidden'>

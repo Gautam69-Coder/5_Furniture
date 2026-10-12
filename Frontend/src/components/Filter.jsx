@@ -144,7 +144,7 @@ const Practice = ({ onFilterChange }) => {
 
                 {isCategoryOpen &&
                     myitems.CATEGORY.map((item, index) => (
-                        <div key={index} className="pt-2 bg-white flex items-center">
+                        <div key={index} className="pt-2  flex items-center">
                             <input
                                 type="checkbox"
                                 className="mx-2 h-4 w-4"

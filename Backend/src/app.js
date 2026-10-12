@@ -7,6 +7,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
+        "http://localhost:5174",
         "https://five-furniture.onrender.com",
         "https://5-furniture-kcu1.vercel.app",
         "https://furniture.gautamdoliya69.workers.dev",

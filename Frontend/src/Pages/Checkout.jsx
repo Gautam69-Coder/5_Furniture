@@ -53,7 +53,7 @@ const Checkout = () => {
             });
 
             setUser(res.data.data);
-            // console.log(res.data.data)
+            console.log(res.data.data)
             setLoading(false);
         } catch (err) {
             setError("Failed to load user details");
@@ -114,12 +114,6 @@ const Checkout = () => {
             };
 
             await cashfree.checkout(checkoutOptions);
-
-            // let checkoutOptions = {
-            //     paymentSessionId: "session_Y8KNU3hC_uEMpG8pT19wO8PfvOKNMEu7oUDky7oyGRFsDRi9xDxN8ClW6Ix5nbZgMEa7Cth4igiKeCqycnK6qJ5MWb0GCfk_KeMZbkoW2zpGneVGPdkuKxMc6Y4r5Qpaymentpayment",
-            //     redirectTarget: "_self",
-            // };
-            // cashfree.checkout(checkoutOptions);
             setisloading(false)
 
         } catch (error) {
@@ -179,21 +173,16 @@ const Checkout = () => {
             </nav>
 
             <div className='sm:p-[38px] mb-10  sm:flex sm:mx-[100px] mx-5 justify-center '>
-                <div className=' sm:pr-6 border-r sm:w-[50%] mb-8 border-[#DFDFDF]'>
+                
+                <div className=' sm:pr-6 sm:border-r sm:w-[50%] mb-8 sm:border-[#DFDFDF]'>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='py-[9px] '>
 
                             <div className='flex items-center text-[14px] justify-between border-b  border-[#DFDFDF] pb-2'>
-                                <p className=' p-2 bg-[#F6F6F6] w-fit rounded-full text-[12px]'>GD</p>
+                                <p className=' p-2 bg-[#F6F6F6] w-fit rounded-full text-[12px]'>{user.firstName.charAt(0)} {user.lastName.charAt(0)}</p>
                                 <div className='flex items-center'>
-                                    <p>gautamdoliya69@gmail.com</p>
-                                    <svg className='w-4' version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style={{ enableBackground: "new 0 0 32 32" }} xmlSpace="preserve">
-                                        <g>
-                                            <path d="M16,10c1.7,0,3-1.3,3-3s-1.3-3-3-3s-3,1.3-3,3S14.3,10,16,10z"></path>
-                                            <path d="M16,13c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S17.7,13,16,13z"></path>
-                                            <path d="M16,22c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S17.7,22,16,22z"></path>
-                                        </g>
-                                    </svg>
+                                    <p>{user.email}</p>
+                                    
                                 </div>
                             </div>
 
@@ -394,7 +383,7 @@ const Checkout = () => {
                 </div>
                 <div className=' sm:pl-6 sm:w-[40%]'>
                     <div className='sticky top-0'>
-                        <div className=" bg-white rounded-xl  shadow-sm space-y-6">
+                        <div className=" bg-white rounded-xl p-4  shadow-sm space-y-6">
                             {/* Product 1 */}
                             {cart.map((item, index) => (
                                 <div className="flex gap-4" key={index}>
@@ -434,7 +423,7 @@ const Checkout = () => {
                                     {state == "India" ? (
                                         <span className="text-gray-400">Free Shipping</span>
                                     ) : (
-                                        <span className="text-gray-400">Enter shipping address</span>
+                                        <span className="text-gray-400">$10</span>
                                     )}
                                 </div>
                             </div>
