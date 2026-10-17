@@ -1,9 +1,6 @@
-const isProd = import.meta.env.PROD;
+const isProd = import.meta.env.PRODUCTION;
 
-// export const API_BASE_URL = isProd
-//   ? "https://five-furniture.onrender.com"
-//   : "http://localhost:5000";
+export const API_BASE_URL = isProd
+    ? "https://five-furniture.onrender.com"
+    : "http://localhost:5000";
 
-// export const API_BASE_URL = "http://localhost:5000";
-
-export const API_BASE_URL = "http://localhost:5000"
