@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import { API_BASE_URL } from "../../api"
+import { message as antMessage } from "antd";
+import { API_BASE_URL } from "../../api";
+import { getErrorMessage } from "../../Utils/errorHandler";
 
 const Contact = () => {
 
@@ -11,18 +13,34 @@ const Contact = () => {
 
 
   const sendMessage = async () => {
+    if (!name || name.trim().length === 0) {
+      antMessage.error("Please enter your name");
+      return;
+    }
+    if (!phone || !/^\d{10}$/.test(phone.trim())) {
+      antMessage.error("Please enter a valid 10-digit phone number");
+      return;
+    }
+    if (!message || message.trim().length === 0) {
+      antMessage.error("Please enter your message");
+      return;
+    }
+
     try {
       setLoading(true);
 
       await axios.post(`${API_BASE_URL}/api/v1/send`, {
-        phone: phone, // 91XXXXXXXXXX
-        message: message,
+        name: name.trim(),
+        phone: phone.trim(),
+        message: message.trim(),
       });
 
-      alert("WhatsApp message sent ✅");
+      antMessage.success("Message sent successfully!");
       setMessage("");
+      setname("");
+      setPhone("");
     } catch (error) {
-      alert("Failed to send message ❌");
+      antMessage.error(getErrorMessage(error, "Failed to send message. Please try again."));
     } finally {
       setLoading(false);
     }
@@ -101,12 +119,15 @@ const Contact = () => {
           </div>
         </div>
         <div className='flex justify-center'>
-          <button className='bg-black text-white py-2 px-4 uppercase' onClick={()=>{
-            console.log(name)
-            console.log(phone)
-            console.log(message)
-            sendMessage()
-          }}>send</button>
+          <button
+            className='bg-black text-white py-2 px-6 uppercase disabled:opacity-50 cursor-pointer'
+            disabled={loading}
+            onClick={() => {
+              sendMessage();
+            }}
+          >
+            {loading ? "Sending..." : "Send"}
+          </button>
         </div>
       </div>
     </>

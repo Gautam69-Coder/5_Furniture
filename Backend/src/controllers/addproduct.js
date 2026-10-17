@@ -8,7 +8,7 @@ const AddProduct = asyncHandler(async (req, res) => {
 
     const { formData } = req.body;
 
-    console.log(formData);
+  
 
     if (!formData) {
         throw new ApiError(400, "Product Data is Required")
@@ -28,7 +28,6 @@ const AddProduct = asyncHandler(async (req, res) => {
         },
     })
 
-    console.log(product)
 
 })
 

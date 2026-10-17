@@ -1,34 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../api";
 import jsPDF from "jspdf";
-import { Steps } from 'antd';
+import { Steps, Button, Result } from 'antd';
 import autoTable from 'jspdf-autotable';
-
-
+import { loader } from "../Utils/loarder";
+import { getErrorMessage } from "../Utils/errorHandler";
 
 const OrderDetails = () => {
+    const navigate = useNavigate();
     const [order, setOrder] = useState(null);
     const [orderTime, setOrderTime] = useState("");
     const { orderId } = useParams();
     const [count, setcount] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
 
     useEffect(() => {
         const fetchOrders = async () => {
             try {
                 const token = localStorage.getItem("refreshToken");
+                if (!token) {
+                    setError("Please log in to view order details.");
+                    setLoading(false);
+                    return;
+                }
                 const res = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
-                const orders = res.data.data[0].order_details;
+                const orders = res.data?.data?.[0]?.order_details || [];
                 const selectedOrder = orders.find(o => o._id === orderId);
 
-                setOrder(selectedOrder);
-                setOrderTime(selectedOrder?.timestamps);
+                if (!selectedOrder) {
+                    setError(`Order "${orderId}" could not be found.`);
+                } else {
+                    setOrder(selectedOrder);
+                    setOrderTime(selectedOrder?.timestamps);
+                }
             } catch (err) {
-                console.log(err);
+                setError(getErrorMessage(err, "Failed to load order details"));
+            } finally {
+                setLoading(false);
             }
         };
         fetchOrders();
@@ -227,8 +241,33 @@ Status: ${order?.status[0]?.payment_status || 'Completed'}`;
         handleTimeOut()
     }, [count])
 
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-[70vh]">
+                {loader()}
+            </div>
+        );
+    }
 
-
+    if (error || !order) {
+        return (
+            <div className="flex justify-center items-center min-h-[70vh] p-6 bg-[#fafafa]">
+                <Result
+                    status="warning"
+                    title="Order Information"
+                    subTitle={error || "Order not found."}
+                    extra={[
+                        <Button type="primary" key="orders" onClick={() => navigate("/profile")}>
+                            View All Orders
+                        </Button>,
+                        <Button key="home" onClick={() => navigate("/")}>
+                            Return to Home
+                        </Button>,
+                    ]}
+                />
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-[#fafafa] sm:py-10">

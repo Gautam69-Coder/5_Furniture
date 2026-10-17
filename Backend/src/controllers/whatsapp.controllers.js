@@ -11,9 +11,7 @@ export const sendMessage = async (req, res) => {
             throw new ApiError(400, "Phone and message are required")
         }
 
-        console.log(message)
-        console.log(phone)
-
+      
         await sendWhatsApp({
             to: phone,
             message,

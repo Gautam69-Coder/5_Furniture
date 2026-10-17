@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Drawer } from 'antd';
+import { Drawer, message } from 'antd';
 import { useQuickView } from '../context/PopupContext';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cart from './Cart';
 import { API_BASE_URL } from '../api';
+import { getErrorMessage } from '../Utils/errorHandler';
 
 const CartDrawer = ({ Close }) => {
   const { closeCart, isOpenCart } = useQuickView();
@@ -54,22 +55,26 @@ const CartDrawer = ({ Close }) => {
         setLoading(false);
 
       } catch (error) {
-        console.error("Error fetching cart:", error);
         setLoading(false);
         setCart([]);
+        if (error.response?.status !== 401) {
+          message.error(getErrorMessage(error, "Failed to load cart items"));
+        }
       }
     };
 
     if (isOpenCart) {
       setTimeout(() => {
         fetchCart();
-      }, 1000);
+      }, 500);
     }
   }, [isOpenCart]);
 
   const deleteItem = async (productId) => {
     try {
       const token = localStorage.getItem("refreshToken");
+      if (!token) return;
+
       await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
         { productId },
         {
@@ -87,9 +92,10 @@ const CartDrawer = ({ Close }) => {
         return total + (item.price * item.quantity);
       }, 0);
       setSubTotal(newSubTotal);
+      message.success("Item removed from cart");
 
     } catch (error) {
-      console.error("Error deleting item:", error);
+      message.error(getErrorMessage(error, "Failed to remove item from cart"));
     }
   };
 

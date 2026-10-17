@@ -6,9 +6,11 @@ import { useQuickView } from '../context/PopupContext';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
 import { Link } from 'react-router-dom';
+import { message } from 'antd';
+import { getErrorMessage } from '../Utils/errorHandler';
 
 const ProductPage = () => {
-    const { openCart } = useQuickView();
+    const { openCart, openLogin } = useQuickView();
     const { id } = useParams();
     const [product, setproduct] = useState([])
     const [qty, setqty] = useState(1);
@@ -20,6 +22,7 @@ const ProductPage = () => {
     })
 
     const [loading, setloading] = useState(false)
+    console.log(product)
 
     // const [AddToCart, setAddToCart] = useState();
 
@@ -31,14 +34,14 @@ const ProductPage = () => {
                 const products = res.data.data;
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
-                setimg(img ||productk.images[0])
+                setimg(img || productk?.images?.[0] || productk?.images);
             } catch (error) {
-                console.error("Error fetching product:", error);
+                message.error(getErrorMessage(error, "Failed to load product details"));
             }
         };
 
         fetchdata();
-    }, [id,img]);
+    }, [id, img]);
 
 
     const hasRun = useRef(false);
@@ -68,7 +71,6 @@ const ProductPage = () => {
 
                 );
             } catch (error) {
-                console.log(error);
             }
         }
         userActivity();
@@ -88,19 +90,25 @@ const ProductPage = () => {
 
     // Send Add to cart pro to
     const cartData = async () => {
+        const token = localStorage.getItem("refreshToken");
+        if (!token) {
+            message.warning("Please log in to add items to your cart");
+            openLogin();
+            return;
+        }
+
         try {
-            const token = localStorage.getItem("refreshToken");
             setloading(true)
             const res = await axios.post(
                 `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: product._id,
                     name: product.name,
-                    image: img,
+                    image: img || (Array.isArray(product?.images) ? product?.images[0] : product?.images),
                     price: product.price,
                     quantity: qty,
-                    size: product.details.sizeIN,
-                    materail: product.details.frameMaterial,
+                    size: product?.details?.sizeIN,
+                    materail: product?.details?.frameMaterial,
                     description: product.description
                 },
                 {
@@ -109,14 +117,15 @@ const ProductPage = () => {
                     },
                 }
             );
-            console.log(res.data.data)
-            let user = res.data.data.user
+            let user = res.data?.data?.user
             if (user) {
+                message.success("Item added to cart!");
                 openCart();
-                setloading(false)
             }
         } catch (error) {
-            console.log("Error in cart", error.response?.data || error.message);
+            message.error(getErrorMessage(error, "Failed to add item to cart"));
+        } finally {
+            setloading(false);
         }
     };
 
@@ -136,7 +145,6 @@ const ProductPage = () => {
 
             );
         } catch (error) {
-            console.log(error);
         }
     }
 
@@ -200,7 +208,6 @@ const ProductPage = () => {
 
                                     onClick={() => {
                                         setimg(item)
-                                        console.log(img)
                                     }}
                                 />
                             </label>

@@ -22,7 +22,6 @@ const Search = () => {
                 setProducts(res.data?.data || []);
                 setFiltered(res.data?.data || []);
             } catch (error) {
-                console.error(error);
             }
         };
 

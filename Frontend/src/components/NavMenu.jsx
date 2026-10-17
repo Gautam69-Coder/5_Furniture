@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { slugify } from '../Utils/slugify';
 import { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
-import {FurnitureCollection,FurnishingCollection} from "../Collections/Navbardata" 
+import { FurnitureCollection, FurnishingCollection } from "../Collections/Navbardata"
 
 
 const NavMenu = () => {
@@ -73,9 +73,10 @@ const NavMenu = () => {
                             }}
 
                         >
-                            <Link to={`/collections/${slugify(item.title)}`}>
+                            <Link to={`/collections/${slugify(item.title)}`} className='text-white!'>
                                 {item.title}
                             </Link>
+
                             <motion.span
                                 className="absolute left-0 bottom-0 h-1.5 bg-white origin-left"
                                 variants={{

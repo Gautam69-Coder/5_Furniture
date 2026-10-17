@@ -60,10 +60,8 @@ const OrderMessage = asyncHandler(async (req, res) => {
 
     let otpStore = {}; // { email: otp }
     const userId = req.user._id;
-    console.log(userId)
 
     const user = await User.findOne({ _id: userId });
-    console.log(user)
     const email = user.email
 
     const transporter = nodemailer.createTransport({
@@ -74,7 +72,6 @@ const OrderMessage = asyncHandler(async (req, res) => {
         }
     });
     const { findOrder } = req.body;
-    console.log(findOrder)
     try {
        await transporter.sendMail({
     from: `"Freedom Tree" <YOUR_EMAIL@gmail.com>`,

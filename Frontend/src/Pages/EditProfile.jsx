@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
+import { message } from "antd";
 import { API_BASE_URL } from "../api";
-export default function EditProfile() {
+import { getErrorMessage } from "../Utils/errorHandler";
 
+export default function EditProfile() {
+    const navigate = useNavigate();
     const [User, setUser] = useState(null)
     const [add, setadd] = useState([])
     const [form, setForm] = useState({
@@ -23,6 +27,11 @@ export default function EditProfile() {
         try {
 
             const token = localStorage.getItem("refreshToken")
+            if (!token) {
+                message.warning("Please log in to edit your profile");
+                navigate("/profile");
+                return;
+            }
             const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -30,9 +39,8 @@ export default function EditProfile() {
             });
 
             setUser(res.data.data);
-            console.log(res.data.data)
         } catch (err) {
-            console.log(err)
+            message.error(getErrorMessage(err, "Failed to load profile details"));
         }
     };
 
@@ -47,9 +55,7 @@ export default function EditProfile() {
             });
 
             setadd(res.data.data || []);
-            // console.log(res.data.data)
         } catch (err) {
-            console.log(err)
         }
     }
 
@@ -96,7 +102,17 @@ export default function EditProfile() {
     const userDetils = async () => {
         try {
             const token = localStorage.getItem("refreshToken")
-            const res = await axios.post(`${API_BASE_URL}/api/v1/edit-profile`, {
+            if (!token) {
+                message.warning("Please log in to save changes");
+                return;
+            }
+
+            if (!form.firstName || form.firstName.trim().length < 2) {
+                message.error("Please enter a valid first name");
+                return;
+            }
+
+            await axios.post(`${API_BASE_URL}/api/v1/edit-profile`, {
                 form,
                 address,
             },
@@ -106,9 +122,11 @@ export default function EditProfile() {
                     }
                 }
             );
-            console.log(res.data.data)
+
+            message.success("Profile updated successfully!");
+            navigate("/profile");
         } catch (error) {
-            console.log(error)
+            message.error(getErrorMessage(error, "Failed to update profile. Please try again."));
         }
     }
 

@@ -18,11 +18,8 @@ const Orders = () => {
             try {
                 const response = await axios.get(`${API_BASE_URL}/api/v1/admin/orders`);
                 setOrders(response.data.data.map(order => order.order_details.map(item => item)));
-                // console.log(response.data.data.map(order => order.order_details.map(item => item)));
-                // console.log(response.data.data[0].order_details);
             }
             catch (error) {
-                console.error("Error fetching orders:", error);
             }
         };
         fetchOrders();
@@ -41,21 +38,20 @@ const Orders = () => {
                 return `${item?.user_address[0]?.firstName || ""} ${item?.user_address[0]?.lastName || ""}`.toLowerCase();
             })
 
-            console.log(customerName)
+          
 
 
             const orderId = order.map((item) => {
                 return item?.status[0]?.cashfreeOrderId?.toLowerCase() || ""
             })
 
-            console.log(orderId)
 
             return (
                 orderId.some(item => item.includes(searchText)) || customerName.some(item => item.includes(searchText))
             )
         })
 
-        console.log(filtered)
+     
         setFilteredOrders(filtered)
 
     }, [search, Orders])
@@ -124,7 +120,6 @@ const Orders = () => {
                         value={search}
                         onChange={(e) => {
                             setsearch(e.target.value)
-                            // console.log(e.target.value)
                         }}
                     />
                 </div>

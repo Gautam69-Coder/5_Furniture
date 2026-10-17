@@ -31,7 +31,6 @@
 //         return api(error.config);
 
 //       } catch (err) {
-//         console.log("Refresh failed");
 //         localStorage.removeItem("accessToken");
 //         window.location.href = `/login`;
 //       }

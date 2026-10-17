@@ -27,7 +27,6 @@ const Customers = () => {
 
         setFilteredUsers(filtered);
       } catch (error) {
-        console.error(error);
       }
     };
     fetchData();

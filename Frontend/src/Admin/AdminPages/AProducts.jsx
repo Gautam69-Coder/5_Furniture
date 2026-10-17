@@ -16,12 +16,10 @@ const Products = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                console.log("hello")
+              
                 const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
-                // console.log(res.data.data);
                 setProductsData(res.data.data);
             } catch (error) {
-                console.error('Error fetching products:', error);
             }
         };
         fetchProducts();

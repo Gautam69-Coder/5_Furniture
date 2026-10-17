@@ -12,6 +12,7 @@ import 'ldrs/react/TailChase.css'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase";
 import { API_BASE_URL } from '../api';
+import { getErrorMessage } from '../Utils/errorHandler';
 
 
 const Login = () => {
@@ -65,17 +66,17 @@ const Login = () => {
       localStorage.setItem("refreshToken", res.data.data)
       await messageApi.open({
         type: 'success',
-        content: 'Signup successFully',
+        content: 'Signed in successfully!',
       });
 
       closeLogin();
 
       window.location.reload();
-
-      console.log("Login success, JWT cookie set by backend");
     } catch (error) {
-      if (error.response) console.error("Backend error:", error.response.data);
-      else console.error("Popup closed or blocked:", error);
+      messageApi.open({
+        type: 'error',
+        content: getErrorMessage(error, "Google sign-in failed. Please try again."),
+      });
     }
   };
 
@@ -105,51 +106,58 @@ const Login = () => {
 
   // Phone Number validation
   const PhoneNumberValidate = () => {
-    if (text.length !== 10) {
+    if (!text || !/^\d{10}$/.test(text.trim())) {
       messageApi.open({
         type: 'error',
-        content: 'Please enter valid number',
+        content: 'Please enter a valid 10-digit mobile number',
       });
+      return false;
     } else {
       setisNumber(false);
       setisOTP(true);
-      setisRegister(false)
+      setisRegister(false);
+      return true;
     }
   }
 
   // OTP Number validation
   const OTPValidation = () => {
-    if (OTPNumber.length !== 6) {
+    if (!OTPNumber || OTPNumber.toString().length !== 6) {
       messageApi.open({
         type: 'error',
-        content: 'Please enter OTP valid number',
+        content: 'Please enter a valid 6-digit OTP',
       });
+      return false;
     } else {
-      setisNumber(false)
+      setisNumber(false);
       setisOTP(false);
       setisRegister(true);
+      return true;
     }
   }
 
   // Register Number validation
   const RegisterValidation = () => {
-    if (firstName.length < 3) {
+    if (!firstName || firstName.trim().length < 3) {
       messageApi.open({
         type: 'error',
-        content: 'Please Filled minimum 3 letter of name',
+        content: 'Please enter minimum 3 letters for first name',
       });
-    } else if (!validator.isEmail(email)) {
+      return false;
+    } else if (!email || !validator.isEmail(email.trim())) {
       messageApi.open({
         type: 'error',
-        content: 'Please Enter valid Email Address',
+        content: 'Please enter a valid email address',
       });
+      return false;
     } else {
       setregister({
         firstName,
         lastName,
         email,
         text,
-      })
+      });
+      return true;
     }
   }
 
@@ -166,10 +174,10 @@ const Login = () => {
       const response = await axios.post(
         `${API_BASE_URL}/api/v1/user/register`,
         {
-          firstName,
-          lastName,
-          email,
-          phoneNumber: text,
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: email.trim(),
+          phoneNumber: text.trim(),
         },
         { withCredentials: true }
       );
@@ -177,12 +185,17 @@ const Login = () => {
       localStorage.setItem("email", response.data.data.user.email)
       setloaders(false);
       setsuccess(true);
+      messageApi.open({
+        type: 'success',
+        content: 'Account created successfully!',
+      });
     } catch (error) {
+      setloaders(false);
+      setisRegister(true);
       messageApi.open({
         type: 'error',
-        content: error.message || "Something went wrong",
+        content: getErrorMessage(error, "Failed to create account. Please try again."),
       });
-      console.log(error)
     }
   }
 
@@ -205,10 +218,10 @@ const Login = () => {
     } else if (isRegister) {
 
       // Register validation and all input are store in one object
-      RegisterValidation();
-
-      //Data send to backend
-      DataSend();
+      if (RegisterValidation()) {
+        //Data send to backend only if validation passes
+        DataSend();
+      }
 
     } else {
 

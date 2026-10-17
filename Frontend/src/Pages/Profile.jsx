@@ -3,11 +3,14 @@ import { useState, useEffect } from "react";
 import 'ldrs/react/TailChase.css'
 import axios from "axios"
 import { Link } from "react-router-dom";
+import { Button, Result } from "antd";
 import { API_BASE_URL } from "../api";
 import { loader } from "../Utils/loarder";
-
+import { getErrorMessage } from "../Utils/errorHandler";
+import { useQuickView } from "../context/PopupContext";
 
 const Profile = () => {
+  const { openLogin } = useQuickView();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -21,6 +24,11 @@ const Profile = () => {
     try {
 
       const token = localStorage.getItem("refreshToken")
+      if (!token) {
+        setError("Please log in to view your profile and orders.");
+        setLoading(false);
+        return;
+      }
       const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
         headers: {
           "Authorization": `Bearer ${token}`
@@ -28,12 +36,10 @@ const Profile = () => {
       });
 
       setUser(res.data.data);
-      console.log(res.data.data)
       setLoading(false);
     } catch (err) {
-      setError("Failed to load user details");
+      setError(getErrorMessage(err, "Failed to load user profile. Please try logging in again."));
       setLoading(false);
-      console.log(err)
     }
   };
 
@@ -48,9 +54,7 @@ const Profile = () => {
       });
 
       setadd(res.data.data || []);
-      // console.log(res.data.data)
     } catch (err) {
-      console.log(err)
     }
   }
 
@@ -76,7 +80,6 @@ const Profile = () => {
         setcart(res.data.data)
 
       } catch (error) {
-        console.log(error)
       }
     }
 
@@ -89,7 +92,25 @@ const Profile = () => {
       {loader()}
     </div>
   </div>;
-  if (error) return <p className="flex justify-center items-center w-full h-[70vh]" style={{ color: "red" }}>{error}</p>;
+  if (error) {
+    return (
+      <div className="flex justify-center items-center min-h-[70vh] p-6 bg-[#fafafa]">
+        <Result
+          status="warning"
+          title="Account Access"
+          subTitle={error}
+          extra={[
+            <Button type="primary" key="login" onClick={() => openLogin()}>
+              Log In
+            </Button>,
+            <Button key="home" onClick={() => navigate("/")}>
+              Go to Home
+            </Button>,
+          ]}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#fafafa] sm:py-10 ">

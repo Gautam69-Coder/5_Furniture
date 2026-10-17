@@ -2,7 +2,9 @@ import { useQuickView } from '../../../context/PopupContext'
 import { useState } from 'react'
 import { motion, easeInOut } from 'motion/react'
 import axios from 'axios'
+import { message } from 'antd'
 import { API_BASE_URL } from '../../../api'
+import { getErrorMessage } from '../../../Utils/errorHandler'
 
 const Popup = () => {
   const { isOpenEdit, setisOpenEdit } = useQuickView();
@@ -23,7 +25,6 @@ const Popup = () => {
     const res = await axios.post(`${API_BASE_URL}/api/v1/addproduct`,{
       formData
     });
-    console.log(res.data.data)
   }
 
   const handleImageChange = (e) => {
@@ -53,10 +54,10 @@ const Popup = () => {
         data.append(key, formData[key]);
       });
 
-      console.log(data)
 
       await axios.post(`${API_BASE_URL}/api/v1/addproduct`,{formData} );
 
+      message.success("Product added successfully!");
       setisOpenEdit(false);
       setFormData({
         name: '',
@@ -69,7 +70,7 @@ const Popup = () => {
       });
       setImagePreview(null);
     } catch (error) {
-      console.error("Error adding product:", error);
+      message.error(getErrorMessage(error, "Failed to add product. Please verify fields and try again."));
     } finally {
       setLoading(false);
     }

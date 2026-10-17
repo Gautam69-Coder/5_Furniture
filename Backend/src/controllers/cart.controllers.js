@@ -12,7 +12,6 @@ const CartData = asyncHandler(async (req, res) => {
             throw new ApiError(400, "Product fileds are required");
         }
 
-        console.log(productId, name, image, price, quantity, size, materail, description)
 
         const item = {
             productId,
@@ -83,7 +82,6 @@ const SetQuantity = asyncHandler(async (req, res) => {
         { new: true }
     )
 
-    console.log("Cart : ", cart)
 
     if (!cart) {
         throw new ApiError(400, "Quantity cannot be less than 1");
@@ -102,7 +100,6 @@ const DeleteItem = asyncHandler(async (req, res) => {
         if (!productId) {
             //delete all cart paroducts
             const orderDelete = await Cart.deleteMany();
-            console.log(orderDelete)
             res.status(200).json(
                 new ApiResponse(200, "All cart item delete successFully")
             )

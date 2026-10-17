@@ -2,11 +2,16 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form"
 import axios from "axios"
+import { message } from "antd"
 import { load } from '@cashfreepayments/cashfree-js';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
+import { getErrorMessage } from '../Utils/errorHandler';
+import { useQuickView } from '../context/PopupContext';
 
 const Checkout = () => {
+
+    const { openLogin } = useQuickView();
 
     const {
         register,
@@ -27,18 +32,20 @@ const Checkout = () => {
     const fetchCart = async () => {
         try {
             const token = localStorage.getItem("refreshToken")
+            if (!token) return;
             const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }
             });
-            setcart(res.data.data[0].product);
-            const s = res.data.data[0].product.reduce((total, item) => {
-                return total + item.price * item.quantity
+            const products = res.data?.data?.[0]?.product || [];
+            setcart(products);
+            const s = products.reduce((total, item) => {
+                return total + (item.price || 0) * (item.quantity || 1)
             }, 0)
             setsubTotal(s)
         } catch (error) {
-            console.error(error);
+            message.error(getErrorMessage(error, "Failed to load cart items"));
         }
     };
 
@@ -46,6 +53,11 @@ const Checkout = () => {
         try {
 
             const token = localStorage.getItem("refreshToken")
+            if (!token) {
+                setError("Please log in to proceed with checkout");
+                setLoading(false);
+                return;
+            }
             const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -53,10 +65,11 @@ const Checkout = () => {
             });
 
             setUser(res.data.data);
-            console.log(res.data.data)
             setLoading(false);
         } catch (err) {
-            setError("Failed to load user details");
+            const errMsg = getErrorMessage(err, "Failed to load user details");
+            setError(errMsg);
+            message.error(errMsg);
             setLoading(false);
         }
     };
@@ -72,21 +85,28 @@ const Checkout = () => {
 
     const handlePayment = async (addressData) => {
         try {
-            console.log(cart)
-            let cashfree;
-            console.log(addressData)
+            const token = localStorage.getItem("refreshToken");
+            if (!token) {
+                message.warning("Please log in to proceed with checkout");
+                openLogin();
+                return;
+            }
+
+            if (!cart || cart.length === 0) {
+                message.warning("Your cart is empty. Please add items before checking out.");
+                return;
+            }
+
             setisloading(true);
-            cashfree = await load({
+            const cashfree = await load({
                 mode: "sandbox"
             });
 
-            const token = localStorage.getItem("refreshToken")
-
             const response = await axios.post(`${API_BASE_URL}/api/v1/create-order`, {
                 amount: subTotal,
-                customer_name: user?.firstName || "John Doe",
-                customer_email: user?.email || "john@example.com",
-                customer_phone: user?.phoneNumber || "9082386079",
+                customer_name: user?.firstName || addressData?.firstName || "Customer",
+                customer_email: user?.email || addressData?.email || "customer@example.com",
+                customer_phone: user?.phoneNumber || addressData?.phone || "9082386079",
                 cart,
                 address: addressData
             },
@@ -97,16 +117,15 @@ const Checkout = () => {
                 }
             );
 
-            console.log(response)
-
-            const sessionId = response.data.data.payment_session_id;
+            const sessionId = response.data?.data?.payment_session_id;
             if (!sessionId) {
-                console.log("Not Found session id")
+                throw new Error("Payment session could not be created. Please try again.");
             }
-            console.log(sessionId)
 
-            const orderId = response.data.data.order_id;
-            localStorage.setItem("currentOrderId", orderId);
+            const orderId = response.data?.data?.order_id;
+            if (orderId) {
+                localStorage.setItem("currentOrderId", orderId);
+            }
 
             const checkoutOptions = {
                 paymentSessionId: sessionId,
@@ -114,19 +133,16 @@ const Checkout = () => {
             };
 
             await cashfree.checkout(checkoutOptions);
-            setisloading(false)
 
         } catch (error) {
-            if (error.response) {
-                console.log("Server Error:", error.response.data);
-            } else {
-                console.log("Network/App Error:", error.message);
-            }
+            const errMsg = getErrorMessage(error, "Payment processing failed. Please try again.");
+            message.error(errMsg);
+        } finally {
+            setisloading(false);
         }
     }
 
     const onSubmit = (formData) => {
-        console.log("Address Form Data:", formData);
         setaddress(formData);
         handlePayment(formData);
     };
@@ -179,9 +195,9 @@ const Checkout = () => {
                         <div className='py-[9px] '>
 
                             <div className='flex items-center text-[14px] justify-between border-b  border-[#DFDFDF] pb-2'>
-                                <p className=' p-2 bg-[#F6F6F6] w-fit rounded-full text-[12px]'>{user.firstName.charAt(0)} {user.lastName.charAt(0)}</p>
+                                <p className=' p-2 bg-[#F6F6F6] w-fit rounded-full text-[12px]'>{user?.firstName?.charAt(0)} {user?.lastName?.charAt(0)}</p>
                                 <div className='flex items-center'>
-                                    <p>{user.email}</p>
+                                    <p>{user?.email}</p>
                                     
                                 </div>
                             </div>
@@ -192,7 +208,7 @@ const Checkout = () => {
                                 <select
                                     {...register("country", { required: "Country is required" })}
                                     className="w-full border border-[#DFDFDF] rounded-md px-3 py-2 focus:outline-none focus:border-green-400 focus:ring-1 text-[12px]"
-                                    onChange={(e) => { setstate(e.target.value); console.log(e.target.value) }}
+                                    onChange={(e) => { setstate(e.target.value); }}
                                 >
                                     <option value="">Select Country</option>
                                     {Countries.map((item, index) => (
@@ -369,8 +385,8 @@ const Checkout = () => {
                         </div>
 
                         {/* Pay Now Button */}
-                        <button onClick={() => { handleSubmit() }} disabled={loading} className="w-full mt-6 bg-black text-white py-4 rounded-lg font-semibold hover:opacity-90 transition">
-                            {loading ? (loader(14, "white")) : ("Pay Now")}
+                        <button type="submit" disabled={isloading || loading} className="w-full mt-6 bg-black text-white py-4 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50 cursor-pointer">
+                            {isloading ? (loader(14, "white")) : ("Pay Now")}
                         </button>
                     </form>
 

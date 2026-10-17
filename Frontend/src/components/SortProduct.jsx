@@ -34,7 +34,6 @@ const SortProduct = ({ ProductSubcategory }) => {
 
         );
       } catch (error) {
-        console.log(error);
       }
     }
 

@@ -57,7 +57,6 @@ const Dashboard = () => {
           .flat();
         settotalOrder(orderCount.reduce((acc, amount) => acc + amount, 0));
       } catch (error) {
-        console.error('Error fetching orders:', error);
       }
     };
     fetchOrders();
@@ -69,7 +68,6 @@ const Dashboard = () => {
         const res = await axios.get(`${API_BASE_URL}/api/v1/users`);
         settotalUser(res.data.data.length);
       } catch (error) {
-        console.error('Error fetching users:', error);
       }
     };
     fetchUsers();

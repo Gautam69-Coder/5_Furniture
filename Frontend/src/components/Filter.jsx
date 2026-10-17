@@ -38,7 +38,6 @@ const Practice = ({ onFilterChange }) => {
         const fetchData = async () => {
             const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
             setProductData(res.data.data);
-            // console.log(res.data.data.find(item => item.category.includes(category)));
             const find = res.data.data.filter(item => item.category.includes(category))
 
             // Extract unique Categories items
@@ -94,7 +93,6 @@ const Practice = ({ onFilterChange }) => {
         PRICE: price
     };
 
-    // console.log(myitems.CATEGORY)
     const toggleCategory = (e) => {
         if (okcategory.includes(e.target.value)) {
             setcategory(prev => prev.filter(item => item !== e.target.value));
@@ -108,7 +106,6 @@ const Practice = ({ onFilterChange }) => {
         setfilter(okcategory)
     }, [okcategory]);
 
-    console.log(window.location.pathname)
 
     return (
         <div className="sm:sticky top-0  ">

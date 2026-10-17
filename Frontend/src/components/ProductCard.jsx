@@ -1,20 +1,25 @@
 import { Link } from 'react-router-dom';
 import { useQuickView } from "../context/PopupContext";
 import axios from 'axios';
+import { message } from 'antd';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
+import { getErrorMessage } from '../Utils/errorHandler';
 import { useState } from 'react';
 
 const ProductCard = ({ link, item }) => {
-    const { openQuickView, openCart } = useQuickView();
+    const { openQuickView, openCart, openLogin } = useQuickView();
     const [loading, setloading] = useState(false)
 
-    // console.log(item)
 
     // Send Add to cart pro to
     const cartData = async () => {
         const token = localStorage.getItem("refreshToken")
-        if (!token) return
+        if (!token) {
+            message.warning("Please log in to add items to your cart");
+            openLogin();
+            return;
+        }
 
         try {
             setloading(true)
@@ -39,13 +44,11 @@ const ProductCard = ({ link, item }) => {
             )
 
             if (res.data?.data?.user) {
+                message.success("Item added to cart!");
                 openCart()
             }
         } catch (error) {
-            console.log(
-                "Error in cart",
-                error.response?.data || error.message
-            )
+            message.error(getErrorMessage(error, "Failed to add item to cart"));
         } finally {
             setloading(false)
         }
@@ -57,7 +60,7 @@ const ProductCard = ({ link, item }) => {
             <div className="relative group">
                 <Link to={link}>
                     <img src={item.images?.[0]} className="transition-all duration-300 group-hover:opacity-0 w-full" />
-                    <img src={item.gallery?.[1]} className="transition-all duration-300 absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100" />
+                    <img src={item.gallery?.[2]} className="transition-all duration-300 absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100" />
                 </Link>
 
                 <div className="absolute bottom-[5px] w-full opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
@@ -72,11 +75,9 @@ const ProductCard = ({ link, item }) => {
                             Quick View
                         </div>
 
-                        <button className={`px-3 py-2 text-white bg-black `}
+                        <button className={`px-3 py-2 text-white bg-black cursor-pointer`}
                             onClick={() => {
                                 cartData();
-                                openCart();
-                                setloading(!loading);
                             }}
                             disabled={loading}
                         >{loading ? (loader(14, "white")) : ("Add to Cart")}</button>

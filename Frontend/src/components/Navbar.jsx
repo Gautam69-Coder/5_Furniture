@@ -52,7 +52,6 @@ const Navbar = () => {
 
         setavatar(res.data.data.avatar);
       } catch (err) {
-        console.log(err)
       }
     };
 
@@ -94,9 +93,7 @@ const Navbar = () => {
               </div>
               <div className='block sm:hidden '
                 onClick={() => {
-                  console.log("hello");
                   setisSearch(true);
-                  console.log(isSearch)
                 }}>
                 <svg width="30" height="30" className='' xmlns="http://www.w3.org/2000/svg"><path d="M19.427 20.427a8.5 8.5 0 111.083-.917l5.998 5.998a.699.699 0 01-.008.992.7.7 0 01-.992.008l-6.08-6.08zM14.5 21a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" fill="#000" fill-rule="evenodd" /></svg>
               </div>
@@ -105,11 +102,8 @@ const Navbar = () => {
 
             <div className='hidden md:flex border h-[30px] cursor-pointer'>
               <input type="text" placeholder='Search our Store '
-                onChange={(e) => console.log("User typed:", e.target.value)}
                 onClick={() => {
-                  console.log("hello");
                   setisSearch(true);
-                  console.log(isSearch)
                 }}
                 className='focus:outline-none px-3 py-2 text-[17px] w-full' />
               <svg width="30" height="30" className='mx-3' xmlns="http://www.w3.org/2000/svg"><path d="M19.427 20.427a8.5 8.5 0 111.083-.917l5.998 5.998a.699.699 0 01-.008.992.7.7 0 01-.992.008l-6.08-6.08zM14.5 21a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" fill="#000" fill-rule="evenodd" /></svg>
@@ -117,7 +111,7 @@ const Navbar = () => {
             </div>
 
 
-            <div className='md:ml-20 cursor-pointer'>
+            <div className=' cursor-pointer'>
               <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924191/freedomtree_phpfqw.avif" alt="" className='w-[150px] md:w-[220px]'
                 onClick={() => {
                   navigate('/');
@@ -126,8 +120,8 @@ const Navbar = () => {
             </div>
 
             <div className='flex gap-5 items-center'>
-              <div className="hidden md:flex justify-center items-center bg-white">
-                <select className="px-2 py-2 focus:outline-1 text-[18px] cursor-pointer">
+              <div className="hidden md:flex justify-center items-center ">
+                <select className=" py-2 focus:outline-1 text-[18px] cursor-pointer">
                   <option>INDIA - INR</option>
                   <option>USA - USD</option>
                   <option>Europe - EUR</option>
@@ -163,13 +157,13 @@ const Navbar = () => {
                 <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/cart_qn88fx.svg" alt="cart" width={28} />
               </div>
 
-              <div className='hidden md:block cursor-pointer'>
+              {/* <div className='hidden md:block cursor-pointer'>
                 <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/lion_mlsdvm.png" alt="lion" width={59}
                   onClick={() => {
                     navigate('/practice');
                   }}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
 

@@ -196,7 +196,7 @@ const refreshAccesToken = asyncHandler(async (req, res) => {
         }
 
         const decodedToken = jwt.verify(incomingRefreshToken, process.env.REFRESH_TOKEN_SECRET)
-        console.log("decodedToken line 170", decodedToken)
+       
 
         const user = await User.findById(decodedToken?._id)
 
@@ -263,7 +263,6 @@ const updateUserDetails = asyncHandler(async (req, res) => {
     }
 
     const profile = await User.findOne(userId)
-    console.log(profile)
 
     const updateProfile = await User.findOneAndUpdate(
         { _id: userId },
@@ -282,11 +281,8 @@ const updateUserDetails = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Profile not Updated")
     }
 
-    console.log(userId)
+  
     const userAddressExistes = await Address.findOne({ userId })
-    console.log(userAddressExistes)
-
-    console.log(userAddressExistes)
     if (!userAddressExistes) {
         await Address.create(
             {

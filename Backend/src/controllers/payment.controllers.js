@@ -4,7 +4,6 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { Cashfree, CFEnvironment } from "cashfree-pg";
 import Order from '../models/order.models.js';
 import { User } from '../models/user.model.js'
-import nodemailer from "nodemailer"
 
 
 const CheckOut = asyncHandler(async (req, res) => {
@@ -21,9 +20,6 @@ const CheckOut = asyncHandler(async (req, res) => {
     if (!userId) {
         throw new ApiError(401, "Unauthorized");
     }
-
-    console.log(customer_phone)
-
 
 
     if (!customer_phone || !customer_name || !customer_email) {
@@ -50,6 +46,8 @@ const CheckOut = asyncHandler(async (req, res) => {
         0
     );
 
+    const returnUrl = process.env.PRODUCTION ? "https://5-furniture.pages.dev/payment-status" : "http://localhost:5173/payment-status";
+
     const request = {
         order_id: orderId,
         order_amount: totalAmount,
@@ -61,8 +59,7 @@ const CheckOut = asyncHandler(async (req, res) => {
             customer_name: customer_name
         },
         order_meta: {
-            return_url: "https://5-furniture.pages.dev/payment-status"
-            // return_url: "http://localhost:5173/payment-status"
+            return_url: returnUrl
         },
         cart_details: {
             cart_items: cart.map(item => ({
@@ -80,12 +77,12 @@ const CheckOut = asyncHandler(async (req, res) => {
         },
     };
 
-    console.log(request)
 
     let data;
     try {
         const response = await cashfree.PGCreateOrder(request);
         data = response.data;
+        console.log("Cashfree : ", data)
         const order = await Order.findOne({ userId });
 
         const orderPayload = {
@@ -110,25 +107,25 @@ const CheckOut = asyncHandler(async (req, res) => {
         }
 
 
-        if (address?.phone) {
-            const existingPhoneNumber = await User.findOne({ phoneNumber: address.phone })
+        // if (address?.phone) {
+        //     const existingPhoneNumber = await User.findOne({ phoneNumber: address.phone })
 
-            console.log(existingPhoneNumber);
 
-            if (!existingPhoneNumber) {
-                await User.findByIdAndUpdate(
-                    { _id: userId },
-                    {
-                        $set: {
-                            phoneNumber: address.phone
-                        }
-                    },
-                    {
-                        new: true,
-                    }
-                );
-            }
-        }
+
+        //     if (!existingPhoneNumber) {
+        //         await User.findByIdAndUpdate(
+        //             { _id: userId },
+        //             {
+        //                 $set: {
+        //                     phoneNumber: address.phone
+        //                 }
+        //             },
+        //             {
+        //                 new: true,
+        //             }
+        //         );
+        //     }
+        // }
 
     } catch (err) {
         console.log(err.response?.data || err.message);
@@ -164,6 +161,7 @@ const getPaymentStatus = asyncHandler(async (req, res) => {
     try {
         const response = await cashfree.PGFetchOrder(orderId);
         data = response.data;
+        console.log("Cashfree gateway : ", data)
     } catch (err) {
         console.log(err.response?.data || err.message);
         throw new ApiError(500, "Failed to fetch order status");
@@ -172,9 +170,6 @@ const getPaymentStatus = asyncHandler(async (req, res) => {
     const order = await Order.findOne({
         "order_details.status.cashfreeOrderId": orderId
     });
-
-    // console.log(order.order_details[0].status[0])
-    console.log(data.order_status)
 
     if (order) {
         order.order_details.forEach(detail => {

@@ -4,92 +4,160 @@ import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../api";
 import { Button, Result } from 'antd';
 import { loader } from "../Utils/loarder";
+import { getErrorMessage } from "../Utils/errorHandler";
+
 const PaymentStatus = () => {
     const [status, setStatus] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const orderId = localStorage.getItem("currentOrderId");
 
     useEffect(() => {
         const fetchStatus = async () => {
             try {
-                // console.log("hello")
-                const orderId = localStorage.getItem("currentOrderId");
-                console.log(orderId)
                 if (!orderId) {
-                    setError("No order found");
+                    setError("No order identifier found. Please check your order history.");
                     setLoading(false);
                     return;
                 }
 
                 const res = await axios.get(`${API_BASE_URL}/api/v1/status/${orderId}`);
+                console.log("Status Response : ", res.data.data);
                 const token = localStorage.getItem("refreshToken");
-                const res2 = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
-                setStatus(res.data.data);
-                console.log(res.data.data);
-                let my = res2.data.data[0].order_details.map((item => item));
-                let findOrder = my.slice(-1)[0]
-                console.log(findOrder)
-                const ordersSend = await axios.post(`${API_BASE_URL}/api/v1/verify_order/`,
-                    { findOrder },
-                    {
-                        headers: { Authorization: `Bearer ${token}` }
-                    }
-                )
-                
-                console.log(ordersSend)
-                setLoading(false);
+                setStatus(res.data?.data);
 
+                if (token) {
+                    const res2 = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const myOrders = res2.data?.data?.[0]?.order_details || [];
+                    const findOrder = myOrders.slice(-1)[0];
+                    if (findOrder) {
+                        await axios.post(`${API_BASE_URL}/api/v1/verify_order/`,
+                            { findOrder },
+                            {
+                                headers: { Authorization: `Bearer ${token}` }
+                            }
+                        );
+                    }
+                }
             } catch (err) {
-                console.error(err);
-                setError("Failed to fetch order status");
+                setError(getErrorMessage(err, "Failed to verify order and payment status."));
             } finally {
                 setLoading(false);
             }
         };
 
         fetchStatus();
-    }, []);
-
+    }, [orderId]);
 
     useEffect(() => {
         const deleteItem = async (productId) => {
             try {
-
-                const token = localStorage.getItem("refreshToken")
-                const res = await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
+                const token = localStorage.getItem("refreshToken");
+                if (!token) return;
+                await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
                     { productId },
                     {
                         headers: {
                             "Authorization": `Bearer ${token}`
                         }
                     }
-                )
-            } catch (error) {
-                console.log(error)
+                );
+            } catch (err) {
+                // Silently handle background cart cleanup
             }
-        }
+        };
 
         deleteItem();
-    }, [])
+    }, []);
 
+    if (loading) {
+        return (
+            <div className="h-[70vh] flex flex-col items-center justify-center gap-4">
+                {loader()}
+                <p className="text-gray-600 text-sm">Verifying payment status...</p>
+            </div>
+        );
+    }
 
-    if (loading) return <p className="h-[70vh] flex items-center justify-center">{loader()}</p>;
-    if (error) return <p className="text-red-500">{error}</p>;
+    if (error) {
+        return (
+            <div className="p-8 flex justify-center items-center min-h-[70vh]">
+                <Result
+                    status="error"
+                    title="Order Verification Issue"
+                    subTitle={error}
+                    extra={[
+                        <Button type="primary" key="orders" onClick={() => navigate("/profile")}>
+                            View My Orders
+                        </Button>,
+                        <Button key="home" onClick={() => navigate("/")}>
+                            Return to Home
+                        </Button>,
+                    ]}
+                />
+            </div>
+        );
+    }
 
+    const orderStatus = status?.order_status?.toUpperCase();
+
+    if (orderStatus === "PAID" || orderStatus === "SUCCESS") {
+        return (
+            <div className="p-8 flex justify-center items-center min-h-[70vh]">
+                <Result
+                    status="success"
+                    title="Payment Successful!"
+                    subTitle={`Order ID: ${orderId || status?.order_id || 'N/A'}. Thank you for your purchase! Your order is confirmed and being prepared.`}
+                    extra={[
+                        <Button type="primary" key="orders" onClick={() => navigate("/profile")}>
+                            View Order Details
+                        </Button>,
+                        <Button key="buy" onClick={() => navigate("/collections/furniture")}>
+                            Continue Shopping
+                        </Button>,
+                    ]}
+                />
+            </div>
+        );
+    }
+
+    if (orderStatus === "ACTIVE" || orderStatus === "PENDING") {
+        return (
+            <div className="p-8 flex justify-center items-center min-h-[70vh]">
+                <Result
+                    status="warning"
+                    title="Payment is Pending"
+                    subTitle={`Order ID: ${orderId || status?.order_id || 'N/A'}. Your transaction is awaiting confirmation from your bank. Please check your order history shortly.`}
+                    extra={[
+                        <Button type="primary" key="orders" onClick={() => navigate("/profile")}>
+                            Check My Orders
+                        </Button>,
+                        <Button key="home" onClick={() => navigate("/")}>
+                            Return to Home
+                        </Button>,
+                    ]}
+                />
+            </div>
+        );
+    }
+
+    // Default to Failed / Cancelled
     return (
-        <div className="p-8 flex justify-center items-center h-[80vh]">
+        <div className="p-8 flex justify-center items-center min-h-[70vh]">
             <Result
-                status="success"
-                title="Successfully Purchased Cloud Server ECS!"
-                subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
+                status="error"
+                title="Payment Failed or Cancelled"
+                subTitle={`Order ID: ${orderId || status?.order_id || 'N/A'}. The payment could not be completed. Any deducted funds will be reversed according to your payment provider's timeline.`}
                 extra={[
-                    <Button type="primary" key="console" onClick={() => { navigate("/") }}>
-                        Home
+                    <Button type="primary" key="checkout" onClick={() => navigate("/checkout")}>
+                        Retry Checkout
                     </Button>,
-                    <Button key="buy" onClick={() => { navigate("/collections/furniture") }} >Buy Again</Button>,
+                    <Button key="home" onClick={() => navigate("/")}>
+                        Return to Home
+                    </Button>,
                 ]}
             />
         </div>

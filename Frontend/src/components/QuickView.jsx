@@ -2,12 +2,14 @@ import { motion, easeInOut } from 'motion/react'
 import { useState } from 'react';
 import { useQuickView } from "../context/PopupContext";
 import axios from 'axios';
+import { message } from 'antd';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
+import { getErrorMessage } from '../Utils/errorHandler';
 
 const QuickView = () => {
 
-    const { isOpen, product, closeQuickView, openCart } = useQuickView();
+    const { isOpen, product, closeQuickView, openCart, openLogin } = useQuickView();
     const [qty, setqty] = useState(1);
     const [zoom, setzoom] = useState(false);
     const [img, setimg] = useState("");
@@ -25,8 +27,6 @@ const QuickView = () => {
         }
     }
 
-    console.log(product)
-
     const decreaseQty = () => {
         if (qty > 1) {
             setqty(qty - 1);
@@ -34,15 +34,21 @@ const QuickView = () => {
     }
 
     const cartData = async () => {
-        try {
-            const token = localStorage.getItem("refreshToken");
+        const token = localStorage.getItem("refreshToken");
+        if (!token) {
+            message.warning("Please log in to add items to your cart");
+            openLogin();
+            return;
+        }
 
+        try {
+            setloading(true);
             const res = await axios.post(
                 `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: product._id,
                     name: product.name,
-                    image: img,
+                    image: img || (Array.isArray(product?.images) ? product?.images[0] : product?.images),
                     price: product.price,
                     quantity: qty,
                 },
@@ -53,10 +59,12 @@ const QuickView = () => {
                 }
             );
 
-            console.log(res.data);
+            message.success("Item added to cart!");
             openCart();
         } catch (error) {
-            console.log("Error in cart", error.response?.data || error.message);
+            message.error(getErrorMessage(error, "Failed to add item to cart"));
+        } finally {
+            setloading(false);
         }
     };
 
@@ -100,7 +108,6 @@ const QuickView = () => {
 
                                             onClick={() => {
                                                 setimg(item)
-                                                console.log(img)
                                             }}
                                         />
                                     </label>
@@ -221,9 +228,7 @@ const QuickView = () => {
                                 <button className='px-6 text-center bg-black py-3 text-white uppercase font-bold text-[14px] w-full cursor-pointer'
                                     disabled={loading}
                                     onClick={() => {
-                                        userActivity();
                                         cartData();
-                                        setloading(!loading);
                                     }} >{loading ? (loader(14, "white")) : ("Add to Cart")}</button>
                                 <button className='px-6 text-center hover:bg-black bg-[#0db269] py-3 text-white uppercase font-bold text-[14px] w-full transition-all duration-300 cursor-pointer'
                                     onClick={() => {

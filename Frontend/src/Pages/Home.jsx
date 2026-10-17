@@ -25,7 +25,6 @@ const Home = () => {
 
         setitem(res.data.data.map(item => item))
       } catch (error) {
-        console.log(error)
       }
     }
     recently_viewed();
@@ -43,7 +42,6 @@ const Home = () => {
         setrecommended(res.data.data.map(item => item))
 
       } catch (error) {
-        console.log(error)
       }
     }
     recommended();

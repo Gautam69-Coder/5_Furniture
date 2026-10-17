@@ -16,7 +16,6 @@ export const googleAuth = asyncHandler(async (req, res) => {
     const [firstName, lastName] = name.trim().split(/\s+/);
 
     let user = await User.findOne({ email });
-    console.log(user)
     if (!user) {
       user = await User.create({
         firstName,
@@ -42,6 +41,6 @@ export const googleAuth = asyncHandler(async (req, res) => {
 
     res.status(200).json(new ApiResponse(200,jwtToken, "Login successful"));
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 });
