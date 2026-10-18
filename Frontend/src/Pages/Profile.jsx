@@ -133,8 +133,8 @@ const Profile = () => {
               </h1>
             </div>
             {user?.email === "gautamdoliya69@gmail.com" && (
-              <Link to={"/admin"}>
-                <button className="p-2 border-2">
+              <Link to={"/admin"} className="text-black! hover:cursor-pointer!">
+                <button className="p-2 border-2 cursor-pointer">
                   Admin
                 </button>
               </Link>
@@ -144,7 +144,7 @@ const Profile = () => {
 
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 mb-12">
 
-          <div className="bg-white border border-gray-200 p-6 flex justify-between ">
+          <div className="bg-white border border-gray-200 p-6  justify-between ">
             <div>
               <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
                 Profile Details
@@ -165,6 +165,7 @@ const Profile = () => {
                 {new Date(user?.createdAt).toLocaleDateString()}
               </p>
 
+            </div>
               <div className="flex justify-between items-center">
                 <button
                   onClick={() => {
@@ -173,7 +174,7 @@ const Profile = () => {
                     navigate("/");
                     window.location.reload();
                   }}
-                  className="mt-6 text-sm underline text-gray-700 hover:text-black"
+                  className="mt-6 text-sm  text-gray-700 hover:text-black p-2 border hover:underline"
                 >
                   Logout
                 </button>
@@ -181,12 +182,11 @@ const Profile = () => {
                   onClick={() => {
                     navigate("/profile/edit");
                   }}
-                  className="mt-6 text-sm underline text-gray-700 hover:text-black"
+                  className="mt-6 text-sm  text-gray-700 hover:text-black p-2 border hover:underline"
                 >
                   Edit
                 </button>
               </div>
-            </div>
             <div>
               <img src={user?.avatar} className="rounded-full w-10" alt="" />
             </div>
