@@ -27,9 +27,10 @@ import DashboardLayout from "./Admin/AdminLayouts/DashboardLayout.jsx";
 import Dashboard from "./Admin/AdminPages/ADashboard.jsx";
 import Products from "./Admin/AdminPages/AProducts.jsx";
 import Orders from "./Admin/AdminPages/AOrders.jsx";
+import Banners from "./Admin/AdminPages/ABanners.jsx";
 import Customers from "./Admin/AdminPages/ACustomers.jsx";
-import Settings from "./Admin/AdminPages/ASettings.jsx"
-import AddProduct from  "./Admin/AdminPages/Components/AddProductPopup.jsx"
+import Settings from "./Admin/AdminPages/ASettings.jsx";
+import AddProduct from "./Admin/AdminPages/Components/AddProductPopup.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -72,6 +73,7 @@ const App = () => {
               <Route path="/admin/" element={<Dashboard />} />
               <Route path="/admin/products" element={<Products />} />
               <Route path="/admin/orders" element={<Orders />} />
+              <Route path="/admin/banners" element={<Banners />} />
               <Route path="/admin/customers" element={<Customers />} />
               <Route path="/admin/settings" element={<Settings />} />
             </Route>

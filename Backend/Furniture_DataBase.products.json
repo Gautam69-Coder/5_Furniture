@@ -53,7 +53,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 10
   },
   {
     "_id": {
@@ -109,7 +110,8 @@
       "technique": "HAND CARVED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 11
   },
   {
     "_id": {
@@ -165,7 +167,8 @@
       "technique": "HANDCRAFTED WOVEN",
       "foamFeel": "Medium Plush",
       "fabricCustomisation": "Available. Select from any Freedom Tree upholstery fabrics."
-    }
+    },
+    "stock": 12
   },
   {
     "_id": {
@@ -221,7 +224,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Medium Plush",
       "fabricCustomisation": "Available. Select from any Freedom Tree upholstery fabrics."
-    }
+    },
+    "stock": 13
   },
   {
     "_id": {
@@ -277,7 +281,8 @@
       "technique": "SCREEN PRINTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 14
   },
   {
     "_id": {
@@ -333,7 +338,8 @@
       "technique": "SCREEN PRINTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 15
   },
   {
     "_id": {
@@ -389,7 +395,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 16
   },
   {
     "_id": {
@@ -445,7 +452,8 @@
       "technique": "HAND CARVED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 17
   },
   {
     "_id": {
@@ -501,7 +509,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 18
   },
   {
     "_id": {
@@ -557,7 +566,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 19
   },
   {
     "_id": {
@@ -613,7 +623,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 20
   },
   {
     "_id": {
@@ -669,7 +680,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 21
   },
   {
     "_id": {
@@ -725,7 +737,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 22
   },
   {
     "_id": {
@@ -781,7 +794,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 23
   },
   {
     "_id": {
@@ -837,7 +851,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 24
   },
   {
     "_id": {
@@ -893,7 +908,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Medium Plush",
       "fabricCustomisation": "Available. Select from any Freedom Tree upholstery fabrics."
-    }
+    },
+    "stock": 25
   },
   {
     "_id": {
@@ -949,7 +965,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 10
   },
   {
     "_id": {
@@ -1005,7 +1022,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Medium Plush",
       "fabricCustomisation": "Available. Select from any Freedom Tree upholstery fabrics."
-    }
+    },
+    "stock": 11
   },
   {
     "_id": {
@@ -1061,7 +1079,8 @@
       "technique": "HANDCRAFTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
-    }
+    },
+    "stock": 12
   },
   {
     "_id": {
@@ -1117,6 +1136,3974 @@
       "technique": "HAND-PAINTED",
       "foamFeel": "Firm Solid Wood",
       "fabricCustomisation": "Not applicable for solid wood pieces."
+    },
+    "stock": 13
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddbb43795cf86e6b066"
+    },
+    "id": "FT-FN-0001",
+    "name": "Kuru Charcoal Red Cushion Cover (41 Cm X 41 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1480,
+    "stock": 27,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Black",
+      "Kuru",
+      "Cotton duck",
+      "Pure cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-kuru-pure-cotton-charcoal-red-cushion-cover-online-10000017553-1197358124.jpg?v=1760351566"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-kuru-pure-cotton-charcoal-red-cushion-cover-online-10000017553-1197358124.jpg?v=1760351566",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/10000017553-kuru-cushion-cover-charcoal-red-1190654808.jpg?v=1760343807",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/10000017553-kuru-cushion-cover-charcoal-red-1190654806.jpg?v=1760343807",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/10000017553-kuru-cushion-cover-charcoal-red-1190654807.jpg?v=1760343807",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/10000017553-kuru-cushion-cover-charcoal-red-1190654805.jpg?v=1760343807"
+    ],
+    "description": "A fresh rendering of our much-loved Kuru cushion. The restful monochrome colorway pops with the three-dimensional texture of handmade potli-pom-poms adorning the center. It’s perfect for studio spaces or conversation corners that thrive on bold, introspective contrasts. Our NE...",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "CHARCOAL RED",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "41 CM X 41 CM",
+      "sizeIN": "41 IN X 41 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "CHARCOAL RED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddb8cc929bfa50db4e2"
+    },
+    "id": "FT-FN-0002",
+    "name": "Noel Brick and Beige Cushion Cover (36 X 51 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1680,
+    "stock": 28,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Neutral",
+      "Noel",
+      "Geometric",
+      "Cotton duck"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-noel-pure-cotton-brick-and-beige-cushion-cover-online-10000018637-1238413777.jpg?v=1779188227"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-noel-pure-cotton-brick-and-beige-cushion-cover-online-10000018637-1238413777.jpg?v=1779188227",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-noel-pure-cotton-brick-and-beige-cushion-cover-online-10000018637-1238413774.jpg?v=1779188170",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-noel-pure-cotton-brick-and-beige-cushion-cover-online-10000018637-1239368542.jpg?v=1779272410",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-noel-pure-cotton-brick-and-beige-cushion-cover-online-10000018637-1238413776.jpg?v=1779187989",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-noel-pure-cotton-brick-and-beige-cushion-cover-online-10000018637-1238413775.jpg?v=1779188110",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-noel-pure-cotton-brick-and-beige-cushion-cover-online-10000018637-1238413773.jpg?v=1779188049"
+    ],
+    "description": "The Noel Cushion Cover renders abstract land forms in a rhythmic, architectural arrangement embroidered on cotton duck in warm brick and beige. A thread of ochre red anchors the design with quiet heat. and laye Tactilered, it pairs naturally with the solids and stripers of the...",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "BRICK & BEIGE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "36 CM X 50 CM",
+      "sizeIN": "36 IN X 50 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "BRICK & BEIGE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddbf398cefe2e0c8c9d"
+    },
+    "id": "FT-FN-0003",
+    "name": "Nu Primitive Off White Cushion Cover (61 X 61 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1880,
+    "stock": 21,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "White",
+      "Nu primitive",
+      "Cotton loose weave",
+      "Pure cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nu-primitive-pure-cotton-off-white-cushion-cover-online-10000018641-1238413810.jpg?v=1779189611"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nu-primitive-pure-cotton-off-white-cushion-cover-online-10000018641-1238413810.jpg?v=1779189611",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nu-primitive-pure-cotton-off-white-cushion-cover-online-10000018641-1238413800.jpg?v=1779189549",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nu-primitive-pure-cotton-off-white-cushion-cover-online-10000018641-1239432756.jpg?v=1779279371",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nu-primitive-pure-cotton-off-white-cushion-cover-online-10000018641-1238413803.jpg?v=1779189372",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nu-primitive-pure-cotton-off-white-cushion-cover-online-10000018641-1238413802.jpg?v=1779189489",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nu-primitive-pure-cotton-off-white-cushion-cover-online-10000018641-1239432757.jpg?v=1779279313"
+    ],
+    "description": "The Nu Primitive Cushion Cover works cave painting-inspired tribal forms into a large-format cotton loose weave abstracted, spaced out, embroidered off-white on off-white. The tonal embroidery on a textured ground reveals its depth only up close. A quiet anchor for the bolder ...",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "OFF WHITE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "61 CM X 61 CM",
+      "sizeIN": "61 IN X 61 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "OFF WHITE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddb9c5940a86f00476c"
+    },
+    "id": "FT-FN-0004",
+    "name": "Sej Navy Blue Cushion Cover (41 X 41 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1480,
+    "stock": 15,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Blue",
+      "Sej",
+      "Geometric",
+      "Cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sej-pure-cotton-navy-blue-cushion-cover-online-10000018638-1239368544.jpg?v=1779272350"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sej-pure-cotton-navy-blue-cushion-cover-online-10000018638-1239368544.jpg?v=1779272350",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sej-pure-cotton-navy-blue-cushion-cover-online-10000018638-1238413770.jpg?v=1779187809",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sej-pure-cotton-navy-blue-cushion-cover-online-10000018638-1238413766.jpg?v=1779187748",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sej-pure-cotton-navy-blue-cushion-cover-online-10000018638-1238413769.jpg?v=1779187569",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sej-pure-cotton-navy-blue-cushion-cover-online-10000018638-1238413768.jpg?v=1779187689",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sej-pure-cotton-navy-blue-cushion-cover-online-10000018638-1238413767.jpg?v=1779187632"
+    ],
+    "description": "The Sej Cushion Cover draws from tribal tattoo markings concentric circles and criss-crossing lines hand-embroidered on pure cotton in navy. A thread of deep ochre red cuts through as accent: warm, precise, unmistakably intentional. The kind of cushion that holds a room togeth...",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "NAVY BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "41 CM X 41 CM",
+      "sizeIN": "41 IN X 41 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "NAVY BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddb933cfdf4fbd8e0f6"
+    },
+    "id": "FT-FN-0005",
+    "name": "Senhur Beige Cushion Cover (36 X 90 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1880,
+    "stock": 13,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Black",
+      "Neutral",
+      "Senhur",
+      "Cotton duck"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-senhur-pure-cotton-beige-cushion-cover-online-10000018643-1238413799.jpg?v=1779189310"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-senhur-pure-cotton-beige-cushion-cover-online-10000018643-1238413799.jpg?v=1779189310",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-senhur-pure-cotton-beige-cushion-cover-online-10000018643-1238413795.jpg?v=1779189250",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-eye-in-the-sky-cotton-and-wool-beige-sand-woven-rug-online-1239449783.jpg?v=1779337042",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-senhur-pure-cotton-beige-cushion-cover-online-10000018643-1238413798.jpg?v=1779189071",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/senhur-beige-embroidered-cushion-cover-freedom-tree-1260172502.jpg?v=1790597770",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-senhur-pure-cotton-beige-cushion-cover-online-10000018643-1238413797.jpg?v=1779189191"
+    ],
+    "description": "The Senhur Cushion Cover is a long bolster-format piece embroidered with sketchy, deliberately unfinished forms on cotton duck in a quiet beige. It sits at the threshold between decorative and functional a resting accent for sofas, daybeds, and headboards. The piece that pulls...",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "BEIGE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "36 CM X 90 CM",
+      "sizeIN": "36 IN X 90 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "BEIGE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddbcd7d4a8236736039"
+    },
+    "id": "FT-FN-0006",
+    "name": "Shifting Sands Charcoal Cushion Cover (36 X 51 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1880,
+    "stock": 23,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Black",
+      "Shifting sands shifting sands",
+      "Cotton duck",
+      "Pure cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shifting-sands-shifting-sands-pure-cotton-charcoal-cushion-cover-online-10000018640-1238413786.jpg?v=1779188771"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shifting-sands-shifting-sands-pure-cotton-charcoal-cushion-cover-online-10000018640-1238413786.jpg?v=1779188771",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shifting-sands-shifting-sands-pure-cotton-charcoal-cushion-cover-online-10000018640-1238413782.jpg?v=1779188713",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shifting-sands-shifting-sands-pure-cotton-charcoal-cushion-cover-online-10000018640-1239432765.jpg?v=1779336780",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shifting-sands-shifting-sands-pure-cotton-charcoal-cushion-cover-online-10000018640-1238413785.jpg?v=1779188528",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/shifting-sands-charcoal-embroidered-cushion-cover-freedom-tree-1260172501.jpg?v=1790597651",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shifting-sands-shifting-sands-pure-cotton-charcoal-cushion-cover-online-10000018640-1238413784.jpg?v=1779188649"
+    ],
+    "description": "The Shifting Sands Cushion Cover in Charcoal draws from the layered strata of the earth fluid, continuous forms embroidered on cotton duck, with a deep ochre red accent threading through like a geological vein. Moody, tactile, grounding. The piece you reach for when layering t...",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "CHARCOAL",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "36 CM X 50 CM",
+      "sizeIN": "36 IN X 50 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "CHARCOAL",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddb37c54123658c9610"
+    },
+    "id": "FT-FN-0007",
+    "name": "Tribal Etchings Grey Cushion Cover (41 X 41 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1480,
+    "stock": 23,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Grey",
+      "Tribal etchings",
+      "Cotton light slub",
+      "Pure cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-pure-cotton-grey-cushion-cover-online-10000018639-1239368538.jpg?v=1779272652"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-pure-cotton-grey-cushion-cover-online-10000018639-1239368538.jpg?v=1779272652",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-pure-cotton-grey-cushion-cover-online-10000018639-1238413781.jpg?v=1779188471",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-pure-cotton-grey-cushion-cover-online-10000018639-1238413778.jpg?v=1779188411",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-pure-cotton-grey-cushion-cover-online-10000018639-1239368537.jpg?v=1779272589",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/tribal-etchings-grey-embroidered-cushion-cover-freedom-tree-1260172496.jpg?v=1790597588",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-pure-cotton-grey-cushion-cover-online-10000018639-1238413779.jpg?v=1779188290"
+    ],
+    "description": "The Tribal Etchings Cushion Cover in Grey translates ancient geometric marks into clean embroidered lines on a cotton light slub ground. A deep ochre red accent thread runs through with quiet warmth. Understated and textural a cushion that rewards closer looking.",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "GREY",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "41 CM X 41 CM",
+      "sizeIN": "41 IN X 41 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "GREY",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddbf5149fee8b76b3c1"
+    },
+    "id": "FT-FN-0008",
+    "name": "Tribal Etchings Sienna and Grey Cushion Cover (41 X 41 Cm)",
+    "category": "furnishing",
+    "subCategory": "cushions",
+    "price": 1480,
+    "stock": 16,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Grey",
+      "Tribal etchings",
+      "Linen",
+      "Red"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-linen-sienna-and-grey-cushion-cover-online-10000018642-1239432764.jpg?v=1779279129"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-linen-sienna-and-grey-cushion-cover-online-10000018642-1239432764.jpg?v=1779279129",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-linen-sienna-and-grey-cushion-cover-online-10000018642-1238413789.jpg?v=1779189012",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-linen-sienna-and-grey-cushion-cover-online-10000018642-1238413788.jpg?v=1779188949",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-linen-sienna-and-grey-cushion-cover-online-10000018642-1238413790.jpg?v=1779188828",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-linen-sienna-and-grey-cushion-cover-online-10000018642-1239432762.jpg?v=1779279071",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-tribal-etchings-linen-sienna-and-grey-cushion-cover-online-10000018642-1238413787.jpg?v=1779188891"
+    ],
+    "description": "The Tribal Etchings Cushion Cover in Sienna and Grey brings the same ancient geometric vocabulary in a warmer, earthier register hand-embroidered on linen. The linen ground adds a raw, elemental quality that makes the embroidery feel older than it is.",
+    "width": "N/A",
+    "material": "LINEN",
+    "color": "SIENNA & GRAY",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "41 CM X 41 CM",
+      "sizeIN": "41 IN X 41 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "SIENNA & GRAY",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddb5b36ca72b1da3a52"
+    },
+    "id": "FT-FN-0009",
+    "name": "Koda Grama Printed Upholstery Fabric (Ochre Yellow)",
+    "category": "furnishing",
+    "subCategory": "upholstery",
+    "price": 1680,
+    "stock": 29,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Yellow",
+      "Koda grama",
+      "Herringbone cotton",
+      "Pure cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-koda-grama-cotton-heavy-slub-ochre-yellow-printed-upholstery-fabric-online-10000015087-39174403490016.jpg?v=1693907706"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-koda-grama-cotton-heavy-slub-ochre-yellow-printed-upholstery-fabric-online-10000015087-39174403490016.jpg?v=1693907706",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-koda-grama-herringbone-cotton-ochre-yellow-printed-upholstery-fabric-online-10000015087-1213623847.png?v=1767108307",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-koda-grama-cotton-heavy-slub-ochre-yellow-printed-upholstery-fabric-online-10000015087-39174403588320.jpg?v=1767096375",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-koda-grama-cotton-heavy-slub-ochre-yellow-printed-upholstery-fabric-online-10000015087-39175098433760.jpg?v=1767096375",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-koda-grama-cotton-heavy-slub-ochre-yellow-printed-upholstery-fabric-online-10000015087-39174403522784.jpg?v=1767096375",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-koda-grama-cotton-heavy-slub-ochre-yellow-printed-upholstery-fabric-online-10000015087-39174403555552.jpg?v=1767096375"
+    ],
+    "description": "The Koda Grama fabric is a slice of humble village scenes, screen printed on cotton. A narrative print that captures the mundane, the people, the overlooked objects of a hamlet on a rustic base. When flipped, the back of the fabric holds shadows of the original print that look...",
+    "width": "N/A",
+    "material": "PURE COTTON",
+    "color": "OCHRE YELLOW",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "1.5 M WIDTH",
+      "sizeIN": "1.5 M WIDTH (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "OCHRE YELLOW",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddb2b72dc143a7961a5"
+    },
+    "id": "FT-FN-0010",
+    "name": "Pixel Cross Woven Rug (Black And White)",
+    "category": "furnishing",
+    "subCategory": "rugs",
+    "price": 7000,
+    "stock": 15,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Allskuminusfurniture",
+      "Be_mansara",
+      "Black"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-pixel-cross-cotton-and-wool-black-and-white-woven-rug-online-10000015102-39174864732384.jpg?v=1705989954"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-pixel-cross-cotton-and-wool-black-and-white-woven-rug-online-10000015102-39174864732384.jpg?v=1705989954",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-pixel-cross-cotton-and-wool-black-and-white-woven-rug-online-10000015102-39175026180320.jpg?v=1705989954",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-pixel-cross-cotton-and-wool-black-and-white-woven-rug-online-10000015102-39290861682912.jpg?v=1705989954",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-pixel-cross-cotton-and-wool-black-and-white-woven-rug-online-10000015102-39290861748448.jpg?v=1697447229",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-pixel-cross-cotton-and-wool-black-and-white-woven-rug-online-10000015102-39290861650144.jpg?v=1697447223"
+    ],
+    "description": "The Pixel Cross Woven Rug is a handwoven marvel crafted with a blend of cotton and wool. The rug is a testament to modern eclectic design, featuring repeated patterns of black quadrilaterals on a pristine white canvas. The pixelated style in which the quadrilaterals are woven ...",
+    "width": "N/A",
+    "material": "checked",
+    "color": "BLACK",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "1.2 M X 1.8 M",
+      "sizeIN": "1.2 M X 1.8 M (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "BLACK",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddbf486810bf227a4c4"
+    },
+    "id": "FT-FN-0011",
+    "name": "Herbal Green Solid Twisted Upholstery Fabric",
+    "category": "furnishing",
+    "subCategory": "upholstery",
+    "price": 1680,
+    "stock": 12,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Green",
+      "Recycled cotton yarn",
+      "Recycled cotton",
+      "Herbal green"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-solid-twisted-recycled-cotton-yarn-mint-solid-twisted-upholstery-fabric-online-10000015030-39175154303200.jpg?v=1693906354"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-solid-twisted-recycled-cotton-yarn-mint-solid-twisted-upholstery-fabric-online-10000015030-39175154303200.jpg?v=1693906354",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-solid-twisted-recycled-cotton-yarn-mint-solid-twisted-upholstery-fabric-online-10000015030-39174549930208.jpg?v=1693906354",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-solid-twisted-recycled-cotton-yarn-mint-solid-twisted-upholstery-fabric-online-10000015030-39197297737952.jpg?v=1694756681",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-solid-twisted-recycled-cotton-yarn-mint-solid-twisted-upholstery-fabric-online-10000015030-39175154368736.jpg?v=1693906354",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-solid-twisted-recycled-cotton-yarn-mint-solid-twisted-upholstery-fabric-online-10000015030-39175103447264.jpg?v=1693912743",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-solid-twisted-recycled-cotton-yarn-mint-solid-twisted-upholstery-fabric-online-10000015030-39175154270432.jpg?v=1694756391"
+    ],
+    "description": "Our signature solid twisted woven fabric is now available in a vivacious mint color. The variegated weave and slub finish pairs bright colors with subtle textures to add visual impact in any room. The twisted woven cotton fabric invites you to weave joy in the every day, with ...",
+    "width": "N/A",
+    "material": "RECYCLED COTTON",
+    "color": "HERBAL GREEN",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Gentle machine wash or dry clean. Use mild detergent. Do not bleach.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "1.6 M WIDTH",
+      "sizeIN": "1.6 M WIDTH (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "TEXTILE",
+      "color": "HERBAL GREEN",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddcf8d7d8b66faf4a6d"
+    },
+    "id": "FT-DN-0001",
+    "name": "Wonderland Ceramic Katori (Set Of 2)",
+    "category": "dining",
+    "subCategory": "bowls-dishes",
+    "price": 580,
+    "stock": 25,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Allskuminusfurniture",
+      "Amala_listing_28sep",
+      "Be_gifting2021under2k",
+      "Be_wonderland"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-katori-online-1000006404-1211499761.jpg?v=1765959649"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-katori-online-1000006404-1211499761.jpg?v=1765959649",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-katori-in-ceramic-wonderland-freedom-tree-1000006404-1260097994.jpg?v=1790482869",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-katori-online-1000006404-1211499760.jpg?v=1765959645",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-katori-set-of-4-online-freedomtree-in-1000006404-34484511244512.jpg?v=1765954688",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-katori-in-ceramic-wonderland-freedom-tree-1000006404-1260099400.jpg?v=1790490667"
+    ],
+    "description": "Watery stripes of forest green encircle these katoris to bring the rain-soaked Wonderland garden to life. As ideal complements to the botanical Wonderland dinner and side plates, they�re apt for serving vegetables and dals during dinner, or nibbles during evening drinks.",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "10L X 10B X 5H CM",
+      "sizeIN": "10L X 10B X 5H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddccdc235534ce0cda8"
+    },
+    "id": "FT-DN-0002",
+    "name": "Wonderland Ceramic Soup Bowl (Set Of 2)",
+    "category": "dining",
+    "subCategory": "bowls-dishes",
+    "price": 1380,
+    "stock": 21,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Allskuminusfurniture",
+      "Be_gifting2021under5k",
+      "Be_wonderland",
+      "Blue"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-soup-bowl-set-of-4-online-freedomtree-in-1000005797-34484512522464.jpg?v=1662365433"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-soup-bowl-set-of-4-online-freedomtree-in-1000005797-34484512522464.jpg?v=1662365433",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-soup-bowl-in-ceramic-wonderland-freedom-tree-1000005797-1260097986.jpg?v=1790482928",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-soup-bowl-in-ceramic-wonderland-freedom-tree-1000005797-1260104341.jpg?v=1790498650",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-soup-bowl-in-ceramic-wonderland-freedom-tree-1000005797-1260107399.jpg?v=1790506450",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-soup-bowl-in-ceramic-wonderland-freedom-tree-1000005797-1260099398.jpg?v=1790490789",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-soup-bowl-set-of-4-online-freedomtree-in-1000005797-34484512489696.jpg?v=1662611462"
+    ],
+    "description": "Our Wonderland soup bowl brings a shot of sunshine to the table with its red trim and yolk yellow exterior. Look further inside, and you’ll find a delicate sprig of blue blossoms falling gracefully into its enchanting depths. Accompanied by a matching red soup spoon, the duo m...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "12.7L X 12.7B X 5H CM",
+      "sizeIN": "12.7L X 12.7B X 5H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddca053cbc5abad16ec"
+    },
+    "id": "FT-DN-0003",
+    "name": "Wonderland Ceramic Cereal Bowl",
+    "category": "dining",
+    "subCategory": "bowls-dishes",
+    "price": 980,
+    "stock": 14,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Allskuminusfurniture",
+      "Be_gifting2021under2k",
+      "Be_wonderland",
+      "Blue"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-cereal-bowl-in-ceramic-wonderland-freedom-tree-1000005576-1260123786.jpg?v=1790522830"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-cereal-bowl-in-ceramic-wonderland-freedom-tree-1000005576-1260123786.jpg?v=1790522830",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-cereal-bowl-set-of-2-online-freedomtree-in-1000005576-34484512915680.jpg?v=1765954725",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-cereal-bowl-set-of-2-online-freedomtree-in-1000005576-34484513013984.jpg?v=1765954725",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-cereal-bowl-in-ceramic-wonderland-freedom-tree-1000005576-1260099402.jpg?v=1790490849"
+    ],
+    "description": "Full of whimsy and wonder, our Wonderland cereal bowl brings strokes of fresh green to the table. Dotted with a navy flower in its interior, the dish celebrates the natural world around us and its captivating garden-grown beauties. Layer it with the Wonderland plates for a cha...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "17.3L X 17.3B X 5H CM",
+      "sizeIN": "17.3L X 17.3B X 5H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddce09741f2ee8db83f"
+    },
+    "id": "FT-DN-0004",
+    "name": "Sabar Ceramic Rectangular Platter",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 2280,
+    "stock": 22,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Breakfast_ware",
+      "Navy",
+      "Sabar",
+      "Dining 23-07"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-hand-painted-navy-ceramic-rectangular-platter-online-10000018753-1243657953.jpg?v=1781103070"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-hand-painted-navy-ceramic-rectangular-platter-online-10000018753-1243657953.jpg?v=1781103070",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-hand-painted-navy-ceramic-rectangular-platter-online-10000018753-1243657955.jpg?v=1781102951",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-hand-painted-navy-ceramic-rectangular-platter-online-10000018753-1244069694.jpg?v=1781288710",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-hand-painted-navy-ceramic-rectangular-platter-online-10000018753-1243657952.jpg?v=1781103007",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/sabar-hand-painted-rectangular-platter-freedom-tree-10000018753-1260083912.jpg?v=1790447710",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-hand-painted-navy-ceramic-rectangular-platter-online-10000018753-1244069692.jpg?v=1781288650"
+    ],
+    "description": "Sharing is at the heart of the Sabar collection, and this hand-painted ceramic rectangular platter is built for exactly that. Bold cobalt blue folk art illustrations on an earthy terracotta form make it as considered as it is functional monochrome and minimal from a distance, ...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "SAPPHIRE BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "31.5L X 14B X 1H CM",
+      "sizeIN": "31.5L X 14B X 1H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "SAPPHIRE BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddc80c788a69e234fef"
+    },
+    "id": "FT-DN-0005",
+    "name": "Wonderland Ceramic Round Platter",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 2880,
+    "stock": 27,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Blue",
+      "Wonderland",
+      "Ceramic",
+      "13l x 13b x 1.3h in"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-round-platter-online-1000005567-44713092186336.jpg?v=1735683008"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-round-platter-online-1000005567-44713092186336.jpg?v=1735683008",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-rice-platter-blue-online-freedomtree-in-1000005567-34484516651232.jpg?v=1735642757",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-round-platter-in-ceramic-wonderland-freedom-tree-1000005567-1260104331.jpg?v=1790498889",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-round-platter-in-ceramic-wonderland-freedom-tree-1000005567-1260107409.jpg?v=1790506509",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-round-platter-in-ceramic-wonderland-freedom-tree-1000005567-1260099413.jpg?v=1790491270",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-rice-platter-blue-online-freedomtree-in-1000005567-34484516618464.jpg?v=1735642757"
+    ],
+    "description": "In celebration of the joy of the world around us, our Wonderland rice platter creates an entrancing escape. As the radiance of vivid blooms shines in the sunlight, the whimsical dish sparks fantasy and imagination. Let it blossom on your indoor or outdoor table with cheeses, v...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "13L X 13B X 1.3H IN",
+      "sizeIN": "13L X 13B X 1.3H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddc0a9953cb68aace86"
+    },
+    "id": "FT-DN-0006",
+    "name": "Wonderland Ceramic Three Part Server",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 2480,
+    "stock": 24,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_crockery_",
+      "Allskuminusfurniture",
+      "Amala_listing_28sep",
+      "Be_gifting2021under5k"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-ceramic-tray-blue-online-freedomtree-in-1000005796-34485408137440.jpg?v=1764241325"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-ceramic-tray-blue-online-freedomtree-in-1000005796-34485408137440.jpg?v=1764241325",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-ceramic-tray-blue-online-freedomtree-in-1000005796-34485408170208.jpg?v=1764241325",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-three-part-server-in-ceramic-freedom-tree-1000005796-1260104330.jpg?v=1790499070",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-ceramic-tray-blue-online-freedomtree-in-1000005796-34485408202976.jpg?v=1764241325",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-three-part-server-in-ceramic-freedom-tree-1000005796-1260099412.jpg?v=1790491388",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-three-part-server-online-1000005796-44713063252192.jpg?v=1764241325"
+    ],
+    "description": "A variety of wildflowers grow over our Wonderland spice tray which is crafted into three compartments for various condiments and spices. As an accompaniment to the Wonderland dining collection, this handy tabletop accessory brings the magical garden to life.",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "13 X 5.5 IN",
+      "sizeIN": "13 X 5.5 IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddc47950abad92e6bd6"
+    },
+    "id": "FT-DN-0007",
+    "name": "Wonderland Ceramic Oval Platter",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 1680,
+    "stock": 22,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_crockery_",
+      "Addd",
+      "Allskuminusfurniture",
+      "Amala_listing_28sep"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-oval-platter-online-1000005571-1211505248.jpg?v=1765966851"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-oval-platter-online-1000005571-1211505248.jpg?v=1765966851",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-kebab-tray-blue-online-freedomtree-in-1000005571-34484514980064.jpg?v=1765958061",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-oval-platter-in-ceramic-wonderland-freedom-tree-1000005571-1260104332.jpg?v=1790498770",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-kebab-tray-blue-online-freedomtree-in-1000005571-34484515143904.jpg?v=1765958061",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-oval-platter-in-ceramic-wonderland-freedom-tree-1000005571-1260099416.jpg?v=1790491032"
+    ],
+    "description": "A large sprig of bluebells sways in line with the slender curves of our Wonderland kebab tray. Crafted in a long oval shape, the contemporary platter gives us a glimpse of the wildflowers of the Wonderland garden while making a beautiful presentation for appetizers and cut fru...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "11.2 X 7.2",
+      "sizeIN": "11.2 X 7.2 (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddcfb7a3c02a2690e26"
+    },
+    "id": "FT-DN-0008",
+    "name": "Wonderland Ceramic Snack Tray",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 1080,
+    "stock": 20,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_crockery_",
+      "Addd",
+      "Allskuminusfurniture",
+      "Be_gifting2021under2k"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-nut-tray-online-1000005574-1211499762.jpg?v=1765959642"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-wonderland-hand-painted-blue-ceramic-nut-tray-online-1000005574-1211499762.jpg?v=1765959642",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-nut-tray-blue-online-freedomtree-in-1000005574-34484514390240.jpg?v=1765954642",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-snack-tray-in-ceramic-wonderland-freedom-tree-1000005574-1260104333.jpg?v=1790498710",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/products/buy-wonderland-nut-tray-blue-online-freedomtree-in-1000005574-34484514357472.jpg?v=1765954642",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/blue-snack-tray-in-ceramic-wonderland-freedom-tree-1000005574-1260099417.jpg?v=1790490970"
+    ],
+    "description": "A large hand painted fern graces our Wonderland nut tray to bring a sense of adventure to the table. Painted in aqueous strokes of emerald and navy, its coloring takes cues from the refreshed shades of the ground after a downpour. Use it to serve leafy greens or an artful arra...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "21 CM X 15 CM",
+      "sizeIN": "21 IN X 15 IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddc50850b72ffd9486f"
+    },
+    "id": "FT-DN-0009",
+    "name": "Toddy Palm Tree Ceramic Snack Plate (Set Of 2)",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 1080,
+    "stock": 18,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Toddy palm tree",
+      "Ceramic",
+      "Coral red"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-tree-hand-painted-red-and-white-ceramic-tapas-plate-online-10000018554-1236912807.jpg?v=1778068868"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-tree-hand-painted-red-and-white-ceramic-tapas-plate-online-10000018554-1236912807.jpg?v=1778068868",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-tree-hand-painted-red-and-white-ceramic-tapas-plate-online-10000018554-1236912809.jpg?v=1778068751",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/toddy-palm-tree-hand-painted-snack-plate-freedom-tree-10000018554-1260150517.jpg?v=1790569808",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/toddy-palm-tree-hand-painted-snack-plate-freedom-tree-10000018554-1260107401.jpg?v=1790510592",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/toddy-palm-tree-hand-painted-snack-plate-freedom-tree-10000018554-1260083936.jpg?v=1790447771",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-tree-hand-painted-red-and-white-ceramic-tapas-plate-online-10000018554-1236912806.jpg?v=1778068809"
+    ],
+    "description": "The Toddy Palm Tapas Plate features hand-painted stoneware, with an illustrated red palm. Burst of turquoise evokes the early days of the new year. Pair them with Toddy Palm Katoris to furnish a vibrant and cohesive table setting to bring in Spring.",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "CORAL RED",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "CORAL RED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddcbe825a1a58d4883d"
+    },
+    "id": "FT-DN-0010",
+    "name": "Toddy Star  Ceramic Snack Plate (Set Of 2)",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 1080,
+    "stock": 22,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Toddy star",
+      "Ceramic",
+      "Coral red"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-star-handpainted-red-and-white-ceramic-tapas-plate-online-10000016869-45061197594848.jpg?v=1738103111"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-star-handpainted-red-and-white-ceramic-tapas-plate-online-10000016869-45061197594848.jpg?v=1738103111",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-star-handpainted-red-and-white-ceramic-tapas-plate-online-10000016869-45061197627616.jpg?v=1769168488",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/toddy-star-hand-painted-snack-plate-freedom-tree-10000016869-1260099403.jpg?v=1790490428",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-star-handpainted-red-and-white-ceramic-tapas-plate-online-10000016869-45061197660384.jpg?v=1769168488",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-star-handpainted-red-and-white-ceramic-tapas-plate-online-10000016869-45061197693152.jpg?v=1738102926"
+    ],
+    "description": "The Toddy Star Tapas Plates are a must for your new season’s hostings. They feature a coral red star motif, placed mindfully to frame your appetizers, desserts, or small bites. Best paired alongside bowls from the Toddy Palm Collection for a cohesive and artful dining experience.",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "CORAL RED",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "CORAL RED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddc6f0609557054b9b6"
+    },
+    "id": "FT-DN-0011",
+    "name": "Toddy Palm Ceramic Dinner Plate",
+    "category": "dining",
+    "subCategory": "plates-platters",
+    "price": 1380,
+    "stock": 27,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Red",
+      "Toddy palm",
+      "Ceramic",
+      "Coral red"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-handpainted-red-and-white-ceramic-dinner-plate-online-10000016867-45062865879264.jpg?v=1738101488"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-handpainted-red-and-white-ceramic-dinner-plate-online-10000016867-45062865879264.jpg?v=1738101488",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-handpainted-red-and-white-ceramic-dinner-plate-online-10000016867-45061143298272.jpg?v=1738101493",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-handpainted-red-and-white-ceramic-dinner-plate-online-10000016867-45061143363808.jpg?v=1738101497",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-handpainted-red-and-white-ceramic-dinner-plate-online-10000016867-45061143396576.jpg?v=1738103117",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/coral-red-dinner-plate-in-ceramic-freedom-tree-10000016867-1260083938.jpg?v=1790450830",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-toddy-palm-handpainted-red-and-white-ceramic-dinner-plate-online-10000016867-45062865846496.jpg?v=1738103278"
+    ],
+    "description": "The Toddy Palm Dinner Plate features hand-painted stoneware, with an illustrated red palm. Burst of turquoise evokes the early days of the new year. Perfect for everything from fresh salads to tropical-inspired dishes, this plate makes every meal feel like a celebration of new...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "CORAL RED",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Dishwasher and microwave safe. Handle with care to prevent chipping.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "10L X 10B X 1H IN",
+      "sizeIN": "10L X 10B X 1H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "CERAMIC",
+      "color": "CORAL RED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd67ae3f52ae0eb89d"
+    },
+    "id": "FT-DC-0001",
+    "name": "Free Birds Candle Stand (Set of 2)",
+    "category": "decor",
+    "subCategory": "candles-fragrance",
+    "price": 1980,
+    "stock": 17,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Metallic",
+      "Free birds",
+      "Metal"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/free-birds-candle-stand-set-of-2-10000018948-1263067596.jpg?v=1792169531"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/free-birds-candle-stand-set-of-2-10000018948-1263067596.jpg?v=1792169531",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/free-birds-candle-stand-set-of-2-10000018948-1263067598.jpg?v=1792169410",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/free-birds-candle-stand-set-of-2-10000018948-1263067595.jpg?v=1792169469",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/free-birds-candle-stand-set-of-2-10000018948-1263067597.jpg?v=1792169349",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/free-birds-candle-stand-set-of-2-10000018948-1263232870.jpg?v=1792225211"
+    ],
+    "description": "Poised like gentle whispers of twilight, the Free Birds are a pair of hand-cast candle stands in a soft matte silver. Their sculptural bird silhouettes bring an easy, romantic charm to relaxed evenings, intimate dinners and cosy corners.",
+    "width": "N/A",
+    "material": "METAL",
+    "color": "MATTE SILVER",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "MATTE SILVER",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd184b535f1ac4e3bf"
+    },
+    "id": "FT-DC-0002",
+    "name": "A Very Late Night Candle Stand",
+    "category": "decor",
+    "subCategory": "candles-fragrance",
+    "price": 4280,
+    "stock": 14,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Metallic",
+      "A very late night",
+      "Steel"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/a-very-late-night-candle-stand-10000018954-1263067601.jpg?v=1792169288"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/a-very-late-night-candle-stand-10000018954-1263067601.jpg?v=1792169288",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/a-very-late-night-candle-stand-10000018954-1263067600.jpg?v=1792169172",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/a-very-late-night-candle-stand-10000018954-1263067594.jpg?v=1792169230",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/a-very-late-night-candle-stand-10000018954-1263067593.jpg?v=1792169109",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/a-very-late-night-candle-stand-10000018954-1263232871.jpg?v=1792225150"
+    ],
+    "description": "A cast aluminium candle stand in matte silver, its form drawn from the idea of metamorphosis — of changing slowly through time and experience. A sculptural, characterful piece for a table or mantel.",
+    "width": "N/A",
+    "material": "STEEL",
+    "color": "MATTE SILVER",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "MATTE SILVER",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd6a1b0de50913edb7"
+    },
+    "id": "FT-DC-0003",
+    "name": "Little Squirrel Candle Stand",
+    "category": "decor",
+    "subCategory": "candles-fragrance",
+    "price": 1980,
+    "stock": 28,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Little squirrel",
+      "Glass",
+      "Metal"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/little-squirrel-candle-stand-10000018953-1263067599.jpg?v=1792169050"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/little-squirrel-candle-stand-10000018953-1263067599.jpg?v=1792169050",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/little-squirrel-candle-stand-10000018953-1263232873.jpg?v=1792225090"
+    ],
+    "description": "The Little Squirrel candle stand blends a soft lavender glass holder with a metal base and a charming cast-squirrel detail. A warm, nature-inspired accent that brings gentle candlelight to a shelf or table.",
+    "width": "N/A",
+    "material": "GLASS",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd6b30845b31755ba7"
+    },
+    "id": "FT-DC-0004",
+    "name": "Bizbee Candle Stand",
+    "category": "decor",
+    "subCategory": "candles-fragrance",
+    "price": 1980,
+    "stock": 14,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Metallic",
+      "Bizbee",
+      "Steel"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/bizbee-candle-stand-10000018947-1263134614.jpg?v=1792167669"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/bizbee-candle-stand-10000018947-1263134614.jpg?v=1792167669",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/bizbee-candle-stand-10000018947-1263134615.jpg?v=1792167610",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/bizbee-candle-stand-10000018947-1263134619.jpg?v=1792167432",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/bizbee-candle-stand-10000018947-1263134612.jpg?v=1792167549",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/bizbee-candle-stand-10000018947-1263134617.jpg?v=1792167490"
+    ],
+    "description": "The Bizbee candle stand is cast by hand into a sculptural bee and finished in warm matte brass. Its intricate, insect-inspired detailing brings a quiet, nature-drawn accent to an intimate tabletop or mantel.",
+    "width": "N/A",
+    "material": "STEEL",
+    "color": "MATTE BRASS",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "MATTE BRASS",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd4df7a044ba9da623"
+    },
+    "id": "FT-DC-0005",
+    "name": "Lovebirds Table Top",
+    "category": "decor",
+    "subCategory": "vases-planters",
+    "price": 2480,
+    "stock": 22,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Metallic",
+      "Love birds",
+      "Steel"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/lovebirds-table-top-10000018946-1263067605.jpg?v=1792168990"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/lovebirds-table-top-10000018946-1263067605.jpg?v=1792168990",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/lovebirds-table-top-10000018946-1263067604.jpg?v=1792168929",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/lovebirds-table-top-10000018946-1263067602.jpg?v=1792168869",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/lovebirds-table-top-10000018946-1263232872.jpg?v=1792225028"
+    ],
+    "description": "A sculptural tabletop accent, the Lovebirds are two birds perched together on a solid base, cast by hand and finished in warm matte brass. A symbolic, nature-inspired piece that adds a small, tender detail to a shelf or console.",
+    "width": "N/A",
+    "material": "STEEL",
+    "color": "DULL GOLD",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "DULL GOLD",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd02318fde3941290d"
+    },
+    "id": "FT-DC-0006",
+    "name": "Freedom Flora Metal Sculpture (Set Of 3)",
+    "category": "decor",
+    "subCategory": "vases-planters",
+    "price": 1280,
+    "stock": 14,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Metallic",
+      "Freedom flora",
+      "Metal"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-freedom-flora-handcrafted-metallic-metal-sculpture-online-10000017470-1183850433.jpg?v=1764676095"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-freedom-flora-handcrafted-metallic-metal-sculpture-online-10000017470-1183850433.jpg?v=1764676095",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-freedom-flora-handcrafted-metallic-metal-sculpture-online-10000017470-1190997654.jpg?v=1764676095",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/freedom-flora-dull-gold-sculpture-10000017470-1260459355.jpg?v=1790857091",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/freedom-flora-dull-gold-sculpture-10000017470-1260459356.jpg?v=1790857031",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-freedom-flora-handcrafted-metallic-metal-sculpture-online-10000017470-1183850439.jpg?v=1764352616",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-freedom-flora-handcrafted-metallic-metal-sculpture-online-10000017470-1183850438.jpg?v=1764352616"
+    ],
+    "description": "The Freedom Flora table accent, in a soft dull gold, celebrates the organic beauty of nature with its abstract tree-like form. Handcrafted in cast iron, it lends depth and texture to any surface.",
+    "width": "N/A",
+    "material": "METAL",
+    "color": "DULL GOLD",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "3L X 0.5B X 6H IN",
+      "sizeIN": "3L X 0.5B X 6H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "DULL GOLD",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddddb08e786ea91494e5"
+    },
+    "id": "FT-DC-0007",
+    "name": "Udanti Candle Votive",
+    "category": "decor",
+    "subCategory": "candles-fragrance",
+    "price": 1280,
+    "stock": 13,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Metallic",
+      "Udanti",
+      "Glass"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-udanti-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017473-1197058995.jpg?v=1760091761"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-udanti-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017473-1197058995.jpg?v=1760091761",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-udanti-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017473-1193971581.jpg?v=1760082848",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-udanti-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017473-1183850428.jpg?v=1760082848",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-udanti-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017473-1183850430.jpg?v=1760082848",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-udanti-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017473-1193971583.jpg?v=1760082848",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/udanti-dull-gold-candle-votive-10000017473-1260665676.jpg?v=1790879950"
+    ],
+    "description": "The Udanti tealight holder, made with intricate metal sheet cutwork in a dull gold finish, casts delicate shadows when lit. Featuring our signature palm motif, its vertical form brings height and elegance to any corner, from intimate dinner tables to cosy nooks. Adding a warm,...",
+    "width": "N/A",
+    "material": "METAL",
+    "color": "DULL GOLD",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "2.5L X 2.5B X 7H IN",
+      "sizeIN": "2.5L X 2.5B X 7H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "DULL GOLD",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddddae3f0f3557f1770a"
+    },
+    "id": "FT-DC-0008",
+    "name": "Sabar Candle Votive",
+    "category": "decor",
+    "subCategory": "candles-fragrance",
+    "price": 1280,
+    "stock": 15,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Metallic",
+      "Sabar",
+      "Glass"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017472-1197058994.jpg?v=1760091758"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017472-1197058994.jpg?v=1760091758",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017472-1193971579.jpg?v=1760082863",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017472-1193971578.jpg?v=1760082863",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-sabar-handcrafted-metallic-metal-and-glass-candle-votive-online-10000017472-1193971580.jpg?v=1760082863",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/dull-gold-candle-votive-in-metal-freedom-tree-10000017472-1260665689.jpg?v=1790879832"
+    ],
+    "description": "With fine cutout detailing in dull gold metal, the Sabar tealight holder creates a play of light and shadow that feels both soothing and celebratory. Featuring our signature Sabar design motif, it is compact yet striking, fitting beautifully on dining tables, window sills, or ...",
+    "width": "N/A",
+    "material": "METAL",
+    "color": "DULL GOLD",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "6.35L X 6.35B X 17.78H CM",
+      "sizeIN": "6.35L X 6.35B X 17.78H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "DULL GOLD",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddddb0dfce6606577197"
+    },
+    "id": "FT-DC-0009",
+    "name": "Azure Fin Vase (Blue)",
+    "category": "decor",
+    "subCategory": "vases-planters",
+    "price": 1680,
+    "stock": 27,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Be_confluence",
+      "Blue",
+      "Fish big",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-big-blue-ceramic-vase-freedom-tree-10000018874-1250059799.jpg?v=1784558170"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-big-blue-ceramic-vase-freedom-tree-10000018874-1250059799.jpg?v=1784558170",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-big-blue-ceramic-vase-freedom-tree-10000018874-1250059796.jpg?v=1784558049",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-big-blue-ceramic-vase-freedom-tree-10000018874-1250059797.jpg?v=1784558108",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-big-blue-ceramic-vase-freedom-tree-10000018874-1250059798.jpg?v=1784557992",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059791.jpg?v=1784558289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-big-blue-vase-freedom-tree-10000018874-1260510585.jpg?v=1790871611"
+    ],
+    "description": "A whole waterscape, gathered onto a single generous vessel. Folk fish swim shoulder to shoulder across this drum-shaped vase in blues, coral and gold, framed by soft teal rims, the fullest expression of the sea creatures we hand-painted again and again across our ceramics. Han...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd78ffef84ac814511"
+    },
+    "id": "FT-DC-0010",
+    "name": "Azure Fin Bottle Vase (Blue)",
+    "category": "decor",
+    "subCategory": "vases-planters",
+    "price": 1980,
+    "stock": 26,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Be_confluence",
+      "Blue",
+      "Fish bottle",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059803.jpg?v=1784558469"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059803.jpg?v=1784558469",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059791.jpg?v=1784558289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059802.jpg?v=1784558408",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059801.jpg?v=1784558348",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059800.jpg?v=1784558231",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-vase-freedom-tree-10000018875-1260510587.jpg?v=1790871674"
+    ],
+    "description": "Fish, fowl and four-legged friends have always found their way into our world, and here a lively shoal circles a slim, handled bottle. Painted in folk blues, coral and gold, these sea creatures form part of a magnificent waterscape brushed by hand across the collection. Handcr...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd35c49299a0cb45a0"
+    },
+    "id": "FT-DC-0011",
+    "name": "Azure Fin Lidded Jar (Blue)",
+    "category": "decor",
+    "subCategory": "vases-planters",
+    "price": 2480,
+    "stock": 19,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Be_confluence",
+      "Blue",
+      "Fish jar",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059794.jpg?v=1784557932"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059794.jpg?v=1784557932",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059791.jpg?v=1784558289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059793.jpg?v=1784557872",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059792.jpg?v=1784557812",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059790.jpg?v=1784557750",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059789.jpg?v=1784557692"
+    ],
+    "description": "We couldn't stop at one, so the shoal swims on, this time across a lidded jar. Bright fish dart over its rounded form and teal-rimmed lid in playful blues, yellow and coral, each one hand-painted as part of our watery ceramic story. Handcrafted and made in India, it's equal pa...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe clean with a soft dry cloth. Avoid abrasive cleaners and moisture.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "13.9L X 13.9B X 20.3H CM",
+      "sizeIN": "13.9L X 13.9B X 20.3H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "METAL / WOOD",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd40974da74f221e80"
+    },
+    "id": "FT-CL-0001",
+    "name": "Jaipur Rose Boxy Crop Shirt (White Mist)",
+    "category": "clothing",
+    "subCategory": "menswear",
+    "price": 8000,
+    "stock": 19,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-crop-shirt-freedom-tree-1261105264.jpg?v=1791187328"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-crop-shirt-freedom-tree-1261105264.jpg?v=1791187328",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105270.jpg?v=1791187690",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-crop-shirt-freedom-tree-1261105266.jpg?v=1791187268",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105269.jpg?v=1791187570",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-crop-shirt-freedom-tree-1261105267.jpg?v=1791187209",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-crop-shirt-freedom-tree-1261105265.jpg?v=1791187150"
+    ],
+    "description": "The boxy crop shirt, a Freedom Tree favourite, in pure cotton slub with pixel cross-stitch Jaipur Rose embroidery in mellow tones. A light, breezy fit made to wear every which way.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddda278a16fdf4fceac"
+    },
+    "id": "FT-CL-0002",
+    "name": "Jaipur Rose Club Skort (White Mist)",
+    "category": "clothing",
+    "subCategory": "apparel",
+    "price": 6400,
+    "stock": 27,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105270.jpg?v=1791187690"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105270.jpg?v=1791187690",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105272.jpg?v=1791187631",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105269.jpg?v=1791187570",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105273.jpg?v=1791187512",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105271.jpg?v=1791187448",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-skort-freedom-tree-1261105268.jpg?v=1791187390"
+    ],
+    "description": "A slim wrap skort with pixel cross-stitch Jaipur Rose embroidery across the front wrap. Embroidered in mellow tones on pure cotton slub — a considered, folk-rooted piece from Freedom Folk.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd797d528769daf2e6"
+    },
+    "id": "FT-CL-0003",
+    "name": "Jaipur Rose Bella Dress (White Mist)",
+    "category": "clothing",
+    "subCategory": "womenswear",
+    "price": 12000,
+    "stock": 24,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-dress-freedom-tree-1261105281.jpg?v=1791186670"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-dress-freedom-tree-1261105281.jpg?v=1791186670",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-dress-freedom-tree-1261105287.jpg?v=1791186610",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-dress-freedom-tree-1261105284.jpg?v=1791186548",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-dress-freedom-tree-1261105283.jpg?v=1791186489",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-dress-freedom-tree-1261105286.jpg?v=1791186430",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-embroidered-cotton-dress-freedom-tree-1261105282.jpg?v=1791186369"
+    ],
+    "description": "The Bella dress is an easy tunic silhouette with drawstring ties, lined for comfort. Pure cotton slub carries pixel cross-stitch Jaipur Rose embroidery in mellow tones — a soft, folk-rooted dress from Freedom Folk.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd7783e14171850006"
+    },
+    "id": "FT-CL-0004",
+    "name": "Jaipur Rose Boxy Crop Shirt (Midday Meadow)",
+    "category": "clothing",
+    "subCategory": "menswear",
+    "price": 8000,
+    "stock": 17,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-printed-cotton-crop-shirt-freedom-tree-1261105274.jpg?v=1791187090"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-printed-cotton-crop-shirt-freedom-tree-1261105274.jpg?v=1791187090",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-printed-cotton-crop-shirt-freedom-tree-1261105278.jpg?v=1791187028",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-printed-cotton-crop-shirt-freedom-tree-1261105277.jpg?v=1791186972",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-printed-cotton-crop-shirt-freedom-tree-1261105280.jpg?v=1791186911",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-printed-cotton-crop-shirt-freedom-tree-1261105276.jpg?v=1791186850",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/jaipur-rose-printed-cotton-crop-shirt-freedom-tree-1261105279.jpg?v=1791186791"
+    ],
+    "description": "The boxy crop shirt in an embroidered Jaipur Rose, its pixel-rose motif rendered in soft meadow tones on breathable cotton. A light, relaxed fit — an easy Freedom Folk layer.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd0ad34b6a9011827e"
+    },
+    "id": "FT-CL-0005",
+    "name": "Ditsy Drift Boxy Shirt (Cream)",
+    "category": "clothing",
+    "subCategory": "menswear",
+    "price": 4800,
+    "stock": 24,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-shirt-freedom-tree-1261105255.jpg?v=1791188350"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-shirt-freedom-tree-1261105255.jpg?v=1791188350",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-shirt-freedom-tree-1261105258.jpg?v=1791188289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-shirt-freedom-tree-1261105257.jpg?v=1791188229",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-shirt-freedom-tree-1261105256.jpg?v=1791188171",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-shirt-freedom-tree-1261105251.jpg?v=1791188109"
+    ],
+    "description": "A Freedom Tree favourite, the boxy shirt meets every occasion with a free spirit. Digitally printed with the Ditsy Drift — a modern ylang-ylang floret — on breathable viscose in a creamy tone, with a light, relaxed fit.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddda94ba3f8d52bbcc3"
+    },
+    "id": "FT-CL-0006",
+    "name": "Ditsy Drift Boxy Pants (Cream)",
+    "category": "clothing",
+    "subCategory": "apparel",
+    "price": 4800,
+    "stock": 26,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-pants-freedom-tree-1261220259.jpg?v=1791274632"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-pants-freedom-tree-1261220259.jpg?v=1791274632",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-pants-freedom-tree-1261105263.jpg?v=1791187989",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-pants-freedom-tree-1261105253.jpg?v=1791187751",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-pants-freedom-tree-1261105262.jpg?v=1791187928",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-shirt-freedom-tree-1261105251.jpg?v=1791188109",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/ditsy-drift-printed-boxy-pants-freedom-tree-1261105254.jpg?v=1791187869"
+    ],
+    "description": "A fabulous, relaxed fit, the boxy pant carries the Ditsy Drift floral on breathable viscose, finished with a scarf-edge border at the hem. Easy, breezy and made to move — a Freedom Folk essential. Pair them with the matching Ditsy Drift Boxy Shirt for a coordinated look, or an...",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd8236d5d782f575f5"
+    },
+    "id": "FT-CL-0007",
+    "name": "Mirror Garden Melaka Tunic (Moss Green)",
+    "category": "clothing",
+    "subCategory": "womenswear",
+    "price": 6800,
+    "stock": 15,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-tunic-freedom-tree-1261216228.jpg?v=1791267549"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-tunic-freedom-tree-1261216228.jpg?v=1791267549",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-tunic-freedom-tree-1261105250.jpg?v=1791188709",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-tunic-freedom-tree-1261105247.jpg?v=1791188650",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-tunic-freedom-tree-1261105246.jpg?v=1791188589",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-tunic-freedom-tree-1261105248.jpg?v=1791188529",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-tunic-freedom-tree-1261105249.jpg?v=1791188468"
+    ],
+    "description": "The Melaka tunic wears as a shirt or slips into a dress, with a collar and gathered off-shoulder sleeves. Digitally printed with the Mirror Garden's floral springs in vegetal tones on breathable pure cotton, in a relaxed, easy fit.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd1a791905b5d37cc6"
+    },
+    "id": "FT-CL-0008",
+    "name": "Mirror Garden Resort Shirt (Moss Green)",
+    "category": "clothing",
+    "subCategory": "menswear",
+    "price": 4200,
+    "stock": 16,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-resort-shirt-freedom-tree-1261105191.jpg?v=1791290528"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-resort-shirt-freedom-tree-1261105191.jpg?v=1791290528",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-resort-shirt-freedom-tree-1261105190.jpg?v=1791290470",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-resort-shirt-freedom-tree-1261105189.jpg?v=1791290409",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-resort-shirt-freedom-tree-1261105188.jpg?v=1791290350",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/mirror-garden-printed-cotton-resort-shirt-freedom-tree-1261105192.jpg?v=1791290291"
+    ],
+    "description": "A garden caught in reflection — blooms and leaves mirrored into a soft, repeating print. Digitally printed on breathable cotton flex in a deep moss green, this resort shirt keeps an open collar and an easy cut, made for warm evenings and unhurried holidays.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd9c538bcc83bb81fd"
+    },
+    "id": "FT-CL-0009",
+    "name": "Madras Plaid Resort Shirt (Midday Meadow)",
+    "category": "clothing",
+    "subCategory": "menswear",
+    "price": 3800,
+    "stock": 12,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105193.jpg?v=1791290229"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105193.jpg?v=1791290229",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105196.jpg?v=1791290170",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105195.jpg?v=1791290109",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105197.jpg?v=1791290049",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105194.jpg?v=1791289992"
+    ],
+    "description": "Madras plaid, woven the old way — fine checks in sunlit greens crossing a soft cotton ground. An easy resort shirt with an open collar and a relaxed fit, it carries the unhurried ease of a midday meadow into warm-weather days.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddd83cbbdf2b88ffb4b"
+    },
+    "id": "FT-CL-0010",
+    "name": "Madras Plaid Resort Shirt (Harmony Orange)",
+    "category": "clothing",
+    "subCategory": "menswear",
+    "price": 3800,
+    "stock": 25,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105198.jpg?v=1791289930"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105198.jpg?v=1791289930",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105203.jpg?v=1791289871",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105201.jpg?v=1791289812",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105200.jpg?v=1791289751",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105204.jpg?v=1791289694",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/madras-plaid-woven-cotton-resort-shirt-freedom-tree-1261105199.jpg?v=1791289630"
+    ],
+    "description": "Madras plaid, woven the old way — fine checks crossing a soft cotton ground, here in a warm harmony orange. An easy resort shirt with an open collar and a relaxed fit, it brings a sunlit lift to linen trousers and bare feet.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddddcb372f7ab790fe05"
+    },
+    "id": "FT-CL-0011",
+    "name": "Checks Embroidered Full Sleeve Shirt (Seafaring Blue)",
+    "category": "clothing",
+    "subCategory": "menswear",
+    "price": 4800,
+    "stock": 13,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_new"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/checks-embroidered-cotton-shirt-freedom-tree-1261105211.jpg?v=1791289151"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/checks-embroidered-cotton-shirt-freedom-tree-1261105211.jpg?v=1791289151",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/checks-embroidered-cotton-shirt-freedom-tree-1261105216.jpg?v=1791289090",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/checks-embroidered-cotton-shirt-freedom-tree-1261105214.jpg?v=1791289029",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/checks-embroidered-cotton-shirt-freedom-tree-1261105215.jpg?v=1791288971",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/checks-embroidered-cotton-shirt-freedom-tree-1261105213.jpg?v=1791288909",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/checks-embroidered-cotton-shirt-freedom-tree-1261105212.jpg?v=1791288849"
+    ],
+    "description": "Checks worked in fine embroidery rather than print, so the pattern sits raised against soft cotton. In a deep seafaring blue with a full sleeve and a neat collar, it is a shirt whose texture reads best up close.",
+    "width": "N/A",
+    "material": "100% Breathable Cotton Muslin",
+    "color": "Assorted",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Machine wash cold separately with mild detergent. Line dry in shade.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "Standard Size",
+      "sizeIN": "Standard Size (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "COTTON",
+      "color": "ASSORTED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde1129532a41159a87"
+    },
+    "id": "FT-GF-0001",
+    "name": "The Onion Duo Wood Table Accent (Set Of 2)",
+    "category": "gifting",
+    "subCategory": "gift-sets",
+    "price": 2480,
+    "stock": 24,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Brown",
+      "The onion duo",
+      "Mango wood"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-onion-duo-handcrafted-brown-mango-wood-table-accent-online-10000018574-1236849550.jpg?v=1778056148"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-onion-duo-handcrafted-brown-mango-wood-table-accent-online-10000018574-1236849550.jpg?v=1778056148",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-onion-duo-handcrafted-brown-mango-wood-table-accent-online-10000018574-1236849555.jpg?v=1778056090",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-onion-duo-handcrafted-brown-mango-wood-table-accent-online-10000018574-1236849554.jpg?v=1778056029",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-onion-duo-handcrafted-brown-mango-wood-table-accent-online-10000018574-1236849553.jpg?v=1778055971",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-onion-duo-handcrafted-brown-mango-wood-table-accent-online-10000018574-1236849551.jpg?v=1778055851",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-onion-duo-handcrafted-brown-mango-wood-table-accent-online-10000018574-1236849552.jpg?v=1778055908"
+    ],
+    "description": "Lining up onions on the kitchen counter, watching them roll, learning their shapes before you could name them- the onion was always there. The Onion Duo Table Accent reimagines that everyday form as a sculptural still-life: two handcrafted and handpainted wooden pieces in a wa...",
+    "width": "N/A",
+    "material": "WOOD",
+    "color": "WALNUT",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "10L X 10B X 11H & 9L X 4B X 19H CM",
+      "sizeIN": "10L X 10B X 11H & 9L X 4B X 19H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "WALNUT",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddeafe91347506f0125"
+    },
+    "id": "FT-GF-0002",
+    "name": "The Mango Muse Wood Table Accent",
+    "category": "gifting",
+    "subCategory": "gift-sets",
+    "price": 1280,
+    "stock": 25,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Be_confluence",
+      "Red",
+      "The mango muse"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-handcrafted-red-mango-wood-table-accent-online-10000018576-1236849543.jpg?v=1778056570"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-handcrafted-red-mango-wood-table-accent-online-10000018576-1236849543.jpg?v=1778056570",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-handcrafted-red-mango-wood-table-accent-online-10000018576-1236849549.jpg?v=1778056508",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-handcrafted-red-mango-wood-table-accent-online-10000018576-1236849548.jpg?v=1778056448",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-handcrafted-red-mango-wood-table-accent-online-10000018576-1236849546.jpg?v=1778056392",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-handcrafted-red-mango-wood-table-accent-online-10000018576-1240244269.jpg?v=1779531491",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-handcrafted-red-mango-wood-table-accent-online-10000018576-1236849547.jpg?v=1778056331"
+    ],
+    "description": "The mango ripening near the kitchen window was one of the first beautiful objects many of us knew. The Mango Muse Table Accent reimagines it in handcrafted and hand painted mango wood, finished in a warm mineral red. Display it on a shelf, use it to hold trinkets or serve swee...",
+    "width": "N/A",
+    "material": "WOOD",
+    "color": "MINERAL RED",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "5L X 3.75B X 1.25H",
+      "sizeIN": "5L X 3.75B X 1.25H (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "MINERAL RED",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde8beffa17da845d10"
+    },
+    "id": "FT-GF-0003",
+    "name": "The Fig Friend Wood Table Accent",
+    "category": "gifting",
+    "subCategory": "gift-sets",
+    "price": 1080,
+    "stock": 27,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Be_confluence",
+      "Pink",
+      "The fig friend"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-fig-friend-handcrafted-pink-mango-wood-table-accent-online-10000018575-1236849536.jpg?v=1778057049"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-fig-friend-handcrafted-pink-mango-wood-table-accent-online-10000018575-1236849536.jpg?v=1778057049",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-fig-friend-handcrafted-pink-mango-wood-table-accent-online-10000018575-1236849541.jpg?v=1778056991",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/the-fig-friend-mango-wood-table-accent-freedom-tree-10000018575-1260459334.jpg?v=1790856369",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-fig-friend-handcrafted-pink-mango-wood-table-accent-online-10000018575-1236849539.jpg?v=1778056930",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-fig-friend-handcrafted-pink-mango-wood-table-accent-online-10000018575-1240244268.jpg?v=1779531552",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-fig-friend-handcrafted-pink-mango-wood-table-accent-online-10000018575-1236849540.jpg?v=1778056872"
+    ],
+    "description": "The Fig Friend Table Accent reimagines the fig- that soft, rounded form from childhood kitchens, in handcrafted mango wood handpainted in a gentle pink. Set it on a windowsill, use it as a trinket holder, or serve sweets from it. A thoughtful, versatile gift with the warm, unh...",
+    "width": "N/A",
+    "material": "WOOD",
+    "color": "PINK",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4.25 L X 4B X 1.5H IN",
+      "sizeIN": "4.25 L X 4B X 1.5H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "PINK",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde005287acfa110787"
+    },
+    "id": "FT-GF-0004",
+    "name": "The Chilly Twin Wood Table Accent (Set Of 2)",
+    "category": "gifting",
+    "subCategory": "gift-sets",
+    "price": 2280,
+    "stock": 19,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_comes in a gift box",
+      "Pink",
+      "The chilly twin",
+      "Mango wood"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-chilly-twin-handcrafted-pink-mango-wood-table-accent-online-10000018573-1236849556.jpg?v=1778055789"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-chilly-twin-handcrafted-pink-mango-wood-table-accent-online-10000018573-1236849556.jpg?v=1778055789",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-chilly-twin-handcrafted-pink-mango-wood-table-accent-online-10000018573-1236849559.jpg?v=1778055670",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-chilly-twin-handcrafted-pink-mango-wood-table-accent-online-10000018573-1236849558.jpg?v=1778055610",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-chilly-twin-handcrafted-pink-mango-wood-table-accent-online-10000018573-1236849561.jpg?v=1778055488",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-chilly-twin-handcrafted-pink-mango-wood-table-accent-online-10000018573-1238048128.jpg?v=1778595489",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-chilly-twin-handcrafted-pink-mango-wood-table-accent-online-10000018573-1236849560.jpg?v=1778055730"
+    ],
+    "description": "Chillies drying in corners. Strung up and left to deepen in the kitchen air the chilli was always part of the backdrop of home. The Chilly Twin Table Accent reimagines that familiar form as a sculptural object: two slender handcrafted and handpainted wooden chillies in vivid p...",
+    "width": "N/A",
+    "material": "WOOD",
+    "color": "PINK",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4L X 3B X 18H CM",
+      "sizeIN": "4L X 3B X 18H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "PINK",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde7d9c2bee3818f997"
+    },
+    "id": "FT-GF-0005",
+    "name": "The Mango Muse Wall Art (Yellow)",
+    "category": "gifting",
+    "subCategory": "wedding-gifts",
+    "price": 1780,
+    "stock": 18,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Acrylic frame",
+      "Be_confluence",
+      "Yellow",
+      "The mango muse"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-illustrated-yellow-framed-paper-wall-art-online-10000018534-1234789580.jpg?v=1777538530"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-illustrated-yellow-framed-paper-wall-art-online-10000018534-1234789580.jpg?v=1777538530",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234935186.jpg?v=1777550349",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-illustrated-yellow-framed-paper-wall-art-online-10000018534-1234789578.jpg?v=1777538468",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-illustrated-yellow-framed-paper-wall-art-online-10000018534-1234789579.jpg?v=1777538350",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-mango-muse-illustrated-yellow-framed-paper-wall-art-online-10000018534-1234789577.jpg?v=1777538409",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234935187.jpg?v=1777550289"
+    ],
+    "description": "The Mango Muse Wall Art pays homage to India's most beloved fruit illustrated in bold, expressive strokes in a warm, sun-kissed yellow. Printed on matt finish paper and framed behind glass, this 30 × 30cm piece brings a joyful splash of colour to any wall, a bright, botanical ...",
+    "width": "N/A",
+    "material": "FRAMED PAPER",
+    "color": "YELLOW",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "12L X 0.5B X 12H IN",
+      "sizeIN": "12L X 0.5B X 12H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "YELLOW",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde1e79b533d279041a"
+    },
+    "id": "FT-GF-0006",
+    "name": "The Beetroot Blush Wall Art (Pink)",
+    "category": "gifting",
+    "subCategory": "wedding-gifts",
+    "price": 1780,
+    "stock": 16,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Acrylic frame",
+      "Be_confluence",
+      "Pink",
+      "The beetroot blush"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234789587.jpg?v=1777538048"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234789587.jpg?v=1777538048",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234935186.jpg?v=1777550349",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234789586.jpg?v=1777537989",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234789588.jpg?v=1777537869",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234789585.jpg?v=1777537930",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234935187.jpg?v=1777550289"
+    ],
+    "description": "The Beetroot Blush Wall Art is a love letter to one of the kitchen garden's most underrated stars rendered in bold, illustrative strokes in a warm, blushing pink palette. Printed on matt finish paper and framed behind glass, this 30 × 30cm piece brings a joyful, botanical spir...",
+    "width": "N/A",
+    "material": "FRAMED PAPER",
+    "color": "PINK",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "12L X 0.5B X 12H IN",
+      "sizeIN": "12L X 0.5B X 12H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "PINK",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde908adf1bb6a687f1"
+    },
+    "id": "FT-GF-0007",
+    "name": "The Turnip Twins Wall Art (Blue)",
+    "category": "gifting",
+    "subCategory": "wedding-gifts",
+    "price": 2480,
+    "stock": 20,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Acrylic frame",
+      "Be_confluence",
+      "Blue",
+      "The turnip twins"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-turnip-twins-illustrated-blue-framed-paper-wall-art-online-10000018535-1234789581.jpg?v=1777538288"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-turnip-twins-illustrated-blue-framed-paper-wall-art-online-10000018535-1234789581.jpg?v=1777538288",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234935187.jpg?v=1777550289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-turnip-twins-illustrated-blue-framed-paper-wall-art-online-10000018535-1234789583.jpg?v=1777538229",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-turnip-twins-illustrated-blue-framed-paper-wall-art-online-10000018535-1234789582.jpg?v=1777538107",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-turnip-twins-illustrated-blue-framed-paper-wall-art-online-10000018535-1234789584.jpg?v=1777538169",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/the-turnip-twins-blue-illustrated-wall-art-freedom-tree-10000018535-1260390083.jpg?v=1790792830"
+    ],
+    "description": "The Turnip Twins Wall Art celebrates the humble turnip in a playful illustrated double portrait two roots drawn in vivid blue with a graphic, expressive line and a generous sense of humour. Printed on matt finish paper and framed behind glass, this portrait-format piece makes ...",
+    "width": "N/A",
+    "material": "FRAMED PAPER",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "12L X 0.5B X 18H IN",
+      "sizeIN": "12L X 0.5B X 18H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddef28b05a5c096adfa"
+    },
+    "id": "FT-GF-0008",
+    "name": "The Radish Twins Wall Art (Green)",
+    "category": "gifting",
+    "subCategory": "wedding-gifts",
+    "price": 2480,
+    "stock": 22,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Acrylic frame",
+      "Be_confluence",
+      "Green",
+      "The radish twins"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-radish-twins-illustrated-green-framed-paper-wall-art-online-10000018536-1234789573.jpg?v=1777538771"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-radish-twins-illustrated-green-framed-paper-wall-art-online-10000018536-1234789573.jpg?v=1777538771",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-beetroot-blush-illustrated-pink-framed-paper-wall-art-online-10000018533-1234935187.jpg?v=1777550289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-radish-twins-illustrated-green-framed-paper-wall-art-online-10000018536-1234789576.jpg?v=1777538709",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-radish-twins-illustrated-green-framed-paper-wall-art-online-10000018536-1234789574.jpg?v=1777538589",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-the-radish-twins-illustrated-green-framed-paper-wall-art-online-10000018536-1234789575.jpg?v=1777538653",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/the-radish-twins-green-illustrated-wall-art-freedom-tree-10000018536-1260390101.jpg?v=1790792948"
+    ],
+    "description": "The Radish Twins Wall Art brings two crisp radishes to life in a vivid illustrated portrait bold green tones and confident graphic line work making them the most stylish vegetables in the room. Printed on matt finish paper and framed behind glass, this portrait-format piece is...",
+    "width": "N/A",
+    "material": "FRAMED PAPER",
+    "color": "GREEN",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "12L X 0.5B X 18H IN",
+      "sizeIN": "12L X 0.5B X 18H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "GREEN",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddebe1f869a1b1fa91d"
+    },
+    "id": "FT-GF-0009",
+    "name": "Azure Fin Bud Vase (Blue)",
+    "category": "gifting",
+    "subCategory": "curated-gifts",
+    "price": 1080,
+    "stock": 14,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Be_confluence",
+      "Blue",
+      "Fish small",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-small-blue-ceramic-vase-freedom-tree-10000018872-1250059806.jpg?v=1784558649"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-small-blue-ceramic-vase-freedom-tree-10000018872-1250059806.jpg?v=1784558649",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-small-blue-ceramic-vase-freedom-tree-10000018872-1250059805.jpg?v=1784558591",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-small-blue-ceramic-vase-freedom-tree-10000018872-1250059804.jpg?v=1784558530",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-small-blue-vase-freedom-tree-10000018872-1260510583.jpg?v=1790871728"
+    ],
+    "description": "We simply couldn't have enough of these sea creatures, so we painted a whole shoal, and the littlest one swam home as a bud vase. A single wide-eyed fish drifts across its rounded belly in blues, coral and yellow, one small piece of the magnificent waterscape hand-painted acro...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "3.5L X 3.5B X 5H IN",
+      "sizeIN": "3.5L X 3.5B X 5H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddea2fc343531eb7c24"
+    },
+    "id": "FT-GF-0010",
+    "name": "Azure Fin Lidded Jar (Blue)",
+    "category": "gifting",
+    "subCategory": "curated-gifts",
+    "price": 2480,
+    "stock": 13,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Be_confluence",
+      "Blue",
+      "Fish jar",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059794.jpg?v=1784557932"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059794.jpg?v=1784557932",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-bottle-blue-ceramic-vase-freedom-tree-10000018875-1250059791.jpg?v=1784558289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059793.jpg?v=1784557872",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059792.jpg?v=1784557812",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059790.jpg?v=1784557750",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/fish-jar-blue-ceramic-vase-freedom-tree-10000018873-1250059789.jpg?v=1784557692"
+    ],
+    "description": "We couldn't stop at one, so the shoal swims on, this time across a lidded jar. Bright fish dart over its rounded form and teal-rimmed lid in playful blues, yellow and coral, each one hand-painted as part of our watery ceramic story. Handcrafted and made in India, it's equal pa...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "13.9L X 13.9B X 20.3H CM",
+      "sizeIN": "13.9L X 13.9B X 20.3H IN",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddded3320a10324a8547"
+    },
+    "id": "FT-GF-0011",
+    "name": "Giva The Cow Center Piece",
+    "category": "gifting",
+    "subCategory": "curated-gifts",
+    "price": 6280,
+    "stock": 15,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "Cow",
+      "Giva the cow",
+      "(nil)",
+      "Mdf"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cow-planter-freedom-tree-10000018620-1250144077.jpg?v=1784571729"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cow-planter-freedom-tree-10000018620-1250144077.jpg?v=1784571729",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cow-planter-freedom-tree-10000018620-1250144072.jpg?v=1784571489",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cow-planter-freedom-tree-10000018620-1250144073.jpg?v=1784571608",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cow-planter-freedom-tree-10000018620-1250144075.jpg?v=1784571669",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cow-planter-freedom-tree-10000018620-1250144076.jpg?v=1784571552",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/cow-planter-freedom-tree-10000018620-1250144074.jpg?v=1784571432"
+    ],
+    "description": "A bountiful giver of all that is good, this folksy animal stands proud as a centrepiece. Its deep indigo body is a meadow in bloom, flowers hand-painted across its sides with cheerful orange ears and hooves, while its hollow form doubles as a container for indoor plants, fruit...",
+    "width": "N/A",
+    "material": "MDF",
+    "color": "(NIL)",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Wipe with a damp cloth or gentle hand wash according to item type.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "20L X 7W X 11H IN",
+      "sizeIN": "20L X 7W X 11H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "(NIL)",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde18159407812a3d16"
+    },
+    "id": "FT-SL-0001",
+    "name": "Raffia Citron Green Upholstery Fabric",
+    "category": "sale",
+    "subCategory": "furnishing-sale",
+    "price": 1386,
+    "stock": 21,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_30% off",
+      "Green",
+      "Raffia",
+      "Polyester"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-raffia-polyester-citron-green-raffia-upholstery-fabric-online-10000016417-44644320837856.jpg?v=1771931435"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-raffia-polyester-citron-green-raffia-upholstery-fabric-online-10000016417-44644320837856.jpg?v=1771931435",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-nomad-modern-luxe-teak-wood-sofa-online-1173677804.jpg?v=1771931435",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-raffia-polyester-citron-green-raffia-upholstery-fabric-online-10000016417-44644320772320.jpg?v=1771931435",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-raffia-polyester-citron-green-raffia-upholstery-fabric-online-10000016417-43839883608288.jpg?v=1750135295",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-raffia-polyester-citron-green-raffia-upholstery-fabric-online-10000016417-44644320903392.jpg?v=1750135295",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-pi-mid-century-teak-wood-armchair-online-10000013501-1156771683.jpg?v=1774798581"
+    ],
+    "description": "Our Raffia upholstery are specialty woven in slubbed weaves from blended yarns. Refresh your favorite corners or furniture with this tactile print, or introduce it as a statement print to a room. The contemporary, understated style is easy to pair and is versatile enough to pl...",
+    "width": "N/A",
+    "material": "POLYESTER",
+    "color": "CITRON GREEN",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "1.2 M WIDTH",
+      "sizeIN": "1.2 M WIDTH (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "CITRON GREEN",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde8fc0e4168025d774"
+    },
+    "id": "FT-SL-0002",
+    "name": "Shoreline Viridian Green Tweed Upholstery Fabric",
+    "category": "sale",
+    "subCategory": "furnishing-sale",
+    "price": 1596,
+    "stock": 29,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_30% off",
+      "Green",
+      "Shoreline",
+      "Pure cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shoreline-pure-cotton-and-viscose-viridian-green-tweed-upholstery-fabric-online-10000016937-1176313632.jpg?v=1751531442"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shoreline-pure-cotton-and-viscose-viridian-green-tweed-upholstery-fabric-online-10000016937-1176313632.jpg?v=1751531442",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shoreline-pure-cotton-and-viscose-viridian-green-tweed-upholstery-fabric-online-10000016937-1216276583.png?v=1768218668",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shoreline-pure-cotton-and-viscose-viridian-green-tweed-upholstery-fabric-online-10000016937-1176313635.jpg?v=1751531450",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shoreline-pure-cotton-and-viscose-viridian-green-tweed-upholstery-fabric-online-10000016937-1176313633.jpg?v=1751531445",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-shoreline-pure-cotton-and-viscose-viridian-green-tweed-upholstery-fabric-online-10000016937-1176313634.jpg?v=1751531448"
+    ],
+    "description": "A lush woven tweed in viridian green. The Shoreline Upholstery Fabric evokes the freshness of summer and the vibrancy of nature. Perfect for upholstery, cushions, and throws, the beautifully textured weave brings a bright, yet earthy elegance to any space.",
+    "width": "N/A",
+    "material": "COTTON BLEND",
+    "color": "VIRIDIAN GREEN",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "1.3 M WIDTH",
+      "sizeIN": "1.3 M WIDTH (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "VIRIDIAN GREEN",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde28b46a4f83796083"
+    },
+    "id": "FT-SL-0003",
+    "name": "Rorschach Emerald Green Printed Upholstery Fabric",
+    "category": "sale",
+    "subCategory": "furnishing-sale",
+    "price": 1386,
+    "stock": 18,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_30% off",
+      "Green",
+      "Rorschach",
+      "Herringbone cotton"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-rorschach-herringbone-cotton-emerald-green-printed-upholstery-fabric-online-10000016935-1149796160.jpg?v=1752229737"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-rorschach-herringbone-cotton-emerald-green-printed-upholstery-fabric-online-10000016935-1149796160.jpg?v=1752229737",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-glider-mid-century-teak-wood-armchair-online-10000010365-1156771534.jpg?v=1771316792",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-rorschach-herringbone-cotton-emerald-green-printed-upholstery-fabric-online-10000016935-1149796162.jpg?v=1752229737",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-rorschach-herringbone-cotton-emerald-green-printed-upholstery-fabric-online-10000016935-1149796161.jpg?v=1752229737",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-rorschach-herringbone-cotton-emerald-green-printed-upholstery-fabric-online-10000016935-1149796163.jpg?v=1752229737",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-rorschach-herringbone-cotton-emerald-green-printed-upholstery-fabric-online-10000016935-1156771536.jpg?v=1744978602"
+    ],
+    "description": "A dreamy blend of emerald, mint, peach, and fuchsia, the Rorschach print mirrors watercolor symmetry in a light, airy design. A design and color palette that will suit any season, it brings coolness and fluid elegance to drapery, upholstery, or statement cushions. Pairs wonder...",
+    "width": "N/A",
+    "material": "HERRINGBONE COTTON",
+    "color": "EMERALD GREEN",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "1.5 M WIDTH",
+      "sizeIN": "1.5 M WIDTH (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "EMERALD GREEN",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde4a9c05e504a58c2a"
+    },
+    "id": "FT-SL-0004",
+    "name": "Studio Naturals Butter Yellow Katori (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 290,
+    "stock": 16,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Yellow",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-katori-online-10000017300-1182485274.jpg?v=1754397370"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-katori-online-10000017300-1182485274.jpg?v=1754397370",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-katori-online-10000017300-1182485266.jpg?v=1754397370",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-katori-online-10000017300-1183233265.jpg?v=1754404129",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-katori-online-10000017300-1182485273.jpg?v=1754396687",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/butter-yellow-katori-in-ceramic-freedom-tree-10000017300-1260083940.jpg?v=1790449211",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-katori-online-10000017300-1182485267.jpg?v=1754396687"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BUTTER YELLOW",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4L X 4B X 2H IN",
+      "sizeIN": "4L X 4B X 2H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "BUTTER YELLOW",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde792d3c896eb5c870"
+    },
+    "id": "FT-SL-0005",
+    "name": "Studio Naturals Butter Yellow Snack Bowl (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 440,
+    "stock": 17,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Yellow",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-mixer-bowl-online-10000017296-1182485269.jpg?v=1754463741"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-mixer-bowl-online-10000017296-1182485269.jpg?v=1754463741",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-mixer-bowl-online-10000017296-1182485270.jpg?v=1754463741",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-mixer-bowl-online-10000017296-1183233274.jpg?v=1754404369",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-mixer-bowl-online-10000017296-1182485268.jpg?v=1754396385",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/studio-naturals-butter-yellow-ceramic-snack-bowl-freedom-tree-10000017296-1260083939.jpg?v=1790448968",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-yellow-ceramic-mixer-bowl-online-10000017296-1182485271.jpg?v=1754396385"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BUTTER YELLOW",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4.5L X 4.5B X 2.4H IN",
+      "sizeIN": "4.5L X 4.5B X 2.4H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "BUTTER YELLOW",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5dddec355057aaf106f8c"
+    },
+    "id": "FT-SL-0006",
+    "name": "Studio Naturals Red Pepper Katori (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 290,
+    "stock": 25,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Red",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-katori-online-10000017302-1182485289.jpg?v=1754463639"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-katori-online-10000017302-1182485289.jpg?v=1754463639",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-katori-online-10000017302-1182485288.jpg?v=1754463639",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-katori-online-10000017302-1183233260.jpg?v=1754463639",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-katori-online-10000017302-1182485287.jpg?v=1754463639",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/red-pepper-katori-in-ceramic-freedom-tree-10000017302-1260083942.jpg?v=1790449329",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-katori-online-10000017302-1182485290.jpg?v=1754463639"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "RED PEPPER",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4L X 4B X 2H IN",
+      "sizeIN": "4L X 4B X 2H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "RED PEPPER",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde930c4e8e1f3fe9fa"
+    },
+    "id": "FT-SL-0007",
+    "name": "Studio Naturals Red Pepper Snack Bowl (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 440,
+    "stock": 24,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Red",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-mixer-bowl-online-10000017298-1182485297.jpg?v=1754463771"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-mixer-bowl-online-10000017298-1182485297.jpg?v=1754463771",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-mixer-bowl-online-10000017298-1182485296.jpg?v=1754463771",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-mixer-bowl-online-10000017298-1183233250.jpg?v=1754463771",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-mixer-bowl-online-10000017298-1182485295.jpg?v=1754463771",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/studio-naturals-red-pepper-ceramic-snack-bowl-freedom-tree-10000017298-1260083941.jpg?v=1790449149",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-red-ceramic-mixer-bowl-online-10000017298-1182485298.jpg?v=1754463771"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "RED PEPPER",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4.5L X 4.5B X 2.4H IN",
+      "sizeIN": "4.5L X 4.5B X 2.4H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "RED PEPPER",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde3b9985122b2275ce"
+    },
+    "id": "FT-SL-0008",
+    "name": "Studio Naturals Berry Blue Katori (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 290,
+    "stock": 12,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Blue",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-katori-online-10000017301-1182485294.jpg?v=1754463668"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-katori-online-10000017301-1182485294.jpg?v=1754463668",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-katori-online-10000017301-1182485291.jpg?v=1754463668",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-katori-online-10000017301-1183233262.jpg?v=1754463668",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-katori-online-10000017301-1182485292.jpg?v=1754463668",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/berry-blue-katori-in-ceramic-freedom-tree-10000017301-1260083946.jpg?v=1790449270",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-katori-online-10000017301-1182485293.jpg?v=1754463668"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BERRY BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4L X 4B X 2H IN",
+      "sizeIN": "4L X 4B X 2H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "BERRY BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde38c3567bf56ce897"
+    },
+    "id": "FT-SL-0009",
+    "name": "Studio Naturals Berry Blue Snack Bowl (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 440,
+    "stock": 18,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Blue",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-mixer-bowl-online-10000017297-1182485299.jpg?v=1754463753"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-mixer-bowl-online-10000017297-1182485299.jpg?v=1754463753",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-mixer-bowl-online-10000017297-1182485301.jpg?v=1754463753",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-mixer-bowl-online-10000017297-1183233273.jpg?v=1754463753",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-mixer-bowl-online-10000017297-1182485300.jpg?v=1754463753",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/studio-naturals-berry-blue-ceramic-snack-bowl-freedom-tree-10000017297-1260083945.jpg?v=1790449031",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-blue-ceramic-mixer-bowl-online-10000017297-1182485302.jpg?v=1754463753"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "BERRY BLUE",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4.5L X 4.5B X 2.4H IN",
+      "sizeIN": "4.5L X 4.5B X 2.4H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "BERRY BLUE",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde1752bc236175a88c"
+    },
+    "id": "FT-SL-0010",
+    "name": "Studio Naturals Herb Green Katori (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 290,
+    "stock": 12,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Green",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-katori-online-10000017303-1183730463.jpg?v=1754655163"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-katori-online-10000017303-1183730463.jpg?v=1754655163",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-katori-online-10000017303-1183730465.jpg?v=1754655169",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-katori-online-10000017303-1183233254.jpg?v=1754648921",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-katori-online-10000017303-1183730464.jpg?v=1754655166",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/herb-green-katori-in-ceramic-freedom-tree-10000017303-1260083944.jpg?v=1790449388",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-katori-online-10000017303-1183730462.jpg?v=1754655160"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "HERB GREEN",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4L X 4B X 2H IN",
+      "sizeIN": "4L X 4B X 2H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "HERB GREEN",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ad5ddde5297ceb218679649"
+    },
+    "id": "FT-SL-0011",
+    "name": "Studio Naturals Herb Green Snack Bowl (Set Of 2)",
+    "category": "sale",
+    "subCategory": "dining-sale",
+    "price": 440,
+    "stock": 15,
+    "currency": "INR",
+    "tags": [
+      "Trending",
+      "_label_50% off",
+      "Green",
+      "Studio naturals",
+      "Ceramic"
+    ],
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-mixer-bowl-online-10000017299-1183730469.jpg?v=1754655400"
+    ],
+    "gallery": [
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-mixer-bowl-online-10000017299-1183730469.jpg?v=1754655400",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-mixer-bowl-online-10000017299-1183730466.jpg?v=1754655172",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-mixer-bowl-online-10000017299-1183233271.jpg?v=1754645289",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/studio-naturals-herb-green-ceramic-snack-bowl-freedom-tree-10000017299-1260104345.jpg?v=1790497329",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/studio-naturals-herb-green-ceramic-snack-bowl-freedom-tree-10000017299-1260083943.jpg?v=1790449088",
+      "https://cdn.shopify.com/s/files/1/0258/1394/2371/files/buy-studio-naturals-handcrafted-green-ceramic-mixer-bowl-online-10000017299-1183730467.jpg?v=1754655175"
+    ],
+    "description": "Our Studio Naturals glazed ceramics series brings a hearty earthiness to the table. The speckled glazes in gustatory hues and vegetal tones make for a settled and laid back table, full of healthy eats. From mugs and tea-cups, to serving palettes and bowls, the mix match series...",
+    "width": "N/A",
+    "material": "CERAMIC",
+    "color": "HERB GREEN",
+    "style": "Contemporary",
+    "technique": "Handcrafted",
+    "fabricWeight": "N/A",
+    "collection": "Freedom Tree Signature",
+    "careInstructions": "Follow standard care instructions specified for fabric or ceramic pieces.",
+    "returnPolicy": "Standard return policy; replacement available for manufacturing defect or delivery damage.",
+    "warranty": "1 year (manufacturing defect)",
+    "origin": "India (Freedom Tree Retail LLP)",
+    "details": {
+      "sizeCM": "4.5L X 4.5B X 2.4H IN",
+      "sizeIN": "4.5L X 4.5B X 2.4H IN (Standard)",
+      "additionalSizes": {
+        "seatHeight": 0,
+        "seatBackHeight": 0,
+        "seatDepth": 0,
+        "backRestAngle": 0,
+        "armWidth": 0,
+        "armHeightFromSeating": 0,
+        "armHeightFromFloor": 0
+      },
+      "frameMaterial": "ASSORTED",
+      "color": "HERB GREEN",
+      "style": "CONTEMPORARY",
+      "technique": "HANDCRAFTED",
+      "foamFeel": "N/A",
+      "fabricCustomisation": "N/A"
     }
   }
 ]

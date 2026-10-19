@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Search, Mail, Phone, MapPin, MoreHorizontal } from "lucide-react";
+import { Search, Mail, Phone, MapPin, Users, ShoppingBag, IndianRupee } from "lucide-react";
 import axios from "axios";
 import { API_BASE_URL } from "../../api";
 
@@ -8,152 +8,186 @@ const Customers = () => {
   const [orders, setOrders] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredUsers, setFilteredUsers] = useState([]);
-  const [country, setcoutnry] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
-        const ordersRes = await axios.get(`${API_BASE_URL}/api/v1/admin/orders`);
-        const usersRes = await axios.get(`${API_BASE_URL}/api/v1/users`);
+        const [ordersRes, usersRes] = await Promise.all([
+          axios.get(`${API_BASE_URL}/api/v1/admin/orders`).catch(() => ({ data: { data: [] } })),
+          axios.get(`${API_BASE_URL}/api/v1/users`).catch(() => ({ data: { data: [] } })),
+        ]);
 
-        const token = localStorage.getItem("refreshToken")
+        const oList = ordersRes.data.data || [];
+        const uList = usersRes.data.data || [];
 
-        setOrders(ordersRes.data.data);
-        setUsers(usersRes.data.data);
-        const orderUserIds = ordersRes.data.data.map(o => o.userId.toString());
-        const filtered = usersRes.data.data.filter(u =>
-          orderUserIds.includes(u._id.toString())
-        );
-
-        setFilteredUsers(filtered);
+        setOrders(oList);
+        setUsers(uList);
+        setFilteredUsers(uList);
       } catch (error) {
+        console.error("Fetch customers error:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
   }, []);
 
   useEffect(() => {
-    if (!search) {
+    if (!search.trim()) {
       setFilteredUsers(users);
       return;
     }
 
-    const searchText = search.toLowerCase();
-    const filtered = users.filter(user => {
+    const q = search.toLowerCase();
+    const filtered = users.filter((user) => {
       const fullName = `${user.firstName || ""} ${user.lastName || ""}`.toLowerCase();
-      return fullName.includes(searchText);
+      const email = user.email?.toLowerCase() || "";
+      const phone = user.phoneNumber || user.phone || "";
+      return fullName.includes(q) || email.includes(q) || phone.includes(q);
     });
 
     setFilteredUsers(filtered);
   }, [search, users]);
 
   const getUserTotals = (userId) => {
-    const userOrders = orders.filter(
-      order => order.userId.toString() === userId.toString()
-    );
+    if (!userId) return { totalOrders: 0, totalSpent: 0 };
 
-    const totalOrders = userOrders[0]?.order_details.length || 0;
+    const userOrders = orders.filter((order) => {
+      const uid = order.userId?._id || order.userId;
+      return uid && uid.toString() === userId.toString();
+    });
 
-    const totalSpent = userOrders.reduce((sum, order) => {
-      const orderTotal = order.order_details.reduce((odSum, od) => {
-        return odSum + od.status.reduce(
-          (statusSum, s) => statusSum + s.totalAmount,
-          0
-        );
-      }, 0);
-      return sum + orderTotal;
-    }, 0);
+    let totalOrders = 0;
+    let totalSpent = 0;
+
+    userOrders.forEach((order) => {
+      if (order.order_details && Array.isArray(order.order_details)) {
+        totalOrders += order.order_details.length;
+        order.order_details.forEach((od) => {
+          if (od.status && Array.isArray(od.status)) {
+            od.status.forEach((st) => {
+              totalSpent += Number(st.totalAmount) || 0;
+            });
+          }
+        });
+      }
+    });
 
     return { totalOrders, totalSpent };
   };
 
   return (
-    <div className="max-w-7xl mx-auto bg-[#F7F4EF] p-6 rounded-3xl">
-      <div className="mb-10">
-        <h1 className="text-3xl font-semibold text-[#2E3A2F] tracking-wide">
-          Customers
-        </h1>
-        <p className="text-sm text-[#6B7280] mt-1">
-          People who believe in sustainable living
-        </p>
+    <div className="max-w-7xl mx-auto space-y-6">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div className="flex items-center gap-2.5">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight font-display">
+              Customer Accounts
+            </h1>
+            <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+              {filteredUsers.length} registered
+            </span>
+          </div>
+          <p className="text-gray-500 text-xs sm:text-sm mt-1">
+            Registered Freedom Tree clientele, lifetime order value, and verified contacts.
+          </p>
+        </div>
       </div>
 
-      <div className="bg-white/70 backdrop-blur p-4 rounded-xl border border-black/5 mb-8 max-w-md">
+      {/* Search Bar */}
+      <div className="bg-white p-4 rounded-2xl border border-gray-200/80 shadow-xs max-w-md">
         <div className="relative">
           <Search
             size={18}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
           />
           <input
             type="text"
-            placeholder="Search by name"
-            className="w-full pl-9 pr-4 py-2 bg-transparent border border-black/10 rounded-lg focus:outline-none focus:border-[#C6A15B]"
+            placeholder="Search by customer name, email, or phone..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 bg-gray-50/80 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Customers Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredUsers.map((customer) => {
           const totals = getUserTotals(customer._id);
+          const initials = `${customer.firstName?.[0] || ""}${customer.lastName?.[0] || ""}`.toUpperCase() || "FT";
+
           return (
             <div
               key={customer._id}
-              className="bg-white rounded-3xl p-6 border border-black/5 hover:border-[#C6A15B]/40 transition-all"
+              className="bg-white rounded-3xl p-6 border border-gray-200/80 hover:border-emerald-500/50 hover:shadow-md transition-all flex flex-col justify-between"
             >
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#C6A15B]/20 text-[#2E3A2F] flex items-center justify-center font-semibold">
-                    {customer.firstName.charAt(0)?.toUpperCase()}
-                    {customer.lastName?.charAt(0)?.toUpperCase()}
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-[#2E3A2F]">
-                      {customer.firstName} {customer.lastName}
-                    </h3>
-                    <p className="text-xs text-gray-500">
-                      Customer ID · {customer._id.slice(-6)}
-                    </p>
+              <div>
+                {/* Customer Header */}
+                <div className="flex items-start justify-between mb-5">
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center font-bold text-base border border-emerald-500/20 shadow-xs">
+                      {initials}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-base leading-snug">
+                        {customer.firstName} {customer.lastName || ""}
+                      </h3>
+                      <p className="text-[11px] text-gray-400 font-mono mt-0.5">
+                        Client ID · #{customer._id?.slice(-6)}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <button className="text-gray-400 hover:text-gray-600">
-                  <MoreHorizontal size={18} />
-                </button>
+
+                {/* Details */}
+                <div className="space-y-2.5 text-xs text-gray-600 mb-6 bg-gray-50/70 p-3.5 rounded-2xl border border-gray-100">
+                  <div className="flex items-center gap-2.5 truncate">
+                    <Mail size={14} className="text-gray-400 shrink-0" />
+                    <span className="truncate">{customer.email || "No email"}</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Phone size={14} className="text-gray-400 shrink-0" />
+                    <span>{customer.phoneNumber || customer.phone || "Not provided"}</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <MapPin size={14} className="text-gray-400 shrink-0" />
+                    <span>{customer.location || "India"}</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-3 text-sm text-gray-600 mb-6">
-                <div className="flex items-center gap-3">
-                  <Mail size={15} />
-                  <span>{customer.email}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={15} />
-                  <span>{customer.phoneNumber}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin size={15} />
-                  <span>{customer.location || "India"}</span>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between pt-4 border-t border-black/5">
+              {/* Order Stats */}
+              <div className="grid grid-cols-2 gap-2 pt-4 border-t border-gray-100 text-xs">
                 <div>
-                  <p className="text-xs text-gray-500">Orders</p>
-                  <p className="text-lg font-semibold text-[#2E3A2F]">
+                  <span className="text-[11px] text-gray-400 font-medium block">Total Orders</span>
+                  <span className="text-base font-extrabold text-gray-900 font-mono">
                     {totals.totalOrders}
-                  </p>
+                  </span>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-gray-500">Total Spent</p>
-                  <p className="text-lg font-semibold text-[#C6A15B]">
-                    ₹{totals.totalSpent.toLocaleString()}
-                  </p>
+                  <span className="text-[11px] text-gray-400 font-medium block">Lifetime Spend</span>
+                  <span className="text-base font-extrabold text-emerald-700 font-mono">
+                    ₹ {totals.totalSpent.toLocaleString("en-IN")}
+                  </span>
                 </div>
               </div>
             </div>
           );
         })}
+
+        {filteredUsers.length === 0 && !loading && (
+          <div className="col-span-full bg-white rounded-3xl p-12 text-center border border-gray-200">
+            <Users size={36} className="mx-auto text-gray-300 mb-2" />
+            <p className="text-sm font-semibold text-gray-600">No customers found</p>
+            <p className="text-xs text-gray-400 mt-0.5">
+              Try adjusting your search by name or contact info.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

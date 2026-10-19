@@ -112,8 +112,23 @@ export default function EditProfile() {
                 return;
             }
 
+            let userUpdatedData = {}
+
+            if (User.firstName !== form.firstName) {
+                userUpdatedData.firstName = form.firstName
+            }
+            if (User.lastName !== form.lastName) {
+                userUpdatedData.lastName = form.lastName
+            }
+            if (User.email !== form.email) {
+                userUpdatedData.email = form.email
+            }
+            if (User.phoneNumber !== form.phoneNumber) {
+                userUpdatedData.phoneNumber = form.phoneNumber
+            }
+
             await axios.post(`${API_BASE_URL}/api/v1/edit-profile`, {
-                form,
+                userUpdatedData,
                 address,
             },
                 {

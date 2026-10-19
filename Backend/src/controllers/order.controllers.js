@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Order from "../models/order.models.js";
 import { User } from "../models/user.model.js";
 import { ApiError } from '../utils/ApiError.js';
@@ -433,6 +434,78 @@ const OrderMessage = asyncHandler(async (req, res) => {
     }
 });
 
+// Update order status (processing, shipped, delivered, cancelled)
+const updateOrderStatus = asyncHandler(async (req, res) => {
+    const { orderId } = req.params;
+    const { status, paymentStatus } = req.body;
 
+    if (!status && !paymentStatus) {
+        throw new ApiError(400, "Status or paymentStatus is required");
+    }
 
-export { MyOrder, getAllOrders, OrderMessage };
+    const isObjectId = mongoose.Types.ObjectId.isValid(orderId);
+    let order = await Order.findOne({
+        $or: [
+            ...(isObjectId ? [{ _id: orderId }, { "order_details._id": orderId }] : []),
+            { "order_details.status.cashfreeOrderId": orderId }
+        ]
+    });
+
+    if (!order) {
+        throw new ApiError(404, "Order not found");
+    }
+
+    let updated = false;
+    order.order_details.forEach(detail => {
+        if (
+            detail._id.toString() === orderId ||
+            detail.status[0]?.cashfreeOrderId === orderId ||
+            order._id.toString() === orderId
+        ) {
+            if (status) {
+                detail.status[0].orderStatus = status.toLowerCase();
+            }
+            if (paymentStatus) {
+                detail.status[0].paymentStatus = paymentStatus;
+            }
+            updated = true;
+        }
+    });
+
+    if (updated) {
+        await order.save();
+    }
+
+    return res.status(200).json(
+        new ApiResponse(200, order, "Order status updated successfully")
+    );
+});
+
+// Delete an order
+const deleteOrder = asyncHandler(async (req, res) => {
+    const { orderId } = req.params;
+    const isObjectId = mongoose.Types.ObjectId.isValid(orderId);
+
+    let deleted = null;
+    if (isObjectId) {
+        deleted = await Order.findByIdAndDelete(orderId);
+    }
+
+    if (!deleted) {
+        deleted = await Order.findOneAndUpdate(
+            { "order_details._id": orderId },
+            { $pull: { order_details: { _id: orderId } } },
+            { new: true }
+        );
+    }
+
+    if (!deleted) {
+        throw new ApiError(404, "Order not found");
+    }
+
+    return res.status(200).json(
+        new ApiResponse(200, null, "Order deleted successfully")
+    );
+});
+
+export { MyOrder, getAllOrders, OrderMessage, updateOrderStatus, deleteOrder };

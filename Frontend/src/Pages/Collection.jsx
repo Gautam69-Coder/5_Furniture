@@ -3,13 +3,36 @@ import Filter from '../components/Filter';
 import { motion } from 'motion/react';
 import SortProduct from '../components/SortProduct';
 import { useQuickView } from '../context/PopupContext';
+import { useParams } from "react-router-dom";
+import { API_BASE_URL } from "../api";
+import axios from 'axios';
+
 const Collection = () => {
 
-
-    const {filter,setfilter}= useQuickView();
-
+    const { category } = useParams();
+    const { filter, setfilter } = useQuickView();
     const [filterChange, setfilterChange] = useState([])
+    const [banner, setBanners] = useState([]);
 
+    // console.log(category);
+
+
+    useEffect(() => {
+        const getBanner = async () => {
+            const res = await axios.get(`${API_BASE_URL}/api/v1/banners`);
+            // setBanners(res.data.data || []);
+            console.log(res.data.data)
+
+            let data = res.data.data;
+
+            data.forEach((item) => {
+                if (item.linkUrl === category) {
+                    setBanners(item.imageUrl);
+                }
+            })
+        }
+        getBanner();
+    }, [])
 
     return (
         <motion.div
@@ -21,36 +44,42 @@ const Collection = () => {
 
             {/* LEFT SIDEBAR */}
             <div className='pr-5  sticky top-0 h-fit'>
-
-               
                 <div className='flex sm:block hidden'>
                     <div>
-                        <Filter onFilterChange={(value) => { setfilterChange(value)}} />
+                        <Filter onFilterChange={(value) => { setfilterChange(value) }} />
                     </div>
                 </div>
-
             </div>
 
             {/* MAIN CONTENT */}
             <div>
 
-                <div className='gap-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pb-[30px]'>
-                    <div>
-                        <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
-                        <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
-                    </div>
-                    <div>
-                        <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
-                        <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
-                    </div>
-                    <div>
-                        <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
-                        <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
-                    </div>
-                    <div>
-                        <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
-                        <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
-                    </div>
+                <div className=' pb-[30px]'>
+                    {banner.length > 1 ? (
+                        <div>
+                            <img src={banner} className='w-full h-[50vh]' alt="" />
+                        </div>
+                    ) :
+                        <div className='gap-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pb-[30px]'>
+                            <div>
+                                <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
+                                <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
+                            </div>
+                            <div>
+                                <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
+                                <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
+                            </div>
+                            <div>
+                                <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
+                                <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
+                            </div>
+                            <div>
+                                <img src="https://freedomtree.in/cdn/shop/files/Living_Room_b7c09749-9bf1-4a08-8bd8-1db7d09d66b4_480x.jpg?v=1758864042" alt="" />
+                                <p className='text-[13px] font-medium leading-[19.5px]'>Living room furniture {">>"}</p>
+                            </div>
+                        </div>
+                    }
+
                 </div>
 
                 <div className='mb-[15px]'>

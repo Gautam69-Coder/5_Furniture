@@ -1,79 +1,132 @@
-import { User, Lock, Bell, Globe, Shield, CreditCard } from 'lucide-react';
+import React from "react";
+import { User, Lock, Bell, Shield, Store, CheckCircle } from "lucide-react";
+import { message } from "antd";
 
 const SettingsSection = ({ title, icon: Icon, children }) => (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-6">
-        <div className="px-6 py-4 border-b border-gray-100 flex items-center gap-3 bg-gray-50/50">
-            <Icon size={20} className="text-brand-primary" />
-            <h3 className="font-bold text-gray-900">{title}</h3>
-        </div>
-        <div className="p-6">
-            {children}
-        </div>
+  <div className="bg-white rounded-3xl border border-gray-200/80 shadow-xs overflow-hidden mb-6">
+    <div className="px-6 py-4 border-b border-gray-100 flex items-center gap-3 bg-gray-50/70">
+      <div className="p-2 bg-emerald-50 text-emerald-700 rounded-xl">
+        <Icon size={18} />
+      </div>
+      <h3 className="font-bold text-gray-900 text-sm tracking-tight">{title}</h3>
     </div>
+    <div className="p-6">{children}</div>
+  </div>
 );
 
 const Settings = () => {
-    return (
-        <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-                <h1 className="text-3xl font-bold text-brand-dark font-display">Settings</h1>
-                <p className="text-gray-500 mt-1">Manage your account and preferences</p>
+  const handleSave = (e) => {
+    e.preventDefault();
+    message.success("Preferences saved successfully!");
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto space-y-6">
+      <div className="mb-6">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight font-display">
+          Store Settings
+        </h1>
+        <p className="text-gray-500 text-xs sm:text-sm mt-1">
+          Configure administrative profile, notifications, and security options.
+        </p>
+      </div>
+
+      <form onSubmit={handleSave}>
+        <SettingsSection title="Administrator Profile" icon={User}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div>
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                Full Name
+              </label>
+              <input
+                type="text"
+                defaultValue="Freedom Tree Administrator"
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all font-medium"
+              />
             </div>
+            <div>
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                Admin Email
+              </label>
+              <input
+                type="email"
+                defaultValue="admin@freedomtree.in"
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all font-medium"
+              />
+            </div>
+            <div className="md:col-span-2">
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
+                Store Bio / Description
+              </label>
+              <textarea
+                rows="3"
+                defaultValue="Freedom Tree is an Indian design and lifestyle store specializing in contemporary handcrafted furniture and vibrant home furnishings."
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 focus:bg-white transition-all resize-none"
+              />
+            </div>
+          </div>
+          <div className="mt-5 flex justify-end">
+            <button
+              type="submit"
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition-colors cursor-pointer"
+            >
+              Save Profile Changes
+            </button>
+          </div>
+        </SettingsSection>
 
-            <SettingsSection title="Profile Information" icon={User}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                        <input type="text" defaultValue="Admin User" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" defaultValue="admin@furniture.com" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all" />
-                    </div>
-                    <div className="md:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Bio</label>
-                        <textarea rows="3" defaultValue="Administrator of the Furniture Store." className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all"></textarea>
-                    </div>
+        <SettingsSection title="Notification Preferences" icon={Bell}>
+          <div className="space-y-4 text-xs">
+            {[
+              { title: "New Order Alerts", desc: "Instant notifications for Cashfree paid orders" },
+              { title: "Low Stock Warnings", desc: "Alert when product stock falls below 3 units" },
+              { title: "Customer Registrations", desc: "Daily summary of new accounts" },
+              { title: "Promotional Banner Reminders", desc: "Notification when campaign banners expire" },
+            ].map((item) => (
+              <div key={item.title} className="flex items-center justify-between py-1">
+                <div>
+                  <span className="font-bold text-gray-900 block text-xs">{item.title}</span>
+                  <span className="text-[11px] text-gray-500">{item.desc}</span>
                 </div>
-                <div className="mt-6 flex justify-end">
-                    <button className="px-4 py-2 bg-brand-primary text-white rounded-lg hover:bg-brand-primary/90 transition-all font-medium">Save Changes</button>
-                </div>
-            </SettingsSection>
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  className="w-4 h-4 text-emerald-600 rounded cursor-pointer"
+                />
+              </div>
+            ))}
+          </div>
+        </SettingsSection>
 
-            <SettingsSection title="Notifications" icon={Bell}>
-                <div className="space-y-4">
-                    {['New Order Alerts', 'Low Stock Warnings', 'New Customer Registrations', 'Weekly Reports'].map((item) => (
-                        <div key={item} className="flex items-center justify-between">
-                            <span className="text-gray-700">{item}</span>
-                            <label className="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" defaultChecked className="sr-only peer" />
-                                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-primary"></div>
-                            </label>
-                        </div>
-                    ))}
-                </div>
-            </SettingsSection>
-
-            <SettingsSection title="Security" icon={Lock}>
-                <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className="font-medium text-gray-900">Change Password</p>
-                            <p className="text-sm text-gray-500">Last changed 30 days ago</p>
-                        </div>
-                        <button className="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">Update</button>
-                    </div>
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className="font-medium text-gray-900">Two-Factor Authentication</p>
-                            <p className="text-sm text-gray-500">Add an extra layer of security to your account</p>
-                        </div>
-                        <button className="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">Enable</button>
-                    </div>
-                </div>
-            </SettingsSection>
-        </div>
-    );
+        <SettingsSection title="Store Security" icon={Lock}>
+          <div className="space-y-4 text-xs">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-bold text-gray-900">Change Admin Password</p>
+                <p className="text-[11px] text-gray-500">Keep account credentials safe</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => message.info("Password update link sent to your registered email")}
+                className="px-3.5 py-1.5 border border-gray-300 rounded-xl text-xs font-bold text-gray-700 hover:bg-gray-50"
+              >
+                Update
+              </button>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+              <div>
+                <p className="font-bold text-gray-900">Two-Factor Authentication</p>
+                <p className="text-[11px] text-gray-500">Extra layer of security on login</p>
+              </div>
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                Enabled
+              </span>
+            </div>
+          </div>
+        </SettingsSection>
+      </form>
+    </div>
+  );
 };
 
 export default Settings;

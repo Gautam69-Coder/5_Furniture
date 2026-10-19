@@ -34,36 +34,49 @@ const Practice = ({ onFilterChange }) => {
 
     const { setfilter, filter } = useQuickView();
 
+    const normalizeCat = (cat) => {
+        if (!cat) return "";
+        const clean = cat.toLowerCase().trim().replace(/[^a-z0-9]/g, "");
+        if (clean === "dinning" || clean === "dining") return "dining";
+        if (clean === "clothiing" || clean === "clothing") return "clothing";
+        if (clean.includes("decor") || clean.includes("light")) return "decor";
+        return clean;
+    };
+
     useEffect(() => {
         const fetchData = async () => {
             const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
             setProductData(res.data.data);
-            const find = res.data.data.filter(item => item.category.includes(category))
+            const find = (res.data.data || []).filter(item => {
+                return item.category === category ||
+                    (item.category && item.category.includes(category)) ||
+                    normalizeCat(item.category) === normalizeCat(category);
+            });
 
             // Extract unique Categories items
             const uniqueSubCategories = [
-                ...new Set(find.map(item => item.subCategory))
+                ...new Set(find.map(item => item.subCategory || item.subcategory).filter(Boolean))
             ];
             const uniquesmallCategories = [
-                ...new Set(find.map(item => item.smallCategory))
+                ...new Set(find.map(item => item.smallCategory).filter(Boolean))
             ];
             const uniqueColors = [
-                ...new Set(find.map(item => item.color))
+                ...new Set(find.map(item => item.color).filter(Boolean))
             ];
             const uniqueStyles = [
-                ...new Set(find.map(item => item.style))
+                ...new Set(find.map(item => item.style).filter(Boolean))
             ];
             const uniqueCollections = [
-                ...new Set(find.map(item => item.collection))
+                ...new Set(find.map(item => item.collection).filter(Boolean))
             ];
             const uniqueMaterials = [
-                ...new Set(find.map(item => item.material))
+                ...new Set(find.map(item => item.material).filter(Boolean))
             ];
             const uniqueSizes = [
-                ...new Set(find.map(item => item.details.sizeIN))
+                ...new Set(find.map(item => item.details?.sizeIN).filter(Boolean))
             ];
             const uniquePrices = [
-                ...new Set(find.map(item => item.price))
+                ...new Set(find.map(item => item.price).filter(Boolean))
             ];
 
             setsubCategory(uniqueSubCategories)

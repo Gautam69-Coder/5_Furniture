@@ -10,6 +10,21 @@ const Home = () => {
 
   const [item, setitem] = useState([])
   const [recommended, setrecommended] = useState([])
+  const [activeBanners, setActiveBanners] = useState([])
+
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/api/v1/banners?activeOnly=true`);
+        if (res.data.data && res.data.data.length > 0) {
+          setActiveBanners(res.data.data);
+        }
+      } catch (e) {
+        // Fallback to static
+      }
+    };
+    fetchBanners();
+  }, []);
 
 
 
@@ -64,9 +79,23 @@ const Home = () => {
 
     >
       <div className='sm:mb-10 mb-5'>
-        <img className='w-full h-auto'
-          loading="lazy"
-          src="https://freedomtree.in/cdn/shop/files/NOV_START_25_c5440a48-26cb-4ec7-8c30-a5beba163d0d_1900x.jpg?v=1762593648" alt="" />
+        {activeBanners.length > 0 ? (
+          <a href={activeBanners[0].linkUrl || '/collections/furniture'}>
+            <img
+              className='w-full h-auto cursor-pointer'
+              loading="lazy"
+              src={activeBanners[0].imageUrl}
+              alt={activeBanners[0].title || "Freedom Tree"}
+            />
+          </a>
+        ) : (
+          <img
+            className='w-full h-auto'
+            loading="lazy"
+            src="https://freedomtree.in/cdn/shop/files/NOV_START_25_c5440a48-26cb-4ec7-8c30-a5beba163d0d_1900x.jpg?v=1762593648"
+            alt="Freedom Tree Banner"
+          />
+        )}
       </div>
 
       {/* Recently Viewed */}

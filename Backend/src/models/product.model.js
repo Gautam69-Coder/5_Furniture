@@ -88,6 +88,11 @@ const productSchema = new mongoose.Schema(
             type: Number,
 
         },
+        stock: {
+            type: Number,
+            default: 15,
+            min: 0,
+        },
         tags: {
             type: Array,
 

@@ -145,51 +145,54 @@ const Profile = () => {
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 mb-12">
 
           <div className="bg-white border border-gray-200 p-6  justify-between ">
-            <div>
-              <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
-                Profile Details
-              </h2>
+            <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-4">
+              Profile Details
+            </h2>
+            <div className="flex justify-between items-start">
+              <div>
+                <p className="text-sm text-gray-800 mb-2">
+                  <span className="text-gray-500">Name:</span>{" "}
+                  {user?.firstName} {user?.lastName}
+                </p>
 
-              <p className="text-sm text-gray-800 mb-2">
-                <span className="text-gray-500">Name:</span>{" "}
-                {user?.firstName} {user?.lastName}
-              </p>
+                <p className="text-sm text-gray-800 mb-2">
+                  <span className="text-gray-500">Email:</span>{" "}
+                  {user?.email}
+                </p>
 
-              <p className="text-sm text-gray-800 mb-2">
-                <span className="text-gray-500">Email:</span>{" "}
-                {user?.email}
-              </p>
-
-              <p className="text-sm text-gray-800">
-                <span className="text-gray-500">Member Since:</span>{" "}
-                {new Date(user?.createdAt).toLocaleDateString()}
-              </p>
-
-            </div>
-              <div className="flex justify-between items-center">
-                <button
-                  onClick={() => {
-                    localStorage.removeItem("refreshToken");
-                    localStorage.removeItem("email");
-                    navigate("/");
-                    window.location.reload();
-                  }}
-                  className="mt-6 text-sm  text-gray-700 hover:text-black p-2 border hover:underline"
-                >
-                  Logout
-                </button>
-                <button
-                  onClick={() => {
-                    navigate("/profile/edit");
-                  }}
-                  className="mt-6 text-sm  text-gray-700 hover:text-black p-2 border hover:underline"
-                >
-                  Edit
-                </button>
+                <p className="text-sm text-gray-800">
+                  <span className="text-gray-500">Member Since:</span>{" "}
+                  {new Date(user?.createdAt).toLocaleDateString()}
+                </p>
               </div>
-            <div>
-              <img src={user?.avatar} className="rounded-full w-10" alt="" />
+
+              <div>
+                <img src={user?.avatar} className="rounded-full w-10" alt="" />
+              </div>
+
             </div>
+            <div className="flex justify-between items-center">
+              <button
+                onClick={() => {
+                  localStorage.removeItem("refreshToken");
+                  localStorage.removeItem("email");
+                  navigate("/");
+                  window.location.reload();
+                }}
+                className="mt-6 text-sm  text-gray-700 hover:text-black p-2 border hover:underline"
+              >
+                Logout
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/profile/edit");
+                }}
+                className="mt-6 text-sm  text-gray-700 hover:text-black p-2 border hover:underline"
+              >
+                Edit
+              </button>
+            </div>
+
           </div>
 
           {add.length !== 0 ? (
@@ -265,7 +268,7 @@ const Profile = () => {
 
                             <Link
                               to={`/order/${prod._id}`}
-                              className="inline-block  text-sm underline text-gray-700 hover:text-black"
+                              className="inline-block  text-sm underline text-gray-700! hover:underline "
                             >
                               View Order Details
                             </Link>

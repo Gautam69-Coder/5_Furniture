@@ -49,173 +49,173 @@ const OrderDetails = () => {
     }, [orderId]);
 
 
-const downloadInvoice = () => {
-    const doc = new jsPDF('p', 'mm', 'a4');
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const pageHeight = doc.internal.pageSize.getHeight();
-    let yPosition = 10;
+    const downloadInvoice = () => {
+        const doc = new jsPDF('p', 'mm', 'a4');
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        let yPosition = 10;
 
-    doc.setFillColor(34, 197, 94);
-    doc.rect(0, 0, pageWidth, 30, 'F');
+        doc.setFillColor(34, 197, 94);
+        doc.rect(0, 0, pageWidth, 30, 'F');
 
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(24);
-    doc.setFont('helvetica', 'bold');
-    doc.text('FREEDOM TREE', 15, 18);
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(24);
+        doc.setFont('helvetica', 'bold');
+        doc.text('FREEDOM TREE', 15, 18);
 
-    doc.setFontSize(11);
-    doc.setFont('helvetica', 'normal');
-    doc.text('support@freedomtree.com | +91 98765 43210', 15, 25);
+        doc.setFontSize(11);
+        doc.setFont('helvetica', 'normal');
+        doc.text('support@freedomtree.com | +91 98765 43210', 15, 25);
 
-    doc.setTextColor(0, 0, 0);
-    doc.setFontSize(28);
-    doc.setFont('helvetica', 'bold');
-    doc.text('INVOICE', pageWidth - 40, 18);
+        doc.setTextColor(0, 0, 0);
+        doc.setFontSize(28);
+        doc.setFont('helvetica', 'bold');
+        doc.text('INVOICE', pageWidth - 40, 18);
 
-    yPosition = 35;
+        yPosition = 35;
 
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.text('BILL TO:', 15, yPosition);
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(9);
-    
-    const addr = order?.user_address[0];
-    const billToText = `${addr?.firstName || ''} ${addr?.lastName || ''}
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.text('BILL TO:', 15, yPosition);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+
+        const addr = order?.user_address[0];
+        const billToText = `${addr?.firstName || ''} ${addr?.lastName || ''}
 ${addr?.address || ''}
 ${addr?.city || ''}, ${addr?.state || ''} - ${addr?.pincode || ''}
 ${addr?.phone || ''}`;
-    
-    doc.text(billToText, 15, yPosition + 6);
 
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(10);
-    doc.text('INVOICE DETAILS:', pageWidth - 80, yPosition);
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(9);
-    
-    const invoiceDate = orderTime?.slice(0, 10) || new Date().toISOString().slice(0, 10);
-    const invoiceDetails = `Invoice #: ${order?.status[0]?.cashfreeOrderId || 'N/A'}
+        doc.text(billToText, 15, yPosition + 6);
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(10);
+        doc.text('INVOICE DETAILS:', pageWidth - 80, yPosition);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+
+        const invoiceDate = orderTime?.slice(0, 10) || new Date().toISOString().slice(0, 10);
+        const invoiceDetails = `Invoice #: ${order?.status[0]?.cashfreeOrderId || 'N/A'}
 Date: ${invoiceDate}
 Payment: Online
 Status: ${order?.status[0]?.payment_status || 'Completed'}`;
-    
-    doc.text(invoiceDetails, pageWidth - 80, yPosition + 6);
 
-    yPosition = 75;
+        doc.text(invoiceDetails, pageWidth - 80, yPosition + 6);
 
-    autoTable(doc, {
-        startY: yPosition,
-        head: [['#', 'Item & Description', 'Qty', 'Unit Price', 'Amount']],
-        body: order?.items?.map((item, i) => {
-            const total = item.item_quantity * item.item_original_unit_price;
-            return [
-                String(i + 1),
-                item.item_name || 'N/A',
-                String(item.item_quantity),
-                `₹${item.item_original_unit_price || '0.00'}`,
-                `₹${total || '0.00'}`
-            ];
-        }) || [],
-        headStyles: {
-            fillColor: [34, 197, 94],
-            textColor: [255, 255, 255],
-            fontStyle: 'bold',
-            fontSize: 10,
-            padding: 4,
-            halign: 'center'
-        },
-        bodyStyles: {
-            fontSize: 9,
-            padding: 3,
-            halign: 'center'
-        },
-        alternateRowStyles: {
-            fillColor: [245, 253, 244]
-        },
-        columnStyles: {
-            0: { halign: 'center', cellWidth: 15 },
-            1: { halign: 'left', cellWidth: 95 },
-            2: { halign: 'center', cellWidth: 20 },
-            3: { halign: 'right', cellWidth: 30 },
-            4: { halign: 'right', cellWidth: 30 }
-        },
-        margin: { left: 15, right: 15 },
-        didDrawPage: (data) => {
-            yPosition = data.cursor.y;
-        }
-    });
+        yPosition = 75;
 
-    yPosition += 15;
+        autoTable(doc, {
+            startY: yPosition,
+            head: [['#', 'Item & Description', 'Qty', 'Unit Price', 'Amount']],
+            body: order?.items?.map((item, i) => {
+                const total = item.item_quantity * item.item_original_unit_price;
+                return [
+                    String(i + 1),
+                    item.item_name || 'N/A',
+                    String(item.item_quantity),
+                    `₹${item.item_original_unit_price || '0.00'}`,
+                    `₹${total || '0.00'}`
+                ];
+            }) || [],
+            headStyles: {
+                fillColor: [34, 197, 94],
+                textColor: [255, 255, 255],
+                fontStyle: 'bold',
+                fontSize: 10,
+                padding: 4,
+                halign: 'center'
+            },
+            bodyStyles: {
+                fontSize: 9,
+                padding: 3,
+                halign: 'center'
+            },
+            alternateRowStyles: {
+                fillColor: [245, 253, 244]
+            },
+            columnStyles: {
+                0: { halign: 'center', cellWidth: 15 },
+                1: { halign: 'left', cellWidth: 95 },
+                2: { halign: 'center', cellWidth: 20 },
+                3: { halign: 'right', cellWidth: 30 },
+                4: { halign: 'right', cellWidth: 30 }
+            },
+            margin: { left: 15, right: 15 },
+            didDrawPage: (data) => {
+                yPosition = data.cursor.y;
+            }
+        });
 
-    const subtotal = order?.items?.reduce((sum, item) => 
-        sum + (item.item_quantity * item.item_original_unit_price), 0) || 0;
-    const gst = subtotal * 0.18;
-    const grandTotal = subtotal + 0;
+        yPosition += 15;
 
-    doc.setFillColor(245, 245, 245);
-    doc.rect(100, yPosition, 95, 35, 'F');
+        const subtotal = order?.items?.reduce((sum, item) =>
+            sum + (item.item_quantity * item.item_original_unit_price), 0) || 0;
+        const gst = subtotal * 0.18;
+        const grandTotal = subtotal + 0;
 
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(9);
-    doc.text('Subtotal:', 110, yPosition + 8);
-    doc.text(`₹${subtotal.toFixed(2)}`, 185, yPosition + 8, { align: 'right' });
+        doc.setFillColor(245, 245, 245);
+        doc.rect(100, yPosition, 95, 35, 'F');
 
-    doc.text('IGST (18%):', 110, yPosition + 16);
-    doc.text(`₹${0}`, 185, yPosition + 16, { align: 'right' });
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        doc.text('Subtotal:', 110, yPosition + 8);
+        doc.text(`₹${subtotal.toFixed(2)}`, 185, yPosition + 8, { align: 'right' });
 
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(11);
-    doc.setTextColor(34, 197, 94);
-    doc.text('Grand Total:', 110, yPosition + 26);
-    doc.text(`₹${grandTotal.toFixed(2)}`, 185, yPosition + 26, { align: 'right' });
+        doc.text('IGST (18%):', 110, yPosition + 16);
+        doc.text(`₹${0}`, 185, yPosition + 16, { align: 'right' });
 
-    doc.setTextColor(0, 0, 0);
-    yPosition += 45;
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(11);
+        doc.setTextColor(34, 197, 94);
+        doc.text('Grand Total:', 110, yPosition + 26);
+        doc.text(`₹${grandTotal.toFixed(2)}`, 185, yPosition + 26, { align: 'right' });
 
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.text('TERMS & CONDITIONS:', 15, yPosition);
+        doc.setTextColor(0, 0, 0);
+        yPosition += 45;
 
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(8);
-    const termsText = doc.splitTextToSize(
-        'Payment Terms: Due upon receipt. Thank you for your business! This is a computer-generated invoice and does not require a signature. For any queries, please contact support@freedomtree.com',
-        170
-    );
-    doc.text(termsText, 15, yPosition + 6);
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.text('TERMS & CONDITIONS:', 15, yPosition);
 
-    yPosition = pageHeight - 20;
-    
-    doc.setDrawColor(34, 197, 94);
-    doc.setLineWidth(0.5);
-    doc.line(15, yPosition, pageWidth - 15, yPosition);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        const termsText = doc.splitTextToSize(
+            'Payment Terms: Due upon receipt. Thank you for your business! This is a computer-generated invoice and does not require a signature. For any queries, please contact support@freedomtree.com',
+            170
+        );
+        doc.text(termsText, 15, yPosition + 6);
 
-    doc.setFontSize(8);
-    doc.setTextColor(100, 100, 100);
-    doc.setFont('helvetica', 'normal');
-    doc.text(
-        'FreeDom Tree | GSTIN: 27ABCDE1234F1Z5 | support@freedomtree.com | +91 98765 43210',
-        pageWidth / 2,
-        yPosition + 8,
-        { align: 'center' }
-    );
+        yPosition = pageHeight - 20;
 
-    doc.text(
-        `Generated on ${new Date().toLocaleString('en-IN')}`,
-        pageWidth / 2,
-        yPosition + 14,
-        { align: 'center' }
-    );
+        doc.setDrawColor(34, 197, 94);
+        doc.setLineWidth(0.5);
+        doc.line(15, yPosition, pageWidth - 15, yPosition);
 
-    doc.save(`Invoice_${order?.status[0]?.cashfreeOrderId || 'Invoice'}.pdf`);
-};
+        doc.setFontSize(8);
+        doc.setTextColor(100, 100, 100);
+        doc.setFont('helvetica', 'normal');
+        doc.text(
+            'FreeDom Tree | GSTIN: 27ABCDE1234F1Z5 | support@freedomtree.com | +91 98765 43210',
+            pageWidth / 2,
+            yPosition + 8,
+            { align: 'center' }
+        );
+
+        doc.text(
+            `Generated on ${new Date().toLocaleString('en-IN')}`,
+            pageWidth / 2,
+            yPosition + 14,
+            { align: 'center' }
+        );
+
+        doc.save(`Invoice_${order?.status[0]?.cashfreeOrderId || 'Invoice'}.pdf`);
+    };
 
 
 
 
     const content = 'This is a content';
-    const items = [
+    let items = [
         {
             title: 'Processing',
             content,
@@ -230,11 +230,23 @@ Status: ${order?.status[0]?.payment_status || 'Completed'}`;
         },
     ];
 
+    order?.status?.forEach(step => {
+        if (step.orderStatus === "processing") {
+            items = items.slice(0, 1);
+        }
+        if (step.orderStatus === "shipped") {
+            items = items.slice(0, 2);
+        }
+        if (step.orderStatus === "delivered") {
+            items = items.slice(0, 3);
+        }
+    });
+
 
     const handleTimeOut = () => {
         setTimeout(() => {
             setcount(count + 1);
-        }, 6000);
+        }, 2000);
     }
 
     useEffect(() => {

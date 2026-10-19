@@ -15,8 +15,6 @@ const SortProduct = ({ ProductSubcategory }) => {
 
 
   useEffect(() => {
-
-
     const userActivity = async (req, res) => {
       try {
         if (hasRun.current) return;
@@ -52,20 +50,42 @@ const SortProduct = ({ ProductSubcategory }) => {
     queryFn: fetchProducts,
   });
 
-  const categoryProducts = products.filter((item) =>
-    item.category === category && item.subCategory.includes(filter)
-  );
+  const normalizeCat = (cat) => {
+    if (!cat) return "";
+    const clean = cat.toLowerCase().trim().replace(/[^a-z0-9]/g, "");
+    if (clean === "dinning" || clean === "dining") return "dining";
+    if (clean === "clothiing" || clean === "clothing") return "clothing";
+    if (clean.includes("decor") || clean.includes("light")) return "decor";
+    return clean;
+  };
+
+  const categoryProducts = products.filter((item) => {
+    const isCategoryMatch =
+      item.category === category ||
+      normalizeCat(item.category) === normalizeCat(category);
+    if (!isCategoryMatch) return false;
+
+    if (!filter || (Array.isArray(filter) && filter.length === 0)) return true;
+    const filterStr = String(filter).toLowerCase();
+    const itemSub = (item.subCategory || item.subcategory || "").toLowerCase();
+    return itemSub.includes(filterStr);
+  });
 
 
   useEffect(() => {
-    const sub = ProductSubcategory?.map((item) => item.toLowerCase());
+    if (!ProductSubcategory || ProductSubcategory.length === 0) {
+      setMyProduct(categoryProducts);
+      return;
+    }
+    const sub = ProductSubcategory.map((item) => item.toLowerCase());
 
-    const filtered = categoryProducts.filter((item) =>
-      sub.includes(item.subCategory.toLowerCase())
-    );
+    const filtered = categoryProducts.filter((item) => {
+      const itemSub = (item.subCategory || item.subcategory || "").toLowerCase();
+      return sub.includes(itemSub);
+    });
 
     setMyProduct(filtered);
-  }, [ProductSubcategory]);
+  }, [ProductSubcategory, category, products]);
 
 
   const handleSelectedBox = (e) => {

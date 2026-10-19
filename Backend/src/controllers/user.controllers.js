@@ -196,7 +196,7 @@ const refreshAccesToken = asyncHandler(async (req, res) => {
         }
 
         const decodedToken = jwt.verify(incomingRefreshToken, process.env.REFRESH_TOKEN_SECRET)
-       
+
 
         const user = await User.findById(decodedToken?._id)
 
@@ -253,65 +253,44 @@ const updateUserDetails = asyncHandler(async (req, res) => {
     const userId = req.user._id;
 
     if (!userId) {
-        throw new ApiError(400, "Not found user id")
+        throw new ApiError(400, "Not found user")
     }
 
-    const { form, address } = req.body
+    const { userUpdatedData, address } = req.body
 
-    if (!form || !address) {
-        throw new ApiError(400, "form or address are required ")
+    if (!userUpdatedData || !address) {
+        throw new ApiError(400, "userUpdatedData or address are required ")
     }
 
-    const profile = await User.findOne(userId)
+    console.log(userUpdatedData);
 
     const updateProfile = await User.findOneAndUpdate(
         { _id: userId },
         {
-            $set: {
-                firstName: form.firstName,
-                lastName: form.lastName,
-                email: form.email,
-                phoneNumber: form.phoneNumber
-            },
+            $set: userUpdatedData
         },
         { new: true }
+    )
+
+    let userAdd = address
+
+    const userAddress = await Address.findOneAndUpdate(
+        { userId: userId },
+        {
+            $set: userAdd
+        },
+        {
+            new: true,
+            upsert: true,
+        }
     )
 
     if (!updateProfile) {
         throw new ApiError(400, "Profile not Updated")
     }
 
-  
-    const userAddressExistes = await Address.findOne({ userId })
-    if (!userAddressExistes) {
-        await Address.create(
-            {
-                userId: userId,
-                address: address.address,
-                city: address.city,
-                state: address.state,
-                country: address.country,
-                pincode: address.pincode
-            },
-        )
-    } else {
-        await Address.findOneAndUpdate(
-            {userId : userId},
-            {
-                $set: {
-                    address: address.address,
-                    city: address.city,
-                    state: address.state,
-                    country: address.country,
-                    pincode: address.pincode
-                }
-            },
-            {
-                new : true,
-            }
-        )
-    }
-
+    console.log("User address : ",userAddress);
+    console.log("User Profile update : ",updateProfile);
 
     res.status(200).json(
         new ApiResponse(200, "Profile Upated SuccessFully")

@@ -58,6 +58,7 @@ app.use("/api/v1/", WhatsAppMessage)
 import AddProduct from "./routes/addproduct.routers.js"
 app.use("/api/v1/", AddProduct)
 
-
+import BannerRoutes from "./routes/banner.routers.js"
+app.use("/api/v1/", BannerRoutes)
 
 export default app;
