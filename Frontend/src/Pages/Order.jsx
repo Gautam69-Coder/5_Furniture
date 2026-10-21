@@ -33,6 +33,8 @@ const OrderDetails = () => {
                 const orders = res.data?.data?.[0]?.order_details || [];
                 const selectedOrder = orders.find(o => o._id === orderId);
 
+                console.log(orders)
+
                 if (!selectedOrder) {
                     setError(`Order "${orderId}" could not be found.`);
                 } else {
@@ -243,6 +245,7 @@ Status: ${order?.status[0]?.payment_status || 'Completed'}`;
     });
 
 
+
     const handleTimeOut = () => {
         setTimeout(() => {
             setcount(count + 1);
@@ -327,31 +330,37 @@ Status: ${order?.status[0]?.payment_status || 'Completed'}`;
                         <div className="space-y-6">
                             {order?.items?.map((prod, idx) => (
                                 <div key={idx} className="flex gap-6 border-b pb-6">
-                                    <img
-                                        src={prod.item_image_url}
-                                        className="w-28 h-28 object-cover"
-                                    />
+                                    <div className="flex justify-between w-full gap-6"
+                                        onClick={() => {
+                                            navigate(`/collections/${prod?.item_category}/products/${prod?.item_name.toLowerCase().replace(/\s+/g, "-")}`)
+                                        }}
+                                    >
+                                        <img
+                                            src={prod.item_image_url}
+                                            className="w-28 h-28 object-cover"
+                                        />
 
-                                    <div className="flex-1">
-                                        <h3 className="text-md font-light">
-                                            {prod.item_name}
-                                        </h3>
+                                        <div className="flex-1">
+                                            <h3 className="text-md font-light">
+                                                {prod.item_name}
+                                            </h3>
 
-                                        <p className="text-sm text-gray-500">
-                                            Material: {prod.item_material}
-                                        </p>
+                                            <p className="text-sm text-gray-500">
+                                                Material: {prod.item_material}
+                                            </p>
 
-                                        <p className="text-sm text-gray-500">
-                                            Size: {prod.item_size}
-                                        </p>
+                                            <p className="text-sm text-gray-500">
+                                                Size: {prod.item_size}
+                                            </p>
 
-                                        <p className="text-sm text-gray-500 mt-2">
-                                            Qty: {prod.item_quantity}
-                                        </p>
-                                    </div>
+                                            <p className="text-sm text-gray-500 mt-2">
+                                                Qty: {prod.item_quantity}
+                                            </p>
+                                        </div>
 
-                                    <div className="text-sm">
-                                        ₹ {prod.item_original_unit_price}
+                                        <div className="text-sm">
+                                            ₹ {prod.item_original_unit_price}
+                                        </div>
                                     </div>
                                 </div>
                             ))}

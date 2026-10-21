@@ -3,8 +3,6 @@ import { ApiError } from '../utils/ApiError.js'
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { Cashfree, CFEnvironment } from "cashfree-pg";
 import Order from '../models/order.models.js';
-import { User } from '../models/user.model.js'
-
 
 const CheckOut = asyncHandler(async (req, res) => {
 
@@ -46,7 +44,7 @@ const CheckOut = asyncHandler(async (req, res) => {
         0
     );
 
-    const returnUrl = process.env.PRODUCTION ? "https://5-furniture.pages.dev/payment-status" : "http://localhost:5173/payment-status";
+    const returnUrl = process.env.PRODUCTION === "true" ? "https://5-furniture.pages.dev/payment-status" : "http://localhost:5173/payment-status";
 
     const request = {
         order_id: orderId,

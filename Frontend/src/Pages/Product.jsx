@@ -34,6 +34,7 @@ const ProductPage = () => {
                 const products = res.data.data;
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
+                console.log(id);
                 setimg(img || productk?.images?.[0] || productk?.images);
             } catch (error) {
                 message.error(getErrorMessage(error, "Failed to load product details"));

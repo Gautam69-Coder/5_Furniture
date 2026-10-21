@@ -20,8 +20,6 @@ const Collection = () => {
     useEffect(() => {
         const getBanner = async () => {
             const res = await axios.get(`${API_BASE_URL}/api/v1/banners`);
-            // setBanners(res.data.data || []);
-            console.log(res.data.data)
 
             let data = res.data.data;
 
