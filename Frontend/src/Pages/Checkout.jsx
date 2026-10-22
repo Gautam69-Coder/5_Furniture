@@ -40,8 +40,9 @@ const Checkout = () => {
             });
             const products = res.data?.data?.[0]?.product || [];
             setcart(products);
+            console.log(products)
             const s = products.reduce((total, item) => {
-                return total + (item.price || 0) * (item.quantity || 1)
+                return total + (item?.productData?.price || 0) * (item?.quantity || 1)
             }, 0)
             setsubTotal(s)
         } catch (error) {
@@ -403,14 +404,14 @@ const Checkout = () => {
                             {/* Product 1 */}
                             {cart.map((item, index) => (
                                 <div className="flex gap-4" key={index}>
-                                    <img src={item.image} className="relative w-14 h-14 rounded-lg bg-gray-100 border border-[#DFDFDF]" />
+                                    <img src={item?.productData?.images?.[0]} className="relative w-14 h-14 rounded-lg bg-gray-100 border border-[#DFDFDF]" />
                                     <span className="absolute ml-10 -mt-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">{item.quantity}</span>
 
 
                                     <div className="flex-1">
                                         <div className="flex justify-between">
-                                            <h3 className="text-sm ">{item.name}</h3>
-                                            <p className="text-sm">₹{item.price * item.quantity}.00</p>
+                                            <h3 className="text-sm ">{item.productData.name}</h3>
+                                            <p className="text-sm">₹{item.productData.price * item.quantity}.00</p>
                                         </div>
                                         <p className="text-[10px] text-gray-500">76L X 48D X 38H CM</p>
                                         <p className="text-[10px] text-gray-500">Fabric Selected Separately</p>

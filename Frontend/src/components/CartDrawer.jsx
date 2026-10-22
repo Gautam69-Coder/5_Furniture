@@ -44,11 +44,12 @@ const CartDrawer = ({ Close }) => {
           }
         });
 
-        const products =await res.data.data[0].product;
+        const products = await res.data.data[0].product;
+        console.log("Products  : ",products);
         setCart(products);
         
         const calculatedSubTotal = products.reduce((total, item) => {
-          return total + (item.price * item.quantity);
+          return total + (item.productData.price * item.quantity);
         }, 0);
         
         setSubTotal(calculatedSubTotal);

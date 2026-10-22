@@ -22,7 +22,6 @@ const ProductPage = () => {
     })
 
     const [loading, setloading] = useState(false)
-    console.log(product)
 
     // const [AddToCart, setAddToCart] = useState();
 
@@ -34,7 +33,6 @@ const ProductPage = () => {
                 const products = res.data.data;
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
-                console.log(id);
                 setimg(img || productk?.images?.[0] || productk?.images);
             } catch (error) {
                 message.error(getErrorMessage(error, "Failed to load product details"));
@@ -104,13 +102,13 @@ const ProductPage = () => {
                 `${API_BASE_URL}/api/v1/cart`,
                 {
                     productId: product._id,
-                    name: product.name,
-                    image: img || (Array.isArray(product?.images) ? product?.images[0] : product?.images),
-                    price: product.price,
+                    // name: product.name,
+                    // image: img || (Array.isArray(product?.images) ? product?.images[0] : product?.images),
+                    // price: product.price,
                     quantity: qty,
                     size: product?.details?.sizeIN,
                     materail: product?.details?.frameMaterial,
-                    description: product.description
+                    // description: product.description
                 },
                 {
                     headers: {

@@ -6,22 +6,18 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 const CartData = asyncHandler(async (req, res) => {
 
     try {
-        const { productId, name, image, price, quantity, size, materail, description } = req.body;
+        const { productId, quantity, size, materail } = req.body;
         const userId = req.user._id
-        if (!productId || !quantity || !name || !price || !image) {
+        if (!productId || !quantity || !size || !materail) {
             throw new ApiError(400, "Product fileds are required");
         }
 
 
         const item = {
-            productId,
-            name,
-            image,
-            price,
+            productData:productId,
             quantity: Number(quantity),
             size,
             materail,
-            description,
         }
 
 
@@ -57,8 +53,7 @@ const CartGetData = asyncHandler(async (req, res) => {
 
     const userId = req.user._id
 
-    const cart = await Cart.find({ user: userId }).populate("product");
-
+    const cart = await Cart.find({ user: userId }).populate("product.productData").select("-user");
 
     if (!cart) {
         throw new ApiError(400, "Not found Cart data")

@@ -2,6 +2,7 @@ import { loader } from '../Utils/loarder';
 
 
 const Cart = ({ loading, cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, closeCart, navigate }) => {
+
     return (
         <div>
             {loading ? (
@@ -24,16 +25,15 @@ const Cart = ({ loading, cart, subTotal, deleteItem, setdeleteProduct, deletePro
                         <>
                             <div className='overflow-y-scroll hide-scrollbar h-[54vh]'>
                                 {cart.map((item, index) => (
-
                                     <div key={index}>
                                         <div className='flex mb-2 ' >
                                             <div className='w-[25%] mr-2'>
-                                                <img src={item.image} alt="" className=' rounded w-full' />
+                                                <img src={item?.productData?.images[0]} alt="" className=' rounded w-full' />
                                             </div>
                                             <div className='flex flex-col justify-between w-full'>
                                                 <div className='w-full'>
                                                     <div className='flex justify-between items-center'>
-                                                        <div className='mb-2 text-[12px] '>{item.name}</div>
+                                                        <div className='mb-2 text-[12px] '>{item.productData.name}</div>
                                                         <div className='cursor-pointer' onClick={() => { deleteItem(item.productId); setdeleteProduct(!deleteProduct) }}>
                                                             <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/trash_pm7xzj.svg" alt="" />
                                                         </div>
@@ -45,7 +45,7 @@ const Cart = ({ loading, cart, subTotal, deleteItem, setdeleteProduct, deletePro
                                                     <div className=' flex w-fit text-[12px] justify-center items-center '>
                                                         <p>Quantity : {item.quantity}</p>
                                                     </div>
-                                                    <div className='text-[15px]'>RS. {item.price}</div>
+                                                    <div className='text-[15px]'>RS. {item.productData.price}</div>
                                                 </div>
                                             </div>
                                         </div>

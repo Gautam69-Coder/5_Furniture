@@ -8,17 +8,25 @@ const cartSchema = new mongoose.Schema({
   },
   product: [
     {
-      productId: { type: String, required: true },
-      name: { type: String, required: true },
-      price: { type: Number, required: true },
-      image: { type: String, required: true },
-      quantity: { type: Number, required: true, default : 1 },
-      size: { type: String},
-      materail: { type: String,},
-      description: { type: String,  },
+      productData: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+        required: true
+      },
+      quantity: {
+        type: Number,
+        required: true,
+        default: 1
+      },
+      size: {
+        type: String
+      },
+      materail: {
+        type: String,
+      },
     }
   ],
-});
+}, { timestamps: true });
 
 
 export const Cart = mongoose.model("Cart", cartSchema)
