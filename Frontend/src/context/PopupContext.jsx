@@ -1,7 +1,42 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import api from "../Api/axiosInstance";
 export const PopupContext = createContext();
 
 export const PopupProvider = ({ children }) => {
+  // Auth state
+  const [user, setUser] = useState(null);
+  const [userLoading, setUserLoading] = useState(true);
+
+  const fetchUser = async () => {
+    try {
+      setUserLoading(true);
+      const res = await api.get("/user/profile");
+      setUser(res.data.data);
+      return res.data.data;
+    } catch {
+      setUser(null);
+      return null;
+    } finally {
+      setUserLoading(false);
+    }
+  };
+
+  const logout = async () => {
+    try {
+      await api.post("/user/logout");
+    } catch {
+      // Cookie cleared even if network fails
+    } finally {
+      setUser(null);
+      localStorage.removeItem("refreshToken");
+      localStorage.removeItem("email");
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   //Quick View
   const [isOpen, setIsOpen] = useState(false);
   const [product, setProduct] = useState(null);
@@ -76,6 +111,7 @@ export const PopupProvider = ({ children }) => {
 
   return (
     <PopupContext.Provider value={{
+      user, setUser, userLoading, fetchUser, logout,
       isOpen, product,
 
       openQuickView, closeQuickView,

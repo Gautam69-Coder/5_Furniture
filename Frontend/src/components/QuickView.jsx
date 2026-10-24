@@ -1,7 +1,7 @@
 import { motion, easeInOut } from 'motion/react'
 import { useState } from 'react';
 import { useQuickView } from "../context/PopupContext";
-import axios from 'axios';
+import api from '../Api/axiosInstance';
 import { message } from 'antd';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
@@ -9,7 +9,7 @@ import { getErrorMessage } from '../Utils/errorHandler';
 
 const QuickView = () => {
 
-    const { isOpen, product, closeQuickView, openCart, openLogin } = useQuickView();
+    const { isOpen, product, closeQuickView, openCart, openLogin, user } = useQuickView();
     const [qty, setqty] = useState(1);
     const [zoom, setzoom] = useState(false);
     const [img, setimg] = useState("");
@@ -34,8 +34,7 @@ const QuickView = () => {
     }
 
     const cartData = async () => {
-        const token = localStorage.getItem("refreshToken");
-        if (!token) {
+        if (!user) {
             message.warning("Please log in to add items to your cart");
             openLogin();
             return;
@@ -43,19 +42,14 @@ const QuickView = () => {
 
         try {
             setloading(true);
-            const res = await axios.post(
-                `${API_BASE_URL}/api/v1/cart`,
+            const res = await api.post(
+                `/cart`,
                 {
                     productId: product._id,
                     name: product.name,
                     image: img || (Array.isArray(product?.images) ? product?.images[0] : product?.images),
                     price: product.price,
                     quantity: qty,
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
                 }
             );
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios"
+import api from "../Api/axiosInstance"
 import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 import { API_BASE_URL } from "../api";
@@ -25,35 +25,17 @@ export default function EditProfile() {
 
     const fetchUserDetails = async () => {
         try {
-
-            const token = localStorage.getItem("refreshToken")
-            if (!token) {
-                message.warning("Please log in to edit your profile");
-                navigate("/profile");
-                return;
-            }
-            const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            });
-
+            const res = await api.get("/user/profile");
             setUser(res.data.data);
         } catch (err) {
-            message.error(getErrorMessage(err, "Failed to load profile details"));
+            message.error(getErrorMessage(err, "Please log in to edit your profile"));
+            navigate("/profile");
         }
     };
 
     const fetchAddressDetails = async () => {
         try {
-
-            const token = localStorage.getItem("refreshToken")
-            const res = await axios.get(`${API_BASE_URL}/api/v1/address`, {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            });
-
+            const res = await api.get("/address");
             setadd(res.data.data || []);
         } catch (err) {
         }
@@ -101,12 +83,6 @@ export default function EditProfile() {
 
     const userDetils = async () => {
         try {
-            const token = localStorage.getItem("refreshToken")
-            if (!token) {
-                message.warning("Please log in to save changes");
-                return;
-            }
-
             if (!form.firstName || form.firstName.trim().length < 2) {
                 message.error("Please enter a valid first name");
                 return;
@@ -114,29 +90,23 @@ export default function EditProfile() {
 
             let userUpdatedData = {}
 
-            if (User.firstName !== form.firstName) {
+            if (User?.firstName !== form.firstName) {
                 userUpdatedData.firstName = form.firstName
             }
-            if (User.lastName !== form.lastName) {
+            if (User?.lastName !== form.lastName) {
                 userUpdatedData.lastName = form.lastName
             }
-            if (User.email !== form.email) {
+            if (User?.email !== form.email) {
                 userUpdatedData.email = form.email
             }
-            if (User.phoneNumber !== form.phoneNumber) {
+            if (User?.phoneNumber !== form.phoneNumber) {
                 userUpdatedData.phoneNumber = form.phoneNumber
             }
 
-            await axios.post(`${API_BASE_URL}/api/v1/edit-profile`, {
+            await api.post("/edit-profile", {
                 userUpdatedData,
                 address,
-            },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                }
-            );
+            });
 
             message.success("Profile updated successfully!");
             navigate("/profile");

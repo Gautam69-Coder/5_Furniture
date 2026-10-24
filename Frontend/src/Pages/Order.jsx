@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../Api/axiosInstance";
 import { API_BASE_URL } from "../api";
 import jsPDF from "jspdf";
 import { Steps, Button, Result } from 'antd';
@@ -20,15 +20,7 @@ const OrderDetails = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const token = localStorage.getItem("refreshToken");
-                if (!token) {
-                    setError("Please log in to view order details.");
-                    setLoading(false);
-                    return;
-                }
-                const res = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
+                const res = await api.get("/myorders");
 
                 const orders = res.data?.data?.[0]?.order_details || [];
                 const selectedOrder = orders.find(o => o._id === orderId);

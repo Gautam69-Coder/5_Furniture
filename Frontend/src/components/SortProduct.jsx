@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "motion/react";
 import ProductCard from "./ProductCard";
-import axios from "axios";
+import api from "../Api/axiosInstance";
 import { useQuery } from "@tanstack/react-query";
 import { API_BASE_URL } from "../api";
 import { loader } from "../Utils/loarder";
@@ -11,26 +11,18 @@ import { useQuickView } from "../context/PopupContext";
 const SortProduct = ({ ProductSubcategory }) => {
   const { category } = useParams();
   const hasRun = useRef(false);
-  const { sort, setsort, filter, setfilter } = useQuickView();
+  const { sort, setsort, filter, setfilter, user } = useQuickView();
 
 
   useEffect(() => {
-    const userActivity = async (req, res) => {
+    const userActivity = async () => {
       try {
-        if (hasRun.current) return;
+        if (hasRun.current || !user) return;
         hasRun.current = true;
-        const token = localStorage.getItem("refreshToken");
-        const res = await axios.post(`${API_BASE_URL}/api/v1/track`, {
+        await api.post(`/track`, {
           action: "category_visit",
           category: category
-        },
-          {
-            headers: {
-              "Authorization": `Bearer ${token}`
-            }
-          }
-
-        );
+        });
       } catch (error) {
       }
     }
@@ -41,7 +33,7 @@ const SortProduct = ({ ProductSubcategory }) => {
   const [myProduct, setMyProduct] = useState([]);
 
   const fetchProducts = async () => {
-    const res = await axios.get(`${API_BASE_URL}/api/v1/product`);
+    const res = await api.get("/product");
     return res.data.data;
   };
 

@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { motion } from 'motion/react';
 import { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import api from '../Api/axiosInstance';
 import { useQuickView } from '../context/PopupContext';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
@@ -10,7 +10,7 @@ import { message } from 'antd';
 import { getErrorMessage } from '../Utils/errorHandler';
 
 const ProductPage = () => {
-    const { openCart, openLogin } = useQuickView();
+    const { openCart, openLogin, user } = useQuickView();
     const { id } = useParams();
     const [product, setproduct] = useState([])
     const [qty, setqty] = useState(1);
@@ -51,24 +51,18 @@ const ProductPage = () => {
         hasRun.current = true;
         const userActivity = async () => {
             try {
-
-                const res2 = await axios.get(`${API_BASE_URL}/api/v1/product/`);
+                if (!user) return;
+                const res2 = await api.get(`/product/`);
                 const products = res2.data.data;
 
                 const productt = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
-                const token = localStorage.getItem("refreshToken");
-                const res = await axios.post(`${API_BASE_URL}/api/v1/track`, {
-                    action: "view",
-                    productId: productt?._id,
-                    category: productt?.category
-                },
-                    {
-                        headers: {
-                            "Authorization": `Bearer ${token}`
-                        }
-                    }
-
-                );
+                if (productt?._id) {
+                    await api.post(`/track`, {
+                        action: "view",
+                        productId: productt._id,
+                        category: productt?.category
+                    });
+                }
             } catch (error) {
             }
         }
@@ -89,8 +83,7 @@ const ProductPage = () => {
 
     // Send Add to cart pro to
     const cartData = async () => {
-        const token = localStorage.getItem("refreshToken");
-        if (!token) {
+        if (!user) {
             message.warning("Please log in to add items to your cart");
             openLogin();
             return;
@@ -98,29 +91,17 @@ const ProductPage = () => {
 
         try {
             setloading(true)
-            const res = await axios.post(
-                `${API_BASE_URL}/api/v1/cart`,
+            const res = await api.post(
+                `/cart`,
                 {
                     productId: product._id,
-                    // name: product.name,
-                    // image: img || (Array.isArray(product?.images) ? product?.images[0] : product?.images),
-                    // price: product.price,
                     quantity: qty,
                     size: product?.details?.sizeIN,
                     materail: product?.details?.frameMaterial,
-                    // description: product.description
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
                 }
             );
-            let user = res.data?.data?.user
-            if (user) {
-                message.success("Item added to cart!");
-                openCart();
-            }
+            message.success("Item added to cart!");
+            openCart();
         } catch (error) {
             message.error(getErrorMessage(error, "Failed to add item to cart"));
         } finally {
@@ -130,19 +111,11 @@ const ProductPage = () => {
 
     const userActivity = async () => {
         try {
-
-            const token = localStorage.getItem("refreshToken");
-            const res = await axios.post(`${API_BASE_URL}/api/v1/track`, {
+            if (!user) return;
+            await api.post(`/track`, {
                 action: "add_to_cart",
                 productId: product._id
-            },
-                {
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    }
-                }
-
-            );
+            });
         } catch (error) {
         }
     }

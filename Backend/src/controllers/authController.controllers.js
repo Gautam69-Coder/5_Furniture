@@ -32,14 +32,18 @@ export const googleAuth = asyncHandler(async (req, res) => {
     user.refreshToken = jwtToken;
     await user.save();
 
-    res.cookie("token", jwtToken, {
+    const cookieOptions = {
       httpOnly: true,
       secure: true,
       sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000, 
-    });
+    };
 
-    res.status(200).json(new ApiResponse(200,jwtToken, "Login successful"));
+    res
+      .cookie("token", jwtToken, cookieOptions)
+      .cookie("refreshToken", jwtToken, cookieOptions)
+      .status(200)
+      .json(new ApiResponse(200, { user }, "Login successful"));
   } catch (error) {
     console.error(error)
   }

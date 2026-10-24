@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useQuickView } from "../context/PopupContext";
-import axios from 'axios';
+import api from '../Api/axiosInstance';
 import { message } from 'antd';
 import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
@@ -8,14 +8,13 @@ import { getErrorMessage } from '../Utils/errorHandler';
 import { useState } from 'react';
 
 const ProductCard = ({ link, item }) => {
-    const { openQuickView, openCart, openLogin } = useQuickView();
+    const { openQuickView, openCart, openLogin, user } = useQuickView();
     const [loading, setloading] = useState(false)
 
 
     // Send Add to cart pro to
     const cartData = async () => {
-        const token = localStorage.getItem("refreshToken")
-        if (!token) {
+        if (!user) {
             message.warning("Please log in to add items to your cart");
             openLogin();
             return;
@@ -24,8 +23,8 @@ const ProductCard = ({ link, item }) => {
         try {
             setloading(true)
 
-            const res = await axios.post(
-                `${API_BASE_URL}/api/v1/cart`,
+            const res = await api.post(
+                `/cart`,
                 {
                     productId: item._id,
                     name: item.name,
@@ -35,11 +34,6 @@ const ProductCard = ({ link, item }) => {
                     size: item.details?.sizeIN,
                     materail: item.details?.frameMaterial,
                     description: item.description
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
                 }
             )
 

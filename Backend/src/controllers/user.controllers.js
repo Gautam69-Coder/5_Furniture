@@ -78,16 +78,16 @@ const registerUser = asyncHandler(async (req, res) => {
 
         const options = {
             httpOnly: true,
-            secure: true
+            secure: true,
+            sameSite: "none",
+            maxAge: 7 * 24 * 60 * 60 * 1000,
         }
-
 
         return res
             .status(200)
-            // .cookie("accessToken", accessToken, options)
             .cookie("refreshToken", refreshToken, options)
-            .json
-            (
+            .cookie("token", refreshToken, options)
+            .json(
                 new ApiResponse(200, {
                     user: {
                         _id: user._id,
@@ -96,7 +96,6 @@ const registerUser = asyncHandler(async (req, res) => {
                         email: user.email,
                         phoneNumber: user.phoneNumber
                     },
-                    // accessToken,
                     refreshToken
                 }, "User created Successfully")
             )
@@ -121,16 +120,16 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: true
+        secure: true,
+        sameSite: "none",
+        maxAge: 7 * 24 * 60 * 60 * 1000,
     }
-
 
     return res
         .status(200)
-        // .cookie("accessToken", accessToken, options)
         .cookie("refreshToken", refreshToken, options)
-        .json
-        (
+        .cookie("token", refreshToken, options)
+        .json(
             new ApiResponse(200, {
                 user: userCreated, refreshToken
             }, "User created Successfully")
@@ -161,7 +160,7 @@ const OTPValidate = asyncHandler(async (req, res) => {
 
 
 const logoutUser = asyncHandler(async (req, res) => {
-    await User.findById(
+    await User.findByIdAndUpdate(
         req.user._id,
         {
             $set: {
@@ -176,27 +175,27 @@ const logoutUser = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
+        sameSite: "none",
     }
 
     return res
         .status(200)
         .clearCookie("refreshToken", options)
-        // .clearCookie("accessToken", options)
+        .clearCookie("token", options)
         .json(
-            200, {}, "User logout"
+            new ApiResponse(200, {}, "User logged out successfully")
         )
 })
 
 const refreshAccesToken = asyncHandler(async (req, res) => {
     try {
-        const incomingRefreshToken = req.cookie?.refreshToken || req.body.refreshToken
+        const incomingRefreshToken = req.cookies?.refreshToken || req.cookies?.token || req.body.refreshToken
 
         if (!incomingRefreshToken) {
-            throw new ApiError(401, "Unautorized token")
+            throw new ApiError(401, "Unauthorized token")
         }
 
         const decodedToken = jwt.verify(incomingRefreshToken, process.env.REFRESH_TOKEN_SECRET)
-
 
         const user = await User.findById(decodedToken?._id)
 
@@ -213,17 +212,17 @@ const refreshAccesToken = asyncHandler(async (req, res) => {
         const options = {
             httpOnly: true,
             secure: true,
+            sameSite: "none",
+            maxAge: 7 * 24 * 60 * 60 * 1000,
         }
 
         return res
             .status(200)
-            .clearCookie("refreshToken", options)
-            // .clearCookie("accessToken", options)
+            .cookie("refreshToken", refreshToken, options)
+            .cookie("token", refreshToken, options)
             .json(
-                200, { refreshToken, accessToken }, "Token refreshed"
+                new ApiResponse(200, { refreshToken }, "Token refreshed successfully")
             )
-
-
 
     } catch (error) {
         throw new ApiError(401, error?.message || "Invalid Access Token")

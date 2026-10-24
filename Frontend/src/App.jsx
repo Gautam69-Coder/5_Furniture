@@ -21,6 +21,7 @@ import EditProfile from "./Pages/EditProfile.jsx";
 import Contact from './Pages/TopMenu/ContactUs.jsx';
 import Professional from './Pages/TopMenu/Professional.jsx';
 import Search from "./components/Search.jsx";
+import ChatBot from "./components/ChatBot.jsx";
 
 // Admin Imports
 import DashboardLayout from "./Admin/AdminLayouts/DashboardLayout.jsx";
@@ -88,6 +89,8 @@ const App = () => {
 
         {/* Admin Popup */}
         <AddProduct/>        
+        {/* AI Chatbot */}
+        <ChatBot />
       </main>
 
       {!hideNavbar && <Footter />}

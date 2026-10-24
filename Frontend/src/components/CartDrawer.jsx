@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Drawer, message } from 'antd';
 import { useQuickView } from '../context/PopupContext';
-import axios from "axios";
+import api from "../Api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import Cart from './Cart';
 import { API_BASE_URL } from '../api';
 import { getErrorMessage } from '../Utils/errorHandler';
 
 const CartDrawer = ({ Close }) => {
-  const { closeCart, isOpenCart } = useQuickView();
+  const { closeCart, isOpenCart, user } = useQuickView();
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
@@ -30,19 +30,13 @@ const CartDrawer = ({ Close }) => {
     const fetchCart = async () => {
       try {
         setLoading(true);
-        const token = localStorage.getItem("refreshToken");
-        
-        if (!token) {
+        if (!user) {
           setLoading(false);
           setCart([]);
           return;
         }
 
-        const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
-          headers: {
-            "Authorization": `Bearer ${token}`
-          }
-        });
+        const res = await api.get("/cart");
 
         const products = await res.data.data[0].product;
         console.log("Products  : ",products);
@@ -73,17 +67,9 @@ const CartDrawer = ({ Close }) => {
 
   const deleteItem = async (productId) => {
     try {
-      const token = localStorage.getItem("refreshToken");
-      if (!token) return;
+      if (!user) return;
 
-      await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
-        { productId },
-        {
-          headers: {
-            "Authorization": `Bearer ${token}`
-          }
-        }
-      );
+      await api.post("/deleteItem", { productId });
 
       // Update cart locally after deletion
       const updatedCart = cart.filter(item => item.productId !== productId);

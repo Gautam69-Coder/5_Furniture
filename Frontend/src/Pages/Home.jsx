@@ -2,7 +2,7 @@ import ProductCarousel from '../components/ProductCarsoul'
 import ItemCarousel from '../components/ItemCarsoul'
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import api from '../Api/axiosInstance'
 import Activity from '../components/Activity'
 import { API_BASE_URL } from '../api'
 
@@ -31,13 +31,7 @@ const Home = () => {
   useEffect(() => {
     const recently_viewed = async () => {
       try {
-        const token = localStorage.getItem("refreshToken");
-        const res = await axios.get(`${API_BASE_URL}/api/v1/recently-view`, {
-          headers: {
-            "Authorization": `Bearer ${token}`
-          }
-        })
-
+        const res = await api.get("/recently-view");
         setitem(res.data.data.map(item => item))
       } catch (error) {
       }
@@ -48,12 +42,7 @@ const Home = () => {
   useEffect(() => {
     const recommended = async () => {
       try {
-        const token = localStorage.getItem("refreshToken");
-        const res = await axios.get(`${API_BASE_URL}/api/v1/recommended`, {
-          headers: {
-            "Authorization": `Bearer ${token}`
-          },
-        })
+        const res = await api.get("/recommended");
         setrecommended(res.data.data.map(item => item))
 
       } catch (error) {

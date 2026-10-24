@@ -1,7 +1,8 @@
 import { loader } from '../Utils/loarder';
-
+import { useQuickView } from '../context/PopupContext';
 
 const Cart = ({ loading, cart, subTotal, deleteItem, setdeleteProduct, deleteProduct, closeCart, navigate }) => {
+    const { user } = useQuickView();
 
     return (
         <div>
@@ -11,7 +12,7 @@ const Cart = ({ loading, cart, subTotal, deleteItem, setdeleteProduct, deletePro
                 </div>
             ) : (
                 <div>
-                    {(cart.length === 0 || !localStorage.getItem("refreshToken")) ? (
+                    {(cart.length === 0 || !user) ? (
                         <div className='flex flex-col mt-40 justify-center items-center'>
                             <div className='my-2'>
                                 <img src="https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924530/cart2_cjjh48.svg" alt="" className='w-[82px] h-[70px]' />

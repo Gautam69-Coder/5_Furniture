@@ -61,4 +61,7 @@ app.use("/api/v1/", AddProduct)
 import BannerRoutes from "./routes/banner.routers.js"
 app.use("/api/v1/", BannerRoutes)
 
+import ChatRoutes from "./routes/chat.routers.js"
+app.use("/api/v1/", ChatRoutes)
+
 export default app;

@@ -1,43 +1,20 @@
-// import axios from "axios";
+import axios from "axios";
+import { API_BASE_URL } from "../api";
 
-// const api = axios.create({
-//   baseURL: "/api/v1",
-//   withCredentials: true, 
-// });
+axios.defaults.withCredentials = true;
 
-// // Attach access token from localStorage
-// api.interceptors.request.use((config) => {
-//   const token = localStorage.getItem("accessToken");
-//   if (token) config.headers.Authorization = `Bearer ${token}`;
-//   return config;
-// });
+const api = axios.create({
+    baseURL: `${API_BASE_URL}/api/v1`,
+    withCredentials: true,
+});
 
-// // Refresh token automatically
-// api.interceptors.response.use(
-//   (response) => response,
-//   async (error) => {
-//     if (error.response?.status === 401) {
-//       try {
-//         const res = await axios.post(
-//           "/api/v1/user/refresh-token",
-//           {},
-//           { withCredentials: true }
-//         );
+api.interceptors.request.use((config) => {
+    return config;
+});
 
-//         const newAccessToken = res.data.data.accessToken;
-//         localStorage.setItem("accessToken", newAccessToken);
+api.interceptors.response.use(
+    (response) => response,
+    (error) => Promise.reject(error)
+);
 
-//         error.config.headers.Authorization = `Bearer ${newAccessToken}`;
-//         return api(error.config);
-
-//       } catch (err) {
-//         localStorage.removeItem("accessToken");
-//         window.location.href = `/login`;
-//       }
-//     }
-
-//     return Promise.reject(error);
-//   }
-// );
-
-// export default api;
+export default api;

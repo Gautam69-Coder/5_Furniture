@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form"
-import axios from "axios"
+import api from "../Api/axiosInstance"
 import { message } from "antd"
 import { load } from '@cashfreepayments/cashfree-js';
 import { API_BASE_URL } from '../api';
@@ -11,7 +11,7 @@ import { useQuickView } from '../context/PopupContext';
 
 const Checkout = () => {
 
-    const { openLogin } = useQuickView();
+    const { openLogin, user: contextUser } = useQuickView();
 
     const {
         register,
@@ -31,13 +31,7 @@ const Checkout = () => {
 
     const fetchCart = async () => {
         try {
-            const token = localStorage.getItem("refreshToken")
-            if (!token) return;
-            const res = await axios.get(`${API_BASE_URL}/api/v1/cart`, {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            });
+            const res = await api.get("/cart");
             const products = res.data?.data?.[0]?.product || [];
             setcart(products);
             console.log(products)
@@ -52,23 +46,11 @@ const Checkout = () => {
 
     const fetchUserDetails = async () => {
         try {
-
-            const token = localStorage.getItem("refreshToken")
-            if (!token) {
-                setError("Please log in to proceed with checkout");
-                setLoading(false);
-                return;
-            }
-            const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            });
-
+            const res = await api.get("/user/profile");
             setUser(res.data.data);
             setLoading(false);
         } catch (err) {
-            const errMsg = getErrorMessage(err, "Failed to load user details");
+            const errMsg = getErrorMessage(err, "Please log in to proceed with checkout");
             setError(errMsg);
             message.error(errMsg);
             setLoading(false);
@@ -86,8 +68,7 @@ const Checkout = () => {
 
     const handlePayment = async (addressData) => {
         try {
-            const token = localStorage.getItem("refreshToken");
-            if (!token) {
+            if (!user && !contextUser) {
                 message.warning("Please log in to proceed with checkout");
                 openLogin();
                 return;
@@ -103,20 +84,15 @@ const Checkout = () => {
                 mode: "sandbox"
             });
 
-            const response = await axios.post(`${API_BASE_URL}/api/v1/create-order`, {
+            const currentUser = user || contextUser;
+            const response = await api.post("/create-order", {
                 amount: subTotal,
-                customer_name: user?.firstName || addressData?.firstName || "Customer",
-                customer_email: user?.email || addressData?.email || "customer@example.com",
-                customer_phone: user?.phoneNumber || addressData?.phone || "9082386079",
+                customer_name: currentUser?.firstName || addressData?.firstName || "Customer",
+                customer_email: currentUser?.email || addressData?.email || "customer@example.com",
+                customer_phone: currentUser?.phoneNumber || addressData?.phone || "9082386079",
                 cart,
                 address: addressData
-            },
-                {
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    },
-                }
-            );
+            });
 
             const sessionId = response.data?.data?.payment_session_id;
             if (!sessionId) {

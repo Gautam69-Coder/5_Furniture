@@ -8,9 +8,10 @@ import { API_BASE_URL } from "../api";
 import { loader } from "../Utils/loarder";
 import { getErrorMessage } from "../Utils/errorHandler";
 import { useQuickView } from "../context/PopupContext";
+import api from "../Api/axiosInstance";
 
 const Profile = () => {
-  const { openLogin } = useQuickView();
+  const { openLogin, logout } = useQuickView();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -22,37 +23,28 @@ const Profile = () => {
 
   const fetchUserDetails = async () => {
     try {
+      setLoading(true);
+      setError("");
 
-      const token = localStorage.getItem("refreshToken")
-      if (!token) {
-        setError("Please log in to view your profile and orders.");
-        setLoading(false);
-        return;
-      }
-      const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        }
-      });
+      const res = await api.get("/user/profile/");
 
       setUser(res.data.data);
-      setLoading(false);
+      console.log(res)
     } catch (err) {
-      setError(getErrorMessage(err, "Failed to load user profile. Please try logging in again."));
+      setError(
+        getErrorMessage(
+          err,
+          "Failed to load user profile. Please try logging in again."
+        )
+      );
+    } finally {
       setLoading(false);
     }
   };
 
   const fetchAddressDetails = async () => {
     try {
-
-      const token = localStorage.getItem("refreshToken")
-      const res = await axios.get(`${API_BASE_URL}/api/v1/address`, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        }
-      });
-
+      const res = await api.get("/address");
       setadd(res.data.data || []);
     } catch (err) {
     }
@@ -70,15 +62,8 @@ const Profile = () => {
   useEffect(() => {
     const myorders = async () => {
       try {
-        const token = localStorage.getItem("refreshToken")
-        const res = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
-          headers: {
-            "Authorization": `Bearer ${token}`
-          }
-        });
-
-        setcart(res.data.data)
-
+        const res = await api.get("/myorders");
+        setcart(res.data.data || []);
       } catch (error) {
       }
     }
@@ -173,11 +158,9 @@ const Profile = () => {
             </div>
             <div className="flex justify-between items-center">
               <button
-                onClick={() => {
-                  localStorage.removeItem("refreshToken");
-                  localStorage.removeItem("email");
+                onClick={async () => {
+                  await logout();
                   navigate("/");
-                  window.location.reload();
                 }}
                 className="mt-6 text-sm  text-gray-700 hover:text-black p-2 border hover:underline"
               >

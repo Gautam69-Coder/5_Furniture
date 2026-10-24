@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Input, message, Checkbox } from 'antd';
 import { motion, easeInOut } from 'motion/react';
 import { useQuickView } from '../context/PopupContext';
+import api from '../Api/axiosInstance';
 
 import validator from 'validator'
 import axios from "axios"
@@ -16,7 +17,7 @@ import { getErrorMessage } from '../Utils/errorHandler';
 
 
 const Login = () => {
-  const { closeLogin, isLoginOpen, openLogin } = useQuickView();
+  const { closeLogin, isLoginOpen, openLogin, fetchUser } = useQuickView();
   const [headerText1, setheaderText1] = useState()
   const [headerText2, setheaderText2] = useState()
   const [button, setbutton] = useState()
@@ -61,17 +62,14 @@ const Login = () => {
       const result = await signInWithPopup(auth, provider);
       const firebaseToken = await result.user.getIdToken();
 
-      const res = await axios.post(`${API_BASE_URL}/api/v1/google`, { token: firebaseToken }, { withCredentials: true });
-
-      localStorage.setItem("refreshToken", res.data.data)
+      await axios.post(`${API_BASE_URL}/api/v1/google`, { token: firebaseToken }, { withCredentials: true });
+      await fetchUser();
       await messageApi.open({
         type: 'success',
         content: 'Signed in successfully!',
       });
 
       closeLogin();
-
-      window.location.reload();
     } catch (error) {
       messageApi.open({
         type: 'error',
@@ -171,18 +169,16 @@ const Login = () => {
       setloaders(true)
       setisRegister(false)
 
-      const response = await axios.post(
-        `${API_BASE_URL}/api/v1/user/register`,
+      await api.post(
+        `/user/register`,
         {
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           email: email.trim(),
           phoneNumber: text.trim(),
-        },
-        { withCredentials: true }
+        }
       );
-      localStorage.setItem("refreshToken", response.data.data.refreshToken);
-      localStorage.setItem("email", response.data.data.user.email)
+      await fetchUser();
       setloaders(false);
       setsuccess(true);
       messageApi.open({

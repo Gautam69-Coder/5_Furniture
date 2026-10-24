@@ -10,11 +10,11 @@ import { API_BASE_URL } from '../api';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { openCart, openLogin, closeLogin, setisSearch, isSearch } = useQuickView();
+  const { openCart, openLogin, closeLogin, setisSearch, isSearch, user } = useQuickView();
 
   const [Islogin, setIslogin] = useState(false);
   const [cartDrawer, setcartDrawer] = useState(false);
-  const [avatar, setavatar] = useState();
+  const avatar = user?.avatar;
 
   // 1. New state for mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,24 +39,7 @@ const Navbar = () => {
     { index: 8, title: "Sale" }
   ];
 
-  useEffect(() => {
-    const fetchUserDetails = async () => {
-      try {
 
-        const token = localStorage.getItem("refreshToken")
-        const res = await axios.get(`${API_BASE_URL}/api/v1/user/profile`, {
-          headers: {
-            "Authorization": `Bearer ${token}`
-          }
-        });
-
-        setavatar(res.data.data.avatar);
-      } catch (err) {
-      }
-    };
-
-    fetchUserDetails();
-  }, [avatar]);
 
 
   return (
@@ -143,7 +126,7 @@ const Navbar = () => {
 
               <div className='cursor-pointer'>
                 <img src={avatar || "https://res.cloudinary.com/gautamcloudinary/image/upload/v1766924413/profile_rwlyrw.svg"} className='rounded-full ' alt="profile" width={30} onClick={() => {
-                  if (!localStorage.getItem("refreshToken")) {
+                  if (!user) {
                     openLogin(null)
                   } else {
                     navigate("/profile")

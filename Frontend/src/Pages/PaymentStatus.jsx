@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../Api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../api";
 import { Button, Result } from 'antd';
@@ -22,25 +22,18 @@ const PaymentStatus = () => {
                     return;
                 }
 
-                const res = await axios.get(`${API_BASE_URL}/api/v1/status/${orderId}`);
+                const res = await api.get(`/status/${orderId}`);
                 console.log("Status Response : ", res.data.data);
-                const token = localStorage.getItem("refreshToken");
                 setStatus(res.data?.data);
 
-                if (token) {
-                    const res2 = await axios.get(`${API_BASE_URL}/api/v1/myorders`, {
-                        headers: { Authorization: `Bearer ${token}` }
-                    });
+                try {
+                    const res2 = await api.get("/myorders");
                     const myOrders = res2.data?.data?.[0]?.order_details || [];
                     const findOrder = myOrders.slice(-1)[0];
                     if (findOrder) {
-                        await axios.post(`${API_BASE_URL}/api/v1/verify_order/`,
-                            { findOrder },
-                            {
-                                headers: { Authorization: `Bearer ${token}` }
-                            }
-                        );
+                        await api.post("/verify_order/", { findOrder });
                     }
+                } catch {
                 }
             } catch (err) {
                 setError(getErrorMessage(err, "Failed to verify order and payment status."));
@@ -55,16 +48,7 @@ const PaymentStatus = () => {
     useEffect(() => {
         const deleteItem = async (productId) => {
             try {
-                const token = localStorage.getItem("refreshToken");
-                if (!token) return;
-                await axios.post(`${API_BASE_URL}/api/v1/deleteItem`,
-                    { productId },
-                    {
-                        headers: {
-                            "Authorization": `Bearer ${token}`
-                        }
-                    }
-                );
+                await api.post("/deleteItem", { productId });
             } catch (err) {
                 // Silently handle background cart cleanup
             }
