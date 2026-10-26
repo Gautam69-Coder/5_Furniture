@@ -1,8 +1,6 @@
+import "dotenv/config";
 import connectDB from "./db/db.js";
-import dotenv from "dotenv";
 import app from "./app.js";
-
-dotenv.config();
 
 // Connect DB once when function is initialized
 connectDB()

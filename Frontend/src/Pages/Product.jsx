@@ -7,7 +7,9 @@ import { API_BASE_URL } from '../api';
 import { loader } from '../Utils/loarder';
 import { Link } from 'react-router-dom';
 import { message } from 'antd';
+import { Sparkles } from 'lucide-react';
 import { getErrorMessage } from '../Utils/errorHandler';
+import RoomVisualizer from '../components/RoomVisualizer';
 
 const ProductPage = () => {
     const { openCart, openLogin, user } = useQuickView();
@@ -22,6 +24,7 @@ const ProductPage = () => {
     })
 
     const [loading, setloading] = useState(false)
+    const [showVisualizer, setShowVisualizer] = useState(false);
 
     // const [AddToCart, setAddToCart] = useState();
 
@@ -29,7 +32,7 @@ const ProductPage = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const res = await axios.get(`${API_BASE_URL}/api/v1/product/`);
+                const res = await api.get(`/product/`);
                 const products = res.data.data;
                 const productk = products.find(item => item.name.toLowerCase().replace(/\s+/g, "-") === id);
                 setproduct(productk);
@@ -310,6 +313,15 @@ const ProductPage = () => {
                             }} >Buy it Now</button>
                     </div>
 
+                    <button
+                        type="button"
+                        onClick={() => setShowVisualizer(true)}
+                        className="mt-3 w-full border-2 border-black bg-[#faf9f5] hover:bg-black hover:text-white text-black py-3 px-4 uppercase font-bold text-[13px] tracking-wider transition-all flex items-center justify-center gap-2 group cursor-pointer shadow-sm"
+                    >
+                        <Sparkles className="w-4 h-4 text-amber-500 group-hover:text-amber-300 transition-colors" />
+                        <span>Try In My Room (AI Visualizer)</span>
+                    </button>
+
                     <div className='text-left my-10 font-medium '>
                         <p>A classic and handsome chair, it can easily be an accent chair in a bedroom or sitting area. The arms gracefully slope down to the seat, giving it an effortless formality. Upholstery in unexpected graphic prints gives it a cheeky update. Contact us for fabric options.</p>
                     </div>
@@ -430,6 +442,13 @@ const ProductPage = () => {
             <div>
 
             </div>
+
+            {showVisualizer && (
+                <RoomVisualizer
+                    product={product}
+                    onClose={() => setShowVisualizer(false)}
+                />
+            )}
 
         </motion.div>
     )
